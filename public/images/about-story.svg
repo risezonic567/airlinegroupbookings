@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="500" y1="0" x2="500" y2="750" gradientUnits="userSpaceOnUse"><stop stop-color="#C9E8F8"/><stop offset="1" stop-color="#EFF8FC"/></linearGradient>
+    <linearGradient id="window" x1="500" y1="70" x2="500" y2="590" gradientUnits="userSpaceOnUse"><stop stop-color="#86C9EA"/><stop offset="1" stop-color="#2589C4"/></linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1000v750H0z"/>
+  <circle cx="835" cy="133" r="54" fill="#F6D889"/>
+  <path fill="url(#window)" d="M0 495c155-52 247-30 378 5 137 37 249 15 372-16 94-24 171-23 250-1v267H0V495Z"/>
+  <path fill="#65B588" d="M0 550c122-58 245-44 360-8 129 41 226 48 365 0 104-36 182-44 275-22v230H0V550Z"/>
+  <g opacity=".85" fill="#fff"><path d="M130 170h170v14H130zm535 60h205v13H665zM80 284h110v12H80z"/><path d="M164 96c-26 0-48 18-53 43h106c-5-25-27-43-53-43Zm479 43c-23 0-43 15-49 37h98c-6-22-26-37-49-37Z"/></g>
+  <g transform="translate(480 390)">
+    <circle cx="0" cy="-88" r="49" fill="#9C6549"/><path fill="#243B61" d="M-46-101c5-43 77-54 94-7-26-11-55-12-94 7Z"/>
+    <path fill="#F6F8FC" d="M-95 50c5-83 36-117 95-117S90-33 95 50v115H-95V50Z"/><path fill="#E6A785" d="M-42-13h84l21 178h-126L-42-13Z"/>
+    <path fill="#1E3A8A" d="M-95 51c5-50 24-79 55-94l25 66 15-30 16 30 29-66c31 15 50 44 55 94v114H-95V51Z"/>
+    <path fill="#fff" d="m-35-42 35 58 36-58-12-20h-47l-12 20Z"/>
+    <path fill="#F5C1A3" d="M-40-124c7-34 63-40 80-4l-8 39c-4 23-19 40-37 40s-34-17-38-40l3-35Z"/>
+    <path fill="#5C3D35" d="M-40-128c2-34 46-52 78-29 17 12 21 30 17 49-13-11-24-20-37-30-9 17-28 27-58 30v-20Z"/>
+  </g>
+  <g transform="translate(265 435) scale(.78)">
+    <circle cy="-78" r="42" fill="#D89670"/><path fill="#3E302A" d="M-42-92c2-37 54-54 78-20l3 34c-19-11-37-14-78-1l-3-13Z"/><path fill="#F4F6FA" d="M-78 45c4-70 30-101 78-101s74 31 78 101v103H-78V45Z"/><path fill="#EEB391" d="M-34-15h68l18 163h-104L-34-15Z"/><path fill="#0A7BD0" d="M-78 45c4-42 20-69 45-81l20 58 13-24 13 24 20-58c25 12 41 39 45 81v103H-78V45Z"/>
+  </g>
+  <g transform="translate(700 445) scale(.76)">
+    <circle cy="-78" r="42" fill="#C8835E"/><path fill="#202A40" d="M-42-87c2-40 56-51 79-20l-2 29c-14-12-39-13-75 1l-2-10Z"/><path fill="#F4F6FA" d="M-78 45c4-70 30-101 78-101s74 31 78 101v103H-78V45Z"/><path fill="#E9AE8C" d="M-34-15h68l18 163h-104L-34-15Z"/><path fill="#1E3A8A" d="M-78 45c4-42 20-69 45-81l20 58 13-24 13 24 20-58c25 12 41 39 45 81v103H-78V45Z"/>
+  </g>
+  <g fill="#fff" opacity=".72"><path d="M74 690h852v5H74zM132 650h135v5H132zm601 16h182v5H733z"/></g>
+</svg>

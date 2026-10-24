@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+.airline-prose h3 { margin-top: 1.5rem; font-size: 1.125rem; font-weight: 700; line-height: 1.5; color: #0f172a; }
+.airline-prose p { margin: 0 0 1rem; }
+.airline-prose ul, .airline-prose ol { margin: 1rem 0; }
+.airline-prose li { padding-left: .25rem; margin: .4rem 0; }
+.airline-prose strong { font-weight: 700; color: #0f172a; }
+.airline-prose a { color: #1d4ed8; text-decoration: underline; }
+.airline-prose table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.airline-prose th, .airline-prose td { border: 1px solid #e2e8f0; padding: .75rem; text-align: left; }
+.airline-prose th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+
+@keyframes airline-card-reveal {
+  from { opacity: 0; filter: blur(5px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+.airline-card-enter {
+  animation: airline-card-reveal 520ms cubic-bezier(.2, .75, .25, 1) both;
+  animation-delay: calc(var(--airline-card-index, 0) * 75ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .airline-card-enter { animation: none; }
+}
