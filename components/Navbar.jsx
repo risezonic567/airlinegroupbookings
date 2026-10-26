@@ -30,6 +30,7 @@ const menus = [
 
 const pages = [
     { label: 'About Us', href: '/about' },
+    { label: 'Deals', href: '/deals' },
     { label: 'Blog', href: '/blog' },
     { label: 'Contact Us', href: '/contact' },
 ]
