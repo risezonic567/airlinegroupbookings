@@ -3,7 +3,7 @@ const deals = [
         slug: 'sports-group-travel-deals',
         title: 'Sports Group Travel Deals',
         category: 'Sports travel',
-        image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=85',
+        image: '/images/deals/Sports%20Group%20Travel%20Deals.jpg.jpeg',
         excerpt: 'Coordinate flights for teams, supporters, and sports groups traveling together.',
         intro: 'Plan air travel for a team, tournament, or group of supporters. Share the destination, event dates, and estimated number of travelers to explore group flight options.',
         details: ['Include event dates and any preferred arrival time.', 'Share the group size and departure cities.', 'Review baggage, schedule, and fare conditions before booking.'],
