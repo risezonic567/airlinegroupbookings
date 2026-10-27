@@ -28,14 +28,17 @@ const linkGroups = [
 const socialMedia = [
     {
         label: 'YouTube',
+        href: 'https://www.youtube.com/channel/UCn09_avVWrAYtpvPb5wGtEA',
         icon: <><rect x="2" y="5" width="20" height="14" rx="4" /><path d="m10 9 5 3-5 3z" /></>,
     },
     {
         label: 'Facebook',
+        href: 'https://www.facebook.com/airlinegroupbookings/',
         icon: <path d="M14 8h3V4h-3a5 5 0 0 0-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9a1 1 0 0 1 1-1Z" />,
     },
     {
         label: 'Instagram',
+        href: 'https://www.instagram.com/airlinegroupbookings/',
         icon: <><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" /></>,
     },
     {
@@ -44,10 +47,12 @@ const socialMedia = [
     },
     {
         label: 'X',
+        href: 'https://x.com/airgrpbooking',
         icon: <path d="M18.9 3H22l-6.8 7.8L23.2 21h-6.3l-5-6.5L6.2 21H3l7.3-8.4L2.8 3h6.5l4.5 6 5.1-6Zm-1.1 16h1.7L8.3 4.9H6.5L17.8 19Z" />,
     },
     {
         label: 'Pinterest',
+        href: 'https://www.pinterest.com/airlinegroupbooking/',
         icon: <path d="M12 3a9 9 0 0 0-3.3 17.4c0-.7 0-1.6.2-2.4l1.2-5.1s-.3-.6-.3-1.5c0-1.4.8-2.5 1.9-2.5.9 0 1.3.7 1.3 1.5 0 .9-.6 2.2-.9 3.5-.3 1 .5 1.8 1.5 1.8 1.8 0 3.2-1.9 3.2-4.7 0-2.4-1.7-4-4.1-4-2.8 0-4.5 2.1-4.5 4.3 0 .9.4 1.9.9 2.4.1.2.2.3.1.5l-.3 1c0 .2-.2.3-.4.2-1.3-.6-2.1-2.3-2.1-3.8 0-3.1 2.2-6 6.4-6 3.4 0 6 2.4 6 5.6 0 3.4-2.1 6.2-5 6.2-1 0-2-.6-2.3-1.2l-.7 2.5c-.3.9-.8 1.8-1.2 2.4A9 9 0 1 0 12 3Z" />,
     },
 ]
@@ -71,9 +76,14 @@ export default function Footer() {
                 </Link>
                 <p className="mt-4 max-w-xs text-md leading-6 text-slate-600">Making it easier for families, teams, schools, and organizations to plan group flights together.</p>
                 <div className="mt-5 flex gap-2.5" aria-label="Social media icons">
-                    {socialMedia.map(({ icon, label }) => <span key={label} role="img" aria-label={label} className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-50 text-blue-700">
-                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{icon}</svg>
-                    </span>)}
+                    {socialMedia.map(({ icon, label, href }) => {
+                        const contents = <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{icon}</svg>
+                        const className = 'flex h-9 w-9 items-center justify-center rounded-full bg-blue-50 text-blue-700 transition hover:-translate-y-0.5 hover:bg-blue-700 hover:text-white'
+
+                        return href
+                            ? <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={className}>{contents}</a>
+                            : <span key={label} role="img" aria-label={label} className={className}>{contents}</span>
+                    })}
                 </div>
                 <div className="mt-4 flex items-center gap-3" aria-label="Travel industry memberships">
                     <Image src="/images/certificates/ARC.png" alt="ARC" width={100} height={50} className="h-10 w-[68px] object-contain" />

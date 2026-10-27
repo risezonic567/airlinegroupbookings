@@ -1,0 +1,26 @@
+name: Deploy to Hostinger VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: root
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -e
+            cd /var/www/airlinegroupbookings
+            git pull origin main
+            touch .env
+            docker-compose up -d --build --force-recreate
+            docker image prune -f
+            docker ps
