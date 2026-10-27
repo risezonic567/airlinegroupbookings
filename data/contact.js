@@ -2,7 +2,7 @@ const contactDetails = {
     phoneDisplay: '+1-833-958-0151',
     phoneHref: 'tel:+18339580151',
     whatsappHref: 'https://wa.me/18339580151',
-    email: 'support@airlinegroupticketr.com',
+    email: 'heath@airlinegroupbookings.com',
     offices: [
         {
             label: 'USA Office',
