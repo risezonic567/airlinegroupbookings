@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { ArrowRight, ChevronDown, Plane } from 'lucide-react'
 
+import AirportInput from './AirportInput'
+
 const tripTypes = ['Round Trip', 'One Way', 'Multi City']
 const textInputClass = 'mt-2 h-11 w-full rounded-md border border-slate-200 bg-white px-3 text-md text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-blue-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100'
 const fieldLabelClass = 'text-base font-medium text-slate-600'
@@ -33,13 +35,12 @@ export default function QuoteForm() {
         <div className="border border-white bg-[#fafafa] px-4 py-5 shadow-xl shadow-slate-900/10 sm:px-6 lg:px-7">
             <h2 className="sr-only">Get a free group flight quote</h2>
             <form onSubmit={submitQuote}>
-                <datalist id="airport-suggestions"><option value="New York (JFK)" /><option value="Los Angeles (LAX)" /><option value="Chicago (ORD)" /><option value="London (LHR)" /></datalist>
                 <div className="grid grid-cols-2 gap-x-3 gap-y-4 sm:gap-x-5 lg:grid-cols-6">
-                    <FormField label="Flying from:"><input className={textInputClass} name="origin" value={form.origin} onChange={updateField} list="airport-suggestions" placeholder="Start Searching..." autoComplete="off" required /></FormField>
-                    <FormField label="To:"><input className={textInputClass} name="destination" value={form.destination} onChange={updateField} list="airport-suggestions" placeholder="Start Searching..." autoComplete="off" required /></FormField>
+                    <FormField label="Flying from:"><AirportInput name="origin" value={form.origin} onChange={updateField} placeholder="Start Searching..." required /></FormField>
+                    <FormField label="To:"><AirportInput name="destination" value={form.destination} onChange={updateField} placeholder="Start Searching..." required /></FormField>
                     <FormField label="Departure:"><input className={textInputClass} name="departure" type="date" value={form.departure} onChange={updateField} required /></FormField>
                     {tripType === 'Round Trip' && <FormField label="Return Date:"><input className={textInputClass} name="returnDate" type="date" value={form.returnDate} onChange={updateField} min={form.departure || undefined} required /></FormField>}
-                    {tripType === 'Multi City' && <><FormField label="Next flight from:"><input className={textInputClass} name="secondOrigin" value={form.secondOrigin} onChange={updateField} list="airport-suggestions" placeholder="Start Searching..." required /></FormField><FormField label="Next flight to:"><input className={textInputClass} name="secondDestination" value={form.secondDestination} onChange={updateField} list="airport-suggestions" placeholder="Start Searching..." required /></FormField><FormField label="Next flight date:"><input className={textInputClass} name="secondDeparture" type="date" value={form.secondDeparture} onChange={updateField} required /></FormField></>}
+                    {tripType === 'Multi City' && <><FormField label="Next flight from:"><AirportInput name="secondOrigin" value={form.secondOrigin} onChange={updateField} placeholder="Start Searching..." required /></FormField><FormField label="Next flight to:"><AirportInput name="secondDestination" value={form.secondDestination} onChange={updateField} placeholder="Start Searching..." required /></FormField><FormField label="Next flight date:"><input className={textInputClass} name="secondDeparture" type="date" value={form.secondDeparture} onChange={updateField} required /></FormField></>}
                     <FormField label="Passenger:"><input className={textInputClass} name="passengers" type="number" min="1" max="999" value={form.passengers} onChange={updateField} placeholder="Enter count" required /></FormField>
                     <SelectControl label="Class:" name="cabin" value={form.cabin} onChange={updateField}><option>Economy</option><option>Premium Economy</option><option>Business</option><option>First Class</option></SelectControl>
                     {tripType === 'One Way' && <div className="hidden lg:block" aria-hidden="true" />}
