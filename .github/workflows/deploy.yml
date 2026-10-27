@@ -21,6 +21,6 @@ jobs:
             cd /var/www/airlinegroupbookings
             git pull origin main
             touch .env
-            docker-compose up -d --build --force-recreate
+            docker compose up -d --build --force-recreate
             docker image prune -f
             docker ps
