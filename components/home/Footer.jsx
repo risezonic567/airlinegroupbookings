@@ -85,10 +85,11 @@ export default function Footer() {
                             : <span key={label} role="img" aria-label={label} className={className}>{contents}</span>
                     })}
                 </div>
-                <div className="mt-4 flex items-center gap-3" aria-label="Travel industry memberships">
+                <div className="mt-4 flex flex-wrap items-center gap-3" aria-label="Travel industry memberships">
                     <Image src="/images/certificates/ARC.png" alt="ARC" width={100} height={50} className="h-10 w-[68px] object-contain" />
                     <Image src="/images/certificates/asta-original.png" alt="ASTA, American Society of Travel Advisors" width={100} height={50} className="h-10 w-[90px] object-contain" />
-                    <Image src="/images/certificates/IATA_logo.png" alt="IATA" width={100} height={50} className="h-10 w-[68px] object-contain" />
+                    <Image src="/images/certificates/clia.jpg" alt="CLIA, Cruise Lines International Association" width={100} height={50} className="h-10 w-[68px] object-contain" />
+                    <Image src="/images/certificates/iatan.jpg" alt="IATAN" width={100} height={50} className="h-10 w-[68px] object-contain" />
                 </div>
             </div>
 
