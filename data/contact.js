@@ -6,7 +6,7 @@ const contactDetails = {
     offices: [
         {
             label: 'USA Office',
-            address: '16192 Coastal Highway, Lewes, Delaware 19958, County of Sussex, USA',
+            address: '16192 Coastal Highway, Lewes, Delaware 19958, USA',
         },
         {
             label: 'Gurugram Office',
