@@ -6,19 +6,11 @@ import { isRateLimited, recordSubmission } from '@/lib/rateLimit';
 import { lookupLocation } from '@/lib/geo';
 import { getTransporter } from '@/lib/mailer';
 import { generateEmail } from '@/lib/emailTemplate';
+import { emailDomainOk, isDisposableEmail, validateEmail, validatePhone } from '@/lib/validators';
 
-// Helper to escape values for email headers/body
-function escapeHtml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
+export const runtime = 'nodejs';
 
-// Basic validation according to the spec
-function validatePayload(payload) {
+async function validatePayload(payload) {
   const errors = [];
   const trimAndCap = (value) => {
     if (typeof value !== 'string') return '';
@@ -37,16 +29,18 @@ function validatePayload(payload) {
     'secondDeparture',
     'passengers',
     'cabin',
-    'email',
     'countryCode',
-    'phone',
     'website',
   ];
   for (const f of fields) {
     sanitized[f] = trimAndCap(payload[f] ?? '');
   }
 
-  const { tripType, passengers, email, phone, website } = sanitized;
+  const { tripType, passengers } = sanitized;
+  const email = typeof payload.email === 'string' ? payload.email : '';
+  const phone = typeof payload.phone === 'string' ? payload.phone.trim().slice(0, 120) : '';
+  sanitized.email = email;
+  sanitized.phone = phone;
 
   // Required fields
   const required = ['tripType', 'origin', 'destination', 'departure', 'passengers', 'cabin', 'email', 'phone'];
@@ -68,17 +62,23 @@ function validatePayload(payload) {
   const pax = Number(passengers);
   if (!Number.isInteger(pax) || pax < 1 || pax > 999) errors.push('passengers');
 
-  // simple email format
-  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRe.test(email)) errors.push('email');
+  if (!validateEmail(email)) {
+    errors.push('email');
+  } else if (isDisposableEmail(email)) {
+    errors.push('email');
+  } else if (!(await emailDomainOk(email))) {
+    errors.push('email');
+  } else {
+    sanitized.email = email.toLowerCase();
+  }
 
-  // phone digits check (ignore plus and spaces)
-  const digits = phone.replace(/\D/g, '');
-  if (digits.length < 6 || digits.length > 15) errors.push('phone');
+  const validatedPhone = validatePhone(sanitized.countryCode, phone);
+  if (!validatedPhone.valid) errors.push('phone');
+  sanitized.phoneE164 = validatedPhone.e164;
 
   // honeypot field is allowed to be any string – handled separately
 
-  return { sanitized, errors };
+  return { sanitized, errors: [...new Set(errors)] };
 }
 
 export async function POST(request) {
@@ -90,9 +90,9 @@ export async function POST(request) {
       return NextResponse.json({ success: true });
     }
 
-    const { sanitized, errors } = validatePayload(body);
+    const { sanitized, errors } = await validatePayload(body);
     if (errors.length) {
-      return NextResponse.json({ success: false, error: 'Please check the form and try again.' }, { status: 400 });
+      return NextResponse.json({ success: false, error: 'Please check the form and try again.', fields: errors }, { status: 400 });
     }
 
     // Step c – client IP
@@ -130,12 +130,12 @@ export async function POST(request) {
       transporter = getTransporter();
 
       console.log('SMTP debug:', {
-  user: process.env.SMTP_USER,
-  passLength: process.env.SMTP_PASS?.length,
-  host: process.env.SMTP_HOST,
-  port: process.env.SMTP_PORT,
-  secure: process.env.SMTP_SECURE,
-});
+        user: process.env.SMTP_USER,
+        passLength: process.env.SMTP_PASS?.length,
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
+        secure: process.env.SMTP_SECURE,
+      });
     } catch (e) {
       console.error('SMTP configuration error:', e);
       return NextResponse.json({ success: false, error: 'Server configuration error. Please try again later.' }, { status: 500 });
@@ -161,4 +161,3 @@ export async function POST(request) {
     return NextResponse.json({ success: false, error: 'Something went wrong. Please try again.' }, { status: 500 });
   }
 }
-
