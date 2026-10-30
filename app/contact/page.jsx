@@ -2,11 +2,14 @@ import Link from 'next/link'
 import { Clock3, Mail, MapPin, Phone, UsersRound } from 'lucide-react'
 import ContactForm from '../../components/contact/ContactForm'
 import contactDetails from '../../data/contact'
+import PageStructuredData from '../../components/seo/PageStructuredData'
+import { createPageMetadata } from '../../lib/seo'
 
-export const metadata = {
+export const metadata = createPageMetadata({
     title: 'Contact Us | AirlinesGroup Travel',
     description: 'Contact AirlinesGroup Travel for help planning group flights and requesting a travel quote.',
-}
+    path: '/contact',
+})
 
 const contactOptions = [
     {
@@ -26,6 +29,7 @@ const contactOptions = [
 export default function ContactPage() {
     return (
         <main>
+            <PageStructuredData name="Contact AirlinesGroup Travel" description="Contact AirlinesGroup Travel for help planning group flights and requesting a travel quote." path="/contact" type="ContactPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact Us', path: '/contact' }]} />
             <section className="bg-gradient-to-br from-[#087cd1] to-[#1e3a8a] px-5 py-14 text-center text-white sm:px-8 sm:py-20">
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">We’re here to help</p>
@@ -63,7 +67,7 @@ export default function ContactPage() {
                     <div id="contact-form" className="scroll-mt-8">
                         <div className="mb-4">
                             <h2 className="text-2xl font-bold text-slate-900">Send us a message</h2>
-                            <p className="mt-2 text-sm leading-6 text-slate-600">Fill out the form and your email app will open with your message ready to send.</p>
+                            <p className="mt-2 text-sm leading-6 text-slate-600">Fill out the form and our travel team will receive your message.</p>
                         </div>
                         <ContactForm />
                         <p className="mt-4 text-sm text-slate-500">Prefer email? <Link href={`mailto:${contactDetails.email}`} className="font-semibold text-blue-700 hover:text-blue-900">Send us a message</Link>.</p>

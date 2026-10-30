@@ -1,13 +1,18 @@
 import PolicyPage from '../../components/content/PolicyPage'
 import contactDetails from '../../data/contact'
+import PageStructuredData from '../../components/seo/PageStructuredData'
+import { createPageMetadata } from '../../lib/seo'
 
-export const metadata = {
+export const metadata = createPageMetadata({
     title: 'Privacy Policy | AirlinesGroup Travel',
     description: 'Privacy information for visitors and customers of AirlinesGroup Travel.',
-}
+    path: '/privacy-policy',
+})
 
 export default function PrivacyPolicyPage() {
     return (
+        <>
+        <PageStructuredData name="Privacy Policy | AirlinesGroup Travel" description="Privacy information for visitors and customers of AirlinesGroup Travel." path="/privacy-policy" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy-policy' }]} />
         <PolicyPage
             title="Privacy Policy"
             introduction="We respect your privacy. This page provides general information about privacy when you use the AirlinesGroup Travel website or contact our team."
@@ -26,5 +31,6 @@ export default function PrivacyPolicyPage() {
                 },
             ]}
         />
+        </>
     )
 }

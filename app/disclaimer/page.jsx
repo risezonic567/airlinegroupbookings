@@ -1,13 +1,18 @@
 import PolicyPage from '../../components/content/PolicyPage'
 import contactDetails from '../../data/contact'
+import PageStructuredData from '../../components/seo/PageStructuredData'
+import { createPageMetadata } from '../../lib/seo'
 
-export const metadata = {
+export const metadata = createPageMetadata({
     title: 'Disclaimer | AirlinesGroup Travel',
     description: 'Important information about website content and travel arrangements.',
-}
+    path: '/disclaimer',
+})
 
 export default function DisclaimerPage() {
     return (
+        <>
+        <PageStructuredData name="Disclaimer | AirlinesGroup Travel" description="Important information about website content and travel arrangements." path="/disclaimer" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Disclaimer', path: '/disclaimer' }]} />
         <PolicyPage
             title="Disclaimer"
             introduction="Information on this website is provided for general travel-planning purposes and may not reflect the latest availability or conditions for a particular trip."
@@ -26,5 +31,6 @@ export default function DisclaimerPage() {
                 },
             ]}
         />
+        </>
     )
 }

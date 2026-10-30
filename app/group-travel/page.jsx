@@ -2,15 +2,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Plane } from 'lucide-react'
 import groupTravelAirlines from '../../data/groupTravelAirlines'
+import PageStructuredData from '../../components/seo/PageStructuredData'
+import { createPageMetadata } from '../../lib/seo'
 
-export const metadata = {
+export const metadata = createPageMetadata({
     title: 'Group Travel by Airline | AirlinesGroup Travel',
     description: 'Explore group flight booking information and airline options for your next group trip.',
-}
+    path: '/group-travel',
+})
 
 export default function GroupTravelPage() {
     return (
         <main>
+            <PageStructuredData name="Group Travel by Airline" description="Explore group flight booking information and airline options for your next group trip." path="/group-travel" type="CollectionPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Group Travel', path: '/group-travel' }]} />
             <section className="bg-gradient-to-br from-[#087cd1] to-[#1e3a8a] px-5 py-14 text-white sm:px-8 sm:py-20">
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Plan together</p>

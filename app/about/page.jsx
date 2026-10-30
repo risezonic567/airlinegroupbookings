@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Home, Phone } from 'lucide-react'
 import contactDetails from '../../data/contact'
+import PageStructuredData from '../../components/seo/PageStructuredData'
+import { createPageMetadata } from '../../lib/seo'
 
 const storyParagraphs = [
     'We help families, corporate teams, student groups and event travelers make the journey together. Group flights come with plenty of details to coordinate, and our team is here to make the process feel straightforward.',
@@ -9,15 +11,16 @@ const storyParagraphs = [
     'Plans can change at any hour, so our expert agents are available 24/7 to help. Tell us where your group is headed and we’ll help you get started.',
 ]
 
-export const metadata = {
-    title: 'About Us | Airline Group Booking',
-    description:
-        'Learn how Airline Group Booking helps families, teams, students and event groups plan flights together with expert support.',
-}
+export const metadata = createPageMetadata({
+    title: 'About Us | AirlinesGroup Travel',
+    description: 'Learn how Airline Group Booking helps families, teams, students and event groups plan flights together with expert support.',
+    path: '/about',
+})
 
 export default function AboutPage() {
     return (
         <main>
+            <PageStructuredData name="About Us | AirlinesGroup Travel" description="Learn how Airline Group Booking helps families, teams, students and event groups plan flights together with expert support." path="/about" type="AboutPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }]} />
             <section className="relative isolate flex min-h-[270px] items-center justify-center overflow-hidden sm:min-h-[320px] lg:min-h-[360px]">
                 <Image
                     src="/images/about-banner.svg"

@@ -2,15 +2,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Plane } from 'lucide-react'
 import businessClassAirlines from '../../data/businessClassAirlines'
+import PageStructuredData from '../../components/seo/PageStructuredData'
+import { createPageMetadata } from '../../lib/seo'
 
-export const metadata = {
+export const metadata = createPageMetadata({
     title: 'Business Class by Airline | AirlinesGroup Travel',
     description: 'Explore business class travel options across leading airlines and find a flight for your next trip.',
-}
+    path: '/business-class',
+})
 
 export default function BusinessClassPage() {
     return (
         <main>
+            <PageStructuredData name="Business Class Flights by Airline" description="Explore business class travel options across leading airlines and find a flight for your next trip." path="/business-class" type="CollectionPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Business Class', path: '/business-class' }]} />
             <section className="bg-gradient-to-br from-[#087cd1] to-[#1e3a8a] px-5 py-14 text-white sm:px-8 sm:py-20">
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Travel in comfort</p>

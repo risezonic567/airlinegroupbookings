@@ -3,15 +3,20 @@ import contactDetails from '../data/contact'
 import QuoteForm from '../components/home/QuoteForm'
 import { AirlinesSection, BlogsSection, DealsSection, DestinationsSection, WhyChooseSection } from '../components/home/HomeSections'
 import Testimonials from '../components/home/Testimonials'
+import PageStructuredData from '../components/seo/PageStructuredData'
+import { createPageMetadata } from '../lib/seo'
 // import Newsletter from '../components/home/Newsletter'
 
-export const metadata = {
+export const metadata = createPageMetadata({
     title: 'AirlinesGroup Travel | Group Flight Bookings',
     description: 'Find and book group flights with dedicated travel support from AirlinesGroup Travel.',
-}
+    path: '/',
+})
+
 
 export default function HomePage() {
     return <main>
+        <PageStructuredData name="AirlinesGroup Travel | Group Flight Bookings" description="Find and book group flights with dedicated travel support from AirlinesGroup Travel." path="/" />
         <section className="relative isolate min-h-[620px] bg-blue-100 pb-12 sm:pb-16 lg:pb-20">
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
                 <div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2200&q=85')" }} />
