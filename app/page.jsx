@@ -1,5 +1,5 @@
-import { MessageCircle, Phone, Plane } from 'lucide-react'
-import contactDetails from '../data/contact'
+import { Plane } from 'lucide-react'
+import ContactFab from '../components/home/ContactFab'
 import QuoteForm from '../components/home/QuoteForm'
 import { AirlinesSection, BlogsSection, DealsSection, DestinationsSection, WhyChooseSection } from '../components/home/HomeSections'
 import Testimonials from '../components/home/Testimonials'
@@ -41,12 +41,6 @@ export default function HomePage() {
         <Testimonials />
         {/* <Newsletter /> */}
 
-        <div className="group fixed bottom-6 right-4 z-50 flex flex-col items-end gap-3 sm:bottom-8 sm:right-6" aria-label="Contact us">
-            <div className="invisible flex translate-x-3 flex-col items-end gap-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-x-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-x-0 group-focus-within:opacity-100">
-                <a href={contactDetails.whatsappHref} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp" className="inline-flex items-center gap-3 rounded-full bg-[#25D366] px-4 py-3 text-md font-semibold text-white shadow-lg transition hover:bg-[#20bd5a] focus:outline-none focus:ring-4 focus:ring-green-200">WhatsApp <MessageCircle className="h-5 w-5" aria-hidden="true" /></a>
-                <a href={contactDetails.phoneHref} aria-label={`Call ${contactDetails.phoneDisplay}`} className="inline-flex items-center gap-3 rounded-full bg-blue-700 px-4 py-3 text-md font-semibold text-white shadow-lg transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-200">Call us <Phone className="h-5 w-5" aria-hidden="true" /></a>
-            </div>
-            <button type="button" aria-label="Show WhatsApp and phone contact options" className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition hover:scale-105 hover:bg-[#20bd5a] focus:outline-none focus:ring-4 focus:ring-green-200"><MessageCircle className="h-7 w-7" aria-hidden="true" /></button>
-        </div>
+        <ContactFab />
     </main>
 }

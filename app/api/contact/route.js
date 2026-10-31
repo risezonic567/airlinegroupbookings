@@ -6,6 +6,9 @@ import { isRateLimited, recordSubmission } from '@/lib/rateLimit';
 import { lookupLocation } from '@/lib/geo';
 import { getTransporter } from '@/lib/mailer';
 import { generateContactEmail } from '@/lib/contactEmailTemplate';
+import { emailDomainOk, isDisposableEmail, validateEmail, validatePhone } from '@/lib/validators';
+
+export const runtime = 'nodejs';
 
 // Helper to trim and cap string values.
 function cleanString(value, max) {
@@ -13,12 +16,13 @@ function cleanString(value, max) {
   return value.trim().slice(0, max);
 }
 
-function validatePayload(payload) {
+async function validatePayload(payload) {
   const errors = [];
   const sanitized = {
     name: cleanString(payload.name, 100),
-    email: cleanString(payload.email, 150),
-    phone: cleanString(payload.phone, 20), // keep raw, later digits check.
+    email: typeof payload.email === 'string' ? payload.email : '',
+    phone: cleanString(payload.phone, 20),
+    countryCode: cleanString(payload.countryCode, 10),
     subject: cleanString(payload.subject, 150),
     details: cleanString(payload.details, 2000),
     website: typeof payload.website === 'string' ? payload.website.trim() : '',
@@ -30,17 +34,26 @@ function validatePayload(payload) {
   if (!sanitized.subject) errors.push('subject');
   if (!sanitized.details) errors.push('details');
 
-  // Email format
-  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (sanitized.email && !emailRe.test(sanitized.email)) errors.push('email');
-
-  // Phone digits (optional)
-  if (sanitized.phone) {
-    const digits = sanitized.phone.replace(/\D/g, '');
-    if (digits.length < 6 || digits.length > 15) errors.push('phone');
+  if (!validateEmail(sanitized.email)) {
+    errors.push('email');
+  } else if (isDisposableEmail(sanitized.email)) {
+    errors.push('email');
+  } else if (!(await emailDomainOk(sanitized.email))) {
+    errors.push('email');
+  } else {
+    sanitized.email = sanitized.email.toLowerCase();
   }
 
-  return { sanitized, errors };
+  // Phone is optional on this form; validate it whenever one is supplied.
+  if (sanitized.phone) {
+    const validatedPhone = validatePhone(sanitized.countryCode, sanitized.phone);
+    if (!validatedPhone.valid) errors.push('phone');
+    sanitized.phoneE164 = validatedPhone.e164;
+  } else {
+    sanitized.phoneE164 = '';
+  }
+
+  return { sanitized, errors: [...new Set(errors)] };
 }
 
 export async function POST(request) {
@@ -52,9 +65,9 @@ export async function POST(request) {
       return NextResponse.json({ success: true });
     }
 
-    const { sanitized, errors } = validatePayload(body);
+    const { sanitized, errors } = await validatePayload(body);
     if (errors.length) {
-      return NextResponse.json({ success: false, error: 'Please check the form and try again.' }, { status: 400 });
+      return NextResponse.json({ success: false, error: 'Please check the form and try again.', fields: errors }, { status: 400 });
     }
 
     // Client IP extraction
@@ -114,4 +127,3 @@ export async function POST(request) {
     return NextResponse.json({ success: false, error: 'Something went wrong. Please try again.' }, { status: 500 });
   }
 }
-

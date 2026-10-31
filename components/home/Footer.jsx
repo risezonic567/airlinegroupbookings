@@ -13,6 +13,7 @@ const linkGroups = [
             { label: 'Our blogs', href: '/blog' },
             { label: 'Airline group travel', href: '/airlines' },
             { label: 'Deals', href: '/deals' },
+            { label: 'Contact Us', href: '/#booking' },
         ],
     },
     {
@@ -21,6 +22,7 @@ const linkGroups = [
             { label: 'Destinations', href: '/destinations' },
             { label: 'Group travel', href: '/group-travel' },
             { label: 'Request a quote', href: '/#booking' },
+
         ],
     },
 ]
