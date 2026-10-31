@@ -7,11 +7,16 @@ import PageStructuredData from '../components/seo/PageStructuredData'
 import { createPageMetadata } from '../lib/seo'
 // import Newsletter from '../components/home/Newsletter'
 
-export const metadata = createPageMetadata({
-    title: 'AirlinesGroup Travel | Group Flight Bookings',
-    description: 'Find and book group flights with dedicated travel support from AirlinesGroup Travel.',
-    path: '/',
-})
+export const metadata = {
+    ...createPageMetadata({
+        title: 'AirlinesGroup Travel | Group Flight Bookings',
+        description: 'Find and book group flights with dedicated travel support from AirlinesGroup Travel.',
+        path: '/',
+    }),
+    verification: {
+        google: 'w_FmKg1-XlB3fN-JMECpNK8PJ4Ky47t39uURze3OcjU',
+    },
+}
 
 
 export default function HomePage() {
