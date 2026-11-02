@@ -45,6 +45,7 @@ const socialMedia = [
     },
     {
         label: 'LinkedIn',
+        href:'https://www.linkedin.com/company/airline-group-bookings/',
         icon: <><path d="M5 9v10M5 5v.01M10 19v-6a4 4 0 0 1 8 0v6M10 9v10" /><circle cx="5" cy="5" r="1" fill="currentColor" /></>,
     },
     {
