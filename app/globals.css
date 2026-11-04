@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
+.airline-prose h2 { margin-top: 2rem; font-size: 1.5rem; font-weight: 700; line-height: 1.3; color: #0f172a; }
 .airline-prose h3 { margin-top: 1.5rem; font-size: 1.125rem; font-weight: 700; line-height: 1.5; color: #0f172a; }
+.airline-prose h4 { margin-top: 1.25rem; font-size: 1rem; font-weight: 700; line-height: 1.4; color: #0f172a; }
 .airline-prose p { margin: 0 0 1rem; }
 .airline-prose ul, .airline-prose ol { margin: 1rem 0; }
 .airline-prose li { padding-left: .25rem; margin: .4rem 0; }
