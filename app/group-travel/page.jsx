@@ -7,14 +7,14 @@ import { createPageMetadata } from '../../lib/seo'
 
 export const metadata = createPageMetadata({
     title: 'Group Travel Airlines | Airline Group Bookings',
-    description: 'Browse group travel airlines and see how group booking discounts work. Compare group fare vs individual fare, review airline policies, and learn how to book group flights with confidence.',
+    description: 'Browse group travel airlines and airlines with group booking discount. Review group flight booking policy by airline, learn how to book group flights with airlines, and compare group fare vs individual fare.',
     path: '/group-travel',
 })
 
 export default function GroupTravelPage() {
     return (
         <main>
-            <PageStructuredData name="Group Travel Airlines | Airline Group Bookings" description="Browse group travel airlines and see how group booking discounts work. Compare group fare vs individual fare, review airline policies, and learn how to book group flights with confidence." path="/group-travel" type="CollectionPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Group Travel', path: '/group-travel' }]} />
+            <PageStructuredData name="Group Travel Airlines | Airline Group Bookings" description="Browse group travel airlines and airlines with group booking discount. Review group flight booking policy by airline, learn how to book group flights with airlines, and compare group fare vs individual fare." path="/group-travel" type="CollectionPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Group Travel', path: '/group-travel' }]} />
             <section className="bg-gradient-to-br from-[#087cd1] to-[#1e3a8a] px-5 py-14 text-white sm:px-8 sm:py-20">
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Plan together</p>
@@ -22,7 +22,7 @@ export default function GroupTravelPage() {
                         Group Travel Airlines — <span className="text-blue-200">Options & Policies</span>
                     </h1>
                     <p className="mt-4 max-w-2xl text-base leading-7 text-blue-50">
-                        Compare airlines with group booking discounts, check fare rules, and start planning your group trip with clearer next steps.
+                        Explore group travel airlines and airlines with group booking discount. Check group flight booking policy by airline, learn how to book group flights with airlines, and compare group fare vs individual fare before you request a quote.
                     </p>
                     <a href="#airlines" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-bold text-blue-800 transition hover:bg-blue-50">
                         Browse airlines <ArrowRight className="h-4 w-4" aria-hidden="true" />

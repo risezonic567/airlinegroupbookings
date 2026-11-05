@@ -68,9 +68,9 @@ export default function CollectionDetail({ item, kind, related }) {
                                     {isDestination
                                         ? `Things to do in ${item.name}`
                                         : isAirline
-                                        ? `Planning a ${item.name} group trip`
+                                        ? `Planning ${item.tagline || `${item.name} group booking`}`
                                         : isBusinessClass
-                                        ? `Explore ${item.name} business class`
+                                        ? `Explore ${item.tagline || `${item.name} business class booking`}`
                                         : 'Explore the options'}
                                 </h2>
                                 <ul className="mt-5 space-y-3">

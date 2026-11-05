@@ -22,7 +22,7 @@ const linkGroups = [
             { label: 'Destinations', href: '/destinations' },
             { label: 'Group travel', href: '/group-travel' },
             { label: 'Request a quote', href: '/#booking' },
-
+            { label: 'Site Map', href: '/site-map' },
         ],
     },
 ]
@@ -76,7 +76,7 @@ export default function Footer() {
         <div className="mx-auto grid max-w-7xl gap-9 rounded-t-[2rem] bg-white/95 px-6 py-9 shadow-2xl shadow-slate-950/20 backdrop-blur-sm sm:px-9 sm:py-11 lg:grid-cols-[1.35fr_.8fr_.9fr_1.15fr] lg:gap-10 lg:px-12">
             <div>
                 <Link href="/" aria-label="AirlinesGroup Travel home" className="inline-flex rounded-xl bg-white p-2 ring-1 ring-slate-100">
-                    <Image src="/images/Airline Group Booking 1.png" alt="AirlinesGroup Travel" width={220} height={62} className="h-auto w-[190px]" />
+                    <Image src="/images/Airline Group Bookings 1.png" alt="Airline Group Bookings" width={220} height={62} className="h-auto w-[190px]" />
                 </Link>
                 <p className="mt-4 max-w-xs text-md leading-6 text-slate-600">Making it easier for families, teams, schools, and organizations to plan group flights together.</p>
                 <div className="mt-5 flex gap-2.5" aria-label="Social media icons">

@@ -1,320 +1,336 @@
 const BRAND = 'Airline Group Bookings'
 
-/** @param {string} primary @param {string} description @param {string} [h1] */
-function seo(primary, description, h1) {
+/** Build SEO + on-page copy with EVERY primary + secondary phrase included. */
+function seo(primary, secondaries = [], h1) {
+    const list = (secondaries || []).map((s) => String(s).trim()).filter(Boolean)
+    const heading = h1 || primary.replace(/\b\w/g, (c) => c.toUpperCase())
+    const metaDescription = list.length
+        ? `Need ${primary}? Get help with ${list.join(', ')}. ${BRAND} makes the next steps clear for your trip.`
+        : `Need ${primary}? ${BRAND} makes the next steps clear for your trip.`
+    const onPageCopy = list.length
+        ? `Looking for ${primary}? ${BRAND} can help you with ${list.join(', ')}. Share your route, dates, and traveler count — we'll compare workable options and explain fare details in plain language before you request a quote.`
+        : `Looking for ${primary}? ${BRAND} can help you compare options and request a clear quote.`
+    const highlights = list.length
+        ? list.map((s) => `Ask us about ${s} when you share your trip details.`)
+        : [`Request a clear quote for ${primary} with ${BRAND}.`]
+
     return {
-        metaTitle: `${primary} | ${BRAND}`,
-        metaDescription: description,
-        h1: h1 || primary.replace(/\b\w/g, (c) => c.toUpperCase()),
+        metaTitle: `${heading} | ${BRAND}`,
+        metaDescription,
+        h1: heading,
+        tagline: heading,
+        onPageCopy,
+        highlights,
+        primary,
+        secondaries: list,
     }
 }
 
 /** Group travel airline pages — /flights/[slug] */
 export const groupTravelSeo = {
     'delta-airlines-group-booking': seo(
-        'Delta Airlines Group Booking',
-        'Arrange Delta airlines group booking with help on the Delta group travel desk, minimum passengers, fare policy, and group flight discount options for USA trips.',
-        'Delta Airlines Group Booking for Teams & Events'
+        'delta airlines group booking',
+        ['delta group travel desk', 'delta group booking minimum passengers', 'delta group fare policy', 'delta group flight discount'],
+        'Delta Airlines Group Booking'
     ),
     'el-al-group-booking': seo(
-        'EL AL Group Booking',
-        'Plan EL AL group booking for heritage tours and family trips. Compare EL AL group travel discounts, group flight tickets, and fare policy before you request a quote.',
-        'EL AL Group Booking — Flights for Your Whole Group'
+        'el al group booking',
+        ['el al group travel discount', 'el al group flight tickets', 'book el al flights for group', 'el al group fare policy'],
+        'EL AL Group Booking'
     ),
     'klm-group-booking': seo(
-        'KLM Group Booking',
-        'Request KLM group booking support for school, sports, and company travel. Review KLM group travel policy, reservations, and group tickets for 10 or more travelers.',
-        'KLM Group Booking & Reservation Help'
+        'klm group booking',
+        ['klm group travel policy', 'klm group reservation', 'klm group flight deals', 'klm group ticket for 10 or more'],
+        'KLM Group Booking'
     ),
     'southwest-airlines-group-travel-booking': seo(
-        'Southwest Airlines Group Travel',
-        'Plan Southwest Airlines group travel for weddings, reunions, and teams across the USA. Get a group flight quote and clear notes on reservation policy and discounts.',
-        'Southwest Airlines Group Travel Made Straightforward'
+        'southwest airlines group travel',
+        ['southwest group booking number', 'southwest group reservation policy', 'southwest group flight quote', 'southwest group travel discount'],
+        'Southwest Airlines Group Travel'
     ),
     'british-airways-group-travel-booking': seo(
-        'British Airways Group Booking',
-        'Book British Airways group booking for tours and business groups. Compare BA group fares, desk support, and discounts for 10 or more passengers on key routes.',
-        'British Airways Group Booking for 10+ Travelers'
+        'british airways group booking',
+        ['british airways group travel desk', 'british airways group fare', 'ba group flight booking for 10 or more', 'british airways group discount'],
+        'British Airways Group Booking'
     ),
     'finnair-group-travel-flight-booking': seo(
-        'Finnair Group Booking',
-        'Explore Finnair group booking for European and long-haul group trips. Learn about the Finnair group travel desk, minimum passengers, tickets for 10+, and fare policy.',
-        'Finnair Group Booking — Plan Your Group Trip'
+        'finnair group booking',
+        ['finnair group travel desk', 'finnair group booking minimum passengers', 'finnair group flight tickets for 10 or more', 'finnair group fare policy'],
+        'Finnair Group Booking'
     ),
     'alaska-airlines-group-travel': seo(
-        'Alaska Airlines Group Travel',
-        'Organize Alaska Airlines group travel for West Coast and domestic USA trips. Request a group flight quote and review reservation policy plus group discount options.',
-        'Alaska Airlines Group Travel for Your Party'
+        'alaska airlines group travel',
+        ['alaska airlines group booking number', 'alaska airlines group reservation policy', 'alaska airlines group flight quote', 'alaska airlines group discount'],
+        'Alaska Airlines Group Travel'
     ),
     'jetblue-group-travel-flight-booking': seo(
-        'JetBlue Group Travel',
-        'Plan JetBlue group travel for friends, teams, and events. Get help with the JetBlue group booking number, reservation policy, flight quotes, and travel discounts.',
-        'JetBlue Group Travel Booking Support'
+        'jetblue group travel',
+        ['jetblue group booking number', 'jetblue group reservation policy', 'jetblue group flight quote', 'jetblue group travel discount'],
+        'Jetblue Group Travel'
     ),
     'qatar-airways-group-travel': seo(
-        'Qatar Airways Group Booking',
-        'Arrange Qatar Airways group booking through Doha for tours and corporate groups. Review group fare policy, tickets for 10 or more, and booking discount options.',
-        'Qatar Airways Group Booking for Large Parties'
+        'qatar airways group booking',
+        ['qatar airways group travel desk', 'qatar airways group fare policy', 'qatar airways group flight tickets for 10 or more', 'qatar airways group booking discount'],
+        'Qatar Airways Group Booking'
     ),
     'avianca-airlines-group-travel': seo(
-        'Avianca Airlines Group Travel',
-        'Plan Avianca Airlines group travel for Latin America routes. Request a group flight quote and compare reservation policy, booking numbers, and travel discount options.',
-        'Avianca Airlines Group Travel Planning'
+        'avianca airlines group travel',
+        ['avianca group booking number', 'avianca group reservation policy', 'avianca group flight quote', 'avianca group travel discount'],
+        'Avianca Airlines Group Travel'
     ),
     'emirates-group-travel-flight-booking': seo(
-        'Emirates Group Booking',
-        'Request Emirates group booking for Dubai connections and long-haul group trips. Compare Emirates group fare policy, tickets for 10+, and booking discount guidance.',
-        'Emirates Group Booking for Tours & Teams'
+        'emirates group booking',
+        ['emirates group travel desk', 'emirates group fare policy', 'emirates group flight tickets for 10 or more', 'emirates group booking discount'],
+        'Emirates Group Booking'
     ),
     'air-france-group-booking': seo(
-        'Air France Group Booking',
-        'Plan Air France group booking via Paris for universities, tours, and companies. Review the group travel desk, fare policy, and reservation rules for 10 or more travelers.',
-        'Air France Group Booking & Travel Desk Help'
+        'air france group booking',
+        ['air france group travel desk', 'air france group fare policy', 'air france group flight booking for 10 or more', 'air france group reservation policy'],
+        'Air France Group Booking'
     ),
     'american-airlines-group-booking': seo(
-        'American Airlines Group Booking',
-        'Arrange American Airlines group booking for domestic USA and international group trips. Check minimum passengers, group fare policy, and flight discount options.',
-        'American Airlines Group Booking Made Clear'
+        'american airlines group booking',
+        ['american airlines group travel desk', 'american airlines group booking minimum passengers', 'american airlines group fare policy', 'american airlines group flight discount'],
+        'American Airlines Group Booking'
     ),
     'lufthansa-group-booking': seo(
-        'Lufthansa Group Booking',
-        'Explore Lufthansa group booking for Europe and beyond. Get help from the group travel desk on reservation policy, tickets for 10 or more, and fare rules.',
-        'Lufthansa Group Booking for Group Trips'
+        'lufthansa group booking',
+        ['lufthansa group travel desk', 'lufthansa group reservation policy', 'lufthansa group flight tickets for 10 or more', 'lufthansa group fare policy'],
+        'Lufthansa Group Booking'
     ),
     'swiss-air-group-booking': seo(
-        'Swiss Air Group Booking',
-        'Plan Swiss Air group booking through Zurich for tours and corporate travel. Review group fare policy, booking for 10+, and reservation guidance before you commit.',
-        'Swiss Air Group Booking Support'
+        'swiss air group booking',
+        ['swiss airlines group travel desk', 'swiss air group fare policy', 'swiss air group flight booking for 10 or more', 'swiss air group reservation policy'],
+        'Swiss Air Group Booking'
     ),
     'spirit-airlines-group-booking': seo(
-        'Spirit Airlines Group Booking',
-        'Look into Spirit Airlines group booking for budget-friendly USA group trips. Compare the group travel desk options, booking number, fare policy, and travel discounts.',
-        'Spirit Airlines Group Booking for Value Trips'
+        'spirit airlines group booking',
+        ['spirit airlines group travel desk', 'spirit airlines group booking number', 'spirit airlines group fare policy', 'spirit airlines group travel discount'],
+        'Spirit Airlines Group Booking'
     ),
     'aeromexico-group-booking-and-reservations': seo(
-        'Aeromexico Group Booking',
-        'Arrange Aeromexico group booking for USA–Mexico group travel. Request a group flight quote and review reservation policy plus fare guidance for your party.',
-        'Aeromexico Group Booking & Reservations'
+        'aeromexico group booking',
+        ['aeromexico group travel desk', 'aeromexico group reservation policy', 'aeromexico group flight quote', 'aeromexico group fare policy'],
+        'Aeromexico Group Booking'
     ),
     'frontier-airlines-group-booking': seo(
-        'Frontier Airlines Group Booking',
-        'Plan Frontier Airlines group booking with help from the group travel desk. Review reservation policy, request a group flight quote, and compare discount options for USA trips.',
-        'Frontier Airlines Group Booking Help'
+        'frontier airlines group booking',
+        ['frontier airlines group travel desk', 'frontier airlines group reservation policy', 'frontier airlines group flight quote', 'frontier airlines group discount'],
+        'Frontier Airlines Group Booking'
     ),
     'copa-airlines-group-booking': seo(
-        'Copa Airlines Group Booking',
-        'Request Copa Airlines group booking via Panama for Latin America trips. Review the group travel desk guidance, reservation policy, tickets for 10+, and fare policy before you book.',
-        'Copa Airlines Group Booking for Regional Trips'
+        'copa airlines group booking',
+        ['copa airlines group travel desk', 'copa airlines group reservation policy', 'copa airlines group flight tickets for 10 or more', 'copa airlines group fare policy'],
+        'Copa Airlines Group Booking'
     ),
 }
 
-/** Business class pages — /business-class/[slug] (sheet + pattern for extras) */
+/** Business class pages — /business-class/[slug] */
 export const businessClassSeo = {
     'american-airlines-business-class-travel-flight-booking': seo(
-        'American Airlines Business Class Booking',
-        'Book American Airlines business class with Flagship comfort in mind. Compare AA business class deals and affordable Flagship Business tickets for USA and long-haul trips.',
+        'american airlines business class booking',
+        ['american airlines flagship business class', 'aa business class deals', 'cheap american airlines business class tickets'],
         'American Airlines Business Class Booking'
     ),
     'delta-airlines-business-class-travel': seo(
-        'Delta One Business Class Booking',
-        'Explore Delta One business class booking for private-suite comfort. Compare Delta business class deals, Delta One fares, and group booking options when your party needs more space.',
+        'delta one business class booking',
+        ['delta business class deals', 'delta one cheap tickets', 'delta business class group booking'],
         'Delta One Business Class Booking'
     ),
     'alaska-airlines-business-class-travel': seo(
-        'Alaska Airlines Business Class Booking',
-        'Compare Alaska Airlines business class booking and First Class comfort. See how First Class vs business differs, plus premium class tickets and West Coast deals.',
+        'alaska airlines business class booking',
+        ['alaska airlines first class vs business', 'alaska business class deals', 'alaska airlines premium class tickets'],
         'Alaska Airlines Business Class Booking'
     ),
     'lufthansa-airlines-business-class-travel': seo(
-        'Lufthansa Business Class Booking',
-        'Book Lufthansa business class for Europe and beyond. Find Lufthansa business class deals from the USA, competitive tickets, and group fare options when you need more seats.',
+        'lufthansa business class booking',
+        ['lufthansa business class deals USA', 'cheap lufthansa business class tickets', 'lufthansa business class group fare'],
         'Lufthansa Business Class Booking'
     ),
     'klm-business-class-travel-experience': seo(
-        'KLM Business Class Booking',
-        'Arrange KLM business class booking through Amsterdam. Compare KLM World Business Class tickets, deals, and affordable business class flights for your next trip.',
+        'klm business class booking',
+        ['klm business class deals', 'klm world business class tickets', 'cheap klm business class flights'],
         'KLM Business Class Booking'
     ),
     'el-al-business-class-travel': seo(
-        'EL AL Business Class Booking',
-        'Book EL AL business class for New York to Tel Aviv and other key routes. Compare EL AL business class deals from the USA and Dreamliner business class tickets.',
+        'el al business class booking',
+        ['el al business class new york to tel aviv', 'el al business class deals from usa', 'el al dreamliner business class tickets'],
         'EL AL Business Class Booking'
     ),
     'united-airlines-business-class-travel': seo(
-        'United Airlines Business Class Booking',
-        'Explore United Airlines business class booking with Polaris in mind. Compare United Polaris deals, lounge access tickets, and affordable business class flights from the USA.',
+        'united airlines business class booking',
+        ['united polaris business class deals', 'united polaris lounge business class tickets', 'cheap united business class flights usa'],
         'United Airlines Business Class Booking'
     ),
     'british-airways-business-class-travel': seo(
-        'British Airways Business Class Booking',
-        'Book British Airways business class for New York to London and more. Compare BA Club World deals from the USA and Club Suite business class tickets.',
+        'british airways business class booking',
+        ['british airways business class new york to london', 'ba club world deals from usa', 'ba club suite business class tickets'],
         'British Airways Business Class Booking'
     ),
     'aeromexico-clase-premier-business-class': seo(
-        'Aeromexico Business Class Booking',
-        'Arrange Aeromexico business class booking with Clase Premier comfort. Compare USA to Mexico City deals and affordable Aeromexico business class flights.',
+        'aeromexico business class booking',
+        ['aeromexico clase premier deals', 'aeromexico business class usa to mexico city', 'cheap aeromexico business class flights'],
         'Aeromexico Business Class Booking'
     ),
     'qatar-airways-business-class-travel': seo(
-        'Qatar Airways Business Class Booking',
-        'Book Qatar Airways business class and explore Qsuite from the USA. Compare New York to Doha options and competitive Qatar business class flights.',
+        'qatar airways business class booking',
+        ['qatar airways qsuite from usa', 'qatar business class new york to doha', 'cheap qatar airways business class flights'],
         'Qatar Airways Business Class Booking'
     ),
     'emirates-airlines-business-class-travel': seo(
-        'Emirates Business Class Booking',
-        'Book Emirates business class for New York to Dubai and long-haul routes. Compare Emirates business class deals from the USA and A380 business class tickets.',
+        'emirates business class booking',
+        ['emirates business class new york to dubai', 'emirates business class deals from usa', 'emirates a380 business class tickets'],
         'Emirates Business Class Booking'
     ),
     'air-france-business-class-travel': seo(
-        'Air France Business Class Booking',
-        'Arrange Air France business class for USA to Paris trips. Compare deals from New York, lie-flat seats, and comfortable business class tickets for your itinerary.',
+        'air france business class booking',
+        ['air france business class usa to paris', 'air france business class deals from new york', 'air france lie flat business class tickets'],
         'Air France Business Class Booking'
     ),
     'turkish-airlines-business-class-travel': seo(
-        'Turkish Airlines Business Class Booking',
-        'Book Turkish Airlines business class for USA to Istanbul routes. Compare deals from New York and competitive Turkish business class tickets for long-haul travel.',
+        'turkish airlines business class booking',
+        ['turkish airlines business class usa to istanbul', 'turkish business class deals from new york', 'cheap turkish airlines business class flights'],
         'Turkish Airlines Business Class Booking'
     ),
     'singapore-airlines-business-class-travel': seo(
-        'Singapore Airlines Business Class Booking',
-        'Explore Singapore Airlines business class from the USA, including New York to Singapore. Compare Book the Cook options and premium business class seats.',
+        'singapore airlines business class booking',
+        ['singapore airlines business class from usa', 'singapore airlines new york to singapore business class', 'singapore airlines book the cook business class'],
         'Singapore Airlines Business Class Booking'
     ),
     'swiss-airlines-business-class-travel': seo(
-        'Swiss Airlines Business Class Booking',
-        'Book Swiss business class for USA to Zurich and European connections. Compare deals from New York and lie-flat Swiss business class tickets.',
+        'swiss airlines business class booking',
+        ['swiss business class usa to zurich', 'swiss business class deals from new york', 'swiss lie flat business class tickets'],
         'Swiss Airlines Business Class Booking'
     ),
     'japan-airlines-business-class-travel': seo(
-        'Japan Airlines Business Class Booking',
-        'Arrange JAL business class for USA to Tokyo routes, including Los Angeles to Tokyo. Compare Sky Suite deals and Japan Airlines business class comfort.',
+        'japan airlines business class booking',
+        ['jal business class usa to tokyo', 'jal business class los angeles to tokyo', 'jal sky suite business class deals'],
         'Japan Airlines Business Class Booking'
     ),
     'hawaiian-airlines-business-class-flights-travel': seo(
-        'Hawaiian Airlines Business Class Booking',
-        'Book Hawaiian Airlines business class for Los Angeles to Honolulu and mainland USA to Hawaii trips. Compare Leihoku suites and island-route premium seats.',
+        'hawaiian airlines business class booking',
+        ['hawaiian business class los angeles to honolulu', 'hawaiian airlines business class from usa mainland', 'hawaiian leihoku suites tickets'],
         'Hawaiian Airlines Business Class Booking'
     ),
     'copa-airlines-business-class-flights': seo(
-        'Copa Airlines Business Class Booking',
-        'Explore Copa Airlines business class for Miami to Panama City and regional routes. Compare Dreams business class options and USA-friendly fares.',
+        'copa airlines business class booking',
+        ['copa airlines business class miami to panama city', 'copa airlines dreams business class', 'cheap copa business class flights usa'],
         'Copa Airlines Business Class Booking'
     ),
     'etihad-airways-business-class-flights': seo(
-        'Etihad Airways Business Class Booking',
-        'Book Etihad Airways business class for New York to Abu Dhabi and long-haul trips. Compare Etihad business class deals from the USA and Business Studio seats.',
+        'etihad airways business class booking',
+        ['etihad business class new york to abu dhabi', 'etihad business class deals from usa', 'etihad business studio tickets'],
         'Etihad Airways Business Class Booking'
     ),
     'eva-air-business-class-flights-and-tickets': seo(
-        'EVA Air Business Class Booking',
-        'Book EVA Air business class for Los Angeles to Taipei and other USA routes. Compare Royal Laurel deals and EVA Air business class options from the USA.',
-        'EVA Air Business Class Booking'
+        'eva air business class booking',
+        ['eva air business class los angeles to taipei', 'eva air business class from usa', 'eva air royal laurel business class deals'],
+        'Eva Air Business Class Booking'
     ),
     'cathay-pacific-business-class-flights': seo(
-        'Cathay Pacific Business Class Booking',
-        'Arrange Cathay Pacific business class for USA to Hong Kong trips, including Los Angeles routes. Compare Aria Suite tickets and premium cabin deals.',
+        'cathay pacific business class booking',
+        ['cathay pacific business class usa to hong kong', 'cathay business class los angeles to hong kong', 'cathay pacific aria suite tickets'],
         'Cathay Pacific Business Class Booking'
     ),
     'finnair-business-class': seo(
-        'Finnair Business Class Booking',
-        'Book Finnair business class for USA to Helsinki routes, including New York to Helsinki. Compare AirLounge seats and Finnair business class deals.',
+        'finnair business class booking',
+        ['finnair business class usa to helsinki', 'finnair business class new york to helsinki', 'finnair airlounge business class deals'],
         'Finnair Business Class Booking'
     ),
     'air-canada-business-class-flights': seo(
-        'Air Canada Business Class Booking',
-        'Explore Air Canada business class for USA to Toronto and beyond. Compare Signature Class from the USA and competitive Air Canada business class flights.',
+        'air canada business class booking',
+        ['air canada business class usa to toronto', 'air canada signature class from usa', 'cheap air canada business class flights'],
         'Air Canada Business Class Booking'
     ),
     'iberia-airlines-business-class-flights': seo(
-        'Iberia Airlines Business Class Booking',
-        'Book Iberia business class for USA to Madrid trips. Compare deals from New York and affordable Iberia business class flights for your itinerary.',
+        'iberia airlines business class booking',
+        ['iberia business class usa to madrid', 'iberia business class deals from new york', 'cheap iberia business class flights'],
         'Iberia Airlines Business Class Booking'
     ),
     'aer-lingus-business-class-flights': seo(
-        'Aer Lingus Business Class Booking',
-        'Arrange Aer Lingus business class for USA to Dublin routes, including New York to Dublin. Compare cabin comfort and current business class deals.',
+        'aer lingus business class booking',
+        ['aer lingus business class usa to dublin', 'aer lingus business class new york to dublin', 'aer lingus business class deals'],
         'Aer Lingus Business Class Booking'
     ),
     'all-nippon-airways-business-class-flights': seo(
-        'ANA Business Class Booking',
-        'Book ANA business class for USA to Tokyo routes, including Los Angeles to Tokyo. Compare THE Room suites and All Nippon Airways business class deals.',
+        'ana business class booking',
+        ['ana business class usa to tokyo', 'ana business class los angeles to tokyo', 'ana the room business class deals'],
         'ANA Business Class Booking'
     ),
     'fiji-airways-business-class-flights': seo(
-        'Fiji Airways Business Class Booking',
-        'Explore Fiji Airways business class for Los Angeles to Nadi and USA–South Pacific trips. Compare A350 business class tickets and island-route fares.',
+        'fiji airways business class booking',
+        ['fiji airways business class los angeles to nadi', 'fiji airways business class from usa', 'fiji airways a350 business class tickets'],
         'Fiji Airways Business Class Booking'
     ),
     'southwest-airlines-business-class-flights': seo(
-        'Southwest Airlines Business Select Booking',
-        'Compare Southwest Airlines Business Select booking benefits, including A1–A15 boarding. See how Business Select vs Anytime differs before you choose a fare.',
+        'southwest airlines business select booking',
+        ['southwest business select fare benefits', 'southwest business select vs anytime', 'southwest business select a1 a15 boarding'],
         'Southwest Airlines Business Select Booking'
     ),
     'avianca-airlines-business-class-flights': seo(
-        'Avianca Airlines Business Class Booking',
-        'Book Avianca Airlines business class for USA to Colombia routes. Compare Insignia deals and affordable Avianca business class flights for your trip.',
+        'avianca airlines business class booking',
+        ['avianca insignia business class deals', 'avianca business class usa to colombia', 'cheap avianca business class flights'],
         'Avianca Airlines Business Class Booking'
     ),
     'spirit-airlines-business-class-flights': seo(
-        'Spirit Airlines Big Front Seat Booking',
-        'Look into Spirit Airlines Big Front Seat booking for extra space on USA routes. Compare Big Front Seat deals vs typical first-class style seats and ticket options.',
+        'spirit airlines big front seat booking',
+        ['spirit big front seat deals', 'spirit big front seat vs first class', 'cheap spirit airlines big front seat tickets'],
         'Spirit Airlines Big Front Seat Booking'
     ),
     'thai-airways-business-class-flights': seo(
-        'Thai Airways Business Class Booking',
-        'Book Thai Airways business class for USA to Bangkok trips. Compare Royal Silk Class deals and competitive Thai Airways business class tickets.',
+        'thai airways business class booking',
+        ['thai airways business class usa to bangkok', 'thai airways royal silk class deals', 'cheap thai airways business class flights'],
         'Thai Airways Business Class Booking'
     ),
     'qantas-airways-business-class-flights': seo(
-        'Qantas Business Class Booking',
-        'Arrange Qantas business class for USA to Sydney routes, including Los Angeles to Sydney. Compare Qantas business class deals for long-haul comfort.',
+        'qantas business class booking',
+        ['qantas business class usa to sydney', 'qantas business class los angeles to sydney', 'qantas business class deals'],
         'Qantas Business Class Booking'
     ),
     'tap-air-portugal-business-class-flights': seo(
-        'TAP Air Portugal Business Class Booking',
-        'Book TAP Air Portugal business class for USA to Lisbon routes, including New York to Lisbon. Compare Executive cabin deals and ticket options.',
-        'TAP Air Portugal Business Class Booking'
+        'tap air portugal business class booking',
+        ['tap business class usa to lisbon', 'tap business class new york to lisbon', 'tap executive business class deals'],
+        'Tap Air Portugal Business Class Booking'
     ),
     'latam-airlines-business-class-flights': seo(
-        'LATAM Airlines Business Class Booking',
-        'Explore LATAM Airlines business class for Miami to South America routes. Compare premium business class deals and affordable LATAM fares from the USA.',
-        'LATAM Airlines Business Class Booking'
+        'latam airlines business class booking',
+        ['latam business class miami to south america', 'latam premium business class deals', 'cheap latam business class flights usa'],
+        'Latam Airlines Business Class Booking'
     ),
     'tarom-airlines-business-class-flights': seo(
-        'TAROM Business Class Booking',
-        'Book TAROM business class for USA to Bucharest trips. Compare TAROM business class deals and straightforward ticket options for your itinerary.',
-        'TAROM Business Class Booking'
+        'tarom business class booking',
+        ['tarom business class usa to bucharest', 'tarom business class deals', 'cheap tarom business class flights'],
+        'Tarom Business Class Booking'
     ),
     'icelandair-business-class-flights': seo(
-        'Icelandair Business Class Booking',
-        'Compare Icelandair Saga Premium deals for USA routes. See how Saga Premium differs from economy and choose the comfort level that fits your trip.',
+        'icelandair business class booking',
+        ['icelandair saga premium deals', 'icelandair saga premium vs economy', 'icelandair business class usa'],
         'Icelandair Business Class Booking'
     ),
     'bulgaria-air-business-class-flights': seo(
-        'Bulgaria Air Business Class Booking',
-        'Book Bulgaria Air business class for USA to Sofia trips. Compare Bulgaria Air business class deals and affordable premium tickets for your group or solo travel.',
+        'bulgaria air business class booking',
+        ['bulgaria air business class usa to sofia', 'bulgaria air business class deals', 'cheap bulgaria air business class flights'],
         'Bulgaria Air Business Class Booking'
     ),
     'aerolineas-argentinas-business-class': seo(
-        'Aerolineas Argentinas Business Class Booking',
-        'Arrange Aerolineas Argentinas business class for Miami to Buenos Aires routes. Compare Club Condor deals and competitive business class tickets.',
+        'aerolineas argentinas business class booking',
+        ['aerolineas argentinas business class miami to buenos aires', 'aerolineas argentinas club condor deals', 'cheap aerolineas argentinas business class flights'],
         'Aerolineas Argentinas Business Class Booking'
     ),
 }
 
-/** Fallback builders for any airline slug not listed above */
 export function fallbackGroupTravelSeo(name) {
     return seo(
-        `${name} Group Booking`,
-        `Plan ${name} group booking for families, teams, and events. Share your route, dates, and group size for a clear quote with USA-friendly planning support.`,
+        `${name} group booking`,
+        [`${name.toLowerCase()} group travel desk`, `${name.toLowerCase()} group fare policy`, `${name.toLowerCase()} group flight quote`],
         `${name} Group Booking`
     )
 }
 
 export function fallbackBusinessClassSeo(name) {
     return seo(
-        `${name} Business Class Booking`,
-        `Explore ${name} business class booking options. Compare premium cabin comfort, deals, and tickets for USA and international routes before you request a quote.`,
+        `${name} business class booking`,
+        [`${name.toLowerCase()} business class deals`, `cheap ${name.toLowerCase()} business class tickets`],
         `${name} Business Class Booking`
     )
 }

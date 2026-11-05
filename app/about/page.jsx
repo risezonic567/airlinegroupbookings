@@ -6,9 +6,9 @@ import PageStructuredData from '../../components/seo/PageStructuredData'
 import { createPageMetadata } from '../../lib/seo'
 
 const storyParagraphs = [
-    'We help families, corporate teams, student groups and event travelers make the journey together. Group flights come with plenty of details to coordinate, and our team is here to make the process feel straightforward.',
-    'From gathering traveler details to finding fares that work for your group, our specialists guide you through the booking process with practical, personal support.',
-    'Plans can change at any hour, so our expert agents are available 24/7 to help. Tell us where your group is headed and we’ll help you get started.',
+    'Airline Group Bookings is a group flight booking company USA travelers trust when families, corporate teams, student groups, and event organizers need to fly together. We act as your airline group reservation agency so the details feel clear from the first quote.',
+    'Our group travel booking specialists help gather traveler details, compare workable itineraries, and explain fare rules in plain language — a trusted group ticket booking service when you need practical, personal support.',
+    'Plans can change at any hour, so our team is available 24/7. Share your route and group size and we will help you start a smooth group flight booking request.',
 ]
 
 export const metadata = createPageMetadata({

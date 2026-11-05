@@ -29,7 +29,13 @@ export default async function GroupTravelAirlineDetail({ params }) {
     if (!airline) notFound()
 
     const seo = groupTravelSeo[slug] || fallbackGroupTravelSeo(airline.name)
-    const item = { ...airline, h1: seo.h1 }
+    const item = {
+        ...airline,
+        h1: seo.h1,
+        tagline: seo.tagline || airline.tagline,
+        description: seo.onPageCopy || seo.metaDescription || airline.description,
+        highlights: seo.highlights || airline.highlights,
+    }
     const related = groupTravelAirlines.filter((entry) => entry.slug !== slug).slice(0, 4)
 
     return <>

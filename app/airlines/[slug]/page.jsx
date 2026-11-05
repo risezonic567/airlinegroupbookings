@@ -11,7 +11,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
     const { slug } = await params
     const airline = airlines.find((item) => item.slug === slug)
-    if (!airline) return { title: 'Airline not found | AirlinesGroup Travel', description: 'Explore group flight booking information from AirlinesGroup Travel.' }
+    if (!airline) return { title: 'Airline not found | Airline Group Bookings', description: 'Explore group flight booking information from Airline Group Bookings.' }
     return createPageMetadata({
         title: airline.metaTitle,
         description: airline.metaDescription,

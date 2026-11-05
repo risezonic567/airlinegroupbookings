@@ -29,7 +29,14 @@ export default async function BusinessClassDetail({ params }) {
     if (!airline) notFound()
 
     const seo = businessClassSeo[slug] || fallbackBusinessClassSeo(airline.name)
-    const item = { ...airline, h1: seo.h1 }
+    const item = {
+        ...airline,
+        h1: seo.h1,
+        tagline: seo.tagline || airline.tagline,
+        description: seo.onPageCopy || seo.metaDescription || airline.description,
+        intro: seo.onPageCopy || seo.metaDescription || airline.intro,
+        highlights: seo.highlights || airline.highlights,
+    }
     const related = businessClassAirlines.filter((entry) => entry.slug !== slug).slice(0, 4)
 
     return <>

@@ -7,7 +7,7 @@ import { createPageMetadata } from '../../lib/seo'
 
 export const metadata = createPageMetadata({
     title: 'Group Flight Booking Phone Number | Airline Group Bookings',
-    description: 'Need a group flight booking phone number or help with your trip? Contact our team to request a group flight quote, get group airline booking help, and talk through your plans anytime.',
+    description: 'Need a group flight booking phone number or group travel booking contact? Request a group flight quote and get group airline booking help 24/7 from our team.',
     path: '/contact',
 })
 
@@ -29,12 +29,12 @@ const contactOptions = [
 export default function ContactPage() {
     return (
         <main>
-            <PageStructuredData name="Group Flight Booking Phone Number | Airline Group Bookings" description="Need a group flight booking phone number or help with your trip? Contact our team to request a group flight quote, get group airline booking help, and talk through your plans anytime." path="/contact" type="ContactPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact Us', path: '/contact' }]} />
+            <PageStructuredData name="Group Flight Booking Phone Number | Airline Group Bookings" description="Need a group flight booking phone number or group travel booking contact? Request a group flight quote and get group airline booking help 24/7 from our team." path="/contact" type="ContactPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact Us', path: '/contact' }]} />
             <section className="bg-gradient-to-br from-[#087cd1] to-[#1e3a8a] px-5 py-14 text-center text-white sm:px-8 sm:py-20">
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">We’re here to help</p>
-                    <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Call Our Group Flight <span className="text-blue-200">Booking Team</span></h1>
-                    <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-blue-50">Reach us for a group travel booking contact, a free quote, or quick help with your airline group plans.</p>
+                    <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Group Flight Booking <span className="text-blue-200">Phone Number</span></h1>
+                    <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-blue-50">Use our group travel booking contact to request a group flight quote or get group airline booking help 24/7 — call or send your trip details anytime.</p>
                 </div>
             </section>
 

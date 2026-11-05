@@ -48,7 +48,7 @@ export default function Navbar() {
             <div className="mx-auto flex min-h-[92px] max-w-[1440px] flex-wrap items-center justify-between gap-y-3 px-5 py-3 sm:px-8 lg:flex-nowrap lg:px-10">
                 <Link href="/" className="order-2 mr-auto flex items-center gap-2.5 lg:order-1 lg:mr-0" aria-label="AirlinesGroup Travel home">
                     <Image
-                        src="/images/Airline Group Booking 1.png"
+                        src="/images/Airline Group Bookings 1.png"
                         alt="AirlinesGroup Travel"
                         width={280}
                         height={78}
