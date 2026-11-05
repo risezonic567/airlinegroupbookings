@@ -65,6 +65,7 @@ const legalLinks = [
     { label: 'Terms and Conditions', href: '/terms-conditions' },
     { label: 'Refund Policy', href: '/refund-policy' },
     { label: 'Disclaimer', href: '/disclaimer' },
+    { label: 'Site Map', href: '/site-map' },
 ]
 
 export default function Footer() {
