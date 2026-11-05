@@ -1,16 +1,35 @@
-'use client'
+const logoFiles = {
+    'American Airlines': '/airline-logos/american.png',
+    'Delta Air Lines': '/airline-logos/delta.png',
+    'United Airlines': '/airline-logos/united.png',
+    Lufthansa: '/airline-logos/lufthansa.png',
+    'Alaska Airlines': '/airline-logos/alaska.png',
+    JetBlue: '/airline-logos/jetblue.png',
+    'Southwest Airlines': '/airline-logos/southwest.png',
+    'Qatar Airways': '/airline-logos/qatar.png',
+}
 
-import Image from 'next/image'
-import { useState } from 'react'
+export default function AirlineLogo({ name, alt }) {
+    const src = logoFiles[name]
+    const label = alt || name || 'Airline'
 
-export default function AirlineLogo({ src, alt }) {
-    const [failed, setFailed] = useState(false)
-
-    if (failed) {
-        return <svg className="h-7 w-7 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" role="img" aria-label={`${alt} logo unavailable`}>
-            <path d="m2 16 8.5-2.5L7 5l2-.7 6.5 7.5L21 10a1.5 1.5 0 0 1 1 2.8l-11 6.2L8 18l-4 1z" />
-        </svg>
+    if (!src) {
+        return (
+            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-xs font-bold text-blue-700">
+                {label.slice(0, 2).toUpperCase()}
+            </span>
+        )
     }
 
-    return <Image src={src} alt="" width={40} height={40} className="h-10 w-10 object-contain" onError={() => setFailed(true)} />
+    return (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+            src={src}
+            alt={label}
+            width={48}
+            height={48}
+            className="h-12 w-12 object-contain"
+            loading="lazy"
+        />
+    )
 }

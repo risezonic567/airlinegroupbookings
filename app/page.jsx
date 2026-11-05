@@ -2,7 +2,9 @@ import ContactFab from '../components/home/ContactFab'
 import QuoteForm from '../components/home/QuoteForm'
 import { AirlinesSection, BlogsSection, DealsSection, DestinationsSection, WhyChooseSection } from '../components/home/HomeSections'
 import Testimonials from '../components/home/Testimonials'
+import FaqSection from '../components/content/FaqSection'
 import PageStructuredData from '../components/seo/PageStructuredData'
+import { homeFaqs } from '../data/pageFaqs'
 import { createPageMetadata } from '../lib/seo'
 // import Newsletter from '../components/home/Newsletter'
 
@@ -30,7 +32,7 @@ export default function HomePage() {
                 <div className="min-w-0 max-w-[540px] text-left text-white">
                     <p className="inline-flex rounded-full border border-blue-200/30 bg-blue-500/20 px-4 py-2 text-sm font-semibold text-blue-100">Reserve your group trip here</p>
                     <h1 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight sm:mt-4 sm:text-4xl lg:text-5xl xl:text-[3.25rem]">FLY TOGETHER, <span className="text-blue-200">SAVE<br className="hidden sm:block" /> TOGETHER</span></h1>
-                    <p className="mt-3 max-w-[540px] text-base leading-7 text-white/90 lg:mt-4 lg:text-lg">Bring everyone together with one simple flight quote.</p>
+                    <p className="mt-3 max-w-[540px] text-base leading-7 text-white/90 lg:mt-4 lg:text-lg">Need group flight booking for 10 or more passengers? Book group flights online, request a free group flight quote or group airline tickets quote, and explore group travel flight deals USA with clear support.</p>
                 </div>
             </div>
         </section>
@@ -41,6 +43,13 @@ export default function HomePage() {
         <DestinationsSection />
         <BlogsSection />
         <Testimonials />
+        <FaqSection
+            heading={homeFaqs.heading}
+            intro={homeFaqs.intro}
+            items={homeFaqs.items}
+            path="/"
+            accentWord="Questions"
+        />
         {/* <Newsletter /> */}
 
         <ContactFab />
