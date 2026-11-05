@@ -36,6 +36,8 @@ export default async function BusinessClassDetail({ params }) {
         description: seo.onPageCopy || seo.metaDescription || airline.description,
         intro: seo.onPageCopy || seo.metaDescription || airline.intro,
         highlights: seo.highlights || airline.highlights,
+        contentHtml: seo.contentHtml || airline.contentHtml,
+        html: seo.contentHtml || airline.html,
     }
     const related = businessClassAirlines.filter((entry) => entry.slug !== slug).slice(0, 4)
 

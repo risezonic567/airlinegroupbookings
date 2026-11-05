@@ -74,7 +74,9 @@
 .airline-prose h3 { margin-top: 1.5rem; font-size: 1.125rem; font-weight: 700; line-height: 1.5; color: #0f172a; }
 .airline-prose h4 { margin-top: 1.25rem; font-size: 1rem; font-weight: 700; line-height: 1.4; color: #0f172a; }
 .airline-prose p { margin: 0 0 1rem; }
-.airline-prose ul, .airline-prose ol { margin: 1rem 0; }
+.airline-prose ul, .airline-prose ol { margin: 1rem 0 1rem 1.25rem; }
+.airline-prose ul { list-style: disc; }
+.airline-prose ol { list-style: decimal; }
 .airline-prose li { padding-left: .25rem; margin: .4rem 0; }
 .airline-prose strong { font-weight: 700; color: #0f172a; }
 .airline-prose a { color: #1d4ed8; text-decoration: underline; }

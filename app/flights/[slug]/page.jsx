@@ -35,6 +35,8 @@ export default async function GroupTravelAirlineDetail({ params }) {
         tagline: seo.tagline || airline.tagline,
         description: seo.onPageCopy || seo.metaDescription || airline.description,
         highlights: seo.highlights || airline.highlights,
+        contentHtml: seo.contentHtml || airline.contentHtml,
+        html: seo.contentHtml || airline.html,
     }
     const related = groupTravelAirlines.filter((entry) => entry.slug !== slug).slice(0, 4)
 

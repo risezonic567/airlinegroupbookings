@@ -3,7 +3,9 @@ import ContactFab from '../components/home/ContactFab'
 import QuoteForm from '../components/home/QuoteForm'
 import { AirlinesSection, BlogsSection, DealsSection, DestinationsSection, WhyChooseSection } from '../components/home/HomeSections'
 import Testimonials from '../components/home/Testimonials'
+import FaqSection from '../components/content/FaqSection'
 import PageStructuredData from '../components/seo/PageStructuredData'
+import { homeFaqs } from '../data/pageFaqs'
 import { createPageMetadata } from '../lib/seo'
 // import Newsletter from '../components/home/Newsletter'
 
@@ -33,13 +35,20 @@ export default function HomePage() {
                 <div id="booking" className="home-booking relative z-30 mt-8 scroll-mt-8 sm:mt-10 lg:mt-12"><QuoteForm /></div>
             </div>
         </section>
-        
+
         <AirlinesSection />
         <DealsSection />
         <WhyChooseSection />
         <DestinationsSection />
         <BlogsSection />
         <Testimonials />
+        <FaqSection
+            heading={homeFaqs.heading}
+            intro={homeFaqs.intro}
+            items={homeFaqs.items}
+            path="/"
+            accentWord="Questions"
+        />
         {/* <Newsletter /> */}
 
         <ContactFab />
