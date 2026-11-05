@@ -1,12 +1,22 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, BadgePercent, CalendarClock, CheckCircle2, Headphones, Plane, Star, WalletCards } from 'lucide-react'
+import { ArrowRight, BadgePercent, CalendarClock, CheckCircle2, Headphones, WalletCards } from 'lucide-react'
+import AirlineLogo from './AirlineLogo'
 import airlines from '../../data/airlines'
 import destinations from '../../data/destinations'
 import deals from '../../data/deals'
 import blogs from '../../data/blogs'
 
-
+const airlineLogoFiles = {
+    'American Airlines': 'american.svg',
+    'Delta Air Lines': 'delta.svg',
+    'United Airlines': 'united.svg',
+    Lufthansa: 'lufthansa.svg',
+    'Alaska Airlines': 'alaska.svg',
+    JetBlue: 'jetblue.svg',
+    'Southwest Airlines': 'southwest.svg',
+    'Qatar Airways': 'qatar.svg',
+}
 
 
 function Heading({ eyebrow, first, accent, subtitle }) {
@@ -15,7 +25,7 @@ function Heading({ eyebrow, first, accent, subtitle }) {
 
 export function AirlinesSection() {
     return (
-        <section className="overflow-hidden bg-gradient-to-b from-blue-50/70 to-white py-16 sm:py-20">
+        <section className="overflow-hidden bg-white py-16 sm:py-20">
             <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
                 <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                     <Heading 
@@ -28,49 +38,23 @@ export function AirlinesSection() {
                         href="/airlines" 
                         className="inline-flex shrink-0 items-center gap-2 self-center text-md font-bold text-blue-700 transition hover:gap-3 sm:self-auto"
                     >
-                        View all groups <ArrowRight className="h-4 w-4" />
+                        View All Travel Airlines <ArrowRight className="h-4 w-4" />
                     </Link>
                 </div>
 
-                <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    {airlines.map((airline, index) => (
-                        <Link 
-                            key={airline.slug} 
-                            href={`/airlines/${airline.slug}`} 
-                            style={{ '--airline-card-index': index }} 
-                            className="airline-card-enter group flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/10 focus-visible:-translate-y-1.5 focus-visible:border-blue-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100"
-                        >
-                            {/* SVG Icon Wrapper */}
-                            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-800 transition duration-300 group-hover:rotate-[-8deg] group-hover:scale-110 group-hover:bg-blue-700 group-hover:text-white">
-                                {airline.icon ? (
-                                    <span className="h-6 w-6 flex items-center justify-center fill-current">
-                                        {airline.icon}
-                                    </span>
-                                ) : (
-                                    /* Fallback Plane SVG Icon */
-                                    <svg 
-                                        className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5" 
-                                        viewBox="0 0 24 24" 
-                                        fill="none" 
-                                        stroke="currentColor" 
-                                        strokeWidth="2" 
-                                        strokeLinecap="round" 
-                                        strokeLinejoin="round" 
-                                        aria-hidden="true"
-                                    >
-                                        <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.7 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>
-                                    </svg>
-                                )}
-                            </span>
-
-                            <span className="min-w-0 flex-1">
-                                <span className="block text-md font-bold text-slate-900">{airline.name}</span>
-                                <span className="mt-1 block text-sm text-slate-500">{airline.name} Group Booking</span>
-                            </span>
-
-                            <ArrowRight className="h-4 w-4 shrink-0 text-blue-500 opacity-0 -translate-x-1 transition duration-300 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true" />
-                            <span className="sr-only">Explore airline group booking</span>
-                        </Link>
+                <div className="airline-marquee mt-9 space-y-4" aria-label="Airlines">
+                    {[airlines, [...airlines].reverse()].map((row, rowIndex) => (
+                        <div className="airline-marquee-mask" key={rowIndex}>
+                            <div className={`airline-marquee-track ${rowIndex === 0 ? 'airline-marquee-left' : 'airline-marquee-right'}`}>
+                                {[...row, ...row].map((airline, index) => {
+                                    return <Link key={`${airline.slug}-${index}`} href={`/airlines/${airline.slug}`} className="group flex w-[17rem] shrink-0 items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-md shadow-blue-950/5 transition duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl">
+                                        <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-blue-50 p-2"><AirlineLogo src={`/airline-logos/${airlineLogoFiles[airline.name]}`} alt={airline.name} /></span>
+                                        <span className="min-w-0 flex-1"><span className="block text-md font-bold text-slate-900">{airline.name}</span><span className="mt-1 block text-sm text-slate-500">{airline.name} Group Booking</span></span>
+                                        <ArrowRight className="h-4 w-4 shrink-0 text-blue-500 opacity-0 -translate-x-1 transition duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true" />
+                                    </Link>
+                                })}
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>
@@ -79,7 +63,7 @@ export function AirlinesSection() {
 }
 
 export function DealsSection() {
-    return <section className="bg-slate-50 py-16 sm:py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><Heading eyebrow="Find your fare" first="Popular" accent="Deals" subtitle="Start with a travel idea. We will help you explore the possibilities." /><div className="mt-10 grid gap-5 md:grid-cols-3">{deals.slice(0, 3).map((deal) => <article key={deal.slug} className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-blue-100 hover:shadow-xl hover:shadow-blue-950/10"><Link href={`/deals/${deal.slug}`} className="block focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"><div className="relative h-52 overflow-hidden bg-blue-900"><Image src={deal.image} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-110" /><span className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-900/5 to-transparent" /><span className="absolute left-4 top-4 rounded-full border border-white/60 bg-white/95 px-3 py-1.5 text-[11px] font-bold text-blue-900 shadow-sm">{deal.category}</span><span className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-blue-800 shadow-md transition duration-300 group-hover:translate-x-1 group-hover:bg-blue-700 group-hover:text-white"><ArrowRight className="h-4 w-4" /></span></div><div className="p-6"><h3 className="text-lg font-bold text-slate-900 transition group-hover:text-blue-700">{deal.title}</h3><p className="mt-2 min-h-12 text-md leading-6 text-slate-600">{deal.excerpt}</p><span className="mt-5 inline-flex items-center gap-2 text-md font-bold text-blue-700">Explore Now <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div></Link></article>)}</div>
+    return <section className="bg-blue-50/60 py-16 sm:py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><Heading eyebrow="Find your fare" first="Popular" accent="Deals" subtitle="Start with a travel idea. We will help you explore the possibilities." /><div className="mt-10 grid gap-5 md:grid-cols-2 md:grid-rows-2">{deals.slice(0, 3).map((deal, index) => <article key={deal.slug} className={`group relative min-h-72 overflow-hidden rounded-2xl bg-blue-950 shadow-lg transition duration-200 hover:-translate-y-1 hover:shadow-xl ${index === 0 ? 'md:row-span-2 md:min-h-[38rem]' : 'md:min-h-[18.4rem]'}`}><Link href={`/deals/${deal.slug}`} className="absolute inset-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"><Image src={deal.image} alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition duration-500 group-hover:scale-105" /><span className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" /><span className="absolute left-5 top-5 rounded-full border border-white/60 bg-white/95 px-3 py-1.5 text-[11px] font-bold text-blue-900 shadow-sm">{deal.category}</span><div className="absolute inset-x-0 bottom-0 p-6 sm:p-8"><h3 className="text-xl font-bold text-white sm:text-2xl">{deal.title}</h3><p className="mt-2 max-w-xl text-md leading-6 text-white/90">{deal.excerpt}</p><span className="mt-4 inline-flex items-center gap-2 text-md font-bold text-white">Explore Now <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div></Link></article>)}</div>
         <Link href="/deals" className="mt-6 inline-flex items-center gap-2 text-md font-bold text-blue-700">View all Deals<ArrowRight className="h-4 w-4" /></Link>
     </div></section>
 }
@@ -93,7 +77,7 @@ const features = [
 ]
 
 export function WhyChooseSection() {
-    return <section className="bg-[#1e3a8a] py-16 text-white sm:py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><div className="mx-auto max-w-2xl text-center"><p className="text-xs font-bold uppercase tracking-[.18em] text-blue-200">Group travel, made clearer</p><h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">Why <span className="text-blue-300">Choose Us</span></h2><p className="mt-3 text-md leading-6 text-blue-100 sm:text-base">A dedicated team can make it easier to coordinate flights for everyone.</p></div><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{features.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-2xl border border-white/10 bg-white/[.07] p-5 transition hover:-translate-y-1 hover:bg-white/10"><span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/30 text-blue-100"><Icon className="h-5 w-5" aria-hidden="true" /></span><h3 className="mt-4 text-lg font-bold">{title}</h3><p className="mt-2 text-md leading-5 text-blue-100/80">{text}</p></article>)}</div></div></section>
+    return <section className="bg-blue-50 py-16 text-slate-900 sm:py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><div className="mx-auto max-w-2xl text-center"><p className="text-xs font-bold uppercase tracking-[.18em] text-blue-700">Group travel, made clearer</p><h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">Why <span className="text-blue-600">Choose Us</span></h2><p className="mt-3 text-md leading-6 text-slate-600 sm:text-base">A dedicated team can make it easier to coordinate flights for everyone.</p></div><div className="mx-auto mt-10 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-6">{features.map(({ icon: Icon, title, text }, index) => <article key={title} className={`rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg ${index < 3 ? 'lg:col-span-2' : 'lg:col-span-3'}`}><span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-700 text-white"><Icon className="h-5 w-5" aria-hidden="true" /></span><h3 className="mt-4 text-lg font-bold">{title}</h3><p className="mt-2 text-md leading-5 text-slate-600">{text}</p></article>)}</div></div></section>
 }
 
 export function DestinationsSection() {
@@ -119,12 +103,12 @@ export function DestinationsSection() {
                 </div>
 
                 {/* Destination Cards Grid - Compact & Sleek */}
-                <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+                <div className="mt-10 grid grid-cols-2 gap-4 max-[479px]:grid-cols-1 sm:gap-5 lg:grid-cols-4">
                     {destinations.map((destination) => (
                         <Link
                             key={destination.slug}
                             href={`/destinations/${destination.slug}`}
-                            className="group relative flex aspect-[4/3] items-end overflow-hidden rounded-2xl bg-slate-900 p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500 sm:rounded-3xl sm:p-6"
+                            className="group relative flex aspect-[4/5] items-end overflow-hidden rounded-2xl bg-slate-900 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500 sm:p-5"
                         >
                             {/* Background Image - Fixed stacking context */}
                             <Image
@@ -175,5 +159,5 @@ export function DestinationsSection() {
 }
 
 export function BlogsSection() {
-    return <section className="bg-slate-50 py-16 sm:py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><Heading eyebrow="Travel notes" first="Our" accent="Blogs" subtitle="Ideas and practical tips for your next group trip." /><div className="mt-10 grid gap-5 md:grid-cols-3">{blogs.map((post) => <article key={post.slug} className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-blue-100 hover:shadow-xl hover:shadow-blue-950/10"><Link href={`/blog/${post.slug}`} className="block focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"><div className="relative h-48 overflow-hidden bg-blue-900"><Image src={post.image} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-110" /><span className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" /><span className="absolute left-4 top-4 rounded-full border border-white/60 bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-blue-800">{post.category}</span></div><div className="p-5"><h3 className="text-base font-bold text-slate-900 transition group-hover:text-blue-700">{post.title}</h3><p className="mt-2 text-md leading-6 text-slate-600">{post.excerpt}</p><span className="mt-4 inline-flex items-center gap-2 text-md font-bold text-blue-700">Know More <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div></Link></article>)}</div><Link href="/blog" className="mt-6 inline-flex items-center gap-2 text-md font-bold text-blue-700">View all articles <ArrowRight className="h-4 w-4" /></Link></div></section>
+    return <section className="bg-white py-16 sm:py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><Heading eyebrow="Travel notes" first="Our" accent="Blogs" subtitle="Ideas and practical tips for your next group trip." /><div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">{blogs.map((post) => <article key={post.slug} className="group flex h-full overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-md shadow-blue-950/5 transition duration-200 hover:-translate-y-1 hover:border-blue-100 hover:shadow-xl"><Link href={`/blog/${post.slug}`} className="flex h-full w-full flex-col focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"><div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-blue-900"><Image src={post.image} alt="" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /><span className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" /><span className="absolute left-4 top-4 rounded-full border border-white/60 bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-blue-800">{post.category}</span></div><div className="flex flex-1 flex-col p-5"><h3 className="text-lg font-bold text-slate-900 transition group-hover:text-blue-700">{post.title}</h3><p className="mt-2 line-clamp-3 text-md leading-6 text-slate-600">{post.excerpt}</p><span className="mt-auto inline-flex items-center gap-2 pt-5 text-md font-bold text-blue-700">Know More <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div></Link></article>)}</div><Link href="/blog" className="mt-6 inline-flex items-center gap-2 text-md font-bold text-blue-700">View all articles <ArrowRight className="h-4 w-4" /></Link></div></section>
 }

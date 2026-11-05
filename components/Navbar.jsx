@@ -32,6 +32,7 @@ const pages = [
     { label: 'About Us', href: '/about' },
     { label: 'Deals', href: '/deals' },
     { label: 'Blog', href: '/blog' },
+    { label: 'Private Jet Charter', href: '/private-jet-charter' },
     { label: 'Contact Us', href: '/contact' },
 ]
 

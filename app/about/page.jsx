@@ -23,14 +23,14 @@ export default function AboutPage() {
             <PageStructuredData name="About Us | AirlinesGroup Travel" description="Learn how Airline Group Booking helps families, teams, students and event groups plan flights together with expert support." path="/about" type="AboutPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }]} />
             <section className="relative isolate flex min-h-[270px] items-center justify-center overflow-hidden sm:min-h-[320px] lg:min-h-[360px]">
                 <Image
-                    src="/images/about-banner.svg"
+                    src="/images/Aboutus.jpg.jpeg"
                     alt="Airplane flying above a calm blue horizon"
                     fill
                     priority
                     sizes="100vw"
                     className="-z-20 object-cover"
                 />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#102b59]/90 via-[#1e3a8a]/75 to-[#0a7bd0]/55" />
+                {/* <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#102b59]/90 via-[#1e3a8a]/75 to-[#0a7bd0]/55" /> */}
                 <div className="mx-auto w-full max-w-7xl px-5 py-14 text-center text-white sm:px-8 sm:py-16">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
                         About <span className="text-[#60a5fa]">Us</span>
@@ -55,7 +55,7 @@ export default function AboutPage() {
                         <div aria-hidden="true" className="absolute -right-3 -top-3 h-24 w-24 rounded-2xl border-2 border-[#0a7bd0]/30 sm:-right-4 sm:-top-4" />
                         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-blue-100 shadow-xl shadow-slate-900/10">
                             <Image
-                                src="/images/about-story.svg"
+                                src="/images/Square.jpg.jpeg"
                                 alt="Travelers preparing to take a group flight together"
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 50vw"
