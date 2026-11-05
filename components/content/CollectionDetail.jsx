@@ -9,7 +9,8 @@ export default function CollectionDetail({ item, kind, related }) {
     const isBusinessClass = kind === 'businessClass'
     const plural = isDestination ? 'destinations' : isAirline ? 'group-travel' : isBusinessClass ? 'business-class' : 'deals'
     const label = isDestination ? `${item.name}, ${item.country}` : isAirline ? 'Airline group travel' : isBusinessClass ? 'Airline business class' : item.category
-    const title = isDestination ? `${item.name}, ${item.country}` : isAirline ? `${item.name} Group Travel` : isBusinessClass ? `${item.name} Business Class` : item.title
+    const title = item.h1
+        || (isDestination ? `${item.name}, ${item.country}` : isAirline ? `${item.name} Group Travel` : isBusinessClass ? `${item.name} Business Class` : item.title)
     const description = item.intro || item.description
     const points = isDestination ? item.highlights : isAirline || isBusinessClass ? item.highlights : item.details
     const customHtml = item.html || item.content || item.contentHtml
