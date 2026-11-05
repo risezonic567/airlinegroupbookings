@@ -6,20 +6,20 @@ import PageStructuredData from '../../components/seo/PageStructuredData'
 import { createPageMetadata } from '../../lib/seo'
 
 export const metadata = createPageMetadata({
-    title: 'Business Class by Airline | AirlinesGroup Travel',
-    description: 'Explore business class travel options across leading airlines and find a flight for your next trip.',
+    title: 'Business Class Flight Booking | Airline Group Bookings',
+    description: 'Compare business class flight booking options for USA and international trips. Find cheap business class flights, group business class tickets, and book business class online with clear support.',
     path: '/business-class',
 })
 
 export default function BusinessClassPage() {
     return (
         <main>
-            <PageStructuredData name="Business Class Flights by Airline" description="Explore business class travel options across leading airlines and find a flight for your next trip." path="/business-class" type="CollectionPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Business Class', path: '/business-class' }]} />
+            <PageStructuredData name="Business Class Flight Booking | Airline Group Bookings" description="Compare business class flight booking options for USA and international trips. Find cheap business class flights, group business class tickets, and book business class online with clear support." path="/business-class" type="CollectionPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Business Class', path: '/business-class' }]} />
             <section className="bg-gradient-to-br from-[#087cd1] to-[#1e3a8a] px-5 py-14 text-white sm:px-8 sm:py-20">
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Travel in comfort</p>
-                    <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Business Class <span className="text-blue-200">Flights</span></h1>
-                    <p className="mt-4 max-w-2xl text-base leading-7 text-blue-50">Explore business class travel options by airline. Choose an airline to learn more about routes and booking options.</p>
+                    <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Business Class Flight <span className="text-blue-200">Booking</span></h1>
+                    <p className="mt-4 max-w-2xl text-base leading-7 text-blue-50">Browse premium cabin options by airline — deals for groups, USA routes, and straightforward booking help when you are ready.</p>
                 </div>
             </section>
             <section id="airlines" className="scroll-mt-6 bg-slate-50 py-14 sm:py-16">
