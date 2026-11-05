@@ -9,7 +9,8 @@ export default function CollectionDetail({ item, kind, related }) {
     const isBusinessClass = kind === 'businessClass'
     const plural = isDestination ? 'destinations' : isAirline ? 'group-travel' : isBusinessClass ? 'business-class' : 'deals'
     const label = isDestination ? `${item.name}, ${item.country}` : isAirline ? 'Airline group travel' : isBusinessClass ? 'Airline business class' : item.category
-    const title = isDestination ? `${item.name}, ${item.country}` : isAirline ? `${item.name} Group Travel` : isBusinessClass ? `${item.name} Business Class` : item.title
+    const title = item.h1
+        || (isDestination ? `${item.name}, ${item.country}` : isAirline ? `${item.name} Group Travel` : isBusinessClass ? `${item.name} Business Class` : item.title)
     const description = item.intro || item.description
     const points = isDestination ? item.highlights : isAirline || isBusinessClass ? item.highlights : item.details
     const customHtml = item.html || item.content || item.contentHtml
@@ -67,9 +68,9 @@ export default function CollectionDetail({ item, kind, related }) {
                                     {isDestination
                                         ? `Things to do in ${item.name}`
                                         : isAirline
-                                        ? `Planning a ${item.name} group trip`
+                                        ? `Planning ${item.tagline || `${item.name} group booking`}`
                                         : isBusinessClass
-                                        ? `Explore ${item.name} business class`
+                                        ? `Explore ${item.tagline || `${item.name} business class booking`}`
                                         : 'Explore the options'}
                                 </h2>
                                 <ul className="mt-5 space-y-3">

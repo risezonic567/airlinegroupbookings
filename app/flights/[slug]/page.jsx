@@ -3,6 +3,7 @@ import CollectionDetail from '../../../components/content/CollectionDetail'
 import PageStructuredData from '../../../components/seo/PageStructuredData'
 import { createPageMetadata } from '../../../lib/seo'
 import groupTravelAirlines from '../../../data/groupTravelAirlines'
+import { fallbackGroupTravelSeo, groupTravelSeo } from '../../../data/pageSeo'
 
 export function generateStaticParams() {
     return groupTravelAirlines.map(({ slug }) => ({ slug }))
@@ -11,10 +12,13 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
     const { slug } = await params
     const airline = groupTravelAirlines.find((item) => item.slug === slug)
-    if (!airline) return { title: 'Airline not found | AirlinesGroup Travel', description: 'Explore group flight booking information from AirlinesGroup Travel.' }
+    if (!airline) {
+        return { title: 'Airline not found | Airline Group Bookings', description: 'Explore group flight booking information from Airline Group Bookings.' }
+    }
+    const seo = groupTravelSeo[slug] || fallbackGroupTravelSeo(airline.name)
     return createPageMetadata({
-        title: `${airline.name} Group Travel | AirlinesGroup Travel`,
-        description: airline.description,
+        title: seo.metaTitle,
+        description: seo.metaDescription,
         path: `/flights/${slug}`,
     })
 }
@@ -24,15 +28,24 @@ export default async function GroupTravelAirlineDetail({ params }) {
     const airline = groupTravelAirlines.find((item) => item.slug === slug)
     if (!airline) notFound()
 
-    const related = groupTravelAirlines.filter((item) => item.slug !== slug).slice(0, 4)
+    const seo = groupTravelSeo[slug] || fallbackGroupTravelSeo(airline.name)
+    const item = {
+        ...airline,
+        h1: seo.h1,
+        tagline: seo.tagline || airline.tagline,
+        description: seo.onPageCopy || seo.metaDescription || airline.description,
+        highlights: seo.highlights || airline.highlights,
+    }
+    const related = groupTravelAirlines.filter((entry) => entry.slug !== slug).slice(0, 4)
+
     return <>
         <PageStructuredData
-            name={`${airline.name} Group Travel`}
-            description={airline.description}
+            name={seo.metaTitle}
+            description={seo.metaDescription}
             path={`/flights/${slug}`}
             type="Service"
             breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Group Travel', path: '/group-travel' }, { name: airline.name, path: `/flights/${slug}` }]}
         />
-        <CollectionDetail item={airline} kind="airline" related={related} />
+        <CollectionDetail item={item} kind="airline" related={related} />
     </>
 }

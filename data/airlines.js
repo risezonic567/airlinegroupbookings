@@ -17,9 +17,9 @@ const airlines = airlineNames.map(([slug, name], index) => ({
     name,
     logo: '/images/travel-card.svg',
     heroImage: '/images/city-card.svg',
-    metaTitle: `${name} Group Travel | Group Flight Booking`,
-    metaDescription: `Explore group flight options on ${name}. Share your route, dates, and group size to request a personalized group travel quote.`,
-    intro: `Planning a trip for a team, family, school, or organization? Explore group flight options with ${name}. Share your preferred route, travel dates, and group size to receive a quote and learn which fare conditions apply to your itinerary.`,
+    metaTitle: `${name} Group Booking | Airline Group Bookings`,
+    metaDescription: `Plan ${name} group booking for teams, families, and events. Share your route, dates, and group size for a clear group flight quote and fare guidance.`,
+    intro: `Looking for ${name} group booking help? Airline Group Bookings supports group flight booking for teams, families, schools, and organizations. Share your route, travel dates, and traveler count to compare ${name} group travel options and review fare conditions before you request a quote.`,
     steps: [
         { title: 'Share your trip', description: 'Tell us where and when your group wants to travel.', icon: 'Send' },
         { title: 'Compare options', description: 'Review schedules and quote details with a specialist.', icon: 'Search' },

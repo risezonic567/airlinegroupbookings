@@ -18,7 +18,9 @@ const staticPaths = [
     '/disclaimer',
     '/group-travel',
     '/privacy-policy',
+    '/private-jet-charter',
     '/refund-policy',
+    '/site-map',
     '/terms-conditions',
 ]
 

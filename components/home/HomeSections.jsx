@@ -110,31 +110,32 @@ export function DestinationsSection() {
                             href={`/destinations/${destination.slug}`}
                             className="group relative flex aspect-[4/5] items-end overflow-hidden rounded-2xl bg-slate-900 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500 sm:p-5"
                         >
-                            {/* Background Image - Fixed stacking context */}
+                            {/* Full source image: banners are 1920x600; small next/image widths blur under tall object-cover crops */}
                             <Image
                                 src={destination.image}
                                 alt={`${destination.name}, ${destination.country}`}
                                 fill
-                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                                className="absolute inset-0 object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                                unoptimized
+                                sizes="100vw"
+                                className="z-0 object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                             />
 
                             {/* Gradient Overlay for Text Readability */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent transition-opacity duration-300 group-hover:from-slate-950/90" />
+                            <div className="absolute inset-0 z-[1] bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent transition-opacity duration-300 group-hover:from-slate-950/90" />
 
-                            {/* Top Glassmorphism Country Badge */}
-                            <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/20 px-3 py-1 text-xs font-medium text-white backdrop-blur-md transition-colors duration-300 group-hover:bg-black/40">
+                            {/* Top Country Badge */}
+                            <span className="absolute left-4 top-4 z-[2] rounded-full border border-white/20 bg-black/45 px-3 py-1 text-xs font-medium text-white transition-colors duration-300 group-hover:bg-black/60">
                                 {destination.country}
                             </span>
 
                             {/* Bottom Content Area */}
-                            <div className="relative z-10 flex w-full items-center justify-between gap-2">
+                            <div className="relative z-[2] flex w-full items-center justify-between gap-2">
                                 <h3 className="text-xl font-bold tracking-tight text-white drop-shadow-sm sm:text-2xl">
                                     {destination.name}
                                 </h3>
 
                                 {/* Animated Arrow Button */}
-                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:bg-white group-hover:text-slate-900">
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/25 text-white transition-all duration-300 group-hover:scale-105 group-hover:bg-white group-hover:text-slate-900">
                                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                                 </span>
                             </div>

@@ -6,21 +6,21 @@ import PageStructuredData from '../../components/seo/PageStructuredData'
 import { createPageMetadata } from '../../lib/seo'
 
 const storyParagraphs = [
-    'We help families, corporate teams, student groups and event travelers make the journey together. Group flights come with plenty of details to coordinate, and our team is here to make the process feel straightforward.',
-    'From gathering traveler details to finding fares that work for your group, our specialists guide you through the booking process with practical, personal support.',
-    'Plans can change at any hour, so our expert agents are available 24/7 to help. Tell us where your group is headed and we’ll help you get started.',
+    'Airline Group Bookings is a group flight booking company USA travelers trust when families, corporate teams, student groups, and event organizers need to fly together. We act as your airline group reservation agency so the details feel clear from the first quote.',
+    'Our group travel booking specialists help gather traveler details, compare workable itineraries, and explain fare rules in plain language — a trusted group ticket booking service when you need practical, personal support.',
+    'Plans can change at any hour, so our team is available 24/7. Share your route and group size and we will help you start a smooth group flight booking request.',
 ]
 
 export const metadata = createPageMetadata({
-    title: 'About Us | AirlinesGroup Travel',
-    description: 'Learn how Airline Group Booking helps families, teams, students and event groups plan flights together with expert support.',
+    title: 'Group Flight Booking Company USA | Airline Group Bookings',
+    description: 'We’re a group flight booking company USA travelers trust for smooth planning. Our group travel booking specialists handle airline group reservations with clear quotes and personal support.',
     path: '/about',
 })
 
 export default function AboutPage() {
     return (
         <main>
-            <PageStructuredData name="About Us | AirlinesGroup Travel" description="Learn how Airline Group Booking helps families, teams, students and event groups plan flights together with expert support." path="/about" type="AboutPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }]} />
+            <PageStructuredData name="Group Flight Booking Company USA | Airline Group Bookings" description="We’re a group flight booking company USA travelers trust for smooth planning. Our group travel booking specialists handle airline group reservations with clear quotes and personal support." path="/about" type="AboutPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }]} />
             <section className="relative isolate flex min-h-[270px] items-center justify-center overflow-hidden sm:min-h-[320px] lg:min-h-[360px]">
                 <Image
                     src="/images/Aboutus.jpg.jpeg"
@@ -33,10 +33,10 @@ export default function AboutPage() {
                 {/* <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#102b59]/90 via-[#1e3a8a]/75 to-[#0a7bd0]/55" /> */}
                 <div className="mx-auto w-full max-w-7xl px-5 py-14 text-center text-white sm:px-8 sm:py-16">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-                        About <span className="text-[#60a5fa]">Us</span>
+                        A Group Flight Booking Company <span className="text-[#60a5fa]">USA</span> Teams Rely On
                     </h1>
                     <p className="mx-auto mt-4 max-w-xl text-base text-blue-50 sm:text-lg">
-                        Making group travel simple, affordable and stress-free.
+                        Trusted group ticket booking with specialists who keep your trip plans clear and simple.
                     </p>
                     <nav aria-label="Breadcrumb" className="mt-6 flex items-center justify-center gap-2 text-sm text-blue-100">
                         <Link href="/" className="inline-flex items-center gap-1.5 transition hover:text-white">

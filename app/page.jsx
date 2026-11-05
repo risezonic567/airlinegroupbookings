@@ -8,8 +8,8 @@ import { createPageMetadata } from '../lib/seo'
 
 export const metadata = {
     ...createPageMetadata({
-        title: 'AirlinesGroup Travel | Group Flight Bookings',
-        description: 'Find and book group flights with dedicated travel support from AirlinesGroup Travel.',
+        title: 'Airline Group Booking | Airline Group Bookings',
+        description: 'Airline group booking for group flight booking for 10 or more passengers. Book group flights online, get a free group flight quote or group airline tickets quote, and compare group travel flight deals USA.',
         path: '/',
     }),
     verification: {
@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function HomePage() {
     return <main>
-        <PageStructuredData name="AirlinesGroup Travel | Group Flight Bookings" description="Find and book group flights with dedicated travel support from AirlinesGroup Travel." path="/" />
+        <PageStructuredData name="Airline Group Booking | Airline Group Bookings" description="Airline group booking for group flight booking for 10 or more passengers. Book group flights online, get a free group flight quote or group airline tickets quote, and compare group travel flight deals USA." path="/" />
         <section className="home-hero relative isolate overflow-visible">
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
                 <div className="absolute inset-0 -z-20 bg-cover bg-[position:62%_center]" style={{ backgroundImage: "url('/images/Airline Group Booking Webside Banner.jpg.jpeg')" }} />
