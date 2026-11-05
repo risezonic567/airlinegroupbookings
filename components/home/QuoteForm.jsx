@@ -9,12 +9,12 @@ import { isDisposableEmail, sanitizePhoneInput, validateEmail, validatePhone } f
 import AirportInput from './AirportInput'
 
 const tripTypes = ['Round Trip', 'One Way', 'Multi City']
-const textInputClass = 'mt-2 h-11 w-full rounded-md border border-slate-200 bg-white px-3 text-md text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-blue-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100'
-const fieldLabelClass = 'text-base font-medium text-slate-600'
+const textInputClass = 'mt-2 h-12 w-full rounded-xl border border-slate-200 bg-white px-3 text-md text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-blue-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100'
+const fieldLabelClass = 'text-sm font-semibold text-slate-700'
 
-function FormField({ label, children }) {
+function FormField({ label, children, className = '' }) {
   return (
-    <label className="block min-w-0">
+    <label className={`relative block min-w-0 focus-within:z-50 ${className}`}>
       <span className={fieldLabelClass}>{label}</span>
       {children}
     </label>
@@ -158,8 +158,8 @@ export default function QuoteForm() {
   }
 
   return (
-    <>
-      <div className="flex w-full max-w-[690px] overflow-hidden rounded-t-md bg-blue-900 text-white sm:w-fit" role="tablist" aria-label="Choose trip type">
+    <div className="relative mx-auto w-full max-w-6xl rounded-2xl border border-blue-100 bg-white p-4 shadow-2xl shadow-blue-950/20 sm:p-5 lg:p-6">
+      <div className="inline-flex w-full max-w-full gap-1 overflow-x-auto rounded-xl bg-blue-50 p-1 sm:w-auto" role="tablist" aria-label="Choose trip type">
         {tripTypes.map((type) => (
           <button
             key={type}
@@ -167,18 +167,17 @@ export default function QuoteForm() {
             role="tab"
             aria-selected={tripType === type}
             onClick={() => { setTripType(type) }}
-            className={`flex flex-1 items-center justify-center gap-2 border-r-2 border-white/80 px-2 py-4 text-xs font-bold transition sm:px-5 sm:py-5 sm:text-base ${tripType === type ? 'bg-blue-600' : 'bg-blue-900 hover:bg-blue-800'}`}
+            className={`flex h-11 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-lg px-2.5 text-xs font-bold transition sm:flex-none sm:px-5 sm:text-sm ${tripType === type ? 'bg-blue-700 text-white shadow-sm' : 'text-slate-700 hover:bg-blue-100'}`}
           >
             <Plane className="h-4 w-4 -rotate-12 sm:h-5 sm:w-5" aria-hidden="true" />{type}
           </button>
         ))}
       </div>
-      <div className="border border-white bg-[#fafafa] px-4 py-5 shadow-xl shadow-slate-900/10 sm:px-6 lg:px-7">
-        <h2 className="sr-only">Get a free group flight quote</h2>
-        <form onSubmit={submitQuote} noValidate>
-          <div className="grid grid-cols-2 gap-x-3 gap-y-4 sm:gap-x-5 lg:grid-cols-6">
-            <FormField label="Flying from:"><AirportInput name="origin" value={form.origin} onChange={updateField} placeholder="Start Searching..." required /></FormField>
-            <FormField label="To:"><AirportInput name="destination" value={form.destination} onChange={updateField} placeholder="Start Searching..." required /></FormField>
+      <h2 className="sr-only">Get a free group flight quote</h2>
+      <form className="mt-4" onSubmit={submitQuote} noValidate>
+          <div className="grid min-w-0 grid-cols-1 gap-x-4 gap-y-3 min-[390px]:grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-5">
+            <FormField label="Flying from:" className="min-[390px]:col-span-2 lg:col-span-1"><AirportInput name="origin" value={form.origin} onChange={updateField} placeholder="Start Searching..." required /></FormField>
+            <FormField label="To:" className="min-[390px]:col-span-2 lg:col-span-1"><AirportInput name="destination" value={form.destination} onChange={updateField} placeholder="Start Searching..." required /></FormField>
             <FormField label="Departure:"><input className={textInputClass} name="departure" type="date" value={form.departure} onChange={updateField} required /></FormField>
             {tripType === 'Round Trip' && (
               <FormField label="Return Date:"><input className={textInputClass} name="returnDate" type="date" value={form.returnDate} onChange={updateField} min={form.departure || undefined} required /></FormField>
@@ -198,7 +197,12 @@ export default function QuoteForm() {
               <option>First Class</option>
             </SelectControl>
             {tripType === 'One Way' && <div className="hidden lg:block" aria-hidden="true" />}
-            <FormField label="Email:">
+            {/* Honeypot field */}
+            <input type="text" name="website" value={form.website} onChange={updateField} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-10000px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }} />
+          </div>
+          {error && <p role="alert" className="mt-2 text-sm text-red-600">{error}</p>}
+          <div className="mt-3 grid min-w-0 grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-5">
+            <FormField label="Email:" className="lg:col-span-2">
               <input className={textInputClass} name="email" type="email" value={form.email} onChange={updateField} onBlur={() => {
                 const email = form.email.trim().toLowerCase()
                 setForm((current) => ({ ...current, email }))
@@ -207,32 +211,28 @@ export default function QuoteForm() {
               }} aria-invalid={Boolean(fieldErrors.email)} aria-describedby={fieldErrors.email ? 'quote-email-error' : undefined} placeholder="*****@gmail.com" autoComplete="email" required />
               {fieldErrors.email && <span id="quote-email-error" role="alert" className="mt-1 block text-xs text-red-600">{fieldErrors.email}</span>}
             </FormField>
-            <div className="block min-w-0">
+            <div className="relative min-w-0 focus-within:z-50 lg:col-span-3">
               <label htmlFor="phone" className={fieldLabelClass}>Phone No.:</label>
-              <span className="mt-2 flex h-11 overflow-hidden rounded-md border border-slate-200 bg-white focus-within:border-blue-600 focus-within:ring-2 focus-within:ring-blue-100">
-                <select aria-label="Country calling code" name="countryCode" value={form.countryCode} onChange={updateField} aria-invalid={Boolean(fieldErrors.phone)} className="w-[82px] shrink-0 border-r border-slate-200 bg-transparent px-2 text-md text-slate-700 outline-none">
+              <span className="mt-2 flex h-12 overflow-hidden rounded-xl border border-slate-200 bg-white focus-within:border-blue-600 focus-within:ring-2 focus-within:ring-blue-100">
+                <select aria-label="Country calling code" name="countryCode" value={form.countryCode} onChange={updateField} aria-invalid={Boolean(fieldErrors.phone)} className="h-full w-[82px] shrink-0 border-r border-slate-200 bg-transparent px-2 text-md text-slate-700 outline-none focus:ring-2 focus:ring-blue-100">
                   <option value="+1">US +1</option>
                   <option value="+44">UK +44</option>
                   <option value="+91">IN +91</option>
                   <option value="+61">AU +61</option>
                   <option value="+971">AE +971</option>
                 </select>
-                <input id="phone" className="min-w-0 flex-1 bg-transparent px-2.5 text-md text-slate-800 outline-none placeholder:text-slate-400" name="phone" type="tel" value={form.phone} onChange={updateField} onBlur={() => setFieldErrors((current) => ({ ...current, phone: getPhoneError(form.countryCode, form.phone) || undefined }))} aria-invalid={Boolean(fieldErrors.phone)} aria-describedby={fieldErrors.phone ? 'quote-phone-error' : undefined} placeholder="Phone number" autoComplete="tel-national" required />
+                <input id="phone" className="min-w-0 flex-1 bg-transparent px-2.5 text-md text-slate-800 outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-blue-100" name="phone" type="tel" value={form.phone} onChange={updateField} onBlur={() => setFieldErrors((current) => ({ ...current, phone: getPhoneError(form.countryCode, form.phone) || undefined }))} aria-invalid={Boolean(fieldErrors.phone)} aria-describedby={fieldErrors.phone ? 'quote-phone-error' : undefined} placeholder="Phone number" autoComplete="tel-national" required />
               </span>
               {fieldErrors.phone && <span id="quote-phone-error" role="alert" className="mt-1 block text-xs text-red-600">{fieldErrors.phone}</span>}
             </div>
-            {/* Honeypot field */}
-            <input type="text" name="website" value={form.website} onChange={updateField} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-10000px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }} />
-          </div>
-          {error && <p role="alert" className="mt-2 text-sm text-red-600">{error}</p>}
-          <div className="col-span-2 flex items-end lg:col-span-1">
-            <button type="submit" disabled={loading} className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-md bg-blue-600 px-6 text-base font-bold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-100 lg:w-auto">
+            <div className="flex items-end sm:col-span-2 lg:col-span-1">
+            <button type="submit" disabled={loading} className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-blue-700 px-6 text-base font-bold text-white transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-100">
               {loading ? 'Sending...' : 'FREE QUOTE'}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
+          </div>
         </form>
-      </div>
-    </>
+    </div>
   )
 }

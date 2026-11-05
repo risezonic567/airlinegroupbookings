@@ -1,4 +1,3 @@
-import { Plane } from 'lucide-react'
 import ContactFab from '../components/home/ContactFab'
 import QuoteForm from '../components/home/QuoteForm'
 import { AirlinesSection, BlogsSection, DealsSection, DestinationsSection, WhyChooseSection } from '../components/home/HomeSections'
@@ -22,17 +21,20 @@ export const metadata = {
 export default function HomePage() {
     return <main>
         <PageStructuredData name="AirlinesGroup Travel | Group Flight Bookings" description="Find and book group flights with dedicated travel support from AirlinesGroup Travel." path="/" />
-        <section className="relative isolate min-h-[620px]  pb-12 sm:pb-16 lg:pb-20">
+        <section className="home-hero relative isolate overflow-visible">
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-                <div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: "url('/images/Airline Group Booking Webside Banner.jpg.jpeg')" }} />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-950/65 via-blue-950/35 to-blue-950/60" />
-                <div className="absolute left-[14%] top-[24%] hidden -rotate-12 text-white drop-shadow-lg md:block"><Plane className="h-16 w-16 fill-white/90" /></div>
+                <div className="absolute inset-0 -z-20 bg-cover bg-[position:62%_center]" style={{ backgroundImage: "url('/images/Airline Group Booking Webside Banner.jpg.jpeg')" }} />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0a1f5c]/95 via-[#0a1f5c]/70 to-[#0a1f5c]/10" />
             </div>
-            <div className="mx-auto max-w-[1440px] px-5 pt-8 sm:px-8 sm:pt-9 lg:px-10">
-                <div className="max-w-[760px] text-left text-[#f0f2f5] sm:ml-auto sm:text-right"><p className="text-base font-medium sm:text-2xl">Reserve your group trip here</p><h1 className="mt-2 text-[34px] font-semibold leading-tight tracking-wide sm:text-5xl lg:text-[56px]">FLY TOGETHER, <span className="text-blue-500">SAVE<br className="hidden sm:block" /> TOGETHER</span></h1><p className="mt-3 max-w-lg text-md leading-6 text-slate-800 sm:ml-auto ">Bring everyone together with one simple flight quote.</p></div>
-                <div id="booking" className="home-booking relative z-30 mt-8 scroll-mt-8 sm:mt-10 lg:mt-12"><QuoteForm /></div>
+            <div className="mx-auto flex max-w-[1440px] items-center px-5 pt-6 pb-8 sm:px-8 sm:pt-8 sm:pb-10 lg:px-10 lg:pt-10 lg:pb-12">
+                <div className="min-w-0 max-w-[540px] text-left text-white">
+                    <p className="inline-flex rounded-full border border-blue-200/30 bg-blue-500/20 px-4 py-2 text-sm font-semibold text-blue-100">Reserve your group trip here</p>
+                    <h1 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight sm:mt-4 sm:text-4xl lg:text-5xl xl:text-[3.25rem]">FLY TOGETHER, <span className="text-blue-200">SAVE<br className="hidden sm:block" /> TOGETHER</span></h1>
+                    <p className="mt-3 max-w-[540px] text-base leading-7 text-white/90 lg:mt-4 lg:text-lg">Bring everyone together with one simple flight quote.</p>
+                </div>
             </div>
         </section>
+        <div id="booking" className="home-booking relative z-40 mx-auto -mt-2 mb-0 w-full max-w-6xl scroll-mt-[100px] px-4 sm:-mt-8 sm:px-6 lg:-mt-10 lg:scroll-mt-[160px] lg:px-8"><QuoteForm /></div>
         <AirlinesSection />
         <DealsSection />
         <WhyChooseSection />

@@ -21,6 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
+            <head>
+                <meta charSet="utf-8" />
+            </head>
             <body suppressHydrationWarning className="min-h-screen bg-white font-sans antialiased">
                 <SiteStructuredData />
                 <Navbar />

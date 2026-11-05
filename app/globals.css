@@ -1,37 +1,9 @@
 @import "tailwindcss";
 
-#booking [role="tablist"] {
-  width: fit-content;
-  max-width: 100%;
-  overflow: hidden;
-  border: 1px solid rgb(191 219 254);
-  border-radius: 9999px;
-  background: white;
-  padding: .25rem;
-  box-shadow: 0 8px 24px rgb(15 23 42 / .12);
+#booking input:not([name="website"]) {
+  height: 3rem;
+  border-radius: .75rem;
 }
-
-#booking [role="tablist"] button {
-  border: 0;
-  border-radius: 9999px;
-  padding: .7rem 1rem;
-}
-
-#booking > div[role="tablist"] + div {
-  margin-top: .65rem;
-  overflow: hidden;
-  border: 0;
-  border-top: 3px solid #2563eb;
-  border-radius: 1rem;
-  background: white;
-  box-shadow: 0 18px 45px rgb(15 23 42 / .2);
-}
-
-@media (max-width: 639px) {
-  #booking [role="tablist"] { width: 100%; }
-  #booking [role="tablist"] button { padding-inline: .4rem; font-size: .7rem; }
-}
-
 
 .airline-marquee-mask {
   overflow: hidden;

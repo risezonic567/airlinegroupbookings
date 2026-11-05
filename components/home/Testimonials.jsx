@@ -60,7 +60,7 @@ export default function Testimonials() {
                     {Array.from({ length: 5 }, (_, index) => <Star key={index} className="h-5 w-5 fill-current" />)}
                   </div>
                   <blockquote className="mt-5 flex-1 text-lg font-medium leading-relaxed text-slate-700">
-                    â€œ{review.quote}â€
+                    &quot;{review.quote}&quot;
                   </blockquote>
                   <div className="mt-7 flex items-center gap-3 border-t border-blue-50 pt-5">
                     <span className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-sm font-bold text-white" aria-hidden="true">
