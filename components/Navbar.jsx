@@ -87,15 +87,15 @@ export default function Navbar() {
                         {pages.slice(1).map(({ label, href }) => <Link key={label} href={href} className={desktopLinkClass(href)}>{label}</Link>)}
                     </div>
                     <div className="flex shrink-0 items-center gap-3 pl-3">
-                        <Link
-                            href="/callback"
+                        <a
+                            href={contactDetails.phoneHref}
                             className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-xl bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 px-6 py-3 text-md font-bold text-white shadow-md shadow-blue-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gradient-to-r hover:from-blue-800 hover:to-indigo-950 hover:shadow-lg hover:shadow-blue-900/50 active:translate-y-0"
                         >
                             <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">
                                 <Phone className="h-3.5 w-3.5 fill-white text-white" />
                             </div>
                             <span className="tracking-wide">Get a Callback</span>
-                        </Link>
+                        </a>
                         {/* <button type="button" className="whitespace-nowrap rounded-full bg-white px-4 py-2 text-md text-slate-800 shadow-sm">United States (EN)</button> */}
                     </div>
                 </div>
@@ -111,7 +111,7 @@ export default function Navbar() {
                     </div>
                     <div className="grid grid-cols-2 gap-2 border-t border-slate-100 pt-3">
                         <a href={contactDetails.phoneHref} className="rounded border border-slate-200 py-3 text-center text-xs">Call {contactDetails.phoneDisplay}</a>
-                        <Link href="/callback" onClick={() => setMobileMenuOpen(false)} className="rounded bg-blue-800 py-3 text-center text-xs text-white">Get a Callback</Link>
+                        <a href={contactDetails.phoneHref} onClick={() => setMobileMenuOpen(false)} className="rounded bg-blue-800 py-3 text-center text-xs text-white">Get a Callback</a>
                     </div>
                 </div>
             </nav>}
