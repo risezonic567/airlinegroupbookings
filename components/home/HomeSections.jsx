@@ -22,12 +22,7 @@ export function AirlinesSection() {
                         accent="Group Travel" 
                         subtitle="Explore group flight options with leading airlines." 
                     />
-                    <Link 
-                        href="/airlines" 
-                        className="inline-flex shrink-0 items-center gap-2 self-center text-md font-bold text-blue-700 transition hover:gap-3 sm:self-auto"
-                    >
-                        View All Travel Airlines <ArrowRight className="h-4 w-4" />
-                    </Link>
+                   
                 </div>
 
                 <div className="airline-marquee mt-9 space-y-4" aria-label="Airlines">
@@ -48,14 +43,28 @@ export function AirlinesSection() {
                                                 <span className="block text-sm font-bold leading-snug text-slate-900 sm:text-[15px]">{airline.name}</span>
                                                 {/* <span className="mt-1 block text-[11px] font-medium uppercase tracking-wide text-slate-400">Group booking</span> */}
                                             </span>
+                                            
                                         </Link>
+                                        
                                     )
                                 })}
+                           
                             </div>
                         </div>
                     ))}
                 </div>
+                <div className="mt-8 flex justify-center">
+                    <Link
+                        href="/airlines"
+                        className="group inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition-colors hover:text-blue-800"
+                    >
+                        <span>View all airlines</span>
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                </div>
+
             </div>
+                  
         </section>
     )
 }
