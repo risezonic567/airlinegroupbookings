@@ -25,7 +25,11 @@ export default function AirportInput({
     const hasSelectedRef = useRef(false)
 
     function selectAirport(airport) {
-        const display = (airport.iataCode || airport.name || '').trim()
+        const namePart = (airport.name || '').trim()
+        const codePart = (airport.iataCode || '').trim()
+        const display = namePart
+            ? (codePart ? `${namePart} (${codePart})` : namePart)
+            : codePart
         hasSelectedRef.current = true
         setIsOpen(false)
         setActiveIndex(-1)
