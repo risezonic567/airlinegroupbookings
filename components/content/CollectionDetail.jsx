@@ -17,12 +17,12 @@ export default function CollectionDetail({ item, kind, related }) {
     const collectionTitle = isDestination ? 'Destinations' : isAirline ? 'Group Travel' : isBusinessClass ? 'Business Class' : 'Popular deals'
     const relatedTitle = isDestination ? 'Explore more destinations' : isAirline || isBusinessClass ? 'Explore more airlines' : 'More group flight deals'
     const relatedHref = (entry) => isAirline ? `/flights/${entry.slug}` : isBusinessClass ? `/business-class/${entry.slug}` : `/${plural}/${entry.slug}`
-    const allHref = isAirline ? '/group-travel#airlines' : isBusinessClass ? '/business-class#airlines' : `/${plural}`
+    const allHref = isAirline ? '/group-travel/airlines' : isBusinessClass ? '/business-class/airlines' : `/${plural}`
     const imageSrc = item.image || '/images/travel-card.svg'
 
     return (
         <main>
-            <section className="relative isolate overflow-hidden bg-[#1e3a8a] text-white">
+            <section className="relative isolate overflow-hidden bg-[#202d60] text-white">
                 <Image
                     src={imageSrc}
                     alt={title || 'Travel'}

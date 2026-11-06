@@ -15,7 +15,7 @@ export default function GroupTravelPage() {
     return (
         <main>
             <PageStructuredData name="Group Travel Airlines | Airline Group Bookings" description="Browse group travel airlines and airlines with group booking discount. Review group flight booking policy by airline, learn how to book group flights with airlines, and compare group fare vs individual fare." path="/group-travel" type="CollectionPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Group Travel', path: '/group-travel' }]} />
-            <section className="bg-gradient-to-br from-[#087cd1] to-[#1e3a8a] px-5 py-14 text-white sm:px-8 sm:py-20">
+            <section className="bg-gradient-to-br from-[#263673] to-[#202d60] px-5 py-14 text-white sm:px-8 sm:py-20">
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Plan together</p>
                     <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
@@ -24,7 +24,7 @@ export default function GroupTravelPage() {
                     <p className="mt-4 max-w-2xl text-base leading-7 text-blue-50">
                         Explore group travel airlines and airlines with group booking discount. Check group flight booking policy by airline, learn how to book group flights with airlines, and compare group fare vs individual fare before you request a quote.
                     </p>
-                    <a href="#airlines" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-bold text-blue-800 transition hover:bg-blue-50">
+                    <a href="/airlines" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-bold text-blue-800 transition hover:bg-blue-50">
                         Browse airlines <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </a>
                 </div>

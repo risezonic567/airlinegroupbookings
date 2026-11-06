@@ -41,6 +41,7 @@ const mapQuery = encodeURIComponent(mapOffice?.address || '')
 const mapSrc = contactDetails.mapEmbedUrl || `https://www.google.com/maps?q=${mapQuery}&output=embed`
 const directionsHref = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`
 
+
 function DetailCard({ title, detail, href, Icon }) {
     const content = (
         <>
@@ -72,7 +73,7 @@ export default function ContactPage() {
         <main>
             <PageStructuredData name="Group Flight Booking Phone Number | Airline Group Bookings" description="Need a group flight booking phone number or group travel booking contact? Request a group flight quote and get group airline booking help 24/7 from our team." path="/contact" type="ContactPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact Us', path: '/contact' }]} />
 
-            <section className="bg-gradient-to-br from-[#087cd1] to-[#1e3a8a] px-5 py-14 text-center text-white sm:px-8 sm:py-20">
+            <section className=" px-5 py-14 text-center text-white sm:px-8 sm:py-20" style={{ backgroundImage: "url('/images/Contact as banner.jpg.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center', height: '400px', width: '100%' }}>
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">We’re here to help</p>
                     <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Group Flight Booking <span className="text-blue-200">Phone Number</span></h1>

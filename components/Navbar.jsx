@@ -40,20 +40,20 @@ export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const pathname = usePathname()
     const isActive = (href) => pathname === href || (href !== '/' && pathname.startsWith(`${href}/`))
-    const desktopLinkClass = (href) => `flex items-center px-4 transition hover:bg-blue-600 ${isActive(href) ? 'bg-blue-600 text-white' : ''}`
-    const mobileLinkClass = (href) => `block rounded px-3 py-2.5 hover:bg-blue-50 ${isActive(href) ? 'bg-blue-50 text-blue-700' : ''}`
+    const desktopLinkClass = (href) => `flex items-center border-b-4 border-transparent px-4 transition hover:border-red-400 hover:bg-blue-600 ${isActive(href) ? 'border-red-400 bg-blue-600 text-white' : ''}`
+    const mobileLinkClass = (href) => `block rounded border-l-2 border-transparent px-3 py-2.5 hover:bg-blue-50 ${isActive(href) ? 'border-red-500 bg-blue-50 text-blue-700' : ''}`
 
     return (
         <header className="relative z-50 bg-white font-sans">
-            <div className="mx-auto flex min-h-[92px] max-w-[1440px] flex-wrap items-center justify-between gap-y-3 px-5 py-3 sm:px-8 lg:flex-nowrap lg:px-10">
+            <div className="mx-auto flex min-h-[76px] max-w-[1440px] flex-wrap items-center justify-between gap-y-2 px-5 py-2 sm:px-8 lg:flex-nowrap lg:px-10">
                 <Link href="/" className="order-2 mr-auto flex items-center gap-2.5 lg:order-1 lg:mr-0" aria-label="AirlinesGroup Travel home">
                     <Image
-                        src="/images/Airline Group Bookings 1.png"
+                        src="/images/navbarlogo.png"
                         alt="AirlinesGroup Travel"
                         width={280}
-                        height={78}
+                        height={40}
                         priority
-                        className="h-auto w-[220px] sm:w-[280px]"
+                        className="h-auto w-[160px] sm:w-[190px]"
                     />
                 </Link>
 
@@ -69,14 +69,14 @@ export default function Navbar() {
                 </button>
             </div>
 
-            <nav className="hidden bg-[#087cd1] text-white lg:block" aria-label="Main navigation">
+            <nav className="hidden bg-[#263673] text-white lg:block" aria-label="Main navigation">
                 <div className="mx-auto flex min-h-[68px] max-w-[1440px] items-stretch justify-between px-5 sm:px-8 lg:px-10">
                     <div className="flex items-stretch gap-1 text-[15px] font-medium xl:gap-3">
                         <Link href="/" className={desktopLinkClass('/')}>Home</Link>
                         {pages.slice(0, 1).map(({ label, href }) => <Link key={label} href={href} className={desktopLinkClass(href)}>{label}</Link>)}
                         {menus.map(({ title, href, links }) => (
                             <div key={title} className="group relative flex items-stretch">
-                                <Link href={href} className={`flex items-center gap-2 px-4 transition hover:bg-blue-600 focus:outline-none focus-visible:bg-blue-600 ${isActive(href) ? 'bg-blue-600 text-white' : ''}`} aria-haspopup="true">
+                                <Link href={href} className={`flex items-center gap-2 border-b-4 border-transparent px-4 transition hover:border-red-400 hover:bg-blue-600 focus:outline-none focus-visible:border-red-400 focus-visible:bg-blue-600 ${isActive(href) ? 'border-red-400 bg-blue-600 text-white' : ''}`} aria-haspopup="true">
                                     {title}<ChevronDown className="mt-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
                                 </Link>
                                 <div className="invisible absolute left-0 top-full max-h-[75vh] w-80 translate-y-2 overflow-y-auto border-t-2 border-blue-500 bg-white py-2 text-slate-700 opacity-0 shadow-xl transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
@@ -89,7 +89,7 @@ export default function Navbar() {
                     <div className="flex shrink-0 items-center gap-3 pl-3">
                         <a
                             href={contactDetails.phoneHref}
-                            className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-xl bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 px-6 py-3 text-md font-bold text-white shadow-md shadow-blue-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gradient-to-r hover:from-blue-800 hover:to-indigo-950 hover:shadow-lg hover:shadow-blue-900/50 active:translate-y-0"
+                            className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-xl bg-gradient-to-r from-blue-700 via-blue-800 to-blue-950 px-6 py-3 text-md font-bold text-white shadow-md shadow-blue-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gradient-to-r hover:from-blue-800 hover:to-blue-950 hover:shadow-lg hover:shadow-blue-900/50 active:translate-y-0"
                         >
                             <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">
                                 <Phone className="h-3.5 w-3.5 fill-white text-white" />

@@ -93,7 +93,7 @@ export default function SiteMapPage() {
                 breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Site Map', path: '/site-map' }]}
             />
 
-            <section className="bg-gradient-to-br from-[#087cd1] to-[#1e3a8a] px-5 py-14 text-white sm:px-8 sm:py-20">
+            <section className="bg-gradient-to-br from-[#263673] to-[#202d60] px-5 py-14 text-white sm:px-8 sm:py-20">
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">All pages</p>
                     <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Site <span className="text-blue-200">Map</span></h1>

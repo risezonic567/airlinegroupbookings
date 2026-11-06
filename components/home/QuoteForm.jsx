@@ -226,7 +226,7 @@ export default function QuoteForm() {
               {fieldErrors.phone && <span id="quote-phone-error" role="alert" className="mt-1 block text-xs text-red-600">{fieldErrors.phone}</span>}
             </div>
             <div className="flex items-end sm:col-span-2 lg:col-span-1">
-            <button type="submit" disabled={loading} className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-blue-700 px-6 text-base font-bold text-white transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-100">
+            <button type="submit" disabled={loading} className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-red-600 px-6 text-base font-bold text-white transition hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-100">
               {loading ? 'Sending...' : 'FREE QUOTE'}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
