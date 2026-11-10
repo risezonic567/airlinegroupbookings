@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import ContactForm from '../../components/contact/ContactForm'
 import contactDetails from '../../data/contact'
-import PageStructuredData from '../../components/seo/PageStructuredData'
+import JsonLd from '../../components/seo/JsonLd'
+import { pageSchemas } from '../../data/pageSchemas'
 import { mainPageSeo } from '../../data/mainPageSeo'
 import { createPageMetadata } from '../../lib/seo'
 
@@ -75,7 +76,7 @@ function DetailCard({ title, detail, href, Icon }) {
 export default function ContactPage() {
     return (
         <main>
-            <PageStructuredData name={seo.metaTitle} description={seo.metaDescription} path="/contact" type="ContactPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact Us', path: '/contact' }]} />
+            <JsonLd data={pageSchemas.contact} />
 
             <section className=" px-5 py-14 text-center text-white sm:px-8 sm:py-20" style={{ backgroundImage: "url('/images/Contact as banner.jpg.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center', height: '400px', width: '100%' }}>
                 <div className="mx-auto max-w-7xl">

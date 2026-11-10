@@ -27,10 +27,10 @@ const staticPaths = [
 const detailPaths = [
     ...airlines.map(({ slug }) => `/airlines/${slug}`),
     ...blogs.map(({ slug }) => `/blog/${slug}`),
-    ...businessClassAirlines.map(({ slug }) => `/business-class/${slug}`),
+    ...businessClassAirlines.map(({ slug }) => `/business-class-booking/${slug}`),
     ...deals.map(({ slug }) => `/deals/${slug}`),
     ...destinations.map(({ slug }) => `/destinations/${slug}`),
-    ...groupTravelAirlines.map(({ slug }) => `/flights/${slug}`),
+    ...groupTravelAirlines.map(({ slug }) => `/group-travel/${slug}`),
 ]
 
 export default function sitemap() {

@@ -55,12 +55,12 @@ function SitemapSection({ title, links }) {
 
 export default function SiteMapPage() {
     const groupTravelLinks = groupTravelAirlines.map((airline) => ({
-        href: `/flights/${airline.slug}`,
+        href: `/group-travel/${airline.slug}`,
         label: `${airline.name} Group Travel`,
     }))
 
     const businessClassLinks = businessClassAirlines.map((airline) => ({
-        href: `/business-class/${airline.slug}`,
+        href: `/business-class-booking/${airline.slug}`,
         label: `${airline.name} Business Class`,
     }))
 

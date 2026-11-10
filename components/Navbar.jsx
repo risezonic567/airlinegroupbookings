@@ -15,7 +15,7 @@ const menus = [
         href: '/group-travel',
         links: [
             { label: 'Browse All Airlines', href: '/group-travel#airlines' },
-            ...groupTravelAirlines.slice(0, 5).map(({ name, slug }) => ({ label: `${name} Group Travel`, href: `/flights/${slug}` })),
+            ...groupTravelAirlines.map(({ name, slug }) => ({ label: `${name} Group Travel`, href: `/group-travel/${slug}` })),
         ],
     },
     {
@@ -23,7 +23,7 @@ const menus = [
         href: '/business-class',
         links: [
             { label: 'Browse All Business Class', href: '/business-class#airlines' },
-            ...businessClassAirlines.slice(0, 5).map(({ name, slug }) => ({ label: `${name} Business Class`, href: `/business-class/${slug}` })),
+            ...businessClassAirlines.map(({ name, slug }) => ({ label: `${name} Business Class`, href: `/business-class-booking/${slug}` })),
         ],
     },
 ]
@@ -79,7 +79,7 @@ export default function Navbar() {
                                 <Link href={href} className={`flex items-center gap-2 border-b-4 border-transparent px-4 transition hover:border-red-400 hover:bg-blue-600 focus:outline-none focus-visible:border-red-400 focus-visible:bg-blue-600 ${isActive(href) ? 'border-red-400 bg-blue-600 text-white' : ''}`} aria-haspopup="true">
                                     {title}<ChevronDown className="mt-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
                                 </Link>
-                                <div className="invisible absolute left-0 top-full max-h-[75vh] w-80 translate-y-2 overflow-y-auto border-t-2 border-blue-500 bg-white py-2 text-slate-700 opacity-0 shadow-xl transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                                <div className="invisible absolute left-0 top-full max-h-[280px] w-80 translate-y-2 overflow-y-auto overscroll-contain border-t-2 border-blue-500 bg-white py-2 text-slate-700 opacity-0 shadow-xl transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 [scrollbar-gutter:stable]">
                                     {links.map(({ label, href: linkHref }) => <Link key={label} href={linkHref} className={`block px-5 py-3 text-md transition hover:bg-blue-50 hover:text-blue-700 ${isActive(linkHref) ? 'bg-blue-50 text-blue-700' : ''}`}>{label}</Link>)}
                                 </div>
                             </div>

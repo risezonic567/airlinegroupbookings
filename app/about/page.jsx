@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Home, Phone } from 'lucide-react'
 import contactDetails from '../../data/contact'
-import PageStructuredData from '../../components/seo/PageStructuredData'
+import JsonLd from '../../components/seo/JsonLd'
+import { pageSchemas } from '../../data/pageSchemas'
 import { mainPageSeo } from '../../data/mainPageSeo'
 import { createPageMetadata } from '../../lib/seo'
 
@@ -23,7 +24,7 @@ export const metadata = createPageMetadata({
 export default function AboutPage() {
     return (
         <main>
-            <PageStructuredData name={seo.metaTitle} description={seo.metaDescription} path="/about" type="AboutPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }]} />
+            <JsonLd data={pageSchemas.about} />
             <section className="relative isolate flex min-h-[270px] items-center justify-center overflow-hidden sm:min-h-[320px] lg:min-h-[360px]">
                 <Image
                     src="/images/Aboutus.jpg.jpeg"
@@ -58,9 +59,10 @@ export default function AboutPage() {
                         <div aria-hidden="true" className="absolute -right-3 -top-3 h-24 w-24 rounded-2xl border-2 border-[#263673]/30 sm:-right-4 sm:-top-4" />
                         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-blue-100 shadow-xl shadow-slate-900/10">
                             <Image
-                                src="/images/Square.jpg.jpeg"
+                                src="/images/about-story.jpg.jpeg"
                                 alt="Travelers preparing to take a group flight together"
                                 fill
+                                priority
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                                 className="object-cover"
                             />

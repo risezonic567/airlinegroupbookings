@@ -15,6 +15,9 @@ dist-ssr
 out
 *.local
 
+# Local docs (keep on machine, never commit)
+SCHEMA_AND_BLOG_GUIDE.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

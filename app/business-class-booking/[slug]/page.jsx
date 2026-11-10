@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
     return createPageMetadata({
         title: seo.metaTitle,
         description: seo.metaDescription,
-        path: `/business-class/${slug}`,
+        path: `/business-class-booking/${slug}`,
     })
 }
 
@@ -45,9 +45,9 @@ export default async function BusinessClassDetail({ params }) {
         <PageStructuredData
             name={seo.metaTitle}
             description={seo.metaDescription}
-            path={`/business-class/${slug}`}
+            path={`/business-class-booking/${slug}`}
             type="Service"
-            breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Business Class', path: '/business-class' }, { name: airline.name, path: `/business-class/${slug}` }]}
+            breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Business Class', path: '/business-class' }, { name: airline.name, path: `/business-class-booking/${slug}` }]}
         />
         <CollectionDetail item={item} kind="businessClass" related={related} />
     </>

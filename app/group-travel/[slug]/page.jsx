@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
     return createPageMetadata({
         title: seo.metaTitle,
         description: seo.metaDescription,
-        path: `/flights/${slug}`,
+        path: `/group-travel/${slug}`,
     })
 }
 
@@ -44,9 +44,9 @@ export default async function GroupTravelAirlineDetail({ params }) {
         <PageStructuredData
             name={seo.metaTitle}
             description={seo.metaDescription}
-            path={`/flights/${slug}`}
+            path={`/group-travel/${slug}`}
             type="Service"
-            breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Group Travel', path: '/group-travel' }, { name: airline.name, path: `/flights/${slug}` }]}
+            breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Group Travel', path: '/group-travel' }, { name: airline.name, path: `/group-travel/${slug}` }]}
         />
         <CollectionDetail item={item} kind="airline" related={related} />
     </>

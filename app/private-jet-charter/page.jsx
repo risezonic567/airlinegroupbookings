@@ -22,6 +22,8 @@ import {
 } from "@/data/privateJetCharter";
 import QuoteForm from "@/components/home/QuoteForm";
 import { AirlinesSection, DealsSection, WhyChooseSection } from "@/components/home/HomeSections";
+import JsonLd from "@/components/seo/JsonLd";
+import { pageSchemas } from "@/data/pageSchemas";
 
 export const metadata = {
   title: "Private Jet Charter | Private Jet Rentals & Charter Flights",
@@ -48,6 +50,7 @@ const photo = (url, overlay) => ({
 export default function PrivateJetCharterPage() {
   return (
     <main className="bg-white text-neutral-900">
+      <JsonLd data={pageSchemas.privateJet} />
       {/* 1. HERO */}
       <section
         className="relative bg-neutral-950 text-white"

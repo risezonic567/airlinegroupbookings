@@ -3,8 +3,9 @@ import QuoteForm from '../components/home/QuoteForm'
 import { AirlinesSection, BlogsSection, DealsSection, DestinationsSection, WhyChooseSection } from '../components/home/HomeSections'
 import Testimonials from '../components/home/Testimonials'
 import FaqSection from '../components/content/FaqSection'
-import PageStructuredData from '../components/seo/PageStructuredData'
+import JsonLd from '../components/seo/JsonLd'
 import { homeFaqs } from '../data/pageFaqs'
+import { pageSchemas } from '../data/pageSchemas'
 import { mainPageSeo } from '../data/mainPageSeo'
 import { createPageMetadata } from '../lib/seo'
 // import Newsletter from '../components/home/Newsletter'
@@ -25,7 +26,7 @@ export const metadata = {
 
 export default function HomePage() {
     return <main>
-        <PageStructuredData name={seo.metaTitle} description={seo.metaDescription} path="/" />
+        <JsonLd data={pageSchemas.home} />
         <section className="home-hero relative isolate overflow-visible">
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
                 <div className="absolute inset-0 -z-20 bg-cover bg-[position:62%_center]" style={{ backgroundImage: "url('/images/Airline Group Booking Webside Banner.jpg.jpeg.png')" }} />
@@ -42,15 +43,14 @@ export default function HomePage() {
         <div id="booking" className="home-booking relative z-40 mx-auto -mt-2 mb-0 w-full max-w-6xl scroll-mt-[100px] px-4 sm:-mt-8 sm:px-6 lg:-mt-10 lg:scroll-mt-[160px] lg:px-8"><QuoteForm /></div>
         <AirlinesSection />
         <DealsSection />
-        <WhyChooseSection />
         <DestinationsSection />
+        <WhyChooseSection />
         <BlogsSection />
         <Testimonials />
         <FaqSection
             heading={homeFaqs.heading}
             intro={homeFaqs.intro}
             items={homeFaqs.items}
-            path="/"
             accentWord="Questions"
         />
         {/* <Newsletter /> */}

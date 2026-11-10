@@ -291,7 +291,7 @@ function bcSeo(primary, secondaries, h1, metaTitle, metaDescription) {
     return seo(primary, secondaries, h1, 'business', metaTitle, metaDescription)
 }
 
-/** Group travel airline pages — /flights/[slug] */
+/** Group travel airline pages — /group-travel/[slug] */
 export const groupTravelSeo = {
     "delta-airlines-group-booking": gtSeo(
         "delta airlines group booking",
@@ -524,7 +524,7 @@ export const groupTravelSeo = {
 }
 
 
-/** Business class pages — /business-class/[slug] */
+/** Business class pages — /business-class-booking/[slug] */
 export const businessClassSeo = {
     "american-airlines-business-class-travel-flight-booking": bcSeo(
         "american airlines business class booking",

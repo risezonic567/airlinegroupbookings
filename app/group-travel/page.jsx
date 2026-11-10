@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Plane } from 'lucide-react'
 import groupTravelAirlines from '../../data/groupTravelAirlines'
-import PageStructuredData from '../../components/seo/PageStructuredData'
+import JsonLd from '../../components/seo/JsonLd'
+import { pageSchemas } from '../../data/pageSchemas'
 import { mainPageSeo } from '../../data/mainPageSeo'
 import { createPageMetadata } from '../../lib/seo'
 
@@ -17,9 +18,11 @@ export const metadata = createPageMetadata({
 export default function GroupTravelPage() {
     return (
         <main>
-            <PageStructuredData name={seo.metaTitle} description={seo.metaDescription} path="/group-travel" type="CollectionPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Group Travel', path: '/group-travel' }]} />
-            <section className="bg-gradient-to-br from-[#263673] to-[#202d60] px-5 py-14 text-white sm:px-8 sm:py-20">
-                <div className="mx-auto max-w-7xl">
+            <JsonLd data={pageSchemas.groupTravel} />
+            <section className="relative isolate overflow-hidden px-5 py-14 text-white sm:px-8 sm:py-20">
+                <div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: "url('/images/group-travel-banner.jpg.png')" }} aria-hidden="true" />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/75 to-[#101a3d]/35" aria-hidden="true" />
+                <div className="relative mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Plan together</p>
                     <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
                         Group Travel Airlines: <span className="text-blue-200">Compare Policies & Discounts</span>
@@ -41,7 +44,7 @@ export default function GroupTravelPage() {
                     </div>
                     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                         {groupTravelAirlines.map((airline) => (
-                            <Link key={airline.slug} href={`/flights/${airline.slug}`} className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                            <Link key={airline.slug} href={`/group-travel/${airline.slug}`} className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                                 <div className="relative aspect-[16/9] overflow-hidden bg-blue-50">
                                     <Image src={airline.image} alt={`${airline.name} group travel`} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
                                 </div>

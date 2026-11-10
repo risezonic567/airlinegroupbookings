@@ -4,8 +4,9 @@ import { ArrowRight } from 'lucide-react'
 import deals from '../../data/deals'
 import Newsletter from '../../components/home/Newsletter'
 import FaqSection from '../../components/content/FaqSection'
-import PageStructuredData from '../../components/seo/PageStructuredData'
+import JsonLd from '../../components/seo/JsonLd'
 import { dealsFaqs } from '../../data/pageFaqs'
+import { pageSchemas } from '../../data/pageSchemas'
 import { mainPageSeo } from '../../data/mainPageSeo'
 import { createPageMetadata } from '../../lib/seo'
 
@@ -21,13 +22,7 @@ export const metadata = createPageMetadata({
 export default function DealsIndex() {
     return (
         <main>
-            <PageStructuredData
-                name={seo.metaTitle}
-                description={seo.metaDescription}
-                path="/deals"
-                type="CollectionPage"
-                breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Deals', path: '/deals' }]}
-            />
+            <JsonLd data={pageSchemas.deals} />
             <section className="bg-gradient-to-br from-[#263673] to-[#202d60] px-5 py-16 text-white sm:px-8 sm:py-20">
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Offers for groups</p>

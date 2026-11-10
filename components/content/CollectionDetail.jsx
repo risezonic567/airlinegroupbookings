@@ -16,8 +16,8 @@ export default function CollectionDetail({ item, kind, related }) {
     const customHtml = item.html || item.content || item.contentHtml
     const collectionTitle = isDestination ? 'Destinations' : isAirline ? 'Group Travel' : isBusinessClass ? 'Business Class' : 'Popular deals'
     const relatedTitle = isDestination ? 'Explore more destinations' : isAirline || isBusinessClass ? 'Explore more airlines' : 'More group flight deals'
-    const relatedHref = (entry) => isAirline ? `/flights/${entry.slug}` : isBusinessClass ? `/business-class/${entry.slug}` : `/${plural}/${entry.slug}`
-    const allHref = isAirline ? '/group-travel/airlines' : isBusinessClass ? '/business-class/airlines' : `/${plural}`
+    const relatedHref = (entry) => isAirline ? `/group-travel/${entry.slug}` : isBusinessClass ? `/business-class-booking/${entry.slug}` : `/${plural}/${entry.slug}`
+    const allHref = isAirline ? '/group-travel' : isBusinessClass ? '/business-class' : `/${plural}`
     const imageSrc = item.image || '/images/travel-card.svg'
 
     return (
