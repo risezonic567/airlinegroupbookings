@@ -1,7 +1,7 @@
 const businessClassAirlines = [
     {
         "name": "American Airlines",
-        "slug": "american-airlines-business-class-travel-flight-booking",
+        "slug": "american-airlines",
         "image": "/images/businessclass/American.jpg.jpeg",
         "tagline": "Premium comfort and lie-flat luxury with American Airlines Flagship Business.",
         "intro": "Fly in comfort with American Airlines Business Class. Whether crossing the country or traveling overseas, enjoy priority airport privileges, exclusive Flagship and Admirals Club lounge access, chef-crafted dining, and spacious lie-flat seating designed for restful journeys.",
@@ -16,7 +16,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Delta Air Lines",
-        "slug": "delta-airlines-business-class-travel",
+        "slug": "delta-airlines",
         "image": "/images/businessclass/DELTA.jpg.jpeg",
         "tagline": "Unmatched privacy and refined hospitality in Delta One suites.",
         "intro": "Delta One offers one of the most exclusive premium cabin experiences in the sky. Featuring full-height sliding doors for complete privacy, Westin Heavenly bedding, and chef-curated regional menus, your journey with Delta Air Lines becomes an unforgettable retreat.",
@@ -31,7 +31,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Alaska Airlines",
-        "slug": "alaska-airlines-business-class-travel",
+        "slug": "alaska-airlines",
         "image": "/images/businessclass/Alaska.jpg.jpeg",
         "tagline": "West Coast warmth and generous legroom in Alaska First Class.",
         "intro": "Alaska Airlines First Class blends genuine West Coast hospitality with generous comfort. Enjoy custom Recaro leather seats with extensive pitch, fresh seasonal West Coast dining, complimentary craft beers and regional wines, and dedicated flight attendant service.",
@@ -46,7 +46,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Lufthansa Airlines",
-        "slug": "lufthansa-airlines-business-class-travel",
+        "slug": "lufthansa-airlines",
         "image": "/images/businessclass/Lufthansa.jpg.jpeg",
         "tagline": "German precision, innovative Allegris suites, and exceptional dining.",
         "intro": "Experience European sophistication with Lufthansa Business Class. With the introduction of the new Allegris cabin, passengers can choose from private suites, extra-long beds, and double-seat arrangements, all complemented by German hospitality and fine dining.",
@@ -61,7 +61,7 @@ const businessClassAirlines = [
     },
     {
         "name": "KLM",
-        "slug": "klm-business-class-travel-experience",
+        "slug": "klm",
         "image": "/images/businessclass/KLM.jpg.jpeg",
         "tagline": "Dutch design, warm hospitality, and iconic collectible Delft Blue houses.",
         "intro": "Fly KLM Royal Dutch Airlines World Business Class for a truly charming European journey. Relax in full-flat seats designed by famous Dutch designers, savor gourmet meals curated by top Dutch chefs, and take home the world-famous KLM Delft Blue ceramic house filled with gin.",
@@ -76,7 +76,7 @@ const businessClassAirlines = [
     },
     {
         "name": "EL AL",
-        "slug": "el-al-business-class-travel",
+        "slug": "el-al",
         "image": "/images/businessclass/ELAL.jpg.jpeg",
         "tagline": "Homestyle hospitality and Dreamliner luxury with EL AL Business Class.",
         "intro": "EL AL Business Class on the Boeing 787 Dreamliner offers an exquisite travel experience connecting North America, Europe, and Tel Aviv. Enjoy 1-2-1 direct aisle access, gourmet Glatt Kosher dining, fine Israeli boutique wines, and welcoming Israeli hospitality.",
@@ -91,7 +91,7 @@ const businessClassAirlines = [
     },
     {
         "name": "United Airlines",
-        "slug": "united-airlines-business-class-travel",
+        "slug": "united-airlines",
         "image": "/images/businessclass/United.jpg.jpeg",
         "tagline": "Uninterrupted rest and Polaris Lounge luxury with United Airlines.",
         "intro": "United Polaris business class is reimagined around the concept of sleep and relaxation. From custom Saks Fifth Avenue bedding and Therabody wellness kits to private United Polaris Lounges with sit-down dining, United ensures you arrive at your destination refreshed.",
@@ -106,7 +106,7 @@ const businessClassAirlines = [
     },
     {
         "name": "British Airways",
-        "slug": "british-airways-business-class-travel",
+        "slug": "british-airways",
         "image": "/images/businessclass/British.jpg.jpeg",
         "tagline": "Quintessential British style and private Club Suites via London Heathrow.",
         "intro": "British Airways Club World and Club Suites deliver timeless British charm and cutting-edge comfort. Enjoy private suites with closing doors, bedding by luxury lifestyle brand The White Company, fine British dining, and prestigious Galleries Lounges at London Heathrow.",
@@ -121,7 +121,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Aeromexico",
-        "slug": "aeromexico-clase-premier-business-class",
+        "slug": "aeromexico-clase-premier",
         "image": "/images/businessclass/Aeromexico.jpg.jpeg",
         "tagline": "Mexican hospitality and Dreamliner lie-flat comfort in Clase Premier.",
         "intro": "Aeromexico Clase Premier invites you to experience Mexico’s premier business class. Onboard the modern Boeing 787 Dreamliner, enjoy 180-degree lie-flat beds, contemporary Mexican gourmet cuisine crafted by renowned chefs, and welcoming Premier Lounges throughout Mexico.",
@@ -136,7 +136,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Qatar Airways",
-        "slug": "qatar-airways-business-class-travel",
+        "slug": "qatar-airways",
         "image": "/images/businessclass/Qatar.jpg.jpeg",
         "tagline": "Award-winning Qsuite innovation and five-star luxury with Qatar Airways.",
         "intro": "Widely recognized as the best business class in the world, Qatar Airways Qsuite redefines luxury. Featuring sliding doors, customizable quad-seating for teams and families, double beds, dine-on-demand service, and access to the majestic Al Mourjan Business Lounge in Doha.",
@@ -151,7 +151,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Emirates",
-        "slug": "emirates-airlines-business-class-travel",
+        "slug": "emirates-airlines",
         "image": "/images/businessclass/Emirates.jpg.jpeg",
         "tagline": "Onboard lounge socializing, gourmet cuisine, and iconic A380 comfort.",
         "intro": "Emirates Business Class sets the gold standard for international prestige. Fly aboard the iconic double-decker Airbus A380 with its legendary Onboard Lounge and bar, or relax in lie-flat leather seating on the Boeing 777, complemented by Bvlgari amenities and Dom Pérignon champagne.",
@@ -166,7 +166,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Air France",
-        "slug": "air-france-business-class-travel",
+        "slug": "air-france",
         "image": "/images/businessclass/AirFrance.jpg.jpeg",
         "tagline": "French art of living, Michelin-starred cuisine, and chic private suites.",
         "intro": "Air France Business Class epitomizes French refinement and style. Savor culinary creations crafted by Michelin-starred French chefs, relax in elegant private suites with sliding doors and full-flat beds, and enjoy Clarins spa treatments at Paris-Charles de Gaulle airport lounges.",
@@ -181,7 +181,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Turkish Airlines",
-        "slug": "turkish-airlines-business-class-travel",
+        "slug": "turkish-airlines",
         "image": "/images/businessclass/Turkish.jpg.jpeg",
         "tagline": "World-renowned Flying Chefs and the ultimate Istanbul Lounge experience.",
         "intro": "Turkish Airlines flies to more countries than any other airline, delivering an extraordinary Business Class experience. Enjoy gourmet dishes prepared in-flight by Flying Chefs, dine by candlelight under the stars, and explore the colossal Istanbul Lounge with private suites and golf simulators.",
@@ -196,7 +196,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Singapore Airlines",
-        "slug": "singapore-airlines-business-class-travel",
+        "slug": "singapore-airlines",
         "image": "/images/businessclass/Singapore.jpg.jpeg",
         "tagline": "Peerless Asian hospitality, extra-wide seats, and Book the Cook dining.",
         "intro": "Singapore Airlines Business Class is celebrated worldwide for flawless hospitality and spacious cabin comfort. Enjoy extra-wide handcrafted leather seats, the renowned Book the Cook dining service, KrisWorld entertainment, and entry to world-class SilverKris Lounges.",
@@ -211,7 +211,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Swiss Airlines",
-        "slug": "swiss-airlines-business-class-travel",
+        "slug": "swiss-airlines",
         "image": "/images/businessclass/Swiss.jpg.jpeg",
         "tagline": "Swiss hospitality, alpine flavors, and the new SWISS Senses comfort.",
         "intro": "SWISS Business Class delivers the unmistakable quality and discretion of Switzerland. Relax in lie-flat seats with customizable firmness, savor regional Swiss dishes inspired by different cantons, and experience the stylish SWISS Lounges in Zurich and Geneva.",
@@ -226,7 +226,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Japan Airlines",
-        "slug": "japan-airlines-business-class-travel",
+        "slug": "japan-airlines",
         "image": "/images/businessclass/Japan.jpg.jpeg",
         "tagline": "Heartfelt Omotenashi hospitality and JAL SKY SUITE privacy.",
         "intro": "Japan Airlines JAL SKY SUITE delivers traditional Japanese omotenashi (heartfelt hospitality) with supreme modern comfort. Enjoy private suites with airweave bedding, BEDD gourmet dining curated by Japanese master chefs, and tranquil Sakura Lounges across Japan.",
@@ -241,7 +241,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Hawaiian Airlines",
-        "slug": "hawaiian-airlines-business-class-flights-travel",
+        "slug": "hawaiian-airlines",
         "image": "/images/businessclass/Hawaiian.jpg.jpeg",
         "tagline": "Island spirit and private Leihōkū Suites beneath starry Hawaiian skies.",
         "intro": "Step into the islands the moment you board Hawaiian Airlines Business Class. With the introduction of the Boeing 787-9 Dreamliner Leihōkū Suites, enjoy lie-flat seats with privacy doors, celestial star ceiling constellations, island-inspired dining, and authentic Aloha hospitality.",
@@ -256,7 +256,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Copa Airlines",
-        "slug": "copa-airlines-business-class-flights",
+        "slug": "copa-airlines",
         "image": "/images/businessclass/copa.jpg.jpeg",
         "tagline": "Dreams Business Class connecting the Americas smoothly via Panama City.",
         "intro": "Copa Airlines Dreams Business Class connects North, Central, and South America seamlessly through the Hub of the Americas in Panama City. Enjoy lie-flat beds on Boeing 737 MAX 9 aircraft, personalized Latin American service, and access to new Copa Club lounges.",
@@ -271,7 +271,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Etihad Airways",
-        "slug": "etihad-airways-business-class-flights",
+        "slug": "etihad-airways",
         "image": "/images/businessclass/Etihad.jpg.jpeg",
         "tagline": "Arabian elegance, Armani/Casa dining, and Business Studio privacy.",
         "intro": "Etihad Airways Business Class delivers modern luxury through its Abu Dhabi hub. Relax in the Business Studio with direct aisle access, dine anytime with Armani/Casa tableware, and unwind in luxurious lounges at the brand-new Zayed International Airport.",
@@ -286,7 +286,7 @@ const businessClassAirlines = [
     },
     {
         "name": "EVA Air",
-        "slug": "eva-air-business-class-flights-and-tickets",
+        "slug": "eva-air",
         "image": "/images/businessclass/EVAAIR.jpg.jpeg",
         "tagline": "Five-star Royal Laurel Class comfort, Din Tai Fung dining, and Rimowa luxury.",
         "intro": "EVA Air Royal Laurel Class is universally lauded as one of the finest premium cabins in aviation. Enjoy reverse-herringbone lie-flat seats, champagne service with Krug or Veuve Clicquot, gourmet Michelin-starred Din Tai Fung dim sum, and luxurious amenity kits.",
@@ -301,7 +301,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Cathay Pacific",
-        "slug": "cathay-pacific-business-class-flights",
+        "slug": "cathay-pacific",
         "image": "/images/businessclass/CathayPacific.jpg.jpeg",
         "tagline": "Aria Suite elegance and world-famous Hong Kong airport lounges.",
         "intro": "Cathay Pacific Business Class blends understated Asian sophistication with supreme comfort. With the introduction of the new Aria Suite featuring sliding privacy doors, 4K screens, and Bamford luxury bedding, fly in ultimate style connecting through Hong Kong.",
@@ -316,7 +316,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Finnair",
-        "slug": "finnair-business-class",
+        "slug": "finnair",
         "image": "/images/businessclass/Finnair.jpg.jpeg",
         "tagline": "Nordic tranquility and the revolutionary AirLounge seat via Helsinki.",
         "intro": "Finnair Business Class introduces the groundbreaking AirLounge—a contoured non-reclining shell seat that creates a private nest in the sky. Paired with Marimekko textiles, Nordic gastronomy, and swift connections over the northern route, Finnair provides a uniquely restful journey.",
@@ -331,7 +331,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Air Canada",
-        "slug": "air-canada-business-class-flights",
+        "slug": "air-canada",
         "image": "/images/businessclass/AirCanada.jpg.jpeg",
         "tagline": "Signature Class executive pods and exclusive Signature Suite dining.",
         "intro": "Air Canada Signature Class delivers North America’s premier international flight experience. Enjoy direct aisle access executive pods with pneumatic lumbar massage, chef-designed Canadian meals, and access to the five-star Air Canada Signature Suite at Toronto and Vancouver.",
@@ -346,7 +346,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Iberia Airlines",
-        "slug": "iberia-airlines-business-class-flights",
+        "slug": "iberia-airlines",
         "image": "/images/businessclass/Iberia.jpg.jpeg",
         "tagline": "Spanish warmth, exquisite Rioja wines, and lie-flat comfort via Madrid.",
         "intro": "Iberia Business Plus brings Spanish zest and comfort to the skies. Connecting Europe and the Americas through Madrid-Barajas, enjoy direct aisle access lie-flat beds, Spanish culinary creations paired with world-class Rioja and Ribera wines, and the stunning Velázquez VIP Lounge.",
@@ -361,7 +361,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Aer Lingus",
-        "slug": "aer-lingus-business-class-flights",
+        "slug": "aer-lingus",
         "image": "/images/businessclass/aer-lingus.jpg",
         "tagline": "Warm Irish hospitality, US Pre-Clearance in Dublin, and lie-flat beds.",
         "intro": "Aer Lingus Business Class offers one of the smartest transatlantic travel options. Enjoy 6.5-foot lie-flat beds with massage functions, artisan Irish dining, complimentary Wi-Fi, and clear US Customs and Border Protection in Dublin before departure.",
@@ -376,7 +376,7 @@ const businessClassAirlines = [
     },
     {
         "name": "All Nippon Airways",
-        "slug": "all-nippon-airways-business-class-flights",
+        "slug": "all-nippon-airways",
         "image": "/images/businessclass/AllNippon.jpg.jpeg",
         "tagline": "The Room: ultra-wide private suites and five-star Japanese perfection.",
         "intro": "All Nippon Airways (ANA) has revolutionized business class with \"The Room\" on its Boeing 777-300ER fleet. Offering one of the widest business class seats in the sky with sliding privacy doors, Japanese culinary mastery, and flawless omotenashi service.",
@@ -391,7 +391,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Fiji Airways",
-        "slug": "fiji-airways-business-class-flights",
+        "slug": "fiji-airways",
         "image": "/images/businessclass/Fiji.jpg.jpeg",
         "tagline": "Warm South Pacific hospitality and modern A350 lie-flat luxury.",
         "intro": "Fiji Airways Business Class welcomes you with heartfelt \"Bula!\" spirit. Aboard the modern Airbus A350-900, enjoy Collins Aerospace Super Diamond lie-flat beds, fresh Pacific Rim dining, fine Australian and New Zealand wines, and the flagship Nadi Premier Lounge.",
@@ -406,7 +406,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Southwest Airlines",
-        "slug": "southwest-airlines-business-class-flights",
+        "slug": "southwest-airlines",
         "image": "/images/businessclass/Southwest.jpg.jpeg",
         "tagline": "Fast boarding, guaranteed A1-A15 positioning, and maximum flexibility.",
         "intro": "Southwest Airlines Business Select delivers the ultimate speed and flexibility for domestic travel. Enjoy guaranteed A1-A15 priority boarding, complimentary premium drinks, priority security lanes, 2 free checked bags, and highest Rapid Rewards earnings.",
@@ -421,7 +421,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Avianca Airlines",
-        "slug": "avianca-airlines-business-class-flights",
+        "slug": "avianca-airlines",
         "image": "/images/businessclass/Avianca.jpg.jpeg",
         "tagline": "Insignia Business Class comfort and rich Colombian hospitality.",
         "intro": "Avianca Insignia Business Class offers comfortable lie-flat seating on Boeing 787 Dreamliner flights connecting the Americas and Europe. Enjoy authentic Colombian coffee, regional Latin American cuisine, Avianca Lounges, and priority airport handling.",
@@ -436,7 +436,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Spirit Airlines",
-        "slug": "spirit-airlines-business-class-flights",
+        "slug": "spirit-airlines",
         "image": "/images/businessclass/Spirit.jpg.jpeg",
         "tagline": "Big Front Seat comfort: extra space and premium value without high fares.",
         "intro": "Spirit Airlines Big Front Seat provides luxury space at an unbeatable budget price. With up to 36 inches of pitch, 20 inches of width, and no middle seat ever, enjoy wide leather seating and priority boarding while saving substantially on your travels.",
@@ -451,7 +451,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Thai Airways",
-        "slug": "thai-airways-business-class-flights",
+        "slug": "thai-airways",
         "image": "/images/businessclass/Thai.jpg.jpeg",
         "tagline": "Royal Silk Class elegance and smooth-as-silk Thai hospitality.",
         "intro": "Thai Airways Royal Silk Class provides a graceful entry into Southeast Asia. Enjoy lie-flat beds, traditional Thai silk touches, fragrant culinary masterpieces, and the serene Royal Orchid Lounges at Bangkok Suvarnabhumi Airport.",
@@ -466,7 +466,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Qantas Airways",
-        "slug": "qantas-airways-business-class-flights",
+        "slug": "qantas-airways",
         "image": "/images/businessclass/Qantas.jpg.jpeg",
         "tagline": "Vantage XL Business Suites and Neil Perry dining across the Pacific.",
         "intro": "Qantas Business Class connects Australia to the world in supreme comfort. Relax in the Thomson Aero Vantage XL Business Suite, savor Neil Perry Rockpool dining with sommelier-selected Australian wines, and unwind in world-class Qantas International Business Lounges.",
@@ -481,7 +481,7 @@ const businessClassAirlines = [
     },
     {
         "name": "TAP Air Portugal",
-        "slug": "tap-air-portugal-business-class-flights",
+        "slug": "tap-air-portugal",
         "image": "/images/businessclass/TAPAirPortugal.jpg.jpeg",
         "tagline": "Modern A330neo lie-flat comfort and Portuguese wine excellence via Lisbon.",
         "intro": "TAP Air Portugal Executive Class connects North America, Europe, and South America through vibrant Lisbon. Fly aboard the ultra-modern Airbus A330neo with full-flat beds, savor Portuguese culinary dishes created by Michelin-starred chefs, and enjoy the Lisbon TAP Premium Lounge.",
@@ -496,7 +496,7 @@ const businessClassAirlines = [
     },
     {
         "name": "LATAM Airlines",
-        "slug": "latam-airlines-business-class-flights",
+        "slug": "latam-airlines",
         "image": "/images/businessclass/LATAM.jpg.jpeg",
         "tagline": "South American warmth, master sommelier wines, and 180° lie-flat beds.",
         "intro": "LATAM Premium Business is South America’s leading business class experience. Enjoy 180-degree lie-flat beds with direct aisle access on Boeing 777 and 787 fleets, gourmet regional cuisine, and wines chosen by master sommeliers Hector Vergara.",
@@ -511,7 +511,7 @@ const businessClassAirlines = [
     },
     {
         "name": "TAROM Airlines",
-        "slug": "tarom-airlines-business-class-flights",
+        "slug": "tarom-airlines",
         "image": "/images/businessclass/TAROM.jpg.jpeg",
         "tagline": "Traditional Romanian hospitality and seamless Bucharest connections.",
         "intro": "TAROM Business Class provides an authentic Eastern European travel experience. Connecting travelers through Bucharest Henri Coandă Airport, enjoy dedicated check-in, Business Lounge access, comfortable seating, traditional Romanian cuisine, and attentive service.",
@@ -526,7 +526,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Icelandair",
-        "slug": "icelandair-business-class-flights",
+        "slug": "icelandair",
         "image": "/images/businessclass/Icelandair.jpg.jpeg",
         "tagline": "Saga Premium comfort, Nordic culinary treats, and Reykjavik Stopovers.",
         "intro": "Icelandair Saga Premium delivers a relaxed, premium travel experience connecting North America and Europe via Reykjavik. Enjoy wide leather recliners, gourmet Nordic cuisine, gate-to-gate high-speed Wi-Fi, and the cozy Saga Lounge at Keflavik Airport.",
@@ -541,7 +541,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Bulgaria Air",
-        "slug": "bulgaria-air-business-class-flights",
+        "slug": "bulgaria-air",
         "image": "/images/businessclass/BulgariaAir.jpg.jpeg",
         "tagline": "Attentive European service, Sofia VIP lounges, and flexible fares.",
         "intro": "Bulgaria Air Business Class connects Sofia with key European capitals and the Mediterranean. Enjoy dedicated check-in, access to Sofia Airport VIP lounges, extra-legroom seating with empty middle seats, delicious multi-course meals, and Bulgarian boutique wines.",
@@ -556,7 +556,7 @@ const businessClassAirlines = [
     },
     {
         "name": "Aerolíneas Argentinas",
-        "slug": "aerolineas-argentinas-business-class",
+        "slug": "aerolineas-argentinas",
         "image": "/images/businessclass/AerolineasArgentinas.jpg.jpeg",
         "tagline": "Club Cóndor lie-flat comfort, Argentine Malbecs, and Buenos Aires lounges.",
         "intro": "Aerolíneas Argentinas Club Cóndor connects the world to Argentina and Patagonia. Onboard the Airbus A330 fleet, enjoy 180-degree lie-flat beds, Argentine culinary specialties paired with world-class Malbec wines, and the stylish Salón Cóndor at Ezeiza Airport.",

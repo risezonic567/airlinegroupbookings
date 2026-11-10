@@ -5,6 +5,7 @@ import businessClassAirlines from '../../data/businessClassAirlines'
 import deals from '../../data/deals'
 import destinations from '../../data/destinations'
 import groupTravelAirlines from '../../data/groupTravelAirlines'
+import { withAirlinesName } from '../../data/slugRedirects'
 import PageStructuredData from '../../components/seo/PageStructuredData'
 import { createPageMetadata } from '../../lib/seo'
 
@@ -56,7 +57,7 @@ function SitemapSection({ title, links }) {
 export default function SiteMapPage() {
     const groupTravelLinks = groupTravelAirlines.map((airline) => ({
         href: `/group-travel/${airline.slug}`,
-        label: `${airline.name} Group Travel`,
+        label: `${withAirlinesName(airline.name)} Group Travel`,
     }))
 
     const businessClassLinks = businessClassAirlines.map((airline) => ({

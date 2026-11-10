@@ -2,22 +2,22 @@ const defaultImages = ['/images/travel-card.svg', '/images/city-card.svg']
 
 const airlineImages = {
     'delta-airlines-group-booking': '/images/grouptravel/Delta.jpg.jpeg',
-    'el-al-group-booking': '/images/grouptravel/EL AL_.jpg.jpeg',
-    'klm-group-booking': '/images/grouptravel/KLM.jpg.jpeg',
-    'southwest-airlines-group-travel-booking': '/images/grouptravel/Southwest.jpg.jpeg',
-    'british-airways-group-travel-booking': '/images/grouptravel/British.jpg.jpeg',
-    'finnair-group-travel-flight-booking': '/images/grouptravel/Finnair.jpg.jpeg',
-    'alaska-airlines-group-travel': '/images/grouptravel/Alaska.jpg.jpeg',
-    'jetblue-group-travel-flight-booking': '/images/grouptravel/JetBlue.jpg.jpeg',
-    'qatar-airways-group-travel': '/images/grouptravel/Qatar.jpg.jpeg',
-    'avianca-airlines-group-travel': '/images/grouptravel/Avianca.jpg.jpeg',
-    'emirates-group-travel-flight-booking': '/images/grouptravel/Emirates.jpg.jpeg',
-    'air-france-group-booking': '/images/grouptravel/Air France.jpg.jpeg',
+    'el-al-airlines-group-booking': '/images/grouptravel/EL AL_.jpg.jpeg',
+    'klm-airlines-group-booking': '/images/grouptravel/KLM.jpg.jpeg',
+    'southwest-airlines-group-booking': '/images/grouptravel/Southwest.jpg.jpeg',
+    'british-airways-airlines-group-booking': '/images/grouptravel/British.jpg.jpeg',
+    'finnair-airlines-group-booking': '/images/grouptravel/Finnair.jpg.jpeg',
+    'alaska-airlines-group-booking': '/images/grouptravel/Alaska.jpg.jpeg',
+    'jetblue-airlines-group-booking': '/images/grouptravel/JetBlue.jpg.jpeg',
+    'qatar-airways-airlines-group-booking': '/images/grouptravel/Qatar.jpg.jpeg',
+    'avianca-airlines-group-booking': '/images/grouptravel/Avianca.jpg.jpeg',
+    'emirates-airlines-group-booking': '/images/grouptravel/Emirates.jpg.jpeg',
+    'air-france-airlines-group-booking': '/images/grouptravel/Air France.jpg.jpeg',
     'american-airlines-group-booking': '/images/grouptravel/American.jpg.jpeg',
-    'lufthansa-group-booking': '/images/grouptravel/Lufthansa.jpg.jpeg',
-    'swiss-air-group-booking': '/images/grouptravel/Swiss.jpg.jpeg',
+    'lufthansa-airlines-group-booking': '/images/grouptravel/Lufthansa.jpg.jpeg',
+    'swiss-air-airlines-group-booking': '/images/grouptravel/Swiss.jpg.jpeg',
     'spirit-airlines-group-booking': '/images/grouptravel/Spirit.jpg.jpeg',
-    'aeromexico-group-booking-and-reservations': '/images/grouptravel/Aeromexico.jpg.jpeg',
+    'aeromexico-airlines-group-booking': '/images/grouptravel/Aeromexico.jpg.jpeg',
     'frontier-airlines-group-booking': '/images/grouptravel/Frontier.jpg.jpeg',
     'copa-airlines-group-booking': '/images/grouptravel/Copa.jpg.jpeg',
 }
@@ -37,7 +37,7 @@ const airlines = [
     },
     {
         name: 'EL AL',
-        slug: 'el-al-group-booking',
+        slug: 'el-al-airlines-group-booking',
         description:
             'Traveling to or from Tel Aviv with a group? Tell us your route and dates and we will help you explore EL AL options for heritage tours, faith groups, schools, and family gatherings.',
         tagline: 'Group flights to and from Tel Aviv with EL AL.',
@@ -49,7 +49,7 @@ const airlines = [
     },
     {
         name: 'KLM',
-        slug: 'klm-group-booking',
+        slug: 'klm-airlines-group-booking',
         description:
             'Flying through Amsterdam Schiphol? Share where your group is headed and we will help you look at KLM group options for school trips, sports teams, and company travel across Europe and beyond.',
         tagline: 'Connect your group through Amsterdam with KLM.',
@@ -61,7 +61,7 @@ const airlines = [
     },
     {
         name: 'Southwest Airlines',
-        slug: 'southwest-airlines-group-travel-booking',
+        slug: 'southwest-airlines-group-booking',
         description:
             'Organizing a domestic group trip within the US? Send your route, dates, and group size and we will help you look into Southwest options for weddings, reunions, teams, and clubs.',
         tagline: 'Simple domestic group travel with Southwest.',
@@ -73,7 +73,7 @@ const airlines = [
     },
     {
         name: 'British Airways',
-        slug: 'british-airways-group-travel-booking',
+        slug: 'british-airways-airlines-group-booking',
         description:
             'Headed to London or connecting through Heathrow? Share your route and group size and we will help you explore British Airways options for tours, universities, and business groups.',
         tagline: 'Group journeys through London with British Airways.',
@@ -85,7 +85,7 @@ const airlines = [
     },
     {
         name: 'Finnair',
-        slug: 'finnair-group-travel-flight-booking',
+        slug: 'finnair-airlines-group-booking',
         description:
             'Looking at a trip between Europe and Asia? Tell us your route and we will help you compare Finnair group options through Helsinki for tours, conferences, and school groups.',
         tagline: 'Europe and Asia group travel via Helsinki with Finnair.',
@@ -97,7 +97,7 @@ const airlines = [
     },
     {
         name: 'Alaska Airlines',
-        slug: 'alaska-airlines-group-travel',
+        slug: 'alaska-airlines-group-booking',
         description:
             'Traveling along the West Coast or through Seattle? Share your dates and group size and we will help you look at Alaska Airlines options for teams, clubs, and family trips.',
         tagline: 'West Coast group travel with Alaska Airlines.',
@@ -109,7 +109,7 @@ const airlines = [
     },
     {
         name: 'JetBlue',
-        slug: 'jetblue-group-travel-flight-booking',
+        slug: 'jetblue-airlines-group-booking',
         description:
             'Flying from New York, Boston, or to the Caribbean? Share your route and we will help you explore JetBlue options for vacations, reunions, and student groups.',
         tagline: 'Group getaways from the Northeast with JetBlue.',
@@ -121,7 +121,7 @@ const airlines = [
     },
     {
         name: 'Qatar Airways',
-        slug: 'qatar-airways-group-travel',
+        slug: 'qatar-airways-airlines-group-booking',
         description:
             'Connecting through Doha? Tell us where your group is flying and we will help you look at Qatar Airways options for pilgrimages, tours, and international business travel.',
         tagline: 'Long-haul group travel through Doha with Qatar Airways.',
@@ -133,7 +133,7 @@ const airlines = [
     },
     {
         name: 'Avianca Airlines',
-        slug: 'avianca-airlines-group-travel',
+        slug: 'avianca-airlines-group-booking',
         description:
             'Heading to Colombia or elsewhere in Latin America? Share your route and dates and we will help you compare Avianca options for family trips, church groups, and sports teams.',
         tagline: 'Latin America group travel with Avianca.',
@@ -145,7 +145,7 @@ const airlines = [
     },
     {
         name: 'Emirates',
-        slug: 'emirates-group-travel-flight-booking',
+        slug: 'emirates-airlines-group-booking',
         description:
             'Planning a trip through Dubai? Share your route and group size and we will help you explore Emirates options for tours, corporate groups, and family gatherings.',
         tagline: 'Group travel through Dubai with Emirates.',
@@ -157,7 +157,7 @@ const airlines = [
     },
     {
         name: 'Air France',
-        slug: 'air-france-group-booking',
+        slug: 'air-france-airlines-group-booking',
         description:
             'Traveling to Paris or connecting through Charles de Gaulle? Tell us your plans and we will help you look at Air France options for school trips, tours, and cultural groups.',
         tagline: 'Group trips to and through Paris with Air France.',
@@ -181,7 +181,7 @@ const airlines = [
     },
     {
         name: 'Lufthansa Airlines',
-        slug: 'lufthansa-group-booking',
+        slug: 'lufthansa-airlines-group-booking',
         description:
             'Connecting through Frankfurt or Munich? Share your route and we will help you explore Lufthansa options for business groups, conferences, and tours across Europe and beyond.',
         tagline: 'European connections for groups with Lufthansa.',
@@ -193,7 +193,7 @@ const airlines = [
     },
     {
         name: 'Swiss Air',
-        slug: 'swiss-air-group-booking',
+        slug: 'swiss-air-airlines-group-booking',
         description:
             'Traveling to Zurich or Geneva? Tell us your dates and group size and we will help you look at Swiss options for ski trips, business travel, and tours.',
         tagline: 'Group travel to Switzerland and beyond with Swiss.',
@@ -217,7 +217,7 @@ const airlines = [
     },
     {
         name: 'Aeromexico',
-        slug: 'aeromexico-group-booking-and-reservations',
+        slug: 'aeromexico-airlines-group-booking',
         description:
             'Traveling to Mexico City or across Mexico? Share your route and group size and we will help you explore Aeromexico options for family trips, weddings, and school groups.',
         tagline: 'Group flights to Mexico with Aeromexico.',

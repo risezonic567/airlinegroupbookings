@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Check, MapPin, Plane } from 'lucide-react'
 import Newsletter from '../home/Newsletter'
+import { withAirlinesName } from '../../data/slugRedirects'
 
 export default function CollectionDetail({ item, kind, related }) {
     const isDestination = kind === 'destination'
@@ -10,7 +11,7 @@ export default function CollectionDetail({ item, kind, related }) {
     const plural = isDestination ? 'destinations' : isAirline ? 'group-travel' : isBusinessClass ? 'business-class' : 'deals'
     const label = isDestination ? `${item.name}, ${item.country}` : isAirline ? 'Airline group travel' : isBusinessClass ? 'Airline business class' : item.category
     const title = item.h1
-        || (isDestination ? `${item.name}, ${item.country}` : isAirline ? `${item.name} Group Travel` : isBusinessClass ? `${item.name} Business Class` : item.title)
+        || (isDestination ? `${item.name}, ${item.country}` : isAirline ? `${withAirlinesName(item.name)} Group Travel` : isBusinessClass ? `${item.name} Business Class` : item.title)
     const description = item.intro || item.description
     const points = isDestination ? item.highlights : isAirline || isBusinessClass ? item.highlights : item.details
     const customHtml = item.html || item.content || item.contentHtml

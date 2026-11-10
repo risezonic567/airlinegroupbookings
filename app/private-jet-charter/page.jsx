@@ -52,18 +52,18 @@ export default function PrivateJetCharterPage() {
     <main className="bg-white text-neutral-900">
       <JsonLd data={pageSchemas.privateJet} />
       {/* 1. HERO */}
-      <section
-        className="relative bg-neutral-950 text-white"
-        style={photo(
-          "/images/private-jet/hero.jpg",
-          "linear-gradient(135deg, rgba(8,20,50,0.92), rgba(30,64,175,0.75))"
-        )}
-      >
-        <div className="mx-auto max-w-7xl px-4 pb-44 pt-20 sm:px-6 lg:px-8 lg:pb-52 lg:pt-28">
-          <h1 className="max-w-3xl text-balance text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+      <section className="relative isolate flex min-h-[320px] items-center overflow-hidden text-white sm:min-h-[380px]">
+        <div
+          className="absolute inset-0 -z-20 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/Jetsetter\u2019s World Map Journey.png')" }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/75 to-[#101a3d]/35" aria-hidden="true" />
+        <div className="relative mx-auto w-full max-w-7xl px-4 pb-44 pt-14 sm:px-6 sm:pt-16 lg:px-8 lg:pb-52">
+          <h1 className="max-w-3xl text-balance text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl">
             Private Jet Rentals &amp; Charter Flights
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-neutral-200 sm:text-lg">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-blue-50 sm:text-lg">
             Trusted by <span className="font-semibold text-white">{BRAND}</span>
             . Tell us your route and get a private charter quote within 60
             minutes.

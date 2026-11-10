@@ -1,5 +1,7 @@
-import groupTravelAirlines from './data/groupTravelAirlines.js'
-import businessClassAirlines from './data/businessClassAirlines.js'
+import {
+    businessClassSlugRedirects,
+    groupTravelSlugRedirects,
+} from './data/slugRedirects.js'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,18 +16,52 @@ const nextConfig = {
         ],
     },
     async redirects() {
-        return [
-            ...groupTravelAirlines.map(({ slug }) => ({
-                source: `/flights/${slug}`,
-                destination: `/group-travel/${slug}`,
-                permanent: true,
-            })),
-            ...businessClassAirlines.map(({ slug }) => ({
-                source: `/business-class/${slug}`,
-                destination: `/business-class-booking/${slug}`,
-                permanent: true,
-            })),
-        ]
+        const groupTravel = Object.entries(groupTravelSlugRedirects).flatMap(([oldSlug, newSlug]) => {
+            const rules = [
+                {
+                    source: `/flights/${oldSlug}`,
+                    destination: `/group-travel/${newSlug}`,
+                    permanent: true,
+                },
+            ]
+            if (oldSlug !== newSlug) {
+                rules.push({
+                    source: `/group-travel/${oldSlug}`,
+                    destination: `/group-travel/${newSlug}`,
+                    permanent: true,
+                })
+            }
+            return rules
+        })
+
+        const businessClass = Object.entries(businessClassSlugRedirects).flatMap(([oldSlug, newSlug]) => {
+            const rules = [
+                {
+                    source: `/business-class/${oldSlug}`,
+                    destination: `/business-class-booking/${newSlug}`,
+                    permanent: true,
+                },
+            ]
+            if (oldSlug !== newSlug) {
+                rules.push({
+                    source: `/business-class-booking/${oldSlug}`,
+                    destination: `/business-class-booking/${newSlug}`,
+                    permanent: true,
+                })
+                // After path move, old hub path + new short slug is unlikely; keep old long under booking path covered above.
+            }
+            // Also redirect old hub path with NEW slug if someone used /business-class/delta-airlines after shorten
+            if (oldSlug !== newSlug) {
+                rules.push({
+                    source: `/business-class/${newSlug}`,
+                    destination: `/business-class-booking/${newSlug}`,
+                    permanent: true,
+                })
+            }
+            return rules
+        })
+
+        return [...groupTravel, ...businessClass]
     },
 }
 

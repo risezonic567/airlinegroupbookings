@@ -38,9 +38,9 @@ function buildGroupContentHtml(primary, secondaries, h1) {
     const s3 = esc(list[3] || list[0] || `${primary} options`)
     const name = esc(airlineLabel(h1, primary))
     const opener = seedPick(primary, [
-        `When several travelers need the same itinerary, the search usually starts with <strong>${p}</strong>.`,
-        `Families, schools, sports teams, and corporate planners often begin with <strong>${p}</strong> when they want one clear plan.`,
-        `If your party is flying together, a focused <strong>${p}</strong> request saves time compared with booking seats one by one.`,
+        `When several travelers need the same itinerary, the search usually starts with ${p}.`,
+        `Families, schools, sports teams, and corporate planners often begin with ${p} when they want one clear plan.`,
+        `If your party is flying together, a focused ${p} request saves time compared with booking seats one by one.`,
     ])
     const why = seedPick(primary + 'why', [
         `${BRAND} helps you compare workable ${name} options, explain fare rules in plain language, and move to a quote when the details look right.`,
@@ -59,14 +59,14 @@ function buildGroupContentHtml(primary, secondaries, h1) {
 <li>Tell us origin, destination, and whether the trip is one-way or round-trip.</li>
 <li>Share approximate travel dates and how flexible the group can be.</li>
 <li>Confirm traveler count and any must-sit-together needs.</li>
-<li>Ask about <strong>${s0}</strong> if you want airline-side coordination clarified early.</li>
+<li>Ask about ${s0} if you want airline-side coordination clarified early.</li>
 <li>Review the outline with your organizer, then request a formal quote when ready.</li>
 </ol>
 <p>Prefer talking it through? Call or send the form on this site — either path reaches the same group desk workflow at ${BRAND}. If your committee still needs a week to vote on dates, say that up front so we prioritize flexible planning instead of rushing a deposit.</p>
 
 <h2>What to know before you request a quote</h2>
-<p>Most group itineraries work best when everyone is on the same flights. Before you lock dates, it helps to understand <strong>${s1}</strong> in everyday terms: what counts as a group request, when names are due, and how changes are handled after a hold is placed.</p>
-<p>We also walk through <strong>${s2}</strong> so your organizer knows what information we need for a clear next step — not a pile of vague screenshots. If budget is the priority, we will look at timing and routing ideas that often improve a <strong>${s3}</strong> conversation without promising numbers we cannot stand behind.</p>
+<p>Most group itineraries work best when everyone is on the same flights. Before you lock dates, it helps to understand ${s1} in everyday terms: what counts as a group request, when names are due, and how changes are handled after a hold is placed.</p>
+<p>We also walk through ${s2} so your organizer knows what information we need for a clear next step — not a pile of vague screenshots. If budget is the priority, we will look at timing and routing ideas that often improve a ${s3} conversation without promising numbers we cannot stand behind.</p>
 <ul>
 <li>Hold windows and deposits vary by airline and season — we explain what applies to your dates.</li>
 <li>Name changes and splits are easier when the lead traveler stays consistent.</li>
@@ -76,7 +76,7 @@ function buildGroupContentHtml(primary, secondaries, h1) {
 </ul>
 
 <h2>${name} group travel notes in plain language</h2>
-<p>Every carrier phrases rules differently, so we translate the parts that usually matter to organizers: who can request space, what a tentative hold means, and when money becomes non-refundable. You should leave the conversation knowing the practical meaning of <strong>${s1}</strong> for your route — not a wall of PDF jargon.</p>
+<p>Every carrier phrases rules differently, so we translate the parts that usually matter to organizers: who can request space, what a tentative hold means, and when money becomes non-refundable. You should leave the conversation knowing the practical meaning of ${s1} for your route — not a wall of PDF jargon.</p>
 <p>If your travelers are spread across a few nearby airports, tell us. Sometimes a slightly longer drive to a hub creates a cleaner ${name} itinerary and fewer missed connections for first-time flyers. That tradeoff is exactly what we review before anyone pays a deposit.</p>
 
 <h2>Benefits of planning ${name} group travel with ${BRAND}</h2>
@@ -109,28 +109,28 @@ function buildGroupContentHtml(primary, secondaries, h1) {
 <li>Align baggage expectations — especially sports gear, instruments, or medical devices.</li>
 <li>Share airport arrival windows so latecomers do not break the group flow.</li>
 <li>Decide who carries payment proof and emergency contacts.</li>
-<li>Reconfirm any seating or assistance requests that were noted during <strong>${s2}</strong>.</li>
+<li>Reconfirm any seating or assistance requests that were noted during ${s2}.</li>
 </ul>
 
 <h2>Practical checklist before you submit details</h2>
-<p>A few minutes of prep makes <strong>${s2}</strong> faster and more accurate:</p>
+<p>A few minutes of prep makes ${s2} faster and more accurate:</p>
 <ul>
 <li>List every city pair in order (including connections you already prefer).</li>
 <li>Note passport timing for international trips and any traveler who needs extra assistance.</li>
 <li>Decide who the contract lead will be for emails and payment questions.</li>
 <li>Flag baggage expectations, sports equipment, or instruments early.</li>
-<li>Ask us to clarify <strong>${s0}</strong> if you want airline desk involvement explained up front.</li>
+<li>Ask us to clarify ${s0} if you want airline desk involvement explained up front.</li>
 </ul>
 
 <h2>Frequently asked questions</h2>
 <h3>How many travelers do we usually need for ${p}?</h3>
-<p>Airlines often treat roughly ten or more passengers on the same itinerary as a group request, but exact rules depend on the carrier and route. Tell us your count and we will confirm whether <strong>${s1}</strong> style planning applies or if another approach is smarter.</p>
+<p>Airlines often treat roughly ten or more passengers on the same itinerary as a group request, but exact rules depend on the carrier and route. Tell us your count and we will confirm whether ${s1} style planning applies or if another approach is smarter.</p>
 <h3>Can you help if we only have rough dates?</h3>
 <p>Yes. Share a date range and flexibility notes. We can outline options first, then tighten dates once the group agrees — useful when people are still voting on the trip.</p>
 <h3>Will everyone sit together?</h3>
 <p>We always note seating priorities. Together seats depend on aircraft and how early the request is made, so earlier planning helps more than last-minute scrambling.</p>
 <h3>How do discounts work?</h3>
-<p>Group savings are not a single published coupon. Pricing depends on route, season, and inventory. When people ask about a <strong>${s3}</strong>, we compare realistic options and explain the tradeoffs before you commit.</p>
+<p>Group savings are not a single published coupon. Pricing depends on route, season, and inventory. When people ask about a ${s3}, we compare realistic options and explain the tradeoffs before you commit.</p>
 <h3>What happens after we request a quote?</h3>
 <p>We confirm the details, check availability patterns, and send a clear outline. You review it with your organizers, ask questions, and only move forward when the plan fits.</p>
 <h3>Can part of the group fly a different cabin?</h3>
@@ -139,7 +139,7 @@ function buildGroupContentHtml(primary, secondaries, h1) {
 <p>No. ${BRAND} writes original planning guidance and uses your search phrases — like ${p} and ${s0} — so the page stays useful and unique.</p>
 
 <h2>Ready for the next step?</h2>
-<p>If <strong>${p}</strong> is what you need — including help with ${list.map(esc).join(', ') || 'group flight planning'} — send your route and dates to ${BRAND}. We will keep the process human, clear, and focused on getting your party on the same flights with fewer surprises.</p>
+<p>If ${p} is what you need — including help with ${list.map(esc).join(', ') || 'group flight planning'} — send your route and dates to ${BRAND}. We will keep the process human, clear, and focused on getting your party on the same flights with fewer surprises.</p>
 `.trim()
 }
 
@@ -152,9 +152,9 @@ function buildBusinessContentHtml(primary, secondaries, h1) {
     const s2 = esc(list[2] || `${primary} tickets`)
     const name = esc(airlineLabel(h1, primary))
     const opener = seedPick(primary, [
-        `Looking for a calmer cabin for a long trip often starts with <strong>${p}</strong>.`,
-        `When comfort matters as much as schedule, travelers begin with <strong>${p}</strong> instead of settling for a rushed coach seat.`,
-        `Whether you are upgrading one organizer or seating a whole party forward, <strong>${p}</strong> is the search that gets the plan moving.`,
+        `Looking for a calmer cabin for a long trip often starts with ${p}.`,
+        `When comfort matters as much as schedule, travelers begin with ${p} instead of settling for a rushed coach seat.`,
+        `Whether you are upgrading one organizer or seating a whole party forward, ${p} is the search that gets the plan moving.`,
     ])
     const why = seedPick(primary + 'bc', [
         `${BRAND} helps you compare ${name} premium options, clarify what is included, and request a quote without the usual runaround.`,
@@ -172,13 +172,13 @@ function buildBusinessContentHtml(primary, secondaries, h1) {
 <li>Share origin, destination, and preferred travel dates (plus flexibility if you have it).</li>
 <li>Confirm how many business-cabin seats you need versus total travelers.</li>
 <li>Mention layover limits, alliance preferences, or must-arrive times.</li>
-<li>Ask about <strong>${s0}</strong> if a specific product or cabin name matters to your group.</li>
+<li>Ask about ${s0} if a specific product or cabin name matters to your group.</li>
 <li>Review the outline, then request a quote when the itinerary feels right.</li>
 </ol>
 <p>You can start from the quote form on this site or call our team — both routes reach specialists who handle premium and mixed-cabin group requests. If finance needs two options for approval, say so early and we will structure the outline that way.</p>
 
 <h2>What to compare before you book</h2>
-<p>Premium cabins differ by aircraft and route. Before you choose, we help you weigh schedule quality, connection risk, and value — including searches people make for <strong>${s1}</strong> and <strong>${s2}</strong>.</p>
+<p>Premium cabins differ by aircraft and route. Before you choose, we help you weigh schedule quality, connection risk, and value — including searches people make for ${s1} and ${s2}.</p>
 <ul>
 <li>Lie-flat versus recliner depends on aircraft; we note what usually operates your city pair.</li>
 <li>Lounge access and baggage rules can change the “real” value of an upgrade.</li>
@@ -186,18 +186,18 @@ function buildBusinessContentHtml(primary, secondaries, h1) {
 <li>Refund and change rules are often stricter in sale inventory — we flag that early.</li>
 <li>Red-eyes can look cheaper but may not help if your group needs to work or perform the next morning.</li>
 </ul>
-<p>If your brief includes a branded experience such as <strong>${s0}</strong>, say so up front so we do not waste time on cabins that will not match expectations.</p>
+<p>If your brief includes a branded experience such as ${s0}, say so up front so we do not waste time on cabins that will not match expectations.</p>
 
 <h2>${name} premium cabin notes</h2>
-<p>Product names change by aircraft and market, so we focus on what you will actually get on your dates: seat type, bag rules, and whether a connection risks a cabin downgrade. When travelers ask about <strong>${s1}</strong>, we explain seasonality and inventory instead of promising a forever-low fare.</p>
-<p>For city-pair searches that look like <strong>${s2}</strong>, send the airports you prefer and any “must arrive before” time. That detail often matters more than chasing the absolute lowest screenshot online.</p>
+<p>Product names change by aircraft and market, so we focus on what you will actually get on your dates: seat type, bag rules, and whether a connection risks a cabin downgrade. When travelers ask about ${s1}, we explain seasonality and inventory instead of promising a forever-low fare.</p>
+<p>For city-pair searches that look like ${s2}, send the airports you prefer and any “must arrive before” time. That detail often matters more than chasing the absolute lowest screenshot online.</p>
 
 <h2>Benefits of planning ${name} premium travel here</h2>
 <ul>
 <li><strong>Human comparison:</strong> side-by-side notes on timing and cabin type, not a wall of unsorted fares.</li>
 <li><strong>Group-aware seating:</strong> useful when only part of the party upgrades.</li>
-<li><strong>Budget honesty:</strong> we discuss when <strong>${s1}</strong> style pricing is realistic versus when peak dates simply cost more.</li>
-<li><strong>Ticket clarity:</strong> help understanding what <strong>${s2}</strong> searches usually include on your route.</li>
+<li><strong>Budget honesty:</strong> we discuss when ${s1} style pricing is realistic versus when peak dates simply cost more.</li>
+<li><strong>Ticket clarity:</strong> help understanding what ${s2} searches usually include on your route.</li>
 <li><strong>One thread for updates:</strong> schedule changes and questions stay with the same planning conversation.</li>
 <li><strong>Original guidance:</strong> content written for ${BRAND} organizers, not scraped from competitors.</li>
 </ul>
@@ -225,7 +225,7 @@ function buildBusinessContentHtml(primary, secondaries, h1) {
 <li>Decide exact upgrade count before final payment deadlines.</li>
 <li>Confirm passport validity and any visa timing for international arrivals.</li>
 <li>Note if anyone needs accessibility assistance or special meals.</li>
-<li>Ask us to prioritize <strong>${s0}</strong> product details when that cabin name is part of your brief.</li>
+<li>Ask us to prioritize ${s0} product details when that cabin name is part of your brief.</li>
 <li>Keep one lead contact for approvals so quotes do not stall in email chains.</li>
 </ul>
 
@@ -233,18 +233,18 @@ function buildBusinessContentHtml(primary, secondaries, h1) {
 <h3>Can we mix business and economy on one group trip?</h3>
 <p>Yes. Many organizers upgrade a few travelers and keep the rest in economy. Tell us the split early so ticketing and seating stay organized.</p>
 <h3>Are cheaper premium seats always available?</h3>
-<p>Not always. Inventory for <strong>${s1}</strong> style pricing moves with season and demand. Flexible dates and earlier requests improve the odds.</p>
+<p>Not always. Inventory for ${s1} style pricing moves with season and demand. Flexible dates and earlier requests improve the odds.</p>
 <h3>Do you book single travelers or only groups?</h3>
 <p>We can help with individual premium requests and with larger parties. Share the traveler count and we will recommend the cleanest path.</p>
 <h3>What should we send to get started on ${p}?</h3>
-<p>Route, dates, cabin count, and contact details for the lead traveler are enough. If you care about <strong>${s2}</strong> on a specific city pair, include that preference too.</p>
+<p>Route, dates, cabin count, and contact details for the lead traveler are enough. If you care about ${s2} on a specific city pair, include that preference too.</p>
 <h3>What happens after the quote?</h3>
 <p>You review the outline with your decision-makers, ask questions, and confirm only when the plan fits schedule and budget.</p>
 <h3>Will you guarantee a specific suite product?</h3>
-<p>We chase the product you ask for, including <strong>${s0}</strong> when it operates your route, and we tell you honestly when a different aircraft is scheduled.</p>
+<p>We chase the product you ask for, including ${s0} when it operates your route, and we tell you honestly when a different aircraft is scheduled.</p>
 
 <h2>Ready to compare options?</h2>
-<p>If you need <strong>${p}</strong> — including help with ${list.map(esc).join(', ') || 'premium cabin planning'} — reach out to ${BRAND}. We will keep the advice practical and the next steps clear.</p>
+<p>If you need ${p} — including help with ${list.map(esc).join(', ') || 'premium cabin planning'} — reach out to ${BRAND}. We will keep the advice practical and the next steps clear.</p>
 `.trim()
 }
 
@@ -305,7 +305,7 @@ export const groupTravelSeo = {
         "Delta Airlines Group Booking: Policy, Fares & Free Quote",
         "Need Delta Airlines group booking? Compare Delta group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "el-al-group-booking": gtSeo(
+    "el-al-airlines-group-booking": gtSeo(
         "el al group booking",
         [
         "el al group travel discount",
@@ -317,7 +317,7 @@ export const groupTravelSeo = {
         "EL AL Group Booking for 10+ Travelers | Free Quote",
         "Need EL AL group booking? Compare EL AL group fare policy, check group minimums and request a free group flight quote from our travel specialists. Call 24/7."
     ),
-    "klm-group-booking": gtSeo(
+    "klm-airlines-group-booking": gtSeo(
         "klm group booking",
         [
         "klm group travel policy",
@@ -329,7 +329,7 @@ export const groupTravelSeo = {
         "KLM Group Booking: Fares, Policy & Free Group Quote",
         "Need KLM group booking? Compare KLM group travel policy, check group minimums and request a free group flight quote from our travel specialists. Call 24/7."
     ),
-    "southwest-airlines-group-travel-booking": gtSeo(
+    "southwest-airlines-group-booking": gtSeo(
         "southwest airlines group travel",
         [
         "southwest group booking number",
@@ -341,7 +341,7 @@ export const groupTravelSeo = {
         "Southwest Airlines Group Travel: Policy, Fares & Free Quote",
         "Book Southwest Airlines group travel for 10+ passengers. Compare Southwest group travel discount and get a free group flight quote from our specialists."
     ),
-    "british-airways-group-travel-booking": gtSeo(
+    "british-airways-airlines-group-booking": gtSeo(
         "british airways group booking",
         [
         "british airways group travel desk",
@@ -353,7 +353,7 @@ export const groupTravelSeo = {
         "British Airways Group Booking: Policy, Fares & Free Quote",
         "Book British Airways group booking for 10+ passengers. Compare British Airways group discount and get a free group flight quote from our specialists. Call 24/7."
     ),
-    "finnair-group-travel-flight-booking": gtSeo(
+    "finnair-airlines-group-booking": gtSeo(
         "finnair group booking",
         [
         "finnair group travel desk",
@@ -365,7 +365,7 @@ export const groupTravelSeo = {
         "Finnair Group Booking: Group Fares, Policy & Quote",
         "Need Finnair group booking? Compare Finnair group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "alaska-airlines-group-travel": gtSeo(
+    "alaska-airlines-group-booking": gtSeo(
         "alaska airlines group travel",
         [
         "alaska airlines group booking number",
@@ -377,7 +377,7 @@ export const groupTravelSeo = {
         "Alaska Airlines Group Travel: Policy, Fares & Free Quote",
         "Book Alaska Airlines group travel for 10+ passengers. Compare Alaska Airlines group discount and get a free group flight quote from our specialists. Call 24/7."
     ),
-    "jetblue-group-travel-flight-booking": gtSeo(
+    "jetblue-airlines-group-booking": gtSeo(
         "jetblue group travel",
         [
         "jetblue group booking number",
@@ -389,7 +389,7 @@ export const groupTravelSeo = {
         "JetBlue Group Travel for 10+ Travelers | Free Quote",
         "Need JetBlue group travel? Compare JetBlue group travel discount, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "qatar-airways-group-travel": gtSeo(
+    "qatar-airways-airlines-group-booking": gtSeo(
         "qatar airways group booking",
         [
         "qatar airways group travel desk",
@@ -401,7 +401,7 @@ export const groupTravelSeo = {
         "Qatar Airways Group Booking: Policy, Fares & Free Quote",
         "Book Qatar Airways group booking for 10+ passengers. Compare Qatar Airways group fare policy and get a free group flight quote from our specialists. Call 24/7."
     ),
-    "avianca-airlines-group-travel": gtSeo(
+    "avianca-airlines-group-booking": gtSeo(
         "avianca airlines group travel",
         [
         "avianca group booking number",
@@ -413,7 +413,7 @@ export const groupTravelSeo = {
         "Avianca Airlines Group Travel: Policy, Fares & Free Quote",
         "Book Avianca Airlines group travel for 10+ passengers. Compare Avianca group travel discount and get a free group flight quote from our specialists. Call 24/7."
     ),
-    "emirates-group-travel-flight-booking": gtSeo(
+    "emirates-airlines-group-booking": gtSeo(
         "emirates group booking",
         [
         "emirates group travel desk",
@@ -425,7 +425,7 @@ export const groupTravelSeo = {
         "Emirates Group Booking: Policy, Fares & Free Quote",
         "Need Emirates group booking? Compare Emirates group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "air-france-group-booking": gtSeo(
+    "air-france-airlines-group-booking": gtSeo(
         "air france group booking",
         [
         "air france group travel desk",
@@ -449,7 +449,7 @@ export const groupTravelSeo = {
         "American Airlines Group Booking: Policy, Fares & Free Quote",
         "Book American Airlines group booking for 10+ passengers. Compare American Airlines group fare policy and get a free group flight quote from our specialists."
     ),
-    "lufthansa-group-booking": gtSeo(
+    "lufthansa-airlines-group-booking": gtSeo(
         "lufthansa group booking",
         [
         "lufthansa group travel desk",
@@ -461,7 +461,7 @@ export const groupTravelSeo = {
         "Lufthansa Group Booking: Policy, Fares & Free Quote",
         "Need Lufthansa group booking? Compare Lufthansa group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "swiss-air-group-booking": gtSeo(
+    "swiss-air-airlines-group-booking": gtSeo(
         "swiss air group booking",
         [
         "swiss airlines group travel desk",
@@ -485,7 +485,7 @@ export const groupTravelSeo = {
         "Spirit Airlines Group Booking: Policy, Fares & Free Quote",
         "Book Spirit Airlines group booking for 10+ passengers. Compare Spirit Airlines group fare policy and get a free group flight quote from our specialists."
     ),
-    "aeromexico-group-booking-and-reservations": gtSeo(
+    "aeromexico-airlines-group-booking": gtSeo(
         "aeromexico group booking",
         [
         "aeromexico group travel desk",
@@ -526,7 +526,7 @@ export const groupTravelSeo = {
 
 /** Business class pages — /business-class-booking/[slug] */
 export const businessClassSeo = {
-    "american-airlines-business-class-travel-flight-booking": bcSeo(
+    "american-airlines": bcSeo(
         "american airlines business class booking",
         [
         "american airlines flagship business class",
@@ -537,7 +537,7 @@ export const businessClassSeo = {
         "American Airlines Business Class Booking: Deals & Free Quote",
         "American Airlines business class made easy. Explore American Airlines Flagship business class and AA business class deals, then request a free quote. Call 24/7."
     ),
-    "delta-airlines-business-class-travel": bcSeo(
+    "delta-airlines": bcSeo(
         "delta one business class booking",
         [
         "delta business class deals",
@@ -548,7 +548,7 @@ export const businessClassSeo = {
         "Delta One Business Class Booking: Deals, Fares & Free Quote",
         "Book Delta Air Lines business class tickets. Compare Delta business class deals and Delta One cheap tickets, then request a free quote from our specialists."
     ),
-    "alaska-airlines-business-class-travel": bcSeo(
+    "alaska-airlines": bcSeo(
         "alaska airlines business class booking",
         [
         "alaska airlines first class vs business",
@@ -559,7 +559,7 @@ export const businessClassSeo = {
         "Alaska Airlines Business Class Booking | Deals & Free Quote",
         "Alaska Airlines business class made easy. Explore Alaska Airlines first class vs business and Alaska business class deals, then request a free quote. Call 24/7."
     ),
-    "lufthansa-airlines-business-class-travel": bcSeo(
+    "lufthansa-airlines": bcSeo(
         "lufthansa business class booking",
         [
         "lufthansa business class deals USA",
@@ -570,7 +570,7 @@ export const businessClassSeo = {
         "Lufthansa Business Class Booking: Deals, Fares & Free Quote",
         "Lufthansa business class made easy. Explore Lufthansa business class deals USA and cheap Lufthansa business class tickets, then request a free quote. Call 24/7."
     ),
-    "klm-business-class-travel-experience": bcSeo(
+    "klm": bcSeo(
         "klm business class booking",
         [
         "klm business class deals",
@@ -581,7 +581,7 @@ export const businessClassSeo = {
         "KLM Business Class Booking: Deals, Fares & Free Quote",
         "Book KLM business class tickets. Compare KLM business class deals and KLM World Business Class tickets, then request a free quote from our specialists."
     ),
-    "el-al-business-class-travel": bcSeo(
+    "el-al": bcSeo(
         "el al business class booking",
         [
         "el al business class new york to tel aviv",
@@ -592,7 +592,7 @@ export const businessClassSeo = {
         "EL AL Business Class Booking: Deals, Fares & Free Quote",
         "EL AL business class made easy. Explore EL AL business class New York to Tel Aviv and EL AL business class deals from USA, then request a free quote. Call 24/7."
     ),
-    "united-airlines-business-class-travel": bcSeo(
+    "united-airlines": bcSeo(
         "united airlines business class booking",
         [
         "united polaris business class deals",
@@ -603,7 +603,7 @@ export const businessClassSeo = {
         "United Airlines Business Class Booking | Deals & Free Quote",
         "United Airlines business class made easy. Explore United Polaris business class deals and cheap United business class flights USA, then request a free quote."
     ),
-    "british-airways-business-class-travel": bcSeo(
+    "british-airways": bcSeo(
         "british airways business class booking",
         [
         "british airways business class new york to london",
@@ -614,7 +614,7 @@ export const businessClassSeo = {
         "British Airways Business Class Booking | Deals & Free Quote",
         "British Airways business class made easy. Explore British Airways business class New York to London and BA Club World deals from USA, then request a free quote."
     ),
-    "aeromexico-clase-premier-business-class": bcSeo(
+    "aeromexico-clase-premier": bcSeo(
         "aeromexico business class booking",
         [
         "aeromexico clase premier deals",
@@ -625,7 +625,7 @@ export const businessClassSeo = {
         "Aeromexico Business Class Booking: Deals, Fares & Free Quote",
         "Aeromexico business class made easy. Explore Aeromexico Clase Premier deals and Aeromexico business class USA to Mexico City, then request a free quote."
     ),
-    "qatar-airways-business-class-travel": bcSeo(
+    "qatar-airways": bcSeo(
         "qatar airways business class booking",
         [
         "qatar airways qsuite from usa",
@@ -636,7 +636,7 @@ export const businessClassSeo = {
         "Qatar Airways Business Class Booking | Deals & Free Quote",
         "Qatar Airways business class made easy. Explore Qatar Airways Qsuite from USA and Qatar business class New York to Doha, then request a free quote. Call 24/7."
     ),
-    "emirates-airlines-business-class-travel": bcSeo(
+    "emirates-airlines": bcSeo(
         "emirates business class booking",
         [
         "emirates business class new york to dubai",
@@ -647,7 +647,7 @@ export const businessClassSeo = {
         "Emirates Business Class Booking: Deals, Fares & Free Quote",
         "Emirates business class made easy. Explore Emirates business class New York to Dubai and Emirates business class deals from USA, then request a free quote."
     ),
-    "air-france-business-class-travel": bcSeo(
+    "air-france": bcSeo(
         "air france business class booking",
         [
         "air france business class usa to paris",
@@ -658,7 +658,7 @@ export const businessClassSeo = {
         "Air France Business Class Booking: Deals, Fares & Free Quote",
         "Air France business class made easy. Explore Air France business class USA to Paris and Air France lie flat business class tickets, then request a free quote."
     ),
-    "turkish-airlines-business-class-travel": bcSeo(
+    "turkish-airlines": bcSeo(
         "turkish airlines business class booking",
         [
         "turkish airlines business class usa to istanbul",
@@ -669,7 +669,7 @@ export const businessClassSeo = {
         "Turkish Airlines Business Class Booking | Deals & Free Quote",
         "Book Turkish Airlines business class tickets. Compare Turkish Airlines business class USA to Istanbul, then request a free quote from our specialists."
     ),
-    "singapore-airlines-business-class-travel": bcSeo(
+    "singapore-airlines": bcSeo(
         "singapore airlines business class booking",
         [
         "singapore airlines business class from usa",
@@ -680,7 +680,7 @@ export const businessClassSeo = {
         "Singapore Airlines Business Class Booking | Get a Free Quote",
         "Book Singapore Airlines business class tickets. Compare Singapore Airlines business class from USA, then request a free quote from our specialists. Call 24/7."
     ),
-    "swiss-airlines-business-class-travel": bcSeo(
+    "swiss-airlines": bcSeo(
         "swiss airlines business class booking",
         [
         "swiss business class usa to zurich",
@@ -691,7 +691,7 @@ export const businessClassSeo = {
         "Swiss Airlines Business Class Booking | Deals & Free Quote",
         "Swiss Airlines business class made easy. Explore Swiss business class USA to Zurich and Swiss business class deals from New York, then request a free quote."
     ),
-    "japan-airlines-business-class-travel": bcSeo(
+    "japan-airlines": bcSeo(
         "japan airlines business class booking",
         [
         "jal business class usa to tokyo",
@@ -702,7 +702,7 @@ export const businessClassSeo = {
         "Japan Airlines Business Class Booking | Deals & Free Quote",
         "Japan Airlines business class made easy. Explore JAL business class USA to Tokyo and JAL business class Los Angeles to Tokyo, then request a free quote."
     ),
-    "hawaiian-airlines-business-class-flights-travel": bcSeo(
+    "hawaiian-airlines": bcSeo(
         "hawaiian airlines business class booking",
         [
         "hawaiian business class los angeles to honolulu",
@@ -713,7 +713,7 @@ export const businessClassSeo = {
         "Hawaiian Airlines Business Class Booking: Deals & Free Quote",
         "Book Hawaiian Airlines business class tickets. Compare Hawaiian business class Los Angeles to Honolulu, then request a free quote from our specialists."
     ),
-    "copa-airlines-business-class-flights": bcSeo(
+    "copa-airlines": bcSeo(
         "copa airlines business class booking",
         [
         "copa airlines business class miami to panama city",
@@ -724,7 +724,7 @@ export const businessClassSeo = {
         "Copa Airlines Business Class Booking | Deals & Free Quote",
         "Copa Airlines business class made easy. Explore Copa Airlines Dreams business class and cheap Copa business class flights USA, then request a free quote."
     ),
-    "etihad-airways-business-class-flights": bcSeo(
+    "etihad-airways": bcSeo(
         "etihad airways business class booking",
         [
         "etihad business class new york to abu dhabi",
@@ -735,7 +735,7 @@ export const businessClassSeo = {
         "Etihad Airways Business Class Booking | Deals & Free Quote",
         "Etihad Airways business class made easy. Explore Etihad business class New York to Abu Dhabi and Etihad Business Studio tickets, then request a free quote."
     ),
-    "eva-air-business-class-flights-and-tickets": bcSeo(
+    "eva-air": bcSeo(
         "eva air business class booking",
         [
         "eva air business class los angeles to taipei",
@@ -746,7 +746,7 @@ export const businessClassSeo = {
         "EVA Air Business Class Booking: Deals, Fares & Free Quote",
         "EVA Air business class made easy. Explore EVA Air business class Los Angeles to Taipei and EVA Air business class from USA, then request a free quote."
     ),
-    "cathay-pacific-business-class-flights": bcSeo(
+    "cathay-pacific": bcSeo(
         "cathay pacific business class booking",
         [
         "cathay pacific business class usa to hong kong",
@@ -757,7 +757,7 @@ export const businessClassSeo = {
         "Cathay Pacific Business Class Booking | Deals & Free Quote",
         "Book Cathay Pacific business class tickets. Compare Cathay Pacific business class USA to Hong Kong, then request a free quote from our specialists. Call 24/7."
     ),
-    "finnair-business-class": bcSeo(
+    "finnair": bcSeo(
         "finnair business class booking",
         [
         "finnair business class usa to helsinki",
@@ -768,7 +768,7 @@ export const businessClassSeo = {
         "Finnair Business Class Booking: Deals, Fares & Free Quote",
         "Finnair business class made easy. Explore Finnair business class USA to Helsinki and Finnair business class New York to Helsinki, then request a free quote."
     ),
-    "air-canada-business-class-flights": bcSeo(
+    "air-canada": bcSeo(
         "air canada business class booking",
         [
         "air canada business class usa to toronto",
@@ -779,7 +779,7 @@ export const businessClassSeo = {
         "Air Canada Business Class Booking: Deals, Fares & Free Quote",
         "Air Canada business class made easy. Explore Air Canada business class USA to Toronto and Air Canada Signature Class from USA, then request a free quote."
     ),
-    "iberia-airlines-business-class-flights": bcSeo(
+    "iberia-airlines": bcSeo(
         "iberia airlines business class booking",
         [
         "iberia business class usa to madrid",
@@ -790,7 +790,7 @@ export const businessClassSeo = {
         "Iberia Airlines Business Class Booking | Deals & Free Quote",
         "Iberia Airlines business class made easy. Explore Iberia business class USA to Madrid and Iberia business class deals from New York, then request a free quote."
     ),
-    "aer-lingus-business-class-flights": bcSeo(
+    "aer-lingus": bcSeo(
         "aer lingus business class booking",
         [
         "aer lingus business class usa to dublin",
@@ -801,7 +801,7 @@ export const businessClassSeo = {
         "Aer Lingus Business Class Booking: Deals, Fares & Free Quote",
         "Aer Lingus business class made easy. Explore Aer Lingus business class USA to Dublin and Aer Lingus business class deals, then request a free quote. Call 24/7."
     ),
-    "all-nippon-airways-business-class-flights": bcSeo(
+    "all-nippon-airways": bcSeo(
         "ana business class booking",
         [
         "ana business class usa to tokyo",
@@ -812,7 +812,7 @@ export const businessClassSeo = {
         "ANA Business Class Booking: Deals, Fares & Free Quote",
         "Book ANA business class booking with expert help. See ANA business class USA to Tokyo and ANA business class Los Angeles to Tokyo, then get a free quote online."
     ),
-    "fiji-airways-business-class-flights": bcSeo(
+    "fiji-airways": bcSeo(
         "fiji airways business class booking",
         [
         "fiji airways business class los angeles to nadi",
@@ -823,7 +823,7 @@ export const businessClassSeo = {
         "Fiji Airways Business Class Booking | Deals & Free Quote",
         "Fiji Airways business class made easy. Explore Fiji Airways business class from USA and Fiji Airways A350 business class tickets, then request a free quote."
     ),
-    "southwest-airlines-business-class-flights": bcSeo(
+    "southwest-airlines": bcSeo(
         "southwest airlines business select booking",
         [
         "southwest business select fare benefits",
@@ -834,7 +834,7 @@ export const businessClassSeo = {
         "Southwest Airlines Business Select Booking | Free Quote",
         "Book Southwest Airlines business class tickets. Compare Southwest Business Select fare benefits, then request a free quote from our specialists. Call 24/7."
     ),
-    "avianca-airlines-business-class-flights": bcSeo(
+    "avianca-airlines": bcSeo(
         "avianca airlines business class booking",
         [
         "avianca insignia business class deals",
@@ -845,7 +845,7 @@ export const businessClassSeo = {
         "Avianca Airlines Business Class Booking | Deals & Free Quote",
         "Avianca Airlines business class made easy. Explore Avianca Insignia business class deals and Avianca business class USA to Colombia, then request a free quote."
     ),
-    "spirit-airlines-business-class-flights": bcSeo(
+    "spirit-airlines": bcSeo(
         "spirit airlines big front seat booking",
         [
         "spirit big front seat deals",
@@ -856,7 +856,7 @@ export const businessClassSeo = {
         "Spirit Airlines Big Front Seat Booking | Deals & Free Quote",
         "Spirit Airlines business class made easy. Explore Spirit Big Front Seat deals and Spirit Big Front Seat vs first class, then request a free quote. Call 24/7."
     ),
-    "thai-airways-business-class-flights": bcSeo(
+    "thai-airways": bcSeo(
         "thai airways business class booking",
         [
         "thai airways business class usa to bangkok",
@@ -867,7 +867,7 @@ export const businessClassSeo = {
         "Thai Airways Business Class Booking | Deals & Free Quote",
         "Thai Airways business class made easy. Explore Thai Airways business class USA to Bangkok and Thai Airways Royal Silk Class deals, then request a free quote."
     ),
-    "qantas-airways-business-class-flights": bcSeo(
+    "qantas-airways": bcSeo(
         "qantas business class booking",
         [
         "qantas business class usa to sydney",
@@ -878,7 +878,7 @@ export const businessClassSeo = {
         "Qantas Business Class Booking: Deals, Fares & Free Quote",
         "Qantas Airways business class made easy. Explore Qantas business class USA to Sydney and Qantas business class Los Angeles to Sydney, then request a free quote."
     ),
-    "tap-air-portugal-business-class-flights": bcSeo(
+    "tap-air-portugal": bcSeo(
         "tap air portugal business class booking",
         [
         "tap business class usa to lisbon",
@@ -889,7 +889,7 @@ export const businessClassSeo = {
         "TAP Air Portugal Business Class Booking | Deals & Free Quote",
         "TAP Air Portugal business class made easy. Explore TAP business class USA to Lisbon and TAP business class New York to Lisbon, then request a free quote."
     ),
-    "latam-airlines-business-class-flights": bcSeo(
+    "latam-airlines": bcSeo(
         "latam airlines business class booking",
         [
         "latam business class miami to south america",
@@ -900,7 +900,7 @@ export const businessClassSeo = {
         "LATAM Airlines Business Class Booking | Deals & Free Quote",
         "LATAM Airlines business class made easy. Explore LATAM business class Miami to South America and LATAM premium business class deals, then request a free quote."
     ),
-    "tarom-airlines-business-class-flights": bcSeo(
+    "tarom-airlines": bcSeo(
         "tarom business class booking",
         [
         "tarom business class usa to bucharest",
@@ -911,7 +911,7 @@ export const businessClassSeo = {
         "TAROM Business Class Booking: Deals, Fares & Free Quote",
         "Book TAROM business class booking with expert help. See TAROM business class USA to Bucharest and TAROM business class deals, then get a free quote online."
     ),
-    "icelandair-business-class-flights": bcSeo(
+    "icelandair": bcSeo(
         "icelandair business class booking",
         [
         "icelandair saga premium deals",
@@ -922,7 +922,7 @@ export const businessClassSeo = {
         "Icelandair Business Class Booking: Deals, Fares & Free Quote",
         "Book Icelandair business class booking with expert help. See Icelandair Saga Premium deals and Icelandair Saga Premium vs economy, then get a free quote online."
     ),
-    "bulgaria-air-business-class-flights": bcSeo(
+    "bulgaria-air": bcSeo(
         "bulgaria air business class booking",
         [
         "bulgaria air business class usa to sofia",
@@ -933,7 +933,7 @@ export const businessClassSeo = {
         "Bulgaria Air Business Class Booking | Deals & Free Quote",
         "Bulgaria Air business class made easy. Explore Bulgaria Air business class USA to Sofia and Bulgaria Air business class deals, then request a free quote."
     ),
-    "aerolineas-argentinas-business-class": bcSeo(
+    "aerolineas-argentinas": bcSeo(
         "aerolineas argentinas business class booking",
         [
         "aerolineas argentinas business class miami to buenos aires",
