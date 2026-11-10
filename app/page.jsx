@@ -28,7 +28,7 @@ export default function HomePage() {
         <PageStructuredData name={seo.metaTitle} description={seo.metaDescription} path="/" />
         <section className="home-hero relative isolate overflow-visible">
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-                <div className="absolute inset-0 -z-20 bg-cover bg-[position:62%_center]" style={{ backgroundImage: "url('/images/Airline Group Booking Webside Banner.jpg.jpeg')" }} />
+                <div className="absolute inset-0 -z-20 bg-cover bg-[position:62%_center]" style={{ backgroundImage: "url('/images/Airline Group Booking Webside Banner.jpg.jpeg.png')" }} />
                 <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/70 to-[#101a3d]/10" />
             </div>
             <div className="mx-auto flex max-w-[1440px] items-center px-5 pt-6 pb-8 sm:px-8 sm:pt-8 sm:pb-10 lg:px-10 lg:pt-10 lg:pb-12">
