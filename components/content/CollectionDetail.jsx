@@ -102,7 +102,7 @@ export default function CollectionDetail({ item, kind, related }) {
                         )}
 
                         <Link
-                            href="/#booking"
+                            href="/contact"
                             className="mt-9 inline-flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-md font-bold text-white transition hover:bg-blue-800"
                         >
                             {isBusinessClass ? 'Request a travel quote' : 'Request a group quote'}{' '}

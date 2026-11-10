@@ -27,7 +27,7 @@ const mainPages = [
     { href: '/airlines', label: 'Airlines' },
     { href: '/contact', label: 'Contact Us' },
     { href: '/private-jet-charter', label: 'Private Jet Charter' },
-    { href: '/#booking', label: 'Request a Quote' },
+    { href: '/contact', label: 'Request a Quote' },
 ]
 
 const legalPages = [

@@ -3,11 +3,15 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import ContactForm from '../../components/contact/ContactForm'
 import contactDetails from '../../data/contact'
 import PageStructuredData from '../../components/seo/PageStructuredData'
+import { mainPageSeo } from '../../data/mainPageSeo'
 import { createPageMetadata } from '../../lib/seo'
 
+const seo = mainPageSeo.contact
+const quoteSeo = mainPageSeo.requestQuote
+
 export const metadata = createPageMetadata({
-    title: 'Group Flight Booking Phone Number | Airline Group Bookings',
-    description: 'Need a group flight booking phone number or group travel booking contact? Request a group flight quote and get group airline booking help 24/7 from our team.',
+    title: seo.metaTitle,
+    description: seo.metaDescription,
     path: '/contact',
 })
 
@@ -71,13 +75,23 @@ function DetailCard({ title, detail, href, Icon }) {
 export default function ContactPage() {
     return (
         <main>
-            <PageStructuredData name="Group Flight Booking Phone Number | Airline Group Bookings" description="Need a group flight booking phone number or group travel booking contact? Request a group flight quote and get group airline booking help 24/7 from our team." path="/contact" type="ContactPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact Us', path: '/contact' }]} />
+            <PageStructuredData name={seo.metaTitle} description={seo.metaDescription} path="/contact" type="ContactPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact Us', path: '/contact' }]} />
 
             <section className=" px-5 py-14 text-center text-white sm:px-8 sm:py-20" style={{ backgroundImage: "url('/images/Contact as banner.jpg.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center', height: '400px', width: '100%' }}>
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">We’re here to help</p>
-                    <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Group Flight Booking <span className="text-blue-200">Phone Number</span></h1>
-                    <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-blue-50">Use our group travel booking contact to request a group flight quote or get group airline booking help 24/7 — call or send your trip details anytime.</p>
+                    <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Contact Us: Group Flight Booking <span className="text-blue-200">Phone & Support</span></h1>
+                    <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-blue-50">Call our group flight booking phone number or use our group travel booking contact to request a group flight quote — group airline booking help 24/7 for your team or family.</p>
+                </div>
+            </section>
+
+            <section id="request-quote" className="scroll-mt-8 bg-white py-12 sm:py-14">
+                <div className="mx-auto max-w-7xl px-5 text-center sm:px-8 lg:px-10">
+                    <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-700">Request a quote</p>
+                    <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{quoteSeo.h1}</h2>
+                    <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-600">
+                        Request a free group flight quote in minutes. Share your route, dates, and group size to get group airfare quote online with clear options from our specialists — then send the form below or call us anytime.
+                    </p>
                 </div>
             </section>
 

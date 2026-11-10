@@ -5,7 +5,6 @@ export const homeFaqs = {
     secondaries: [
         'group flight booking for 10 or more passengers',
         'book group flights online',
-        'free group flight quote',
         'group airline tickets quote',
         'group travel flight deals USA',
     ],
@@ -28,11 +27,6 @@ export const homeFaqs = {
                 'Yes. You can book group flights online by sharing your route, dates, and traveler count through our quote form, then reviewing the outline with a specialist. Prefer a call? We can walk through the same details by phone so your organizers stay aligned.',
         },
         {
-            question: 'How do I get a free group flight quote?',
-            answer:
-                'Request a free group flight quote by sending origin, destination, travel window, cabin preference, and how many people are traveling. We check workable options and reply with a plain-language outline — no pressure to commit until the plan fits.',
-        },
-        {
             question: 'What is a group airline tickets quote used for?',
             answer:
                 'A group airline tickets quote helps your lead traveler compare total cost, timing, and rules before deposits or names are due. It is useful when a committee needs approval, or when you want one document everyone can review together.',
@@ -53,15 +47,15 @@ export const homeFaqs = {
 export const dealsFaqs = {
     primary: 'group flight deals',
     secondaries: [
-        'popular group flight deals',
-        'trending group travel deals',
         'cheap group airfare deals USA',
         'last minute group flight deals',
         'group discount on airline tickets',
         'group travel offers',
+        'popular group flight deals',
+        'trending group travel deals',
     ],
     heading: 'Group Flight Deals FAQ',
-    intro: 'Straight answers about group flight deals — how popular and trending offers work, what “cheap” really means, and how discounts are quoted.',
+    intro: 'Straight answers about group flight deals — how cheap offers work, what last-minute options look like, and how discounts are quoted.',
     items: [
         {
             question: 'What counts as group flight deals on this page?',
@@ -69,14 +63,9 @@ export const dealsFaqs = {
                 'Group flight deals are trip ideas and offer themes we use to start a real quote for parties flying together. They are not random coupon codes — each deal still depends on your route, dates, and how many travelers share the same itinerary.',
         },
         {
-            question: 'How do popular group flight deals get chosen?',
+            question: 'Where can I see popular group flight deals?',
             answer:
-                'Popular group flight deals usually reflect routes and trip types organizers ask about often — reunions, school trips, sports travel, and corporate meetings. We highlight those themes so you can jump into planning faster with Airline Group Bookings.',
-        },
-        {
-            question: 'What are trending group travel deals right now?',
-            answer:
-                'Trending group travel deals shift with season, school calendars, and event schedules. Browse the cards on this page, then share your cities and dates so we can check what is actually available for your party instead of relying on outdated screenshots.',
+                'Popular group flight deals are highlighted near the top of this Deals page, alongside trending group travel deals for teams, families, and schools. Pick a theme, then contact us for a free group flight quote.',
         },
         {
             question: 'Can you help with cheap group airfare deals USA groups are searching for?',
@@ -96,7 +85,7 @@ export const dealsFaqs = {
         {
             question: 'Where can I see current group travel offers?',
             answer:
-                'Start with the group travel offers listed on this Deals page, then request a quote with your headcount and preferred dates. That turns a general offer into a concrete outline your organizers can approve.',
+                'Start with the group travel offers listed on this Deals page, then contact Airline Group Bookings with your headcount and preferred dates. That turns a general offer into a concrete outline your organizers can approve.',
         },
     ],
 }

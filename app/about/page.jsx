@@ -3,7 +3,10 @@ import Link from 'next/link'
 import { ArrowRight, Home, Phone } from 'lucide-react'
 import contactDetails from '../../data/contact'
 import PageStructuredData from '../../components/seo/PageStructuredData'
+import { mainPageSeo } from '../../data/mainPageSeo'
 import { createPageMetadata } from '../../lib/seo'
+
+const seo = mainPageSeo.about
 
 const storyParagraphs = [
     'Airline Group Bookings is a group flight booking company USA travelers trust when families, corporate teams, student groups, and event organizers need to fly together. We act as your airline group reservation agency so the details feel clear from the first quote.',
@@ -12,15 +15,15 @@ const storyParagraphs = [
 ]
 
 export const metadata = createPageMetadata({
-    title: 'Group Flight Booking Company USA | Airline Group Bookings',
-    description: 'We’re a group flight booking company USA travelers trust for smooth planning. Our group travel booking specialists handle airline group reservations with clear quotes and personal support.',
+    title: seo.metaTitle,
+    description: seo.metaDescription,
     path: '/about',
 })
 
 export default function AboutPage() {
     return (
         <main>
-            <PageStructuredData name="Group Flight Booking Company USA | Airline Group Bookings" description="We’re a group flight booking company USA travelers trust for smooth planning. Our group travel booking specialists handle airline group reservations with clear quotes and personal support." path="/about" type="AboutPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }]} />
+            <PageStructuredData name={seo.metaTitle} description={seo.metaDescription} path="/about" type="AboutPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }]} />
             <section className="relative isolate flex min-h-[270px] items-center justify-center overflow-hidden sm:min-h-[320px] lg:min-h-[360px]">
                 <Image
                     src="/images/Aboutus.jpg.jpeg"
@@ -33,10 +36,10 @@ export default function AboutPage() {
                 {/* <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#19244d]/90 via-[#202d60]/75 to-[#263673]/55" /> */}
                 <div className="mx-auto w-full max-w-7xl px-5 py-14 text-center text-white sm:px-8 sm:py-16">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-                        A Group Flight Booking Company <span className="text-[#ffcaca]">USA</span> Teams Rely On
+                        Trusted Group Flight Booking Company in the <span className="text-[#ffcaca]">USA</span>
                     </h1>
                     <p className="mx-auto mt-4 max-w-xl text-base text-blue-50 sm:text-lg">
-                        Trusted group ticket booking with specialists who keep your trip plans clear and simple.
+                        Meet our group travel booking specialists — a trusted group ticket booking service and airline group reservation agency with clear quotes and 24/7 support.
                     </p>
                     <nav aria-label="Breadcrumb" className="mt-6 flex items-center justify-center gap-2 text-sm text-blue-100">
                         <Link href="/" className="inline-flex items-center gap-1.5 transition hover:text-white">
@@ -76,7 +79,7 @@ export default function AboutPage() {
                         </div>
                         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                             <Link
-                                href="/#booking"
+                                href="/contact"
                                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#263673] px-6 py-3 text-sm font-semibold text-white shadow-md shadow-blue-900/15 transition hover:-translate-y-0.5 hover:bg-[#202d60] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
                             >
                                 Get a Free Quote <ArrowRight size={17} aria-hidden="true" />

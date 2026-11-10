@@ -251,13 +251,15 @@ function buildBusinessContentHtml(primary, secondaries, h1) {
 /**
  * Build SEO + on-page copy with EVERY primary + secondary phrase included.
  * kind: 'group' | 'business'
+ * metaTitle / metaDescription: exact sheet values (title already includes brand)
  */
-function seo(primary, secondaries = [], h1, kind = 'group') {
+function seo(primary, secondaries = [], h1, kind = 'group', metaTitle, metaDescription) {
     const list = (secondaries || []).map((s) => String(s).trim()).filter(Boolean)
     const heading = h1 || primary.replace(/\b\w/g, (c) => c.toUpperCase())
-    const metaDescription = list.length
+    const finalMetaTitle = metaTitle || `${heading} | ${BRAND}`
+    const finalMetaDescription = metaDescription || (list.length
         ? `Need ${primary}? Get help with ${list.join(', ')}. ${BRAND} makes the next steps clear for your trip.`
-        : `Need ${primary}? ${BRAND} makes the next steps clear for your trip.`
+        : `Need ${primary}? ${BRAND} makes the next steps clear for your trip.`)
     const onPageCopy = list.length
         ? `Looking for ${primary}? ${BRAND} can help you with ${list.join(', ')}. Share your route, dates, and traveler count — we'll compare workable options and explain fare details in plain language before you request a quote.`
         : `Looking for ${primary}? ${BRAND} can help you compare options and request a clear quote.`
@@ -269,8 +271,8 @@ function seo(primary, secondaries = [], h1, kind = 'group') {
         : buildGroupContentHtml(primary, list, heading)
 
     return {
-        metaTitle: `${heading} | ${BRAND}`,
-        metaDescription,
+        metaTitle: finalMetaTitle,
+        metaDescription: finalMetaDescription,
         h1: heading,
         tagline: heading,
         onPageCopy,
@@ -281,312 +283,677 @@ function seo(primary, secondaries = [], h1, kind = 'group') {
     }
 }
 
-function gtSeo(primary, secondaries, h1) {
-    return seo(primary, secondaries, h1, 'group')
+function gtSeo(primary, secondaries, h1, metaTitle, metaDescription) {
+    return seo(primary, secondaries, h1, 'group', metaTitle, metaDescription)
 }
 
-function bcSeo(primary, secondaries, h1) {
-    return seo(primary, secondaries, h1, 'business')
+function bcSeo(primary, secondaries, h1, metaTitle, metaDescription) {
+    return seo(primary, secondaries, h1, 'business', metaTitle, metaDescription)
 }
 
 /** Group travel airline pages — /flights/[slug] */
 export const groupTravelSeo = {
-    'delta-airlines-group-booking': gtSeo(
-        'delta airlines group booking',
-        ['delta group travel desk', 'delta group booking minimum passengers', 'delta group fare policy', 'delta group flight discount'],
-        'Delta Airlines Group Booking'
+    "delta-airlines-group-booking": gtSeo(
+        "delta airlines group booking",
+        [
+        "delta group travel desk",
+        "delta group booking minimum passengers",
+        "delta group fare policy",
+        "delta group flight discount"
+        ],
+        "Delta Airlines Group Booking for 10+ Passengers",
+        "Delta Airlines Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Need Delta Airlines group booking? Compare Delta group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    'el-al-group-booking': gtSeo(
-        'el al group booking',
-        ['el al group travel discount', 'el al group flight tickets', 'book el al flights for group', 'el al group fare policy'],
-        'EL AL Group Booking'
+    "el-al-group-booking": gtSeo(
+        "el al group booking",
+        [
+        "el al group travel discount",
+        "el al group flight tickets",
+        "book el al flights for group",
+        "el al group fare policy"
+        ],
+        "EL AL Group Booking for 10+ Passengers",
+        "EL AL Group Booking for 10+ Travelers | Free Quote | Airline Group Bookings",
+        "Need EL AL group booking? Compare EL AL group fare policy, check group minimums and request a free group flight quote from our travel specialists. Call 24/7."
     ),
-    'klm-group-booking': gtSeo(
-        'klm group booking',
-        ['klm group travel policy', 'klm group reservation', 'klm group flight deals', 'klm group ticket for 10 or more'],
-        'KLM Group Booking'
+    "klm-group-booking": gtSeo(
+        "klm group booking",
+        [
+        "klm group travel policy",
+        "klm group reservation",
+        "klm group flight deals",
+        "klm group ticket for 10 or more"
+        ],
+        "KLM Group Booking for 10+ Passengers",
+        "KLM Group Booking: Fares, Policy & Free Group Quote | Airline Group Bookings",
+        "Need KLM group booking? Compare KLM group travel policy, check group minimums and request a free group flight quote from our travel specialists. Call 24/7."
     ),
-    'southwest-airlines-group-travel-booking': gtSeo(
-        'southwest airlines group travel',
-        ['southwest group booking number', 'southwest group reservation policy', 'southwest group flight quote', 'southwest group travel discount'],
-        'Southwest Airlines Group Travel'
+    "southwest-airlines-group-travel-booking": gtSeo(
+        "southwest airlines group travel",
+        [
+        "southwest group booking number",
+        "southwest group reservation policy",
+        "southwest group flight quote",
+        "southwest group travel discount"
+        ],
+        "Southwest Airlines Group Travel for 10+ Passengers",
+        "Southwest Airlines Group Travel: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Book Southwest Airlines group travel for 10+ passengers. Compare Southwest group travel discount and get a free group flight quote from our specialists."
     ),
-    'british-airways-group-travel-booking': gtSeo(
-        'british airways group booking',
-        ['british airways group travel desk', 'british airways group fare', 'ba group flight booking for 10 or more', 'british airways group discount'],
-        'British Airways Group Booking'
+    "british-airways-group-travel-booking": gtSeo(
+        "british airways group booking",
+        [
+        "british airways group travel desk",
+        "british airways group fare",
+        "ba group flight booking for 10 or more",
+        "british airways group discount"
+        ],
+        "British Airways Group Booking for 10+ Passengers",
+        "British Airways Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Book British Airways group booking for 10+ passengers. Compare British Airways group discount and get a free group flight quote from our specialists. Call 24/7."
     ),
-    'finnair-group-travel-flight-booking': gtSeo(
-        'finnair group booking',
-        ['finnair group travel desk', 'finnair group booking minimum passengers', 'finnair group flight tickets for 10 or more', 'finnair group fare policy'],
-        'Finnair Group Booking'
+    "finnair-group-travel-flight-booking": gtSeo(
+        "finnair group booking",
+        [
+        "finnair group travel desk",
+        "finnair group booking minimum passengers",
+        "finnair group flight tickets for 10 or more",
+        "finnair group fare policy"
+        ],
+        "Finnair Group Booking for 10+ Passengers",
+        "Finnair Group Booking: Group Fares, Policy & Quote | Airline Group Bookings",
+        "Need Finnair group booking? Compare Finnair group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    'alaska-airlines-group-travel': gtSeo(
-        'alaska airlines group travel',
-        ['alaska airlines group booking number', 'alaska airlines group reservation policy', 'alaska airlines group flight quote', 'alaska airlines group discount'],
-        'Alaska Airlines Group Travel'
+    "alaska-airlines-group-travel": gtSeo(
+        "alaska airlines group travel",
+        [
+        "alaska airlines group booking number",
+        "alaska airlines group reservation policy",
+        "alaska airlines group flight quote",
+        "alaska airlines group discount"
+        ],
+        "Alaska Airlines Group Travel for 10+ Passengers",
+        "Alaska Airlines Group Travel: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Book Alaska Airlines group travel for 10+ passengers. Compare Alaska Airlines group discount and get a free group flight quote from our specialists. Call 24/7."
     ),
-    'jetblue-group-travel-flight-booking': gtSeo(
-        'jetblue group travel',
-        ['jetblue group booking number', 'jetblue group reservation policy', 'jetblue group flight quote', 'jetblue group travel discount'],
-        'Jetblue Group Travel'
+    "jetblue-group-travel-flight-booking": gtSeo(
+        "jetblue group travel",
+        [
+        "jetblue group booking number",
+        "jetblue group reservation policy",
+        "jetblue group flight quote",
+        "jetblue group travel discount"
+        ],
+        "JetBlue Group Travel for 10+ Passengers",
+        "JetBlue Group Travel for 10+ Travelers | Free Quote | Airline Group Bookings",
+        "Need JetBlue group travel? Compare JetBlue group travel discount, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    'qatar-airways-group-travel': gtSeo(
-        'qatar airways group booking',
-        ['qatar airways group travel desk', 'qatar airways group fare policy', 'qatar airways group flight tickets for 10 or more', 'qatar airways group booking discount'],
-        'Qatar Airways Group Booking'
+    "qatar-airways-group-travel": gtSeo(
+        "qatar airways group booking",
+        [
+        "qatar airways group travel desk",
+        "qatar airways group fare policy",
+        "qatar airways group flight tickets for 10 or more",
+        "qatar airways group booking discount"
+        ],
+        "Qatar Airways Group Booking for 10+ Passengers",
+        "Qatar Airways Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Book Qatar Airways group booking for 10+ passengers. Compare Qatar Airways group fare policy and get a free group flight quote from our specialists. Call 24/7."
     ),
-    'avianca-airlines-group-travel': gtSeo(
-        'avianca airlines group travel',
-        ['avianca group booking number', 'avianca group reservation policy', 'avianca group flight quote', 'avianca group travel discount'],
-        'Avianca Airlines Group Travel'
+    "avianca-airlines-group-travel": gtSeo(
+        "avianca airlines group travel",
+        [
+        "avianca group booking number",
+        "avianca group reservation policy",
+        "avianca group flight quote",
+        "avianca group travel discount"
+        ],
+        "Avianca Airlines Group Travel for 10+ Passengers",
+        "Avianca Airlines Group Travel: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Book Avianca Airlines group travel for 10+ passengers. Compare Avianca group travel discount and get a free group flight quote from our specialists. Call 24/7."
     ),
-    'emirates-group-travel-flight-booking': gtSeo(
-        'emirates group booking',
-        ['emirates group travel desk', 'emirates group fare policy', 'emirates group flight tickets for 10 or more', 'emirates group booking discount'],
-        'Emirates Group Booking'
+    "emirates-group-travel-flight-booking": gtSeo(
+        "emirates group booking",
+        [
+        "emirates group travel desk",
+        "emirates group fare policy",
+        "emirates group flight tickets for 10 or more",
+        "emirates group booking discount"
+        ],
+        "Emirates Group Booking for 10+ Passengers",
+        "Emirates Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Need Emirates group booking? Compare Emirates group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    'air-france-group-booking': gtSeo(
-        'air france group booking',
-        ['air france group travel desk', 'air france group fare policy', 'air france group flight booking for 10 or more', 'air france group reservation policy'],
-        'Air France Group Booking'
+    "air-france-group-booking": gtSeo(
+        "air france group booking",
+        [
+        "air france group travel desk",
+        "air france group fare policy",
+        "air france group flight booking for 10 or more",
+        "air france group reservation policy"
+        ],
+        "Air France Group Booking for 10+ Passengers",
+        "Air France Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Need Air France group booking? Compare Air France group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    'american-airlines-group-booking': gtSeo(
-        'american airlines group booking',
-        ['american airlines group travel desk', 'american airlines group booking minimum passengers', 'american airlines group fare policy', 'american airlines group flight discount'],
-        'American Airlines Group Booking'
+    "american-airlines-group-booking": gtSeo(
+        "american airlines group booking",
+        [
+        "american airlines group travel desk",
+        "american airlines group booking minimum passengers",
+        "american airlines group fare policy",
+        "american airlines group flight discount"
+        ],
+        "American Airlines Group Booking for 10+ Passengers",
+        "American Airlines Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Book American Airlines group booking for 10+ passengers. Compare American Airlines group fare policy and get a free group flight quote from our specialists."
     ),
-    'lufthansa-group-booking': gtSeo(
-        'lufthansa group booking',
-        ['lufthansa group travel desk', 'lufthansa group reservation policy', 'lufthansa group flight tickets for 10 or more', 'lufthansa group fare policy'],
-        'Lufthansa Group Booking'
+    "lufthansa-group-booking": gtSeo(
+        "lufthansa group booking",
+        [
+        "lufthansa group travel desk",
+        "lufthansa group reservation policy",
+        "lufthansa group flight tickets for 10 or more",
+        "lufthansa group fare policy"
+        ],
+        "Lufthansa Group Booking for 10+ Passengers",
+        "Lufthansa Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Need Lufthansa group booking? Compare Lufthansa group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    'swiss-air-group-booking': gtSeo(
-        'swiss air group booking',
-        ['swiss airlines group travel desk', 'swiss air group fare policy', 'swiss air group flight booking for 10 or more', 'swiss air group reservation policy'],
-        'Swiss Air Group Booking'
+    "swiss-air-group-booking": gtSeo(
+        "swiss air group booking",
+        [
+        "swiss airlines group travel desk",
+        "swiss air group fare policy",
+        "swiss air group flight booking for 10 or more",
+        "swiss air group reservation policy"
+        ],
+        "Swiss Air Group Booking for 10+ Passengers",
+        "Swiss Air Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Need Swiss Air group booking? Compare Swiss Air group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    'spirit-airlines-group-booking': gtSeo(
-        'spirit airlines group booking',
-        ['spirit airlines group travel desk', 'spirit airlines group booking number', 'spirit airlines group fare policy', 'spirit airlines group travel discount'],
-        'Spirit Airlines Group Booking'
+    "spirit-airlines-group-booking": gtSeo(
+        "spirit airlines group booking",
+        [
+        "spirit airlines group travel desk",
+        "spirit airlines group booking number",
+        "spirit airlines group fare policy",
+        "spirit airlines group travel discount"
+        ],
+        "Spirit Airlines Group Booking for 10+ Passengers",
+        "Spirit Airlines Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Book Spirit Airlines group booking for 10+ passengers. Compare Spirit Airlines group fare policy and get a free group flight quote from our specialists."
     ),
-    'aeromexico-group-booking-and-reservations': gtSeo(
-        'aeromexico group booking',
-        ['aeromexico group travel desk', 'aeromexico group reservation policy', 'aeromexico group flight quote', 'aeromexico group fare policy'],
-        'Aeromexico Group Booking'
+    "aeromexico-group-booking-and-reservations": gtSeo(
+        "aeromexico group booking",
+        [
+        "aeromexico group travel desk",
+        "aeromexico group reservation policy",
+        "aeromexico group flight quote",
+        "aeromexico group fare policy"
+        ],
+        "Aeromexico Group Booking for 10+ Passengers",
+        "Aeromexico Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Need Aeromexico group booking? Compare Aeromexico group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    'frontier-airlines-group-booking': gtSeo(
-        'frontier airlines group booking',
-        ['frontier airlines group travel desk', 'frontier airlines group reservation policy', 'frontier airlines group flight quote', 'frontier airlines group discount'],
-        'Frontier Airlines Group Booking'
+    "frontier-airlines-group-booking": gtSeo(
+        "frontier airlines group booking",
+        [
+        "frontier airlines group travel desk",
+        "frontier airlines group reservation policy",
+        "frontier airlines group flight quote",
+        "frontier airlines group discount"
+        ],
+        "Frontier Airlines Group Booking for 10+ Passengers",
+        "Frontier Airlines Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Book Frontier Airlines group booking for 10+ passengers. Compare Frontier Airlines group discount and get a free group flight quote from our specialists."
     ),
-    'copa-airlines-group-booking': gtSeo(
-        'copa airlines group booking',
-        ['copa airlines group travel desk', 'copa airlines group reservation policy', 'copa airlines group flight tickets for 10 or more', 'copa airlines group fare policy'],
-        'Copa Airlines Group Booking'
+    "copa-airlines-group-booking": gtSeo(
+        "copa airlines group booking",
+        [
+        "copa airlines group travel desk",
+        "copa airlines group reservation policy",
+        "copa airlines group flight tickets for 10 or more",
+        "copa airlines group fare policy"
+        ],
+        "Copa Airlines Group Booking for 10+ Passengers",
+        "Copa Airlines Group Booking: Policy, Fares & Free Quote | Airline Group Bookings",
+        "Book Copa Airlines group booking for 10+ passengers. Compare Copa Airlines group fare policy and get a free group flight quote from our specialists. Call 24/7."
     ),
 }
 
+
 /** Business class pages — /business-class/[slug] */
 export const businessClassSeo = {
-    'american-airlines-business-class-travel-flight-booking': bcSeo(
-        'american airlines business class booking',
-        ['american airlines flagship business class', 'aa business class deals', 'cheap american airlines business class tickets'],
-        'American Airlines Business Class Booking'
+    "american-airlines-business-class-travel-flight-booking": bcSeo(
+        "american airlines business class booking",
+        [
+        "american airlines flagship business class",
+        "aa business class deals",
+        "cheap american airlines business class tickets"
+        ],
+        "American Airlines Business Class Booking: Fares, Deals & Support",
+        "American Airlines Business Class Booking: Deals & Free Quote | Airline Group Bookings",
+        "American Airlines business class made easy. Explore American Airlines Flagship business class and AA business class deals, then request a free quote. Call 24/7."
     ),
-    'delta-airlines-business-class-travel': bcSeo(
-        'delta one business class booking',
-        ['delta business class deals', 'delta one cheap tickets', 'delta business class group booking'],
-        'Delta One Business Class Booking'
+    "delta-airlines-business-class-travel": bcSeo(
+        "delta one business class booking",
+        [
+        "delta business class deals",
+        "delta one cheap tickets",
+        "delta business class group booking"
+        ],
+        "Delta One Business Class Booking: Fares, Deals & Support",
+        "Delta One Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Book Delta Air Lines business class tickets. Compare Delta business class deals and Delta One cheap tickets, then request a free quote from our specialists."
     ),
-    'alaska-airlines-business-class-travel': bcSeo(
-        'alaska airlines business class booking',
-        ['alaska airlines first class vs business', 'alaska business class deals', 'alaska airlines premium class tickets'],
-        'Alaska Airlines Business Class Booking'
+    "alaska-airlines-business-class-travel": bcSeo(
+        "alaska airlines business class booking",
+        [
+        "alaska airlines first class vs business",
+        "alaska business class deals",
+        "alaska airlines premium class tickets"
+        ],
+        "Alaska Airlines Business Class Booking: Fares, Deals & Support",
+        "Alaska Airlines Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Alaska Airlines business class made easy. Explore Alaska Airlines first class vs business and Alaska business class deals, then request a free quote. Call 24/7."
     ),
-    'lufthansa-airlines-business-class-travel': bcSeo(
-        'lufthansa business class booking',
-        ['lufthansa business class deals USA', 'cheap lufthansa business class tickets', 'lufthansa business class group fare'],
-        'Lufthansa Business Class Booking'
+    "lufthansa-airlines-business-class-travel": bcSeo(
+        "lufthansa business class booking",
+        [
+        "lufthansa business class deals USA",
+        "cheap lufthansa business class tickets",
+        "lufthansa business class group fare"
+        ],
+        "Lufthansa Business Class Booking: Fares, Deals & Support",
+        "Lufthansa Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Lufthansa business class made easy. Explore Lufthansa business class deals USA and cheap Lufthansa business class tickets, then request a free quote. Call 24/7."
     ),
-    'klm-business-class-travel-experience': bcSeo(
-        'klm business class booking',
-        ['klm business class deals', 'klm world business class tickets', 'cheap klm business class flights'],
-        'KLM Business Class Booking'
+    "klm-business-class-travel-experience": bcSeo(
+        "klm business class booking",
+        [
+        "klm business class deals",
+        "klm world business class tickets",
+        "cheap klm business class flights"
+        ],
+        "KLM Business Class Booking: Fares, Deals & Support",
+        "KLM Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Book KLM business class tickets. Compare KLM business class deals and KLM World Business Class tickets, then request a free quote from our specialists."
     ),
-    'el-al-business-class-travel': bcSeo(
-        'el al business class booking',
-        ['el al business class new york to tel aviv', 'el al business class deals from usa', 'el al dreamliner business class tickets'],
-        'EL AL Business Class Booking'
+    "el-al-business-class-travel": bcSeo(
+        "el al business class booking",
+        [
+        "el al business class new york to tel aviv",
+        "el al business class deals from usa",
+        "el al dreamliner business class tickets"
+        ],
+        "EL AL Business Class Booking: Fares, Deals & Support",
+        "EL AL Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "EL AL business class made easy. Explore EL AL business class New York to Tel Aviv and EL AL business class deals from USA, then request a free quote. Call 24/7."
     ),
-    'united-airlines-business-class-travel': bcSeo(
-        'united airlines business class booking',
-        ['united polaris business class deals', 'united polaris lounge business class tickets', 'cheap united business class flights usa'],
-        'United Airlines Business Class Booking'
+    "united-airlines-business-class-travel": bcSeo(
+        "united airlines business class booking",
+        [
+        "united polaris business class deals",
+        "united polaris lounge business class tickets",
+        "cheap united business class flights usa"
+        ],
+        "United Airlines Business Class Booking: Fares, Deals & Support",
+        "United Airlines Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "United Airlines business class made easy. Explore United Polaris business class deals and cheap United business class flights USA, then request a free quote."
     ),
-    'british-airways-business-class-travel': bcSeo(
-        'british airways business class booking',
-        ['british airways business class new york to london', 'ba club world deals from usa', 'ba club suite business class tickets'],
-        'British Airways Business Class Booking'
+    "british-airways-business-class-travel": bcSeo(
+        "british airways business class booking",
+        [
+        "british airways business class new york to london",
+        "ba club world deals from usa",
+        "ba club suite business class tickets"
+        ],
+        "British Airways Business Class Booking: Fares, Deals & Support",
+        "British Airways Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "British Airways business class made easy. Explore British Airways business class New York to London and BA Club World deals from USA, then request a free quote."
     ),
-    'aeromexico-clase-premier-business-class': bcSeo(
-        'aeromexico business class booking',
-        ['aeromexico clase premier deals', 'aeromexico business class usa to mexico city', 'cheap aeromexico business class flights'],
-        'Aeromexico Business Class Booking'
+    "aeromexico-clase-premier-business-class": bcSeo(
+        "aeromexico business class booking",
+        [
+        "aeromexico clase premier deals",
+        "aeromexico business class usa to mexico city",
+        "cheap aeromexico business class flights"
+        ],
+        "Aeromexico Business Class Booking: Fares, Deals & Support",
+        "Aeromexico Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Aeromexico business class made easy. Explore Aeromexico Clase Premier deals and Aeromexico business class USA to Mexico City, then request a free quote."
     ),
-    'qatar-airways-business-class-travel': bcSeo(
-        'qatar airways business class booking',
-        ['qatar airways qsuite from usa', 'qatar business class new york to doha', 'cheap qatar airways business class flights'],
-        'Qatar Airways Business Class Booking'
+    "qatar-airways-business-class-travel": bcSeo(
+        "qatar airways business class booking",
+        [
+        "qatar airways qsuite from usa",
+        "qatar business class new york to doha",
+        "cheap qatar airways business class flights"
+        ],
+        "Qatar Airways Business Class Booking: Fares, Deals & Support",
+        "Qatar Airways Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Qatar Airways business class made easy. Explore Qatar Airways Qsuite from USA and Qatar business class New York to Doha, then request a free quote. Call 24/7."
     ),
-    'emirates-airlines-business-class-travel': bcSeo(
-        'emirates business class booking',
-        ['emirates business class new york to dubai', 'emirates business class deals from usa', 'emirates a380 business class tickets'],
-        'Emirates Business Class Booking'
+    "emirates-airlines-business-class-travel": bcSeo(
+        "emirates business class booking",
+        [
+        "emirates business class new york to dubai",
+        "emirates business class deals from usa",
+        "emirates a380 business class tickets"
+        ],
+        "Emirates Business Class Booking: Fares, Deals & Support",
+        "Emirates Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Emirates business class made easy. Explore Emirates business class New York to Dubai and Emirates business class deals from USA, then request a free quote."
     ),
-    'air-france-business-class-travel': bcSeo(
-        'air france business class booking',
-        ['air france business class usa to paris', 'air france business class deals from new york', 'air france lie flat business class tickets'],
-        'Air France Business Class Booking'
+    "air-france-business-class-travel": bcSeo(
+        "air france business class booking",
+        [
+        "air france business class usa to paris",
+        "air france business class deals from new york",
+        "air france lie flat business class tickets"
+        ],
+        "Air France Business Class Booking: Fares, Deals & Support",
+        "Air France Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Air France business class made easy. Explore Air France business class USA to Paris and Air France lie flat business class tickets, then request a free quote."
     ),
-    'turkish-airlines-business-class-travel': bcSeo(
-        'turkish airlines business class booking',
-        ['turkish airlines business class usa to istanbul', 'turkish business class deals from new york', 'cheap turkish airlines business class flights'],
-        'Turkish Airlines Business Class Booking'
+    "turkish-airlines-business-class-travel": bcSeo(
+        "turkish airlines business class booking",
+        [
+        "turkish airlines business class usa to istanbul",
+        "turkish business class deals from new york",
+        "cheap turkish airlines business class flights"
+        ],
+        "Turkish Airlines Business Class Booking: Fares, Deals & Support",
+        "Turkish Airlines Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Book Turkish Airlines business class tickets. Compare Turkish Airlines business class USA to Istanbul, then request a free quote from our specialists."
     ),
-    'singapore-airlines-business-class-travel': bcSeo(
-        'singapore airlines business class booking',
-        ['singapore airlines business class from usa', 'singapore airlines new york to singapore business class', 'singapore airlines book the cook business class'],
-        'Singapore Airlines Business Class Booking'
+    "singapore-airlines-business-class-travel": bcSeo(
+        "singapore airlines business class booking",
+        [
+        "singapore airlines business class from usa",
+        "singapore airlines new york to singapore business class",
+        "singapore airlines book the cook business class"
+        ],
+        "Singapore Airlines Business Class Booking: Fares, Deals & Support",
+        "Singapore Airlines Business Class Booking | Get a Free Quote | Airline Group Bookings",
+        "Book Singapore Airlines business class tickets. Compare Singapore Airlines business class from USA, then request a free quote from our specialists. Call 24/7."
     ),
-    'swiss-airlines-business-class-travel': bcSeo(
-        'swiss airlines business class booking',
-        ['swiss business class usa to zurich', 'swiss business class deals from new york', 'swiss lie flat business class tickets'],
-        'Swiss Airlines Business Class Booking'
+    "swiss-airlines-business-class-travel": bcSeo(
+        "swiss airlines business class booking",
+        [
+        "swiss business class usa to zurich",
+        "swiss business class deals from new york",
+        "swiss lie flat business class tickets"
+        ],
+        "Swiss Airlines Business Class Booking: Fares, Deals & Support",
+        "Swiss Airlines Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Swiss Airlines business class made easy. Explore Swiss business class USA to Zurich and Swiss business class deals from New York, then request a free quote."
     ),
-    'japan-airlines-business-class-travel': bcSeo(
-        'japan airlines business class booking',
-        ['jal business class usa to tokyo', 'jal business class los angeles to tokyo', 'jal sky suite business class deals'],
-        'Japan Airlines Business Class Booking'
+    "japan-airlines-business-class-travel": bcSeo(
+        "japan airlines business class booking",
+        [
+        "jal business class usa to tokyo",
+        "jal business class los angeles to tokyo",
+        "jal sky suite business class deals"
+        ],
+        "Japan Airlines Business Class Booking: Fares, Deals & Support",
+        "Japan Airlines Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Japan Airlines business class made easy. Explore JAL business class USA to Tokyo and JAL business class Los Angeles to Tokyo, then request a free quote."
     ),
-    'hawaiian-airlines-business-class-flights-travel': bcSeo(
-        'hawaiian airlines business class booking',
-        ['hawaiian business class los angeles to honolulu', 'hawaiian airlines business class from usa mainland', 'hawaiian leihoku suites tickets'],
-        'Hawaiian Airlines Business Class Booking'
+    "hawaiian-airlines-business-class-flights-travel": bcSeo(
+        "hawaiian airlines business class booking",
+        [
+        "hawaiian business class los angeles to honolulu",
+        "hawaiian airlines business class from usa mainland",
+        "hawaiian leihoku suites tickets"
+        ],
+        "Hawaiian Airlines Business Class Booking: Fares, Deals & Support",
+        "Hawaiian Airlines Business Class Booking: Deals & Free Quote | Airline Group Bookings",
+        "Book Hawaiian Airlines business class tickets. Compare Hawaiian business class Los Angeles to Honolulu, then request a free quote from our specialists."
     ),
-    'copa-airlines-business-class-flights': bcSeo(
-        'copa airlines business class booking',
-        ['copa airlines business class miami to panama city', 'copa airlines dreams business class', 'cheap copa business class flights usa'],
-        'Copa Airlines Business Class Booking'
+    "copa-airlines-business-class-flights": bcSeo(
+        "copa airlines business class booking",
+        [
+        "copa airlines business class miami to panama city",
+        "copa airlines dreams business class",
+        "cheap copa business class flights usa"
+        ],
+        "Copa Airlines Business Class Booking: Fares, Deals & Support",
+        "Copa Airlines Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Copa Airlines business class made easy. Explore Copa Airlines Dreams business class and cheap Copa business class flights USA, then request a free quote."
     ),
-    'etihad-airways-business-class-flights': bcSeo(
-        'etihad airways business class booking',
-        ['etihad business class new york to abu dhabi', 'etihad business class deals from usa', 'etihad business studio tickets'],
-        'Etihad Airways Business Class Booking'
+    "etihad-airways-business-class-flights": bcSeo(
+        "etihad airways business class booking",
+        [
+        "etihad business class new york to abu dhabi",
+        "etihad business class deals from usa",
+        "etihad business studio tickets"
+        ],
+        "Etihad Airways Business Class Booking: Fares, Deals & Support",
+        "Etihad Airways Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Etihad Airways business class made easy. Explore Etihad business class New York to Abu Dhabi and Etihad Business Studio tickets, then request a free quote."
     ),
-    'eva-air-business-class-flights-and-tickets': bcSeo(
-        'eva air business class booking',
-        ['eva air business class los angeles to taipei', 'eva air business class from usa', 'eva air royal laurel business class deals'],
-        'Eva Air Business Class Booking'
+    "eva-air-business-class-flights-and-tickets": bcSeo(
+        "eva air business class booking",
+        [
+        "eva air business class los angeles to taipei",
+        "eva air business class from usa",
+        "eva air royal laurel business class deals"
+        ],
+        "EVA Air Business Class Booking: Fares, Deals & Support",
+        "EVA Air Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "EVA Air business class made easy. Explore EVA Air business class Los Angeles to Taipei and EVA Air business class from USA, then request a free quote."
     ),
-    'cathay-pacific-business-class-flights': bcSeo(
-        'cathay pacific business class booking',
-        ['cathay pacific business class usa to hong kong', 'cathay business class los angeles to hong kong', 'cathay pacific aria suite tickets'],
-        'Cathay Pacific Business Class Booking'
+    "cathay-pacific-business-class-flights": bcSeo(
+        "cathay pacific business class booking",
+        [
+        "cathay pacific business class usa to hong kong",
+        "cathay business class los angeles to hong kong",
+        "cathay pacific aria suite tickets"
+        ],
+        "Cathay Pacific Business Class Booking: Fares, Deals & Support",
+        "Cathay Pacific Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Book Cathay Pacific business class tickets. Compare Cathay Pacific business class USA to Hong Kong, then request a free quote from our specialists. Call 24/7."
     ),
-    'finnair-business-class': bcSeo(
-        'finnair business class booking',
-        ['finnair business class usa to helsinki', 'finnair business class new york to helsinki', 'finnair airlounge business class deals'],
-        'Finnair Business Class Booking'
+    "finnair-business-class": bcSeo(
+        "finnair business class booking",
+        [
+        "finnair business class usa to helsinki",
+        "finnair business class new york to helsinki",
+        "finnair airlounge business class deals"
+        ],
+        "Finnair Business Class Booking: Fares, Deals & Support",
+        "Finnair Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Finnair business class made easy. Explore Finnair business class USA to Helsinki and Finnair business class New York to Helsinki, then request a free quote."
     ),
-    'air-canada-business-class-flights': bcSeo(
-        'air canada business class booking',
-        ['air canada business class usa to toronto', 'air canada signature class from usa', 'cheap air canada business class flights'],
-        'Air Canada Business Class Booking'
+    "air-canada-business-class-flights": bcSeo(
+        "air canada business class booking",
+        [
+        "air canada business class usa to toronto",
+        "air canada signature class from usa",
+        "cheap air canada business class flights"
+        ],
+        "Air Canada Business Class Booking: Fares, Deals & Support",
+        "Air Canada Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Air Canada business class made easy. Explore Air Canada business class USA to Toronto and Air Canada Signature Class from USA, then request a free quote."
     ),
-    'iberia-airlines-business-class-flights': bcSeo(
-        'iberia airlines business class booking',
-        ['iberia business class usa to madrid', 'iberia business class deals from new york', 'cheap iberia business class flights'],
-        'Iberia Airlines Business Class Booking'
+    "iberia-airlines-business-class-flights": bcSeo(
+        "iberia airlines business class booking",
+        [
+        "iberia business class usa to madrid",
+        "iberia business class deals from new york",
+        "cheap iberia business class flights"
+        ],
+        "Iberia Airlines Business Class Booking: Fares, Deals & Support",
+        "Iberia Airlines Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Iberia Airlines business class made easy. Explore Iberia business class USA to Madrid and Iberia business class deals from New York, then request a free quote."
     ),
-    'aer-lingus-business-class-flights': bcSeo(
-        'aer lingus business class booking',
-        ['aer lingus business class usa to dublin', 'aer lingus business class new york to dublin', 'aer lingus business class deals'],
-        'Aer Lingus Business Class Booking'
+    "aer-lingus-business-class-flights": bcSeo(
+        "aer lingus business class booking",
+        [
+        "aer lingus business class usa to dublin",
+        "aer lingus business class new york to dublin",
+        "aer lingus business class deals"
+        ],
+        "Aer Lingus Business Class Booking: Fares, Deals & Support",
+        "Aer Lingus Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Aer Lingus business class made easy. Explore Aer Lingus business class USA to Dublin and Aer Lingus business class deals, then request a free quote. Call 24/7."
     ),
-    'all-nippon-airways-business-class-flights': bcSeo(
-        'ana business class booking',
-        ['ana business class usa to tokyo', 'ana business class los angeles to tokyo', 'ana the room business class deals'],
-        'ANA Business Class Booking'
+    "all-nippon-airways-business-class-flights": bcSeo(
+        "ana business class booking",
+        [
+        "ana business class usa to tokyo",
+        "ana business class los angeles to tokyo",
+        "ana the room business class deals"
+        ],
+        "ANA Business Class Booking: Fares, Deals & Support",
+        "ANA Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Book ANA business class booking with expert help. See ANA business class USA to Tokyo and ANA business class Los Angeles to Tokyo, then get a free quote online."
     ),
-    'fiji-airways-business-class-flights': bcSeo(
-        'fiji airways business class booking',
-        ['fiji airways business class los angeles to nadi', 'fiji airways business class from usa', 'fiji airways a350 business class tickets'],
-        'Fiji Airways Business Class Booking'
+    "fiji-airways-business-class-flights": bcSeo(
+        "fiji airways business class booking",
+        [
+        "fiji airways business class los angeles to nadi",
+        "fiji airways business class from usa",
+        "fiji airways a350 business class tickets"
+        ],
+        "Fiji Airways Business Class Booking: Fares, Deals & Support",
+        "Fiji Airways Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Fiji Airways business class made easy. Explore Fiji Airways business class from USA and Fiji Airways A350 business class tickets, then request a free quote."
     ),
-    'southwest-airlines-business-class-flights': bcSeo(
-        'southwest airlines business select booking',
-        ['southwest business select fare benefits', 'southwest business select vs anytime', 'southwest business select a1 a15 boarding'],
-        'Southwest Airlines Business Select Booking'
+    "southwest-airlines-business-class-flights": bcSeo(
+        "southwest airlines business select booking",
+        [
+        "southwest business select fare benefits",
+        "southwest business select vs anytime",
+        "southwest business select a1 a15 boarding"
+        ],
+        "Southwest Airlines Business Select Booking: Fares, Deals & Support",
+        "Southwest Airlines Business Select Booking | Free Quote | Airline Group Bookings",
+        "Book Southwest Airlines business class tickets. Compare Southwest Business Select fare benefits, then request a free quote from our specialists. Call 24/7."
     ),
-    'avianca-airlines-business-class-flights': bcSeo(
-        'avianca airlines business class booking',
-        ['avianca insignia business class deals', 'avianca business class usa to colombia', 'cheap avianca business class flights'],
-        'Avianca Airlines Business Class Booking'
+    "avianca-airlines-business-class-flights": bcSeo(
+        "avianca airlines business class booking",
+        [
+        "avianca insignia business class deals",
+        "avianca business class usa to colombia",
+        "cheap avianca business class flights"
+        ],
+        "Avianca Airlines Business Class Booking: Fares, Deals & Support",
+        "Avianca Airlines Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Avianca Airlines business class made easy. Explore Avianca Insignia business class deals and Avianca business class USA to Colombia, then request a free quote."
     ),
-    'spirit-airlines-business-class-flights': bcSeo(
-        'spirit airlines big front seat booking',
-        ['spirit big front seat deals', 'spirit big front seat vs first class', 'cheap spirit airlines big front seat tickets'],
-        'Spirit Airlines Big Front Seat Booking'
+    "spirit-airlines-business-class-flights": bcSeo(
+        "spirit airlines big front seat booking",
+        [
+        "spirit big front seat deals",
+        "spirit big front seat vs first class",
+        "cheap spirit airlines big front seat tickets"
+        ],
+        "Spirit Airlines Big Front Seat Booking: Fares, Deals & Support",
+        "Spirit Airlines Big Front Seat Booking | Deals & Free Quote | Airline Group Bookings",
+        "Spirit Airlines business class made easy. Explore Spirit Big Front Seat deals and Spirit Big Front Seat vs first class, then request a free quote. Call 24/7."
     ),
-    'thai-airways-business-class-flights': bcSeo(
-        'thai airways business class booking',
-        ['thai airways business class usa to bangkok', 'thai airways royal silk class deals', 'cheap thai airways business class flights'],
-        'Thai Airways Business Class Booking'
+    "thai-airways-business-class-flights": bcSeo(
+        "thai airways business class booking",
+        [
+        "thai airways business class usa to bangkok",
+        "thai airways royal silk class deals",
+        "cheap thai airways business class flights"
+        ],
+        "Thai Airways Business Class Booking: Fares, Deals & Support",
+        "Thai Airways Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Thai Airways business class made easy. Explore Thai Airways business class USA to Bangkok and Thai Airways Royal Silk Class deals, then request a free quote."
     ),
-    'qantas-airways-business-class-flights': bcSeo(
-        'qantas business class booking',
-        ['qantas business class usa to sydney', 'qantas business class los angeles to sydney', 'qantas business class deals'],
-        'Qantas Business Class Booking'
+    "qantas-airways-business-class-flights": bcSeo(
+        "qantas business class booking",
+        [
+        "qantas business class usa to sydney",
+        "qantas business class los angeles to sydney",
+        "qantas business class deals"
+        ],
+        "Qantas Business Class Booking: Fares, Deals & Support",
+        "Qantas Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Qantas Airways business class made easy. Explore Qantas business class USA to Sydney and Qantas business class Los Angeles to Sydney, then request a free quote."
     ),
-    'tap-air-portugal-business-class-flights': bcSeo(
-        'tap air portugal business class booking',
-        ['tap business class usa to lisbon', 'tap business class new york to lisbon', 'tap executive business class deals'],
-        'Tap Air Portugal Business Class Booking'
+    "tap-air-portugal-business-class-flights": bcSeo(
+        "tap air portugal business class booking",
+        [
+        "tap business class usa to lisbon",
+        "tap business class new york to lisbon",
+        "tap executive business class deals"
+        ],
+        "TAP Air Portugal Business Class Booking: Fares, Deals & Support",
+        "TAP Air Portugal Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "TAP Air Portugal business class made easy. Explore TAP business class USA to Lisbon and TAP business class New York to Lisbon, then request a free quote."
     ),
-    'latam-airlines-business-class-flights': bcSeo(
-        'latam airlines business class booking',
-        ['latam business class miami to south america', 'latam premium business class deals', 'cheap latam business class flights usa'],
-        'Latam Airlines Business Class Booking'
+    "latam-airlines-business-class-flights": bcSeo(
+        "latam airlines business class booking",
+        [
+        "latam business class miami to south america",
+        "latam premium business class deals",
+        "cheap latam business class flights usa"
+        ],
+        "LATAM Airlines Business Class Booking: Fares, Deals & Support",
+        "LATAM Airlines Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "LATAM Airlines business class made easy. Explore LATAM business class Miami to South America and LATAM premium business class deals, then request a free quote."
     ),
-    'tarom-airlines-business-class-flights': bcSeo(
-        'tarom business class booking',
-        ['tarom business class usa to bucharest', 'tarom business class deals', 'cheap tarom business class flights'],
-        'Tarom Business Class Booking'
+    "tarom-airlines-business-class-flights": bcSeo(
+        "tarom business class booking",
+        [
+        "tarom business class usa to bucharest",
+        "tarom business class deals",
+        "cheap tarom business class flights"
+        ],
+        "TAROM Business Class Booking: Fares, Deals & Support",
+        "TAROM Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Book TAROM business class booking with expert help. See TAROM business class USA to Bucharest and TAROM business class deals, then get a free quote online."
     ),
-    'icelandair-business-class-flights': bcSeo(
-        'icelandair business class booking',
-        ['icelandair saga premium deals', 'icelandair saga premium vs economy', 'icelandair business class usa'],
-        'Icelandair Business Class Booking'
+    "icelandair-business-class-flights": bcSeo(
+        "icelandair business class booking",
+        [
+        "icelandair saga premium deals",
+        "icelandair saga premium vs economy",
+        "icelandair business class usa"
+        ],
+        "Icelandair Business Class Booking: Fares, Deals & Support",
+        "Icelandair Business Class Booking: Deals, Fares & Free Quote | Airline Group Bookings",
+        "Book Icelandair business class booking with expert help. See Icelandair Saga Premium deals and Icelandair Saga Premium vs economy, then get a free quote online."
     ),
-    'bulgaria-air-business-class-flights': bcSeo(
-        'bulgaria air business class booking',
-        ['bulgaria air business class usa to sofia', 'bulgaria air business class deals', 'cheap bulgaria air business class flights'],
-        'Bulgaria Air Business Class Booking'
+    "bulgaria-air-business-class-flights": bcSeo(
+        "bulgaria air business class booking",
+        [
+        "bulgaria air business class usa to sofia",
+        "bulgaria air business class deals",
+        "cheap bulgaria air business class flights"
+        ],
+        "Bulgaria Air Business Class Booking: Fares, Deals & Support",
+        "Bulgaria Air Business Class Booking | Deals & Free Quote | Airline Group Bookings",
+        "Bulgaria Air business class made easy. Explore Bulgaria Air business class USA to Sofia and Bulgaria Air business class deals, then request a free quote."
     ),
-    'aerolineas-argentinas-business-class': bcSeo(
-        'aerolineas argentinas business class booking',
-        ['aerolineas argentinas business class miami to buenos aires', 'aerolineas argentinas club condor deals', 'cheap aerolineas argentinas business class flights'],
-        'Aerolineas Argentinas Business Class Booking'
+    "aerolineas-argentinas-business-class": bcSeo(
+        "aerolineas argentinas business class booking",
+        [
+        "aerolineas argentinas business class miami to buenos aires",
+        "aerolineas argentinas club condor deals",
+        "cheap aerolineas argentinas business class flights"
+        ],
+        "Aerolineas Argentinas Business Class Booking: Fares, Deals & Support",
+        "Aerolineas Argentinas Business Class Booking | Free Quote | Airline Group Bookings",
+        "Aerolineas Argentinas business class made easy. Explore Aerolineas Argentinas business class Miami to Buenos Aires, then request a free quote. Call 24/7."
     ),
 }
+
 
 export function fallbackGroupTravelSeo(name) {
     return gtSeo(
         `${name} group booking`,
         [`${name.toLowerCase()} group travel desk`, `${name.toLowerCase()} group fare policy`, `${name.toLowerCase()} group flight quote`],
-        `${name} Group Booking`
+        `${name} Group Booking`,
+        `${name} Group Booking | ${BRAND}`,
+        `Need ${name} group booking? Compare group fare policy, check group minimums and request a free group flight quote from ${BRAND}.`
     )
 }
 
@@ -594,7 +961,9 @@ export function fallbackBusinessClassSeo(name) {
     return bcSeo(
         `${name} business class booking`,
         [`${name.toLowerCase()} business class deals`, `cheap ${name.toLowerCase()} business class tickets`],
-        `${name} Business Class Booking`
+        `${name} Business Class Booking`,
+        `${name} Business Class Booking | ${BRAND}`,
+        `Book ${name} business class tickets. Compare deals and fares, then request a free quote from ${BRAND}.`
     )
 }
 

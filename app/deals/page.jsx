@@ -6,22 +6,85 @@ import Newsletter from '../../components/home/Newsletter'
 import FaqSection from '../../components/content/FaqSection'
 import PageStructuredData from '../../components/seo/PageStructuredData'
 import { dealsFaqs } from '../../data/pageFaqs'
+import { mainPageSeo } from '../../data/mainPageSeo'
 import { createPageMetadata } from '../../lib/seo'
 
-export const metadata = createPageMetadata({ title: 'Group Flight Deals | Airline Group Bookings', description: 'Browse group flight deals, popular group flight deals, and trending group travel deals. Find cheap group airfare deals USA, last minute group flight deals, group discount on airline tickets, and group travel offers.', path: '/deals' })
+const seo = mainPageSeo.deals
+const popular = mainPageSeo.popularDeals
+
+export const metadata = createPageMetadata({
+    title: seo.metaTitle,
+    description: seo.metaDescription,
+    path: '/deals',
+})
 
 export default function DealsIndex() {
-    return <main><PageStructuredData name="Group Flight Deals | Airline Group Bookings" description="Browse group flight deals, popular group flight deals, and trending group travel deals. Find cheap group airfare deals USA, last minute group flight deals, group discount on airline tickets, and group travel offers." path="/deals" type="CollectionPage" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Deals', path: '/deals' }]} />
-        <section className="bg-gradient-to-br from-[#263673] to-[#202d60] px-5 py-16 text-white sm:px-8 sm:py-20"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Popular & trending offers</p><h1 className="mt-3 text-4xl font-bold sm:text-5xl">Group Flight <span className="text-blue-200">Deals</span> for Every Kind of Trip</h1><p className="mt-4 max-w-2xl text-base leading-7 text-blue-50">Explore popular group flight deals and trending group travel deals — including cheap group airfare deals USA, last minute group flight deals, group discount on airline tickets, and seasonal group travel offers.</p></div></section><section className="bg-slate-50 py-12 sm:py-16"><div className="mx-auto grid max-w-7xl gap-5 px-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-3 lg:px-10">{deals.map((deal) => <Link key={deal.slug} href={`/deals/${deal.slug}`} className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-blue-100 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"><div className="relative h-56 overflow-hidden bg-blue-900"><Image src={deal.image} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-110"/><span className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"/><span className="absolute bottom-4 left-4 rounded-full border border-white/60 bg-white/95 px-3 py-1.5 text-xs font-bold text-blue-900">{deal.category}</span><span className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-white text-blue-800 transition group-hover:bg-blue-700 group-hover:text-white"><ArrowRight className="h-4 w-4"/></span></div><div className="p-6"><h2 className="text-xl font-bold text-slate-900 transition group-hover:text-blue-700">{deal.title}</h2><p className="mt-2 min-h-12 text-md leading-6 text-slate-600">{deal.excerpt}</p><span className="mt-5 inline-flex items-center gap-2 text-md font-bold text-blue-700">Explore Now <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1"/></span></div></Link>)}
-        </div>
-        </section>
-        <FaqSection
-            heading="Group Flight Deals Questions"
-            intro={dealsFaqs.intro}
-            items={dealsFaqs.items}
-            path="/deals"
-            accentWord="Questions"
-        />
-        <Newsletter/>
+    return (
+        <main>
+            <PageStructuredData
+                name={seo.metaTitle}
+                description={seo.metaDescription}
+                path="/deals"
+                type="CollectionPage"
+                breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Deals', path: '/deals' }]}
+            />
+            <section className="bg-gradient-to-br from-[#263673] to-[#202d60] px-5 py-16 text-white sm:px-8 sm:py-20">
+                <div className="mx-auto max-w-7xl">
+                    <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Offers for groups</p>
+                    <h1 className="mt-3 text-4xl font-bold sm:text-5xl">
+                        Group Flight Deals: <span className="text-blue-200">Cheap Group Airfare Offers</span>
+                    </h1>
+                    <p className="mt-4 max-w-2xl text-base leading-7 text-blue-50">
+                        Find group flight deals and cheap group airfare deals USA. Compare last minute group flight deals, group discount on airline tickets, and seasonal group travel offers — then request a free quote.
+                    </p>
+                </div>
+            </section>
+
+            <section id="popular-deals" className="scroll-mt-8 bg-white py-12 sm:py-14">
+                <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+                    <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-700">Trending now</p>
+                    <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{popular.h1}</h2>
+                    <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
+                        Browse popular group flight deals and trending group travel deals for teams, families, and schools. Pick an idea below, then contact our specialists for a free group flight quote.
+                    </p>
+                </div>
+            </section>
+
+            <section className="bg-slate-50 py-12 sm:py-16">
+                <div className="mx-auto grid max-w-7xl gap-5 px-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-3 lg:px-10">
+                    {deals.map((deal) => (
+                        <Link
+                            key={deal.slug}
+                            href={`/deals/${deal.slug}`}
+                            className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-blue-100 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
+                        >
+                            <div className="relative h-56 overflow-hidden bg-blue-900">
+                                <Image src={deal.image} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-110" />
+                                <span className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                                <span className="absolute bottom-4 left-4 rounded-full border border-white/60 bg-white/95 px-3 py-1.5 text-xs font-bold text-blue-900">{deal.category}</span>
+                                <span className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-white text-blue-800 transition group-hover:bg-blue-700 group-hover:text-white">
+                                    <ArrowRight className="h-4 w-4" />
+                                </span>
+                            </div>
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-slate-900 transition group-hover:text-blue-700">{deal.title}</h3>
+                                <p className="mt-2 min-h-12 text-md leading-6 text-slate-600">{deal.excerpt}</p>
+                                <span className="mt-5 inline-flex items-center gap-2 text-md font-bold text-blue-700">
+                                    Explore Now <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                </span>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </section>
+            <FaqSection
+                heading="Group Flight Deals Questions"
+                intro={dealsFaqs.intro}
+                items={dealsFaqs.items}
+                path="/deals"
+                accentWord="Questions"
+            />
+            <Newsletter />
         </main>
+    )
 }
