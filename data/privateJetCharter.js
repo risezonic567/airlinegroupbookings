@@ -1,5 +1,5 @@
 export const BRAND = "Airline Group Booking"; // apna brand name likho
-export const PHONE = "+1-888-000-0000"; // apna phone number likho
+export const PHONE = "+1-833-958-0151"; // apna phone number likho
 
 export const steps = [
   {
