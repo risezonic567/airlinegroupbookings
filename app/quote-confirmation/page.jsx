@@ -4,7 +4,7 @@
 import QuoteConfirmationClient from '@/components/QuoteConfirmationClient';
 
 export const metadata = {
-  title: 'Quote Confirmation | AirlinesGroup Travel',
+  title: 'Quote Confirmation | Airline Group Bookings',
   description: 'Your group flight quote request has been received.',
   robots: { index: false, follow: false },
 };

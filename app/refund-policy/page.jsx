@@ -4,7 +4,7 @@ import PageStructuredData from '../../components/seo/PageStructuredData'
 import { createPageMetadata } from '../../lib/seo'
 
 export const metadata = createPageMetadata({
-    title: 'Refund Policy | AirlinesGroup Travel',
+    title: 'Refund Policy | Airline Group Bookings',
     description: 'General information about refunds for group flight bookings.',
     path: '/refund-policy',
 })
@@ -12,7 +12,7 @@ export const metadata = createPageMetadata({
 export default function RefundPolicyPage() {
     return (
         <>
-        <PageStructuredData name="Refund Policy | AirlinesGroup Travel" description="General information about refunds for group flight bookings." path="/refund-policy" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Refund Policy', path: '/refund-policy' }]} />
+        <PageStructuredData name="Refund Policy | Airline Group Bookings" description="General information about refunds for group flight bookings." path="/refund-policy" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Refund Policy', path: '/refund-policy' }]} />
         <PolicyPage
             title="Refund Policy"
             introduction="Refund eligibility and any applicable charges depend on the airline fare rules and the written terms for your specific booking."

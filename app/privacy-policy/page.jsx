@@ -4,18 +4,18 @@ import PageStructuredData from '../../components/seo/PageStructuredData'
 import { createPageMetadata } from '../../lib/seo'
 
 export const metadata = createPageMetadata({
-    title: 'Privacy Policy | AirlinesGroup Travel',
-    description: 'Privacy information for visitors and customers of AirlinesGroup Travel.',
+    title: 'Privacy Policy | Airline Group Bookings',
+    description: 'Privacy information for visitors and customers of Airline Group Bookings.',
     path: '/privacy-policy',
 })
 
 export default function PrivacyPolicyPage() {
     return (
         <>
-        <PageStructuredData name="Privacy Policy | AirlinesGroup Travel" description="Privacy information for visitors and customers of AirlinesGroup Travel." path="/privacy-policy" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy-policy' }]} />
+        <PageStructuredData name="Privacy Policy | Airline Group Bookings" description="Privacy information for visitors and customers of Airline Group Bookings." path="/privacy-policy" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy-policy' }]} />
         <PolicyPage
             title="Privacy Policy"
-            introduction="We respect your privacy. This page provides general information about privacy when you use the AirlinesGroup Travel website or contact our team."
+            introduction="We respect your privacy. This page provides general information about privacy when you use the Airline Group Bookings website or contact our team."
             sections={[
                 {
                     title: 'Information you provide',

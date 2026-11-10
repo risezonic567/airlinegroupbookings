@@ -8,7 +8,7 @@ import blogs from '../../../data/blogs'
 import Newsletter from '../../../components/home/Newsletter'
 
 export function generateStaticParams() { return blogs.map(({ slug }) => ({ slug })) }
-export async function generateMetadata({ params }) { const { slug } = await params; const post = blogs.find((entry) => entry.slug === slug); return post ? createPageMetadata({ title: `${post.title} | AirlinesGroup Travel`, description: post.excerpt, path: `/blog/${slug}`, type: 'article' }) : { title: 'Article not found | AirlinesGroup Travel', description: 'Read group travel planning guides from AirlinesGroup Travel.' } }
+export async function generateMetadata({ params }) { const { slug } = await params; const post = blogs.find((entry) => entry.slug === slug); return post ? createPageMetadata({ title: `${post.title} | Airline Group Bookings`, description: post.excerpt, path: `/blog/${slug}`, type: 'article' }) : { title: 'Article not found | Airline Group Bookings', description: 'Read group travel planning guides from Airline Group Bookings.' } }
 
 export default async function BlogDetail({ params }) {
     const { slug } = await params

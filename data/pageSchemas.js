@@ -170,7 +170,7 @@ export const pageSchemas = {
                 '@type': 'CollectionPage',
                 '@id': `${SITE_URL}/group-travel#webpage`,
                 url: `${SITE_URL}/group-travel`,
-                name: 'Airline Group Travel | Group Flight Booking by Airline',
+                name: 'Airline Group Bookings | Group Flight Booking by Airline',
                 description: 'Browse group flight booking options with leading airlines for 10+ passengers.',
                 inLanguage: 'en-US',
                 isPartOf: { '@id': websiteId },

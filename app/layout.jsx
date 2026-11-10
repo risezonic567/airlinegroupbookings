@@ -6,11 +6,11 @@ import './globals.css'
 
 export const metadata = {
     metadataBase: new URL(SITE_URL),
-    title: 'AirlinesGroup Travel | Group Flight Bookings',
-    description: 'Find and book group flights with dedicated travel support from AirlinesGroup Travel.',
+    title: 'Airline Group Bookings | Group Flight Bookings',
+    description: 'Find and book group flights with dedicated travel support from Airline Group Bookings.',
     openGraph: {
         type: 'website',
-        siteName: 'AirlinesGroup Travel',
+        siteName: 'Airline Group Bookings',
         locale: 'en_US',
     },
     twitter: {

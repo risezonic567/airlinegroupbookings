@@ -75,7 +75,7 @@ export default function Footer() {
 
         <div className="mx-auto grid max-w-7xl gap-9 rounded-t-[2rem] bg-white/95 px-6 py-9 shadow-2xl shadow-slate-950/20 backdrop-blur-sm sm:px-9 sm:py-11 lg:grid-cols-[1.35fr_.8fr_.9fr_1.15fr] lg:gap-10 lg:px-12">
             <div>
-                <Link href="/" aria-label="AirlinesGroup Travel home" className="inline-flex  p-2 ring-1 ring-slate-100">
+                <Link href="/" aria-label="Airline Group Bookings home" className="inline-flex  p-2 ring-1 ring-slate-100">
                     <Image src="/images/navbarlogo.png" alt="Airline Group Bookings" width={220} height={60} className="h-auto w-[190px]" />
                 </Link>
                 <p className="mt-4 max-w-xs text-md leading-6 text-slate-600">Making it easier for families, teams, schools, and organizations to plan group flights together.</p>
@@ -117,7 +117,7 @@ export default function Footer() {
             <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-slate-200 pt-5 text-sm">
                 {legalLinks.map((link) => <Link key={link.href} href={link.href} className="font-semibold text-slate-600 transition hover:text-blue-700">{link.label}</Link>)}
             </div>
-            <div className="pt-4 text-sm text-slate-500">© AirlinesGroup Bookings. All rights reserved. <span className="mx-1 hidden sm:inline">·</span><span className="mt-1 block sm:mt-0 sm:inline">Plan together. Fly together.</span></div>
+            <div className="pt-4 text-sm text-slate-500">© Airline Group Bookings. All rights reserved. <span className="mx-1 hidden sm:inline">·</span><span className="mt-1 block sm:mt-0 sm:inline">Plan together. Fly together.</span></div>
         </div>
 
         <svg className="pointer-events-none absolute bottom-0 left-0 -z-0 h-14 w-full sm:h-20" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48C188 112 318 108 492 62C690 10 812 21 982 67C1158 114 1288 88 1440 42V120H0V48Z" fill="#c8102e" /></svg>

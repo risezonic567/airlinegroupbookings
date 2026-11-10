@@ -4,7 +4,7 @@ import PageStructuredData from '../../components/seo/PageStructuredData'
 import { createPageMetadata } from '../../lib/seo'
 
 export const metadata = createPageMetadata({
-    title: 'Disclaimer | AirlinesGroup Travel',
+    title: 'Disclaimer | Airline Group Bookings',
     description: 'Important information about website content and travel arrangements.',
     path: '/disclaimer',
 })
@@ -12,7 +12,7 @@ export const metadata = createPageMetadata({
 export default function DisclaimerPage() {
     return (
         <>
-        <PageStructuredData name="Disclaimer | AirlinesGroup Travel" description="Important information about website content and travel arrangements." path="/disclaimer" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Disclaimer', path: '/disclaimer' }]} />
+        <PageStructuredData name="Disclaimer | Airline Group Bookings" description="Important information about website content and travel arrangements." path="/disclaimer" breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Disclaimer', path: '/disclaimer' }]} />
         <PolicyPage
             title="Disclaimer"
             introduction="Information on this website is provided for general travel-planning purposes and may not reflect the latest availability or conditions for a particular trip."

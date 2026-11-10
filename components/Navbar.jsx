@@ -14,7 +14,6 @@ const menus = [
         title: 'Group Travel',
         href: '/group-travel',
         links: [
-            { label: 'Browse All Airlines', href: '/group-travel#airlines' },
             ...groupTravelAirlines.map(({ name, slug }) => ({ label: `${name} Group Travel`, href: `/group-travel/${slug}` })),
         ],
     },
@@ -22,7 +21,6 @@ const menus = [
         title: 'Business Class Booking',
         href: '/business-class',
         links: [
-            { label: 'Browse All Business Class', href: '/business-class#airlines' },
             ...businessClassAirlines.map(({ name, slug }) => ({ label: `${name} Business Class`, href: `/business-class-booking/${slug}` })),
         ],
     },
@@ -46,10 +44,10 @@ export default function Navbar() {
     return (
         <header className="relative z-50 bg-white font-sans">
             <div className="mx-auto flex min-h-[76px] max-w-[1440px] flex-wrap items-center justify-between gap-y-2 px-5 py-2 sm:px-8 lg:flex-nowrap lg:px-10">
-                <Link href="/" className="order-2 mr-auto flex items-center gap-2.5 lg:order-1 lg:mr-0" aria-label="AirlinesGroup Travel home">
+                <Link href="/" className="order-2 mr-auto flex items-center gap-2.5 lg:order-1 lg:mr-0" aria-label="Airline Group Bookings home">
                     <Image
                         src="/images/navbarlogo.png"
-                        alt="AirlinesGroup Travel"
+                        alt="Airline Group Bookings"
                         width={280}
                         height={40}
                         priority

@@ -9,7 +9,6 @@ const data = {
             '@type': ['Organization', 'TravelAgency'],
             '@id': `${SITE_URL}/#organization`,
             name: 'Airline Group Bookings',
-            alternateName: 'AirlinesGroup Travel',
             url: `${SITE_URL}/`,
             logo: {
                 '@type': 'ImageObject',
