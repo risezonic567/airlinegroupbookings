@@ -19,8 +19,10 @@ export default function BusinessClassPage() {
     return (
         <main>
             <JsonLd data={pageSchemas.businessClass} />
-            <section className="bg-gradient-to-br from-[#263673] to-[#202d60] px-5 py-14 text-white sm:px-8 sm:py-20">
-                <div className="mx-auto max-w-7xl">
+            <section className="relative isolate flex min-h-[320px] items-center overflow-hidden px-5 py-16 text-white sm:min-h-[380px] sm:px-8 sm:py-20">
+                <div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: "url('/images/Luxury Global Flight Experience.png')" }} aria-hidden="true" />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/75 to-[#101a3d]/35" aria-hidden="true" />
+                <div className="relative mx-auto w-full max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Travel in comfort</p>
                     <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
                         Business Class Flight Booking <span className="text-blue-200">for Individuals & Groups</span>

@@ -78,7 +78,7 @@ export default function ContactPage() {
         <main>
             <JsonLd data={pageSchemas.contact} />
 
-            <section className=" px-5 py-14 text-center text-white sm:px-8 sm:py-20" style={{ backgroundImage: "url('/images/Contact as banner.jpg.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center', height: '400px', width: '100%' }}>
+            <section className=" px-5 py-14 text-center text-white sm:px-8 sm:py-20" style={{ backgroundImage: "url('/images/Global Travel Contact Connections.png')", backgroundSize: 'cover', backgroundPosition: 'center', height: '400px', width: '100%' }}>
                 <div className="mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">We’re here to help</p>
                     <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Contact Us: Group Flight Booking <span className="text-blue-200">Phone & Support</span></h1>

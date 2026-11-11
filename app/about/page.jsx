@@ -27,8 +27,8 @@ export default function AboutPage() {
             <JsonLd data={pageSchemas.about} />
             <section className="relative isolate flex min-h-[270px] items-center justify-center overflow-hidden sm:min-h-[320px] lg:min-h-[360px]">
                 <Image
-                    src="/images/Aboutus.jpg.jpeg"
-                    alt="Airplane flying above a calm blue horizon"
+                    src="/images/Realistic Airliner Over World Map.png"
+                    alt="Airliner flying over a world map"
                     fill
                     priority
                     sizes="100vw"
