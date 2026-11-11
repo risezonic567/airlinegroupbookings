@@ -293,7 +293,7 @@ function bcSeo(primary, secondaries, h1, metaTitle, metaDescription) {
 
 /** Group travel airline pages — /group-travel/[slug] */
 export const groupTravelSeo = {
-    "delta-airlines-group-booking": gtSeo(
+    "delta-airlines": gtSeo(
         "delta airlines group booking",
         [
         "delta group travel desk",
@@ -305,7 +305,7 @@ export const groupTravelSeo = {
         "Delta Airlines Group Booking: Policy, Fares & Free Quote",
         "Need Delta Airlines group booking? Compare Delta group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "el-al-airlines-group-booking": gtSeo(
+    "el-al-airlines": gtSeo(
         "el al group booking",
         [
         "el al group travel discount",
@@ -317,7 +317,7 @@ export const groupTravelSeo = {
         "EL AL Group Booking for 10+ Travelers | Free Quote",
         "Need EL AL group booking? Compare EL AL group fare policy, check group minimums and request a free group flight quote from our travel specialists. Call 24/7."
     ),
-    "klm-airlines-group-booking": gtSeo(
+    "klm-airlines": gtSeo(
         "klm group booking",
         [
         "klm group travel policy",
@@ -329,7 +329,7 @@ export const groupTravelSeo = {
         "KLM Group Booking: Fares, Policy & Free Group Quote",
         "Need KLM group booking? Compare KLM group travel policy, check group minimums and request a free group flight quote from our travel specialists. Call 24/7."
     ),
-    "southwest-airlines-group-booking": gtSeo(
+    "southwest-airlines": gtSeo(
         "southwest airlines group travel",
         [
         "southwest group booking number",
@@ -341,7 +341,7 @@ export const groupTravelSeo = {
         "Southwest Airlines Group Travel: Policy, Fares & Free Quote",
         "Book Southwest Airlines group travel for 10+ passengers. Compare Southwest group travel discount and get a free group flight quote from our specialists."
     ),
-    "british-airways-airlines-group-booking": gtSeo(
+    "british-airways-airlines": gtSeo(
         "british airways group booking",
         [
         "british airways group travel desk",
@@ -353,7 +353,7 @@ export const groupTravelSeo = {
         "British Airways Group Booking: Policy, Fares & Free Quote",
         "Book British Airways group booking for 10+ passengers. Compare British Airways group discount and get a free group flight quote from our specialists. Call 24/7."
     ),
-    "finnair-airlines-group-booking": gtSeo(
+    "finnair-airlines": gtSeo(
         "finnair group booking",
         [
         "finnair group travel desk",
@@ -365,7 +365,7 @@ export const groupTravelSeo = {
         "Finnair Group Booking: Group Fares, Policy & Quote",
         "Need Finnair group booking? Compare Finnair group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "alaska-airlines-group-booking": gtSeo(
+    "alaska-airlines": gtSeo(
         "alaska airlines group travel",
         [
         "alaska airlines group booking number",
@@ -377,7 +377,7 @@ export const groupTravelSeo = {
         "Alaska Airlines Group Travel: Policy, Fares & Free Quote",
         "Book Alaska Airlines group travel for 10+ passengers. Compare Alaska Airlines group discount and get a free group flight quote from our specialists. Call 24/7."
     ),
-    "jetblue-airlines-group-booking": gtSeo(
+    "jetblue-airlines": gtSeo(
         "jetblue group travel",
         [
         "jetblue group booking number",
@@ -389,7 +389,7 @@ export const groupTravelSeo = {
         "JetBlue Group Travel for 10+ Travelers | Free Quote",
         "Need JetBlue group travel? Compare JetBlue group travel discount, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "qatar-airways-airlines-group-booking": gtSeo(
+    "qatar-airways-airlines": gtSeo(
         "qatar airways group booking",
         [
         "qatar airways group travel desk",
@@ -401,7 +401,7 @@ export const groupTravelSeo = {
         "Qatar Airways Group Booking: Policy, Fares & Free Quote",
         "Book Qatar Airways group booking for 10+ passengers. Compare Qatar Airways group fare policy and get a free group flight quote from our specialists. Call 24/7."
     ),
-    "avianca-airlines-group-booking": gtSeo(
+    "avianca-airlines": gtSeo(
         "avianca airlines group travel",
         [
         "avianca group booking number",
@@ -413,7 +413,7 @@ export const groupTravelSeo = {
         "Avianca Airlines Group Travel: Policy, Fares & Free Quote",
         "Book Avianca Airlines group travel for 10+ passengers. Compare Avianca group travel discount and get a free group flight quote from our specialists. Call 24/7."
     ),
-    "emirates-airlines-group-booking": gtSeo(
+    "emirates-airlines": gtSeo(
         "emirates group booking",
         [
         "emirates group travel desk",
@@ -425,7 +425,7 @@ export const groupTravelSeo = {
         "Emirates Group Booking: Policy, Fares & Free Quote",
         "Need Emirates group booking? Compare Emirates group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "air-france-airlines-group-booking": gtSeo(
+    "air-france-airlines": gtSeo(
         "air france group booking",
         [
         "air france group travel desk",
@@ -437,7 +437,7 @@ export const groupTravelSeo = {
         "Air France Group Booking: Policy, Fares & Free Quote",
         "Need Air France group booking? Compare Air France group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "american-airlines-group-booking": gtSeo(
+    "american-airlines": gtSeo(
         "american airlines group booking",
         [
         "american airlines group travel desk",
@@ -449,7 +449,7 @@ export const groupTravelSeo = {
         "American Airlines Group Booking: Policy, Fares & Free Quote",
         "Book American Airlines group booking for 10+ passengers. Compare American Airlines group fare policy and get a free group flight quote from our specialists."
     ),
-    "lufthansa-airlines-group-booking": gtSeo(
+    "lufthansa-airlines": gtSeo(
         "lufthansa group booking",
         [
         "lufthansa group travel desk",
@@ -461,7 +461,7 @@ export const groupTravelSeo = {
         "Lufthansa Group Booking: Policy, Fares & Free Quote",
         "Need Lufthansa group booking? Compare Lufthansa group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "swiss-air-airlines-group-booking": gtSeo(
+    "swiss-air-airlines": gtSeo(
         "swiss air group booking",
         [
         "swiss airlines group travel desk",
@@ -473,7 +473,7 @@ export const groupTravelSeo = {
         "Swiss Air Group Booking: Policy, Fares & Free Quote",
         "Need Swiss Air group booking? Compare Swiss Air group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "spirit-airlines-group-booking": gtSeo(
+    "spirit-airlines": gtSeo(
         "spirit airlines group booking",
         [
         "spirit airlines group travel desk",
@@ -485,7 +485,7 @@ export const groupTravelSeo = {
         "Spirit Airlines Group Booking: Policy, Fares & Free Quote",
         "Book Spirit Airlines group booking for 10+ passengers. Compare Spirit Airlines group fare policy and get a free group flight quote from our specialists."
     ),
-    "aeromexico-airlines-group-booking": gtSeo(
+    "aeromexico-airlines": gtSeo(
         "aeromexico group booking",
         [
         "aeromexico group travel desk",
@@ -497,7 +497,7 @@ export const groupTravelSeo = {
         "Aeromexico Group Booking: Policy, Fares & Free Quote",
         "Need Aeromexico group booking? Compare Aeromexico group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "frontier-airlines-group-booking": gtSeo(
+    "frontier-airlines": gtSeo(
         "frontier airlines group booking",
         [
         "frontier airlines group travel desk",
@@ -509,7 +509,7 @@ export const groupTravelSeo = {
         "Frontier Airlines Group Booking: Policy, Fares & Free Quote",
         "Book Frontier Airlines group booking for 10+ passengers. Compare Frontier Airlines group discount and get a free group flight quote from our specialists."
     ),
-    "copa-airlines-group-booking": gtSeo(
+    "copa-airlines": gtSeo(
         "copa airlines group booking",
         [
         "copa airlines group travel desk",
