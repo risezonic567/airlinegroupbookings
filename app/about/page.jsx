@@ -34,8 +34,8 @@ export default function AboutPage() {
                     sizes="100vw"
                     className="-z-20 object-cover"
                 />
-                {/* <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#19244d]/90 via-[#202d60]/75 to-[#263673]/55" /> */}
-                <div className="mx-auto w-full max-w-7xl px-5 py-14 text-center text-white sm:px-8 sm:py-16">
+                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/75 to-[#101a3d]/35" aria-hidden="true" />
+                <div className="relative mx-auto w-full max-w-7xl px-5 py-14 text-center text-white sm:px-8 sm:py-16">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
                         Trusted Group Flight Booking Company in the <span className="text-[#ffcaca]">USA</span>
                     </h1>
