@@ -473,18 +473,6 @@ export const groupTravelSeo = {
         "Swiss Air Group Booking: Policy, Fares & Free Quote",
         "Need Swiss Air group booking? Compare Swiss Air group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "spirit-airlines": gtSeo(
-        "spirit airlines group booking",
-        [
-        "spirit airlines group travel desk",
-        "spirit airlines group booking number",
-        "spirit airlines group fare policy",
-        "spirit airlines group travel discount"
-        ],
-        "Spirit Airlines Group Booking for 10+ Passengers",
-        "Spirit Airlines Group Booking: Policy, Fares & Free Quote",
-        "Book Spirit Airlines group booking for 10+ passengers. Compare Spirit Airlines group fare policy and get a free group flight quote from our specialists."
-    ),
     "aeromexico-airlines": gtSeo(
         "aeromexico group booking",
         [
@@ -844,17 +832,6 @@ export const businessClassSeo = {
         "Avianca Airlines Business Class Booking: Fares, Deals & Support",
         "Avianca Airlines Business Class Booking | Deals & Free Quote",
         "Avianca Airlines business class made easy. Explore Avianca Insignia business class deals and Avianca business class USA to Colombia, then request a free quote."
-    ),
-    "spirit-airlines": bcSeo(
-        "spirit airlines big front seat booking",
-        [
-        "spirit big front seat deals",
-        "spirit big front seat vs first class",
-        "cheap spirit airlines big front seat tickets"
-        ],
-        "Spirit Airlines Big Front Seat Booking: Fares, Deals & Support",
-        "Spirit Airlines Big Front Seat Booking | Deals & Free Quote",
-        "Spirit Airlines business class made easy. Explore Spirit Big Front Seat deals and Spirit Big Front Seat vs first class, then request a free quote. Call 24/7."
     ),
     "thai-airways": bcSeo(
         "thai airways business class booking",

@@ -61,7 +61,45 @@ const nextConfig = {
             return rules
         })
 
-        return [...groupTravel, ...businessClass]
+        const removedSpirit = [
+            {
+                source: '/group-travel/spirit-airlines',
+                destination: '/group-travel',
+                permanent: true,
+            },
+            {
+                source: '/group-travel/spirit-airlines-group-booking',
+                destination: '/group-travel',
+                permanent: true,
+            },
+            {
+                source: '/flights/spirit-airlines-group-booking',
+                destination: '/group-travel',
+                permanent: true,
+            },
+            {
+                source: '/business-class-booking/spirit-airlines',
+                destination: '/business-class',
+                permanent: true,
+            },
+            {
+                source: '/business-class-booking/spirit-airlines-business-class-flights',
+                destination: '/business-class',
+                permanent: true,
+            },
+            {
+                source: '/business-class/spirit-airlines',
+                destination: '/business-class',
+                permanent: true,
+            },
+            {
+                source: '/business-class/spirit-airlines-business-class-flights',
+                destination: '/business-class',
+                permanent: true,
+            },
+        ]
+
+        return [...groupTravel, ...businessClass, ...removedSpirit]
     },
 }
 

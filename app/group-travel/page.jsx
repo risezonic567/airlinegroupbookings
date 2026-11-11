@@ -43,11 +43,11 @@ export default function GroupTravelPage() {
                         <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-700">Find your airline</p>
                         <h2 className="mt-2 text-3xl font-bold text-slate-900">Explore <span className="text-blue-600">Group Flights</span></h2>
                     </div>
-                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                         {groupTravelAirlines.map((airline) => (
                             <Link key={airline.slug} href={`/group-travel/${airline.slug}`} className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                                 <div className="relative aspect-[16/9] overflow-hidden bg-blue-50">
-                                    <Image src={airline.image} alt={`${airline.name} group travel`} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                                    <Image src={airline.image} alt={`${airline.name} group travel`} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover transition duration-500 group-hover:scale-105" />
                                 </div>
                                 <div className="p-5">
                                     <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Plane className="h-5 w-5" aria-hidden="true" /></span>

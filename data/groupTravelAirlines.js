@@ -16,7 +16,6 @@ const airlineImages = {
     'american-airlines': '/images/grouptravel/American.jpg.jpeg',
     'lufthansa-airlines': '/images/grouptravel/Lufthansa.jpg.jpeg',
     'swiss-air-airlines': '/images/grouptravel/Swiss.jpg.jpeg',
-    'spirit-airlines': '/images/grouptravel/Spirit.jpg.jpeg',
     'aeromexico-airlines': '/images/grouptravel/Aeromexico.jpg.jpeg',
     'frontier-airlines': '/images/grouptravel/Frontier.jpg.jpeg',
     'copa-airlines': '/images/grouptravel/Copa.jpg.jpeg',
@@ -201,18 +200,6 @@ const airlines = [
             'Look at Swiss routes to Zurich, Geneva, and connecting cities.',
             'Plan around ski and holiday seasons by sharing flexible dates early.',
             'Check baggage rules, especially for sports equipment, before you book.',
-        ],
-    },
-    {
-        name: 'Spirit Airlines',
-        slug: 'spirit-airlines',
-        description:
-            'Watching your group budget? Share your route and dates and we will help you compare Spirit options for domestic trips, the Caribbean, and Latin America.',
-        tagline: 'Budget-minded group travel with Spirit.',
-        highlights: [
-            'Compare Spirit options for domestic and nearby international routes.',
-            'Check carefully what is included in the fare, such as bags and seats.',
-            'Share your group size and dates early to keep more choices open.',
         ],
     },
     {

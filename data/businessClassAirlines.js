@@ -435,21 +435,6 @@ const businessClassAirlines = [
         "html": "<h2>Avianca Insignia Business Class</h2>\n<p>As one of the oldest operating airlines in the world, Avianca connects travelers across Latin America with modern comfort and authentic regional character.</p>\n<h3>Boeing 787 Dreamliner Comfort</h3>\n<ul>\n  <li><strong>180-Degree Recline:</strong> Rest comfortably in full flat-bed seats with direct aisle access on transatlantic and select inter-American routes.</li>\n  <li><strong>Colombian Gastronomy:</strong> Enjoy seasonal Latin American dishes, fine wines, and freshly ground Colombian specialty coffees.</li>\n  <li><strong>Amenity Kits:</strong> Travel kits featuring natural skincare essentials inspired by Colombia’s rich biodiversity.</li>\n</ul>\n<h3>Bogota El Dorado Hub</h3>\n<p>Enjoy the spacious Avianca Lounge in Bogota Terminal 1, featuring Colombian craft beers, buffet meals, and quiet workspaces.</p>"
     },
     {
-        "name": "Spirit Airlines",
-        "slug": "spirit-airlines",
-        "image": "/images/businessclass/Spirit.jpg.jpeg",
-        "tagline": "Big Front Seat comfort: extra space and premium value without high fares.",
-        "intro": "Spirit Airlines Big Front Seat provides luxury space at an unbeatable budget price. With up to 36 inches of pitch, 20 inches of width, and no middle seat ever, enjoy wide leather seating and priority boarding while saving substantially on your travels.",
-        "description": "Explore Spirit Airlines Big Front Seat options. Compare spacious seats with no middle seat, priority boarding, and budget-friendly travel comfort.",
-        "highlights": [
-            "Extra-wide ergonomic leather seats with up to 36 inches of pitch and 20 inches of width.",
-            "Guaranteed no middle seat: fly with maximum personal elbow room.",
-            "Shortcut boarding to get settled on the aircraft before general groups.",
-            "Affordable upgrade pricing available on all domestic and Caribbean routes."
-        ],
-        "html": "<h2>Spirit Airlines Big Front Seat</h2>\n<p>Want first-class style space without paying exorbitant legacy carrier fares? Spirit’s Big Front Seat delivers the extra room you crave at a fraction of the cost.</p>\n<h3>Big Front Seat Advantages</h3>\n<ul>\n  <li><strong>Generous Dimensions:</strong> Spread out with 36 inches of legroom and wide pre-reclined leather padding.</li>\n  <li><strong>No Middle Seats:</strong> Arranged in a comfortable 2-2 configuration in the front rows of the aircraft.</li>\n  <li><strong>Combine with Bundles:</strong> Pair your Big Front Seat with checked bags, carry-ons, and in-flight Wi-Fi for an all-inclusive low fare.</li>\n</ul>\n<h3>Smart Travel Value</h3>\n<p>Pay only for the premium space you want, keeping more money in your pocket for your vacation or business trip.</p>"
-    },
-    {
         "name": "Thai Airways",
         "slug": "thai-airways",
         "image": "/images/businessclass/Thai.jpg.jpeg",
