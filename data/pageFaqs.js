@@ -8,7 +8,7 @@ export const homeFaqs = {
         'group airline tickets quote',
         'group travel flight deals USA',
     ],
-    heading: 'Frequently Asked Questions',
+    heading: 'Group Flight Booking FAQs',
     intro: 'Quick answers about airline group booking with Airline Group Bookings — from traveler minimums to quotes and deals.',
     items: [
         {

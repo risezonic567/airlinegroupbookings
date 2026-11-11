@@ -51,7 +51,7 @@ export default function HomePage() {
             heading={homeFaqs.heading}
             intro={homeFaqs.intro}
             items={homeFaqs.items}
-            accentWord="Questions"
+            accentWord="FAQs"
         />
         {/* <Newsletter /> */}
 

@@ -36,7 +36,7 @@ export default function Testimonials() {
             Stories from travelers
           </span>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-            Client <span className="text-blue-600">Testimonials</span>
+            What Group Organizers <span className="text-blue-600">Say</span>
           </h2>
         </div>
 
