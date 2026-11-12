@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/home/Footer'
 import SiteStructuredData from '../components/seo/SiteStructuredData'
-import { SITE_URL } from '../lib/seo'
+import { OG_IMAGE, SITE_URL } from '../lib/seo'
 import './globals.css'
 
 export const metadata = {
@@ -12,9 +12,11 @@ export const metadata = {
         type: 'website',
         siteName: 'Airline Group Bookings',
         locale: 'en_US',
+        images: [OG_IMAGE],
     },
     twitter: {
-        card: 'summary',
+        card: 'summary_large_image',
+        images: [OG_IMAGE.url],
     },
 }
 

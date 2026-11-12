@@ -25,7 +25,7 @@ import QuoteForm from "@/components/home/QuoteForm";
 import { AirlinesSection, DealsSection, WhyChooseSection } from "@/components/home/HomeSections";
 import JsonLd from "@/components/seo/JsonLd";
 import { pageSchemas } from "@/data/pageSchemas";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, OG_IMAGE } from "@/lib/seo";
 
 export const metadata = {
   title: "Private Jet Charter | Private Jet Rentals & Charter Flights",
@@ -37,6 +37,11 @@ export const metadata = {
     description:
       "Get a private jet charter quote for your group or business trip within 60 minutes.",
     type: "website",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [OG_IMAGE.url],
   },
 };
 
