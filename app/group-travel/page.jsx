@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Plane } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import groupTravelAirlines from '../../data/groupTravelAirlines'
 import { withAirlinesName } from '../../data/slugRedirects'
 import JsonLd from '../../components/seo/JsonLd'
@@ -50,8 +50,7 @@ export default function GroupTravelPage() {
                                     <Image src={airline.image} alt={`${airline.name} group travel`} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover transition duration-500 group-hover:scale-105" />
                                 </div>
                                 <div className="p-5">
-                                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Plane className="h-5 w-5" aria-hidden="true" /></span>
-                                    <h3 className="mt-4 text-lg font-bold text-slate-900">{withAirlinesName(airline.name)} Group Travel</h3>
+                                    <h3 className="text-lg font-bold text-slate-900">{withAirlinesName(airline.name)} Group Travel</h3>
                                     <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">{airline.description}</p>
                                     <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-700">View details <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" /></span>
                                 </div>
