@@ -25,12 +25,13 @@ import QuoteForm from "@/components/home/QuoteForm";
 import { AirlinesSection, DealsSection, WhyChooseSection } from "@/components/home/HomeSections";
 import JsonLd from "@/components/seo/JsonLd";
 import { pageSchemas } from "@/data/pageSchemas";
+import { absoluteUrl } from "@/lib/seo";
 
 export const metadata = {
   title: "Private Jet Charter | Private Jet Rentals & Charter Flights",
   description:
     "Rent a private jet for your group or business trip. Share your route and get a private jet charter quote within 60 minutes.",
-  alternates: { canonical: "/private-jet-charter/" },
+  alternates: { canonical: absoluteUrl("/private-jet-charter") },
   openGraph: {
     title: "Private Jet Rentals & Charter Flights",
     description:

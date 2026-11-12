@@ -3,9 +3,13 @@ import {
     groupTravelSlugRedirects,
 } from './data/slugRedirects.js'
 
+const withSlash = (path) => (path.endsWith('/') ? path : `${path}/`)
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'standalone',
+    // Keep live URLs, canonicals, and sitemap aligned (SEO: trailing slash)
+    trailingSlash: true,
     images: {
         qualities: [75, 90],
         remotePatterns: [
@@ -20,14 +24,14 @@ const nextConfig = {
             const rules = [
                 {
                     source: `/flights/${oldSlug}`,
-                    destination: `/group-travel/${newSlug}`,
+                    destination: withSlash(`/group-travel/${newSlug}`),
                     permanent: true,
                 },
             ]
             if (oldSlug !== newSlug) {
                 rules.push({
                     source: `/group-travel/${oldSlug}`,
-                    destination: `/group-travel/${newSlug}`,
+                    destination: withSlash(`/group-travel/${newSlug}`),
                     permanent: true,
                 })
             }
@@ -38,23 +42,19 @@ const nextConfig = {
             const rules = [
                 {
                     source: `/business-class/${oldSlug}`,
-                    destination: `/business-class-booking/${newSlug}`,
+                    destination: withSlash(`/business-class-booking/${newSlug}`),
                     permanent: true,
                 },
             ]
             if (oldSlug !== newSlug) {
                 rules.push({
                     source: `/business-class-booking/${oldSlug}`,
-                    destination: `/business-class-booking/${newSlug}`,
+                    destination: withSlash(`/business-class-booking/${newSlug}`),
                     permanent: true,
                 })
-                // After path move, old hub path + new short slug is unlikely; keep old long under booking path covered above.
-            }
-            // Also redirect old hub path with NEW slug if someone used /business-class/delta-airlines after shorten
-            if (oldSlug !== newSlug) {
                 rules.push({
                     source: `/business-class/${newSlug}`,
-                    destination: `/business-class-booking/${newSlug}`,
+                    destination: withSlash(`/business-class-booking/${newSlug}`),
                     permanent: true,
                 })
             }
@@ -64,37 +64,37 @@ const nextConfig = {
         const removedSpirit = [
             {
                 source: '/group-travel/spirit-airlines',
-                destination: '/group-travel',
+                destination: withSlash('/group-travel'),
                 permanent: true,
             },
             {
                 source: '/group-travel/spirit-airlines-group-booking',
-                destination: '/group-travel',
+                destination: withSlash('/group-travel'),
                 permanent: true,
             },
             {
                 source: '/flights/spirit-airlines-group-booking',
-                destination: '/group-travel',
+                destination: withSlash('/group-travel'),
                 permanent: true,
             },
             {
                 source: '/business-class-booking/spirit-airlines',
-                destination: '/business-class',
+                destination: withSlash('/business-class'),
                 permanent: true,
             },
             {
                 source: '/business-class-booking/spirit-airlines-business-class-flights',
-                destination: '/business-class',
+                destination: withSlash('/business-class'),
                 permanent: true,
             },
             {
                 source: '/business-class/spirit-airlines',
-                destination: '/business-class',
+                destination: withSlash('/business-class'),
                 permanent: true,
             },
             {
                 source: '/business-class/spirit-airlines-business-class-flights',
-                destination: '/business-class',
+                destination: withSlash('/business-class'),
                 permanent: true,
             },
         ]
