@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   Send,
@@ -29,7 +30,7 @@ export const metadata = {
   title: "Private Jet Charter | Private Jet Rentals & Charter Flights",
   description:
     "Rent a private jet for your group or business trip. Share your route and get a private jet charter quote within 60 minutes.",
-  alternates: { canonical: "/private-jet-charter" },
+  alternates: { canonical: "/private-jet-charter/" },
   openGraph: {
     title: "Private Jet Rentals & Charter Flights",
     description:
@@ -53,10 +54,13 @@ export default function PrivateJetCharterPage() {
       <JsonLd data={pageSchemas.privateJet} />
       {/* 1. HERO */}
       <section className="relative isolate flex min-h-[320px] items-center overflow-hidden text-white sm:min-h-[380px]">
-        <div
-          className="absolute inset-0 -z-20 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/Jetsetter\u2019s World Map Journey.png')" }}
-          aria-hidden="true"
+        <Image
+          src="/images/Jetsetter's World Map Journey.png"
+          alt="Private jet journey illustrated over a world map"
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/75 to-[#101a3d]/35" aria-hidden="true" />
         <div className="relative mx-auto w-full max-w-7xl px-4 pb-44 pt-14 sm:px-6 sm:pt-16 lg:px-8 lg:pb-52">

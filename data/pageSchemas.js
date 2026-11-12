@@ -2,11 +2,12 @@
  *  Shared Organization + WebSite live in SiteStructuredData.jsx
  *  Update THIS file when page schemas change.
  */
-import { SITE_URL } from '../lib/seo'
+import { SITE_URL, absoluteUrl } from '../lib/seo'
 
 const orgId = `${SITE_URL}/#organization`
 const websiteId = `${SITE_URL}/#website`
 const logoId = `${SITE_URL}/#logo`
+const pageUrl = (path) => absoluteUrl(path)
 
 function breadcrumb(id, items) {
     return {
@@ -111,19 +112,19 @@ export const pageSchemas = {
         '@graph': [
             {
                 '@type': 'AboutPage',
-                '@id': `${SITE_URL}/about#webpage`,
-                url: `${SITE_URL}/about`,
+                '@id': `${pageUrl('/about')}#webpage`,
+                url: `${pageUrl('/about')}`,
                 name: 'About Us | Airline Group Bookings',
                 description:
                     'Learn about Airline Group Bookings and how our team helps families, schools, teams and companies plan group flights together.',
                 inLanguage: 'en-US',
                 isPartOf: { '@id': websiteId },
-                breadcrumb: { '@id': `${SITE_URL}/about#breadcrumb` },
+                breadcrumb: { '@id': `${pageUrl('/about')}#breadcrumb` },
                 about: { '@id': orgId },
             },
-            breadcrumb(`${SITE_URL}/about#breadcrumb`, [
+            breadcrumb(`${pageUrl('/about')}#breadcrumb`, [
                 { name: 'Home', item: `${SITE_URL}/` },
-                { name: 'About Us', item: `${SITE_URL}/about` },
+                { name: 'About Us', item: `${pageUrl('/about')}` },
             ]),
         ],
     },
@@ -133,13 +134,13 @@ export const pageSchemas = {
         '@graph': [
             {
                 '@type': 'ContactPage',
-                '@id': `${SITE_URL}/contact#webpage`,
-                url: `${SITE_URL}/contact`,
+                '@id': `${pageUrl('/contact')}#webpage`,
+                url: `${pageUrl('/contact')}`,
                 name: 'Contact Us | Airline Group Bookings',
                 description: 'Request a free group flight quote or speak to our group travel team 24/7.',
                 inLanguage: 'en-US',
                 isPartOf: { '@id': websiteId },
-                breadcrumb: { '@id': `${SITE_URL}/contact#breadcrumb` },
+                breadcrumb: { '@id': `${pageUrl('/contact')}#breadcrumb` },
                 mainEntity: {
                     '@type': 'Organization',
                     '@id': orgId,
@@ -156,9 +157,9 @@ export const pageSchemas = {
                     },
                 },
             },
-            breadcrumb(`${SITE_URL}/contact#breadcrumb`, [
+            breadcrumb(`${pageUrl('/contact')}#breadcrumb`, [
                 { name: 'Home', item: `${SITE_URL}/` },
-                { name: 'Contact Us', item: `${SITE_URL}/contact` },
+                { name: 'Contact Us', item: `${pageUrl('/contact')}` },
             ]),
         ],
     },
@@ -168,17 +169,17 @@ export const pageSchemas = {
         '@graph': [
             {
                 '@type': 'CollectionPage',
-                '@id': `${SITE_URL}/group-travel#webpage`,
-                url: `${SITE_URL}/group-travel`,
+                '@id': `${pageUrl('/group-travel')}#webpage`,
+                url: `${pageUrl('/group-travel')}`,
                 name: 'Airline Group Bookings | Group Flight Booking by Airline',
                 description: 'Browse group flight booking options with leading airlines for 10+ passengers.',
                 inLanguage: 'en-US',
                 isPartOf: { '@id': websiteId },
-                breadcrumb: { '@id': `${SITE_URL}/group-travel#breadcrumb` },
+                breadcrumb: { '@id': `${pageUrl('/group-travel')}#breadcrumb` },
             },
-            breadcrumb(`${SITE_URL}/group-travel#breadcrumb`, [
+            breadcrumb(`${pageUrl('/group-travel')}#breadcrumb`, [
                 { name: 'Home', item: `${SITE_URL}/` },
-                { name: 'Group Travel', item: `${SITE_URL}/group-travel` },
+                { name: 'Group Travel', item: `${pageUrl('/group-travel')}` },
             ]),
         ],
     },
@@ -188,17 +189,17 @@ export const pageSchemas = {
         '@graph': [
             {
                 '@type': 'CollectionPage',
-                '@id': `${SITE_URL}/business-class#webpage`,
-                url: `${SITE_URL}/business-class`,
+                '@id': `${pageUrl('/business-class')}#webpage`,
+                url: `${pageUrl('/business-class')}`,
                 name: 'Business Class Group Booking | Airlines Business Class Travel',
                 description: 'Browse business class group flight booking options by airline.',
                 inLanguage: 'en-US',
                 isPartOf: { '@id': websiteId },
-                breadcrumb: { '@id': `${SITE_URL}/business-class#breadcrumb` },
+                breadcrumb: { '@id': `${pageUrl('/business-class')}#breadcrumb` },
             },
-            breadcrumb(`${SITE_URL}/business-class#breadcrumb`, [
+            breadcrumb(`${pageUrl('/business-class')}#breadcrumb`, [
                 { name: 'Home', item: `${SITE_URL}/` },
-                { name: 'Business Class Booking', item: `${SITE_URL}/business-class` },
+                { name: 'Business Class Booking', item: `${pageUrl('/business-class')}` },
             ]),
         ],
     },
@@ -208,17 +209,17 @@ export const pageSchemas = {
         '@graph': [
             {
                 '@type': 'CollectionPage',
-                '@id': `${SITE_URL}/airlines#webpage`,
-                url: `${SITE_URL}/airlines`,
+                '@id': `${pageUrl('/airlines')}#webpage`,
+                url: `${pageUrl('/airlines')}`,
                 name: 'Airlines for Group Booking | Airline Group Bookings',
                 description: 'View all airlines available for group flight booking.',
                 inLanguage: 'en-US',
                 isPartOf: { '@id': websiteId },
-                breadcrumb: { '@id': `${SITE_URL}/airlines#breadcrumb` },
+                breadcrumb: { '@id': `${pageUrl('/airlines')}#breadcrumb` },
             },
-            breadcrumb(`${SITE_URL}/airlines#breadcrumb`, [
+            breadcrumb(`${pageUrl('/airlines')}#breadcrumb`, [
                 { name: 'Home', item: `${SITE_URL}/` },
-                { name: 'Airlines', item: `${SITE_URL}/airlines` },
+                { name: 'Airlines', item: `${pageUrl('/airlines')}` },
             ]),
         ],
     },
@@ -228,17 +229,17 @@ export const pageSchemas = {
         '@graph': [
             {
                 '@type': 'CollectionPage',
-                '@id': `${SITE_URL}/deals#webpage`,
-                url: `${SITE_URL}/deals`,
+                '@id': `${pageUrl('/deals')}#webpage`,
+                url: `${pageUrl('/deals')}`,
                 name: 'Group Travel Deals | Airline Group Bookings',
                 description: 'Explore group travel deals including sports, seasonal and corporate travel.',
                 inLanguage: 'en-US',
                 isPartOf: { '@id': websiteId },
-                breadcrumb: { '@id': `${SITE_URL}/deals#breadcrumb` },
+                breadcrumb: { '@id': `${pageUrl('/deals')}#breadcrumb` },
             },
-            breadcrumb(`${SITE_URL}/deals#breadcrumb`, [
+            breadcrumb(`${pageUrl('/deals')}#breadcrumb`, [
                 { name: 'Home', item: `${SITE_URL}/` },
-                { name: 'Deals', item: `${SITE_URL}/deals` },
+                { name: 'Deals', item: `${pageUrl('/deals')}` },
             ]),
         ],
     },
@@ -248,18 +249,18 @@ export const pageSchemas = {
         '@graph': [
             {
                 '@type': 'CollectionPage',
-                '@id': `${SITE_URL}/destinations#webpage`,
-                url: `${SITE_URL}/destinations`,
+                '@id': `${pageUrl('/destinations')}#webpage`,
+                url: `${pageUrl('/destinations')}`,
                 name: 'Group Travel Destinations | Airline Group Bookings',
                 description:
                     'Explore popular group travel destinations such as Paris, London, Las Vegas, Dubai, Tokyo and Miami.',
                 inLanguage: 'en-US',
                 isPartOf: { '@id': websiteId },
-                breadcrumb: { '@id': `${SITE_URL}/destinations#breadcrumb` },
+                breadcrumb: { '@id': `${pageUrl('/destinations')}#breadcrumb` },
             },
-            breadcrumb(`${SITE_URL}/destinations#breadcrumb`, [
+            breadcrumb(`${pageUrl('/destinations')}#breadcrumb`, [
                 { name: 'Home', item: `${SITE_URL}/` },
-                { name: 'Destinations', item: `${SITE_URL}/destinations` },
+                { name: 'Destinations', item: `${pageUrl('/destinations')}` },
             ]),
         ],
     },
@@ -269,22 +270,22 @@ export const pageSchemas = {
         '@graph': [
             {
                 '@type': 'CollectionPage',
-                '@id': `${SITE_URL}/blog#webpage`,
-                url: `${SITE_URL}/blog`,
+                '@id': `${pageUrl('/blog')}#webpage`,
+                url: `${pageUrl('/blog')}`,
                 name: 'Group Travel Blog | Tips & Guides',
                 description: 'Ideas and practical tips for planning your next group trip.',
                 inLanguage: 'en-US',
                 isPartOf: { '@id': websiteId },
-                breadcrumb: { '@id': `${SITE_URL}/blog#breadcrumb` },
+                breadcrumb: { '@id': `${pageUrl('/blog')}#breadcrumb` },
             },
-            breadcrumb(`${SITE_URL}/blog#breadcrumb`, [
+            breadcrumb(`${pageUrl('/blog')}#breadcrumb`, [
                 { name: 'Home', item: `${SITE_URL}/` },
-                { name: 'Blog', item: `${SITE_URL}/blog` },
+                { name: 'Blog', item: `${pageUrl('/blog')}` },
             ]),
             {
                 '@type': 'Blog',
-                '@id': `${SITE_URL}/blog#blog`,
-                url: `${SITE_URL}/blog`,
+                '@id': `${pageUrl('/blog')}#blog`,
+                url: `${pageUrl('/blog')}`,
                 name: 'Airline Group Bookings Blog',
                 publisher: { '@id': orgId },
             },
@@ -296,28 +297,28 @@ export const pageSchemas = {
         '@graph': [
             {
                 '@type': 'WebPage',
-                '@id': `${SITE_URL}/private-jet-charter#webpage`,
-                url: `${SITE_URL}/private-jet-charter`,
+                '@id': `${pageUrl('/private-jet-charter')}#webpage`,
+                url: `${pageUrl('/private-jet-charter')}`,
                 name: 'Private Jet Charter | Airline Group Bookings',
                 description: 'Request a private jet charter quote for your group or team.',
                 inLanguage: 'en-US',
                 isPartOf: { '@id': websiteId },
-                breadcrumb: { '@id': `${SITE_URL}/private-jet-charter#breadcrumb` },
-                mainEntity: { '@id': `${SITE_URL}/private-jet-charter#service` },
+                breadcrumb: { '@id': `${pageUrl('/private-jet-charter')}#breadcrumb` },
+                mainEntity: { '@id': `${pageUrl('/private-jet-charter')}#service` },
             },
-            breadcrumb(`${SITE_URL}/private-jet-charter#breadcrumb`, [
+            breadcrumb(`${pageUrl('/private-jet-charter')}#breadcrumb`, [
                 { name: 'Home', item: `${SITE_URL}/` },
-                { name: 'Private Jet Charter', item: `${SITE_URL}/private-jet-charter` },
+                { name: 'Private Jet Charter', item: `${pageUrl('/private-jet-charter')}` },
             ]),
             {
                 '@type': 'Service',
-                '@id': `${SITE_URL}/private-jet-charter#service`,
+                '@id': `${pageUrl('/private-jet-charter')}#service`,
                 name: 'Private Jet Charter',
                 serviceType: 'Private jet charter',
                 description: 'Private jet charter for groups, teams and executives.',
                 provider: { '@id': orgId },
                 areaServed: { '@type': 'Country', name: 'United States' },
-                url: `${SITE_URL}/private-jet-charter`,
+                url: `${pageUrl('/private-jet-charter')}`,
             },
         ],
     },

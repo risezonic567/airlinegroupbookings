@@ -80,42 +80,6 @@ const deals = [
         intro: 'For a short-notice group trip, share your route, travel dates, and passenger count as soon as possible. Options depend on current seat availability.',
         details: ['Provide exact dates and flexible alternatives if possible.', 'Share traveler count and departure airports.', 'Confirm ticketing deadlines and payment requirements promptly.'],
     },
-    {
-        slug: 'nfl-travel-deals',
-        title: 'NFL - National Football League Travel Deals',
-        category: 'Sports travel',
-        image:"/images/deals/National Football League Travel.jpg.jpeg",
-        excerpt: 'Coordinate group flights for NFL games, fan trips, and football events.',
-        intro: 'Traveling with a group to an NFL game or football event? Share the host city, event date, and group size to explore flight options.',
-        details: ['Include the game date and preferred arrival window.', 'Share the number of travelers and origin cities.', 'Check flight schedules and fare conditions before booking.'],
-    },
-    {
-        slug: 'wimbledon-tennis-travel-deals',
-        title: 'Wimbledon Tennis Travel Deals',
-        category: 'Tennis travel',
-        image:"/images/deals/Wimbledon Tennis  Travel.jpg.jpeg",
-        excerpt: 'Plan group travel to Wimbledon and tennis events in London.',
-        intro: 'Organizing a group trip to Wimbledon? Share your preferred dates, departure city, and traveler count to explore air travel options to London.',
-        details: ['Consider the event dates when choosing your travel window.', 'Include departure cities and group size in your request.', 'Check entry requirements and all fare conditions before booking.'],
-    },
-    {
-        slug: 'tennis-group-travel-deals',
-        title: 'Tennis Group Travel Deals',
-        category: 'Tennis travel',
-        image:"/images/deals/Tennis Group  Travel.jpg.jpeg",
-        excerpt: 'Coordinate flights for tennis teams, clubs, tournaments, and fans.',
-        intro: 'Make travel planning easier for a tennis team, club, or tournament group. Send your route, dates, and estimated passenger count to request flight options.',
-        details: ['Share tournament dates and preferred arrival times.', 'Include the traveler count and departure cities.', 'Ask about baggage needs and review fare restrictions.'],
-    },
-    {
-        slug: 'us-open-tennis-travel-deals',
-        title: 'US Open Tennis Travel Deals',
-        category: 'Tennis travel',
-        image:"/images/deals/US Open Tennis Travel.jpg.jpeg",
-        excerpt: 'Explore group flights for the US Open and tennis trips to New York.',
-        intro: 'Planning a trip to the US Open with a group? Share your travel dates, departure city, and party size to explore flight options to New York.',
-        details: ['Plan around your preferred tournament dates.', 'Include your group size and departure airport.', 'Review the complete itinerary and fare rules before booking.'],
-    },
 ]
 
 export default deals

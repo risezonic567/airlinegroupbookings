@@ -21,7 +21,7 @@ export default function BlogIndex() {
         <main>
             <JsonLd data={pageSchemas.blog} />
             <section className="relative isolate flex min-h-[320px] items-center overflow-hidden px-5 py-16 text-white sm:min-h-[380px] sm:px-8 sm:py-20">
-                <div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: "url('/images/Modern Travel Blog Aviation Hero Banner.png')" }} aria-hidden="true" />
+                <Image src="/images/Modern Travel Blog Aviation Hero Banner.png" alt="Modern travel blog aviation hero banner with airplane imagery" fill priority sizes="100vw" className="-z-20 object-cover" />
                 <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/75 to-[#101a3d]/35" aria-hidden="true" />
                 <div className="relative mx-auto w-full max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Guides and inspiration</p>

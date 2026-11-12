@@ -21,7 +21,7 @@ export default function GroupTravelPage() {
         <main>
             <JsonLd data={pageSchemas.groupTravel} />
             <section className="relative isolate overflow-hidden px-5 py-14 text-white sm:px-8 sm:py-20">
-                <div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: "url('/images/group-travel-banner.jpg.png')" }} aria-hidden="true" />
+                <Image src="/images/group-travel-banner.jpg.png" alt="Group travelers preparing for a shared airline journey" fill priority sizes="100vw" className="-z-20 object-cover" />
                 <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/75 to-[#101a3d]/35" aria-hidden="true" />
                 <div className="relative mx-auto max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Plan together</p>

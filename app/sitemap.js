@@ -4,7 +4,7 @@ import businessClassAirlines from '../data/businessClassAirlines'
 import deals from '../data/deals'
 import destinations from '../data/destinations'
 import groupTravelAirlines from '../data/groupTravelAirlines'
-import { SITE_URL } from '../lib/seo'
+import { absoluteUrl } from '../lib/seo'
 
 const staticPaths = [
     '/',
@@ -35,6 +35,6 @@ const detailPaths = [
 
 export default function sitemap() {
     return [...staticPaths, ...detailPaths].map((path) => ({
-        url: new URL(path, SITE_URL).toString(),
+        url: absoluteUrl(path),
     }))
 }

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import ContactForm from '../../components/contact/ContactForm'
@@ -79,7 +80,7 @@ export default function ContactPage() {
             <JsonLd data={pageSchemas.contact} />
 
             <section className="relative isolate flex min-h-[320px] items-center justify-center overflow-hidden px-5 py-14 text-center text-white sm:min-h-[380px] sm:px-8 sm:py-20">
-                <div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: "url('/images/Global Travel Contact Connections.png')" }} aria-hidden="true" />
+                <Image src="/images/Global Travel Contact Connections.png" alt="Global travel contact connections across destinations" fill priority sizes="100vw" className="-z-20 object-cover" />
                 <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/75 to-[#101a3d]/35" aria-hidden="true" />
                 <div className="relative mx-auto w-full max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">We’re here to help</p>

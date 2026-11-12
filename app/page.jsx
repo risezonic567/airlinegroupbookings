@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import ContactFab from '../components/home/ContactFab'
 import QuoteForm from '../components/home/QuoteForm'
 import { AirlinesSection, BlogsSection, DealsSection, DestinationsSection, WhyChooseSection } from '../components/home/HomeSections'
@@ -28,9 +29,16 @@ export default function HomePage() {
     return <main>
         <JsonLd data={pageSchemas.home} />
         <section className="home-hero relative isolate overflow-visible">
-            <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-                <div className="absolute inset-0 -z-20 bg-cover bg-[position:62%_center]" style={{ backgroundImage: "url('/images/Airline Group Booking Webside Banner.jpg.jpeg.png')" }} />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/70 to-[#101a3d]/10" />
+            <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+                <Image
+                    src="/images/Airline Group Booking Webside Banner.jpg.jpeg.png"
+                    alt="Passenger airplane flying over a world map with flight routes"
+                    fill
+                    priority
+                    sizes="100vw"
+                    className="-z-20 object-cover object-[62%_center]"
+                />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/70 to-[#101a3d]/10" aria-hidden="true" />
             </div>
             <div className="mx-auto flex max-w-[1440px] items-center px-5 pt-6 pb-8 sm:px-8 sm:pt-8 sm:pb-10 lg:px-10 lg:pt-10 lg:pb-12">
                 <div className="min-w-0 max-w-[540px] text-left text-white">
