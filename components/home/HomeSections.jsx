@@ -7,6 +7,41 @@ import destinations from '../../data/destinations'
 import deals from '../../data/deals'
 import blogs from '../../data/blogs'
 
+const homeDealAlts = {
+    'sports-group-travel-deals': 'Sports team and fans in green jerseys at a stadium, Sports Group Travel',
+    'black-friday-travel-deals': 'Black gift box with discount percent balloons, Black Friday Group Travel deals',
+    'cyber-monday-travel-deals': 'Airplane over a futuristic airport with luggage and passport, Cyber Monday Travel deals',
+    'corporate-booking': 'Businessman working on a laptop in an airport lounge, Corporate Booking Group Travel',
+}
+
+const homeDestinationAlts = {
+    paris: 'Paris skyline at dusk along the Seine river, group flights to Paris',
+    london: 'Big Ben and Westminster Bridge at sunset, group flights to London',
+    'las-vegas': 'Las Vegas skyline and hotels at dusk, group flights to Las Vegas',
+    singapore: 'Singapore skyline near Marina Bay at dusk, group flights to Singapore',
+    dubai: 'Burj Khalifa and Dubai skyscrapers at sunset, group flights to Dubai',
+    tokyo: 'Tokyo Tower lit up at night, group flights to Tokyo',
+    'tel-aviv': 'Tel Aviv waterfront promenade at night, group flights to Tel Aviv',
+    miami: 'Miami skyline across the bay at dusk, group flights to Miami',
+}
+
+const homeBlogAlts = {
+    'plan-flights-large-group': 'Group of people working on laptops around a table, planning flights together',
+    'group-air-travel-checklist': 'Open desert road leading toward mountains under a blue sky',
+    'team-trip-planning': 'Travel map with a camera, backpack and notebook for trip planning',
+}
+
+const homeAirlineAlts = {
+    'american-airlines': 'American Airlines logo',
+    'delta-air-lines': 'Delta Air Lines logo',
+    'united-airlines': 'United Airlines logo',
+    lufthansa: 'Lufthansa logo',
+    'alaska-airlines': 'Alaska Airlines logo',
+    jetblue: 'JetBlue logo',
+    'southwest-airlines': 'Southwest Airlines logo',
+    'qatar-airways': 'Qatar Airways logo',
+}
+
 function Heading({ eyebrow, first, accent, subtitle }) {
     return <div className="mx-auto max-w-2xl text-center"><p className="text-xs font-bold uppercase tracking-[.18em] text-blue-700">{eyebrow}</p><h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">{first} <span className="text-red-700">{accent}</span></h2>{subtitle && <p className="mt-3 text-md leading-6 text-slate-600 sm:text-md">{subtitle}</p>}</div>
 }
@@ -37,7 +72,7 @@ export function AirlinesSection() {
                                             className="group flex w-[9.5rem] shrink-0 flex-col items-center gap-3 rounded-2xl border border-slate-100 bg-white px-3 py-4 text-center shadow-md shadow-blue-950/5 transition duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl sm:w-[10.5rem]"
                                         >
                                             <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 ring-1 ring-slate-200">
-                                                <AirlineLogo name={airline.name} alt={airline.name} />
+                                                <AirlineLogo name={airline.name} alt={homeAirlineAlts[airline.slug] || `${airline.name} logo`} />
                                             </span>
                                             <span className="min-w-0 w-full">
                                                 <span className="block text-sm font-bold leading-snug text-slate-900 sm:text-[15px]">{airline.name}</span>
@@ -70,7 +105,7 @@ export function AirlinesSection() {
 }
 
 export function DealsSection() {
-    return <section className="bg-blue-50/60 py-16 sm:py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><Heading eyebrow="Find your fare" first="Group Travel Flight Deals for" accent="USA Travelers" subtitle="Start with a travel idea. We will help you explore the possibilities." /><div className="mt-10 grid gap-5 sm:grid-cols-2">{deals.slice(0, 4).map((deal) => <article key={deal.slug} className="group relative min-h-[18.4rem] overflow-hidden rounded-2xl bg-blue-950 shadow-lg transition duration-200 hover:-translate-y-1 hover:shadow-xl"><Link href={`/deals/${deal.slug}`} className="absolute inset-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"><Image src={deal.image} alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-[78%_center] transition duration-500 group-hover:scale-105" /><span className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" /><span className="absolute left-5 top-5 rounded-full border border-white/60 bg-white/95 px-3 py-1.5 text-[11px] font-bold text-blue-900 shadow-sm">{deal.category}</span><div className="absolute inset-x-0 bottom-0 p-6 sm:p-8"><span className="mt-4 inline-flex items-center gap-2 text-md font-bold text-white">Explore Now <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div></Link></article>)}</div>
+    return <section className="bg-blue-50/60 py-16 sm:py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><Heading eyebrow="Find your fare" first="Group Travel Flight Deals for" accent="USA Travelers" subtitle="Start with a travel idea. We will help you explore the possibilities." /><div className="mt-10 grid gap-5 sm:grid-cols-2">{deals.slice(0, 4).map((deal) => <article key={deal.slug} className="group relative min-h-[18.4rem] overflow-hidden rounded-2xl bg-blue-950 shadow-lg transition duration-200 hover:-translate-y-1 hover:shadow-xl"><Link href={`/deals/${deal.slug}`} className="absolute inset-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"><Image src={deal.image} alt={homeDealAlts[deal.slug] || deal.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-[78%_center] transition duration-500 group-hover:scale-105" /><span className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" /><span className="absolute left-5 top-5 rounded-full border border-white/60 bg-white/95 px-3 py-1.5 text-[11px] font-bold text-blue-900 shadow-sm">{deal.category}</span><div className="absolute inset-x-0 bottom-0 p-6 sm:p-8"><span className="mt-4 inline-flex items-center gap-2 text-md font-bold text-white">Explore Now <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div></Link></article>)}</div>
         <div className="mt-6 flex justify-center">
             <Link href="/deals" className="inline-flex items-center gap-2 text-md font-bold text-blue-700">View all Deals<ArrowRight className="h-4 w-4" /></Link>
         </div>
@@ -113,7 +148,7 @@ export function DestinationsSection() {
                             {/* Full source image: banners are 1920x600; small next/image widths blur under tall object-cover crops */}
                             <Image
                                 src={destination.image}
-                                alt={`${destination.name}, ${destination.country}`}
+                                alt={homeDestinationAlts[destination.slug] || `${destination.name}, ${destination.country}`}
                                 fill
                                 unoptimized
                                 sizes="100vw"
@@ -159,7 +194,7 @@ export function DestinationsSection() {
 }
 
 export function BlogsSection() {
-    return <section className="bg-white py-16 sm:py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><Heading eyebrow="Travel notes" first="Group Travel Tips &" accent="Guides" subtitle="Ideas and practical tips for your next group trip." /><div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">{blogs.map((post) => <article key={post.slug} className="group flex h-full overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-md shadow-blue-950/5 transition duration-200 hover:-translate-y-1 hover:border-blue-100 hover:shadow-xl"><Link href={`/blog/${post.slug}`} className="flex h-full w-full flex-col focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"><div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-blue-900"><Image src={post.image} alt="" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /><span className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" /><span className="absolute left-4 top-4 rounded-full border border-white/60 bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-blue-800">{post.category}</span></div><div className="flex flex-1 flex-col p-5"><h3 className="text-lg font-bold text-slate-900 transition group-hover:text-blue-700">{post.title}</h3><p className="mt-2 line-clamp-3 text-md leading-6 text-slate-600">{post.excerpt}</p><span className="mt-auto inline-flex items-center gap-2 pt-5 text-md font-bold text-blue-700">Know More <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div></Link></article>)}</div>
+    return <section className="bg-white py-16 sm:py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><Heading eyebrow="Travel notes" first="Group Travel Tips &" accent="Guides" subtitle="Ideas and practical tips for your next group trip." /><div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">{blogs.map((post) => <article key={post.slug} className="group flex h-full overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-md shadow-blue-950/5 transition duration-200 hover:-translate-y-1 hover:border-blue-100 hover:shadow-xl"><Link href={`/blog/${post.slug}`} className="flex h-full w-full flex-col focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"><div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-blue-900"><Image src={post.image} alt={homeBlogAlts[post.slug] || post.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /><span className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" /><span className="absolute left-4 top-4 rounded-full border border-white/60 bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-blue-800">{post.category}</span></div><div className="flex flex-1 flex-col p-5"><h3 className="text-lg font-bold text-slate-900 transition group-hover:text-blue-700">{post.title}</h3><p className="mt-2 line-clamp-3 text-md leading-6 text-slate-600">{post.excerpt}</p><span className="mt-auto inline-flex items-center gap-2 pt-5 text-md font-bold text-blue-700">Know More <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div></Link></article>)}</div>
         <div className="mt-6 flex justify-center">
             <Link href="/blog" className="inline-flex items-center gap-2 text-md font-bold text-blue-700">View all articles <ArrowRight className="h-4 w-4" /></Link>
         </div>

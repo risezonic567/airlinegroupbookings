@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Phone, ChevronDown, Menu, X } from 'lucide-react'
+import { Phone, ChevronDown, ChevronRight, Menu, X } from 'lucide-react'
 import groupTravelAirlines from '../data/groupTravelAirlines'
 import businessClassAirlines from '../data/businessClassAirlines'
 import contactDetails from '../data/contact'
@@ -56,11 +56,22 @@ export default function Navbar() {
                     />
                 </Link>
 
-                <a href={contactDetails.phoneHref} className="order-1 mx-auto flex basis-full max-w-full items-center justify-center gap-2 rounded-full border border-blue-400 bg-blue-50/70 px-3 py-2 text-[11px] font-bold text-slate-900 transition hover:bg-blue-100 sm:px-4 sm:text-xs lg:order-2 lg:mx-0 lg:basis-auto lg:justify-start lg:gap-3 lg:px-5 lg:py-3 lg:text-md">
-                    <Phone className="h-4 w-4 fill-red-500 text-red-500" />
-                    <span className="hidden sm:inline">Book a Group - Call us 24/7</span>
-                    <span className="sm:hidden">Call 24/7</span>
-                    <strong className="whitespace-nowrap text-red-600">{contactDetails.phoneDisplay}</strong>
+                <a
+                    href={contactDetails.phoneHref}
+                    className="order-1 mx-auto flex w-full max-w-md basis-full items-center gap-3 rounded-full bg-[#1a2a5a] px-3 py-2.5 text-white transition hover:bg-[#15234d] sm:max-w-lg sm:gap-4 sm:px-4 sm:py-3 lg:order-2 lg:mx-0 lg:w-auto lg:max-w-none lg:basis-auto lg:px-5"
+                >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white sm:h-10 sm:w-10">
+                        <Phone className="h-4 w-4 text-[#1a2a5a] sm:h-5 sm:w-5" aria-hidden="true" />
+                    </span>
+                    <span className="min-w-0 flex-1 text-left">
+                        <span className="block text-[10px] font-semibold uppercase tracking-[0.12em] text-white/90 sm:text-[11px]">
+                            Group Booking Support · 24/7
+                        </span>
+                        <span className="mt-0.5 block text-sm font-bold tracking-tight sm:text-base">
+                            {contactDetails.phoneDisplay}
+                        </span>
+                    </span>
+                    <ChevronRight className="h-5 w-5 shrink-0 text-white/90" aria-hidden="true" />
                 </a>
 
                 <button type="button" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="order-3 ml-2 rounded-md p-2 text-slate-700 hover:bg-slate-100 lg:hidden" aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileMenuOpen}>
