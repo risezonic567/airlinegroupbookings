@@ -58,20 +58,20 @@ export default function Navbar() {
 
                 <a
                     href={contactDetails.phoneHref}
-                    className="order-1 mx-auto flex w-full max-w-md basis-full items-center gap-3 rounded-full bg-[#1a2a5a] px-3 py-2.5 text-white transition hover:bg-[#15234d] sm:max-w-lg sm:gap-4 sm:px-4 sm:py-3 lg:order-2 lg:mx-0 lg:w-auto lg:max-w-none lg:basis-auto lg:px-5"
+                    className="order-1 mx-auto flex basis-full max-w-full items-center gap-2 rounded-full bg-[#1a2a5a] px-3 py-2 text-white transition hover:bg-[#15234d] sm:gap-2.5 sm:px-4 lg:order-2 lg:mx-0 lg:basis-auto lg:px-5 lg:py-2.5"
                 >
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white sm:h-10 sm:w-10">
-                        <Phone className="h-4 w-4 text-[#1a2a5a] sm:h-5 sm:w-5" aria-hidden="true" />
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white">
+                        <Phone className="h-3.5 w-3.5 text-[#1a2a5a]" aria-hidden="true" />
                     </span>
-                    <span className="min-w-0 flex-1 text-left">
-                        <span className="block text-[10px] font-semibold uppercase tracking-[0.12em] text-white/90 sm:text-[11px]">
+                    <span className="min-w-0 flex-1 text-left leading-tight lg:flex-none">
+                        <span className="block text-[9px] font-semibold uppercase tracking-[0.1em] text-white/90 sm:text-[10px]">
                             Group Booking Support · 24/7
                         </span>
-                        <span className="mt-0.5 block text-sm font-bold tracking-tight sm:text-base">
+                        <span className="block text-[11px] font-bold sm:text-xs lg:text-sm">
                             {contactDetails.phoneDisplay}
                         </span>
                     </span>
-                    <ChevronRight className="h-5 w-5 shrink-0 text-white/90" aria-hidden="true" />
+                    <ChevronRight className="h-4 w-4 shrink-0 text-white/90" aria-hidden="true" />
                 </a>
 
                 <button type="button" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="order-3 ml-2 rounded-md p-2 text-slate-700 hover:bg-slate-100 lg:hidden" aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileMenuOpen}>
