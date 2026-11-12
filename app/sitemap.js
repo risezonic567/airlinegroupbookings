@@ -1,4 +1,3 @@
-import airlines from '../data/airlines'
 import blogs from '../data/blogs'
 import businessClassAirlines from '../data/businessClassAirlines'
 import deals from '../data/deals'
@@ -9,7 +8,6 @@ import { absoluteUrl } from '../lib/seo'
 const staticPaths = [
     '/',
     '/about',
-    '/airlines',
     '/blog',
     '/business-class',
     '/contact',
@@ -25,7 +23,6 @@ const staticPaths = [
 ]
 
 const detailPaths = [
-    ...airlines.map(({ slug }) => `/airlines/${slug}`),
     ...blogs.map(({ slug }) => `/blog/${slug}`),
     ...businessClassAirlines.map(({ slug }) => `/business-class-booking/${slug}`),
     ...deals.map(({ slug }) => `/deals/${slug}`),

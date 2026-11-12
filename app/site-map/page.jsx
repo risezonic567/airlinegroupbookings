@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import airlines from '../../data/airlines'
 import blogs from '../../data/blogs'
 import businessClassAirlines from '../../data/businessClassAirlines'
 import deals from '../../data/deals'
@@ -25,7 +24,6 @@ const mainPages = [
     { href: '/deals', label: 'Deals' },
     { href: '/blog', label: 'Blog' },
     { href: '/destinations', label: 'Destinations' },
-    { href: '/airlines', label: 'Airlines' },
     { href: '/contact', label: 'Contact Us' },
     { href: '/private-jet-charter', label: 'Private Jet Charter' },
     { href: '/contact', label: 'Request a Quote' },
@@ -63,11 +61,6 @@ export default function SiteMapPage() {
     const businessClassLinks = businessClassAirlines.map((airline) => ({
         href: `/business-class-booking/${airline.slug}`,
         label: `${airline.name} Business Class`,
-    }))
-
-    const airlineLinks = airlines.map((airline) => ({
-        href: `/airlines/${airline.slug}`,
-        label: `${airline.name} Group Travel`,
     }))
 
     const dealLinks = deals.map((deal) => ({
@@ -109,7 +102,6 @@ export default function SiteMapPage() {
                     <SitemapSection title="Main Pages" links={mainPages} />
                     <SitemapSection title="Group Travel Airlines" links={groupTravelLinks} />
                     <SitemapSection title="Business Class" links={businessClassLinks} />
-                    <SitemapSection title="Airlines" links={airlineLinks} />
                     <SitemapSection title="Deals" links={dealLinks} />
                     <SitemapSection title="Destinations" links={destinationLinks} />
                     <SitemapSection title="Blog" links={blogLinks} />

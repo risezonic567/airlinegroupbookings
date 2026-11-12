@@ -31,7 +31,7 @@ export default function GroupTravelPage() {
                     <p className="mt-4 max-w-2xl text-base leading-7 text-blue-50">
                         Browse group travel airlines and airlines with group booking discount. Review group flight booking policy by airline, learn how to book group flights with airlines, and compare group fare vs individual fare before you request a free group flight quote.
                     </p>
-                    <Link href="/airlines" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-bold text-blue-800 transition hover:bg-blue-50">
+                    <Link href="#airlines" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-bold text-blue-800 transition hover:bg-blue-50">
                         Browse airlines <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
                 </div>

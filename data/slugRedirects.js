@@ -78,3 +78,20 @@ export function withAirlinesName(name) {
   if (/air\s*lines/i.test(name)) return name
   return `${name} Airlines`
 }
+
+/** Home /airlines/* demo slugs → real Group Travel slugs (null = GT listing only) */
+export const airlinesSlugToGroupTravel = {
+  'american-airlines': 'american-airlines',
+  'delta-air-lines': 'delta-airlines',
+  'united-airlines': null,
+  lufthansa: 'lufthansa-airlines',
+  'alaska-airlines': 'alaska-airlines',
+  jetblue: 'jetblue-airlines',
+  'southwest-airlines': 'southwest-airlines',
+  'qatar-airways': 'qatar-airways-airlines',
+}
+
+export function groupTravelPathForAirlinesSlug(slug) {
+  const mapped = airlinesSlugToGroupTravel[slug]
+  return mapped ? `/group-travel/${mapped}` : '/group-travel'
+}

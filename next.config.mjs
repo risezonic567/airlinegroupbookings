@@ -1,4 +1,5 @@
 import {
+    airlinesSlugToGroupTravel,
     businessClassSlugRedirects,
     groupTravelSlugRedirects,
 } from './data/slugRedirects.js'
@@ -99,7 +100,20 @@ const nextConfig = {
             },
         ]
 
-        return [...groupTravel, ...businessClass, ...removedSpirit]
+        const airlinesToGroupTravel = [
+            {
+                source: '/airlines',
+                destination: withSlash('/group-travel'),
+                permanent: true,
+            },
+            ...Object.entries(airlinesSlugToGroupTravel).map(([oldSlug, newSlug]) => ({
+                source: `/airlines/${oldSlug}`,
+                destination: withSlash(newSlug ? `/group-travel/${newSlug}` : '/group-travel'),
+                permanent: true,
+            })),
+        ]
+
+        return [...groupTravel, ...businessClass, ...removedSpirit, ...airlinesToGroupTravel]
     },
 }
 

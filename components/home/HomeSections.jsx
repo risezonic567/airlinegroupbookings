@@ -6,6 +6,7 @@ import airlines from '../../data/airlines'
 import destinations from '../../data/destinations'
 import deals from '../../data/deals'
 import blogs from '../../data/blogs'
+import { groupTravelPathForAirlinesSlug } from '../../data/slugRedirects'
 
 const homeDealAlts = {
     'sports-group-travel-deals': 'Sports team and fans in green jerseys at a stadium, Sports Group Travel',
@@ -68,7 +69,7 @@ export function AirlinesSection() {
                                     return (
                                         <Link
                                             key={`${airline.slug}-${index}`}
-                                            href={`/airlines/${airline.slug}`}
+                                            href={groupTravelPathForAirlinesSlug(airline.slug)}
                                             className="group flex w-[9.5rem] shrink-0 flex-col items-center gap-3 rounded-2xl border border-slate-100 bg-white px-3 py-4 text-center shadow-md shadow-blue-950/5 transition duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl sm:w-[10.5rem]"
                                         >
                                             <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 ring-1 ring-slate-200">
@@ -90,7 +91,7 @@ export function AirlinesSection() {
                 </div>
                 <div className="mt-8 flex justify-center">
                     <Link
-                        href="/airlines"
+                        href="/group-travel"
                         className="group inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition-colors hover:text-blue-800"
                     >
                         <span>View all airlines</span>

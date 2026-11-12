@@ -11,7 +11,7 @@ const linkGroups = [
         links: [
             { label: 'About us', href: '/about' },
             { label: 'Our blogs', href: '/blog' },
-            { label: 'Airline group bookings', href: '/airlines' },
+            { label: 'Airline group bookings', href: '/group-travel' },
             { label: 'Deals', href: '/deals' },
             { label: 'Contact Us', href: '/contact' },
         ],
