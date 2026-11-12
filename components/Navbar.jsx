@@ -71,7 +71,7 @@ export default function Navbar() {
                             {contactDetails.phoneDisplay}
                         </span>
                     </span>
-                    <ChevronRight className="h-4 w-4 shrink-0 text-white/90" aria-hidden="true" />
+                    {/* <ChevronRight className="h-4 w-4 shrink-0 text-white/90" aria-hidden="true" /> */}
                 </a>
 
                 <button type="button" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="order-3 ml-2 rounded-md p-2 text-slate-700 hover:bg-slate-100 lg:hidden" aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileMenuOpen}>
