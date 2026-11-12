@@ -146,7 +146,7 @@ export const pageSchemas = {
                     '@id': orgId,
                     name: 'Airline Group Bookings',
                     telephone: '+1-833-958-0151',
-                    email: 'heath@airlinegroupbookings.com',
+                    email: 'info@airlinegroupbookings.com',
                     address: {
                         '@type': 'PostalAddress',
                         streetAddress: '16192 Coastal Highway',
@@ -200,26 +200,6 @@ export const pageSchemas = {
             breadcrumb(`${pageUrl('/business-class')}#breadcrumb`, [
                 { name: 'Home', item: `${SITE_URL}/` },
                 { name: 'Business Class Booking', item: `${pageUrl('/business-class')}` },
-            ]),
-        ],
-    },
-
-    airlines: {
-        '@context': 'https://schema.org',
-        '@graph': [
-            {
-                '@type': 'CollectionPage',
-                '@id': `${pageUrl('/airlines')}#webpage`,
-                url: `${pageUrl('/airlines')}`,
-                name: 'Airlines for Group Booking | Airline Group Bookings',
-                description: 'View all airlines available for group flight booking.',
-                inLanguage: 'en-US',
-                isPartOf: { '@id': websiteId },
-                breadcrumb: { '@id': `${pageUrl('/airlines')}#breadcrumb` },
-            },
-            breadcrumb(`${pageUrl('/airlines')}#breadcrumb`, [
-                { name: 'Home', item: `${SITE_URL}/` },
-                { name: 'Airlines', item: `${pageUrl('/airlines')}` },
             ]),
         ],
     },

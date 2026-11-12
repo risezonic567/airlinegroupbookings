@@ -37,7 +37,7 @@ export const mainPageSeo = {
         ],
         metaTitle: `Group Travel Airlines: Compare Group Booking Policies`,
         metaDescription:
-            'Browse 19 group travel airlines and compare group booking policies, discounts and group fare vs individual fare. Request a free group flight quote today.',
+            'Browse 18 group travel airlines and compare group booking policies, discounts and group fare vs individual fare. Request a free group flight quote today.',
         h1: 'Group Travel Airlines: Compare Policies & Discounts',
     },
     deals: {

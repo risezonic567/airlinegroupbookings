@@ -10,19 +10,29 @@ import businessClassAirlines from '../data/businessClassAirlines'
 import contactDetails from '../data/contact'
 import { withAirlinesName } from '../data/slugRedirects'
 
+const MEGA_PREVIEW = 10
+
 const menus = [
     {
         title: 'Group Travel',
         href: '/group-travel',
         links: [
-            ...groupTravelAirlines.map(({ name, slug }) => ({ label: `${withAirlinesName(name)} Group Travel`, href: `/group-travel/${slug}` })),
+            ...groupTravelAirlines.slice(0, MEGA_PREVIEW).map(({ name, slug }) => ({
+                label: `${withAirlinesName(name)} Group Travel`,
+                href: `/group-travel/${slug}`,
+            })),
+            { label: 'View all group travel airlines', href: '/group-travel', isViewAll: true },
         ],
     },
     {
         title: 'Business Class Booking',
         href: '/business-class',
         links: [
-            ...businessClassAirlines.map(({ name, slug }) => ({ label: `${name} Business Class`, href: `/business-class-booking/${slug}` })),
+            ...businessClassAirlines.slice(0, MEGA_PREVIEW).map(({ name, slug }) => ({
+                label: `${name} Business Class`,
+                href: `/business-class-booking/${slug}`,
+            })),
+            { label: 'View all business class airlines', href: '/business-class', isViewAll: true },
         ],
     },
 ]
@@ -90,7 +100,15 @@ export default function Navbar() {
                                     {title}<ChevronDown className="mt-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
                                 </Link>
                                 <div className="invisible absolute left-0 top-full max-h-[280px] w-80 translate-y-2 overflow-y-auto overscroll-contain border-t-2 border-blue-500 bg-white py-2 text-slate-700 opacity-0 shadow-xl transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-                                    {links.map(({ label, href: linkHref }) => <Link key={label} href={linkHref} className={`block border-b border-slate-400 px-5 py-3 text-md transition last:border-b-0 hover:bg-red-500 hover:text-white ${isActive(linkHref) ? 'bg-red-500 text-white' : ''}`}>{label}</Link>)}
+                                    {links.map(({ label, href: linkHref, isViewAll }) => (
+                                        <Link
+                                            key={label}
+                                            href={linkHref}
+                                            className={`block border-b border-slate-400 px-5 py-3 text-md transition last:border-b-0 hover:bg-red-500 hover:text-white ${isViewAll ? 'font-bold text-blue-700' : ''} ${isActive(linkHref) && !isViewAll ? 'bg-red-500 text-white' : ''}`}
+                                        >
+                                            {label}
+                                        </Link>
+                                    ))}
                                 </div>
                             </div>
                         ))}
@@ -115,7 +133,21 @@ export default function Navbar() {
                 <div className="flex flex-col gap-1 text-md font-semibold text-slate-700">
                     <Link href="/" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass('/')}>Home</Link>
                     {pages.slice(0, 1).map(({ label, href }) => <Link key={label} href={href} onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass(href)}>{label}</Link>)}
-                    {menus.map(({ title, href, links }) => <div key={title} className="border-t border-slate-100 pt-2"><Link href={href} onClick={() => setMobileMenuOpen(false)} className={`block rounded px-3 py-2 text-blue-700 ${isActive(href) ? 'bg-blue-50' : ''}`}>{title}</Link>{links.map(({ label, href: linkHref }) => <Link key={label} href={linkHref} onClick={() => setMobileMenuOpen(false)} className={`block border-b border-slate-400 px-5 py-2 text-xs font-medium text-slate-600 last:border-b-0 hover:bg-red-500 hover:text-white ${isActive(linkHref) ? 'bg-red-500 text-white' : ''}`}>{label}</Link>)}</div>)}
+                    {menus.map(({ title, href, links }) => (
+                        <div key={title} className="border-t border-slate-100 pt-2">
+                            <Link href={href} onClick={() => setMobileMenuOpen(false)} className={`block rounded px-3 py-2 text-blue-700 ${isActive(href) ? 'bg-blue-50' : ''}`}>{title}</Link>
+                            {links.map(({ label, href: linkHref, isViewAll }) => (
+                                <Link
+                                    key={label}
+                                    href={linkHref}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className={`block border-b border-slate-400 px-5 py-2 text-xs font-medium last:border-b-0 hover:bg-red-500 hover:text-white ${isViewAll ? 'font-bold text-blue-700' : 'text-slate-600'} ${isActive(linkHref) && !isViewAll ? 'bg-red-500 text-white' : ''}`}
+                                >
+                                    {label}
+                                </Link>
+                            ))}
+                        </div>
+                    ))}
                     <div className="border-t border-slate-100 pt-2">
                         {pages.slice(1).map(({ label, href }) => <Link key={label} href={href} onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass(href)}>{label}</Link>)}
                     </div>

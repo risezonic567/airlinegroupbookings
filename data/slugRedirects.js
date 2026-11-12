@@ -79,7 +79,7 @@ export function withAirlinesName(name) {
   return `${name} Airlines`
 }
 
-/** Home /airlines/* demo slugs → real Group Travel slugs (null = GT listing only) */
+/** Retired /airlines/* slugs → Group Travel (null = listing only). Used by next.config redirects. */
 export const airlinesSlugToGroupTravel = {
   'american-airlines': 'american-airlines',
   'delta-air-lines': 'delta-airlines',
@@ -89,9 +89,4 @@ export const airlinesSlugToGroupTravel = {
   jetblue: 'jetblue-airlines',
   'southwest-airlines': 'southwest-airlines',
   'qatar-airways': 'qatar-airways-airlines',
-}
-
-export function groupTravelPathForAirlinesSlug(slug) {
-  const mapped = airlinesSlugToGroupTravel[slug]
-  return mapped ? `/group-travel/${mapped}` : '/group-travel'
 }

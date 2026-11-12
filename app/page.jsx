@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import ContactFab from '../components/home/ContactFab'
 import QuoteForm from '../components/home/QuoteForm'
 import { AirlinesSection, BlogsSection, DealsSection, DestinationsSection, WhyChooseSection } from '../components/home/HomeSections'
@@ -35,6 +36,7 @@ export default function HomePage() {
                     alt="Passenger airplane flying over a world map with flight routes"
                     fill
                     priority
+                    quality={70}
                     sizes="100vw"
                     className="-z-20 object-cover object-[62%_center]"
                 />
@@ -44,7 +46,13 @@ export default function HomePage() {
                 <div className="min-w-0 max-w-[540px] text-left text-white">
                     <p className="inline-flex items-center rounded-full border border-red-200/40 bg-blue-500/20 px-4 py-2 text-sm font-semibold text-blue-100"><span aria-hidden="true" className="mr-2 h-2 w-2 rounded-full bg-red-400" />Reserve your group trip here</p>
                     <h1 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight sm:mt-4 sm:text-4xl lg:text-5xl xl:text-[3.25rem]">Airline Group Booking <span className="text-blue-200">for 10+ Passengers</span></h1>
-                    <p className="mt-3 max-w-[540px] text-base leading-7 text-white/90 lg:mt-4 lg:text-lg">Need group flight booking for 10 or more passengers? Book group flights online, get a group airline tickets quote, and compare group travel flight deals USA with clear support from Airline Group Bookings.</p>
+                    <p className="mt-3 max-w-[540px] text-base leading-7 text-white/90 lg:mt-4 lg:text-lg">
+                        Need group flight booking for 10 or more passengers? Book group flights online, get a{' '}
+                        <Link href="/contact" className="underline decoration-white/50 underline-offset-2 transition hover:decoration-white">group airline tickets quote</Link>
+                        , and compare{' '}
+                        <Link href="/deals" className="underline decoration-white/50 underline-offset-2 transition hover:decoration-white">group travel flight deals</Link>
+                        {' '}USA with clear support from Airline Group Bookings.
+                    </p>
                 </div>
             </div>
         </section>
@@ -61,6 +69,16 @@ export default function HomePage() {
             items={homeFaqs.items}
             accentWord="FAQs"
         />
+        <div className="bg-slate-50 px-5 pb-14 sm:px-8 sm:pb-16">
+            <div className="mx-auto flex max-w-7xl justify-center">
+                <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-6 py-3 text-sm font-bold text-white transition hover:bg-blue-800"
+                >
+                    Request a group quote
+                </Link>
+            </div>
+        </div>
         {/* <Newsletter /> */}
 
         <ContactFab />

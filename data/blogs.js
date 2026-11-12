@@ -4,7 +4,9 @@ const blogs = [
         title: 'How to Plan Flights for a Large Group',
         category: 'Group travel guide',
         image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85',
-        excerpt: 'A few early decisions can make coordinating a group journey easier.', publishedAt: 'Travel planning guide',
+        excerpt: 'A few early decisions can make coordinating a group journey easier.',
+        metaDescription: 'Planning flights for 10+ travelers? Learn how to pick an organizer, compare quotes and manage deposits, names and deadlines for your group.',
+        publishedAt: 'Travel planning guide',
         sections: [{
             title: 'Start with the essentials',
             paragraphs: ['Set a destination, date range, and a realistic estimate of your traveler count. These basics help you compare suitable schedules and understand the options available to your group.']
@@ -26,8 +28,9 @@ const blogs = [
         category: 'Planning tips',
 
         image: 'https://images.unsplash.com/photo-1494783367193-149034c05e8f?auto=format&fit=crop&w=1400&q=85',
-
-        excerpt: 'Understand the details to compare when reviewing group flight options.', publishedAt: 'Booking checklist',
+        excerpt: 'Understand the details to compare when reviewing group flight options.',
+        metaDescription: 'Before you book group air travel, check minimum passengers, deposit rules, name-change terms, baggage and seating. A simple organizer checklist.',
+        publishedAt: 'Booking checklist',
         sections: [{
             title: 'Know your travel window',
             paragraphs: ['If your dates are flexible, share a range instead of a single departure day. This may help your specialist look across more schedules.']
@@ -47,6 +50,7 @@ const blogs = [
         category: 'Travel inspiration',
         image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1400&q=85',
         excerpt: 'Plan a team offsite with clear priorities, a balanced schedule, and time for meaningful connection.',
+        metaDescription: 'Plan a team offsite flight smoothly: set priorities, balance the schedule and handle group fares, payments and traveler details.',
         publishedAt: 'Team travel ideas',
         sections: [
             {

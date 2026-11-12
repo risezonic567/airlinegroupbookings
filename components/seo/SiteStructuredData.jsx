@@ -21,7 +21,7 @@ const data = {
             description:
                 'Airline group booking for 10+ passengers in the USA. Book group flights online, get a free group airline tickets quote and compare group travel flight deals.',
             telephone: '+1-833-958-0151',
-            email: 'heath@airlinegroupbookings.com',
+            email: 'info@airlinegroupbookings.com',
             address: {
                 '@type': 'PostalAddress',
                 streetAddress: '16192 Coastal Highway',
@@ -30,10 +30,7 @@ const data = {
                 postalCode: '19958',
                 addressCountry: 'US',
             },
-            areaServed: [
-                { '@type': 'Country', name: 'United States' },
-                { '@type': 'Place', name: 'Worldwide' },
-            ],
+            areaServed: { '@type': 'Country', name: 'United States' },
             contactPoint: [
                 {
                     '@type': 'ContactPoint',

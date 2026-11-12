@@ -2,11 +2,23 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, BadgePercent, CalendarClock, CheckCircle2, Headphones, WalletCards } from 'lucide-react'
 import AirlineLogo from './AirlineLogo'
-import airlines from '../../data/airlines'
 import destinations from '../../data/destinations'
 import deals from '../../data/deals'
 import blogs from '../../data/blogs'
-import { groupTravelPathForAirlinesSlug } from '../../data/slugRedirects'
+
+/** Homepage carousel — 7 airlines with Group Travel pages (no United). */
+const homeCarouselAirlines = [
+    { name: 'American Airlines', href: '/group-travel/american-airlines', alt: 'American Airlines logo' },
+    { name: 'Delta Air Lines', href: '/group-travel/delta-airlines', alt: 'Delta Air Lines logo' },
+    { name: 'Lufthansa', href: '/group-travel/lufthansa-airlines', alt: 'Lufthansa logo' },
+    { name: 'Alaska Airlines', href: '/group-travel/alaska-airlines', alt: 'Alaska Airlines logo' },
+    { name: 'JetBlue', href: '/group-travel/jetblue-airlines', alt: 'JetBlue logo' },
+    { name: 'Southwest Airlines', href: '/group-travel/southwest-airlines', alt: 'Southwest Airlines logo' },
+    { name: 'Qatar Airways', href: '/group-travel/qatar-airways-airlines', alt: 'Qatar Airways logo' },
+]
+
+const cardClass =
+    'flex w-[9.5rem] shrink-0 flex-col items-center gap-3 rounded-2xl border border-slate-100 bg-white px-3 py-4 text-center shadow-md shadow-blue-950/5 sm:w-[10.5rem]'
 
 const homeDealAlts = {
     'sports-group-travel-deals': 'Sports team and fans in green jerseys at a stadium, Sports Group Travel',
@@ -32,62 +44,66 @@ const homeBlogAlts = {
     'team-trip-planning': 'Travel map with a camera, backpack and notebook for trip planning',
 }
 
-const homeAirlineAlts = {
-    'american-airlines': 'American Airlines logo',
-    'delta-air-lines': 'Delta Air Lines logo',
-    'united-airlines': 'United Airlines logo',
-    lufthansa: 'Lufthansa logo',
-    'alaska-airlines': 'Alaska Airlines logo',
-    jetblue: 'JetBlue logo',
-    'southwest-airlines': 'Southwest Airlines logo',
-    'qatar-airways': 'Qatar Airways logo',
-}
-
 function Heading({ eyebrow, first, accent, subtitle }) {
     return <div className="mx-auto max-w-2xl text-center"><p className="text-xs font-bold uppercase tracking-[.18em] text-blue-700">{eyebrow}</p><h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">{first} <span className="text-red-700">{accent}</span></h2>{subtitle && <p className="mt-3 text-md leading-6 text-slate-600 sm:text-md">{subtitle}</p>}</div>
 }
 
+function AirlineCardFace({ airline, decorative = false }) {
+    return (
+        <>
+            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 ring-1 ring-slate-200">
+                <AirlineLogo name={airline.name} alt={decorative ? '' : airline.alt} />
+            </span>
+            <span className="min-w-0 w-full">
+                <span className="block text-sm font-bold leading-snug text-slate-900 sm:text-[15px]">{airline.name}</span>
+            </span>
+        </>
+    )
+}
+
 export function AirlinesSection() {
+    const reverseRow = [...homeCarouselAirlines].reverse()
+
     return (
         <section className="overflow-hidden bg-white py-16 sm:py-20">
             <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
                 <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-                    <Heading 
-                        eyebrow="Fly together" 
-                        first="Group Flight Booking With Top" 
-                        accent="Airlines" 
-                        subtitle="Explore group flight options with leading airlines." 
+                    <Heading
+                        eyebrow="Fly together"
+                        first="Group Flight Booking With Top"
+                        accent="Airlines"
+                        subtitle="Explore group flight options with leading airlines."
                     />
-                   
                 </div>
 
                 <div className="airline-marquee mt-9 space-y-4" aria-label="Airlines">
-                    {[airlines, [...airlines].reverse()].map((row, rowIndex) => (
-                        <div className="airline-marquee-mask" key={rowIndex}>
-                            <div className={`airline-marquee-track ${rowIndex === 0 ? 'airline-marquee-left' : 'airline-marquee-right'}`}>
-                                {[...row, ...row].map((airline, index) => {
-                                    return (
-                                        <Link
-                                            key={`${airline.slug}-${index}`}
-                                            href={groupTravelPathForAirlinesSlug(airline.slug)}
-                                            className="group flex w-[9.5rem] shrink-0 flex-col items-center gap-3 rounded-2xl border border-slate-100 bg-white px-3 py-4 text-center shadow-md shadow-blue-950/5 transition duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl sm:w-[10.5rem]"
-                                        >
-                                            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 ring-1 ring-slate-200">
-                                                <AirlineLogo name={airline.name} alt={homeAirlineAlts[airline.slug] || `${airline.name} logo`} />
-                                            </span>
-                                            <span className="min-w-0 w-full">
-                                                <span className="block text-sm font-bold leading-snug text-slate-900 sm:text-[15px]">{airline.name}</span>
-                                                {/* <span className="mt-1 block text-[11px] font-medium uppercase tracking-wide text-slate-400">Group booking</span> */}
-                                            </span>
-                                            
-                                        </Link>
-                                        
-                                    )
-                                })}
-                           
-                            </div>
+                    <div className="airline-marquee-mask">
+                        <div className="airline-marquee-track airline-marquee-left">
+                            {homeCarouselAirlines.map((airline) => (
+                                <Link
+                                    key={`link-${airline.href}`}
+                                    href={airline.href}
+                                    className={`group ${cardClass} transition duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl`}
+                                >
+                                    <AirlineCardFace airline={airline} />
+                                </Link>
+                            ))}
+                            {homeCarouselAirlines.map((airline) => (
+                                <div key={`dup-a-${airline.href}`} aria-hidden="true" className={cardClass}>
+                                    <AirlineCardFace airline={airline} decorative />
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
+                    <div className="airline-marquee-mask" aria-hidden="true">
+                        <div className="airline-marquee-track airline-marquee-right">
+                            {[...reverseRow, ...reverseRow].map((airline, index) => (
+                                <div key={`dup-b-${airline.href}-${index}`} className={cardClass}>
+                                    <AirlineCardFace airline={airline} decorative />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
                 <div className="mt-8 flex justify-center">
                     <Link
@@ -98,9 +114,7 @@ export function AirlinesSection() {
                         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </Link>
                 </div>
-
             </div>
-                  
         </section>
     )
 }
@@ -152,7 +166,7 @@ export function DestinationsSection() {
                                 alt={homeDestinationAlts[destination.slug] || `${destination.name}, ${destination.country}`}
                                 fill
                                 unoptimized
-                                sizes="100vw"
+                                sizes="(max-width: 768px) 100vw, 33vw"
                                 className="z-0 object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                             />
 
