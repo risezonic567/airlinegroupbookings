@@ -45,6 +45,15 @@
   will-change: transform;
 }
 
+/* Solid cards — no child transforms (parent already animates translateX) */
+.airline-marquee-track > * {
+  position: relative;
+  flex-shrink: 0;
+  background-color: #fff;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
 .airline-marquee-left { animation: airline-marquee-left 38s linear infinite; }
 .airline-marquee-right { animation: airline-marquee-right 38s linear infinite; }
 .airline-marquee:hover .airline-marquee-track { animation-play-state: paused; }

@@ -18,7 +18,7 @@ const homeCarouselAirlines = [
 ]
 
 const cardClass =
-    'flex w-[9.5rem] shrink-0 flex-col items-center gap-3 rounded-2xl border border-slate-100 bg-white px-3 py-4 text-center shadow-md shadow-blue-950/5 sm:w-[10.5rem]'
+    'relative isolate flex w-[9.5rem] shrink-0 flex-col items-center gap-3 overflow-hidden rounded-2xl border border-slate-100 bg-white px-3 py-4 text-center shadow-md shadow-blue-950/5 sm:w-[10.5rem]'
 
 const homeDealAlts = {
     'sports-group-travel-deals': 'Sports team and fans in green jerseys at a stadium, Sports Group Travel',
@@ -51,7 +51,7 @@ function Heading({ eyebrow, first, accent, subtitle }) {
 function AirlineCardFace({ airline, decorative = false }) {
     return (
         <>
-            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 ring-1 ring-slate-200">
+            <span className="relative isolate flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-white p-2 ring-1 ring-slate-200">
                 <AirlineLogo name={airline.name} alt={decorative ? '' : airline.alt} />
             </span>
             <span className="min-w-0 w-full">
@@ -82,7 +82,7 @@ export function AirlinesSection() {
                                 <Link
                                     key={`link-${airline.href}`}
                                     href={airline.href}
-                                    className={`group ${cardClass} transition duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl`}
+                                    className={`group ${cardClass} z-0 transition-[border-color,box-shadow] duration-200 hover:z-20 hover:border-blue-300 hover:shadow-xl`}
                                 >
                                     <AirlineCardFace airline={airline} />
                                 </Link>
