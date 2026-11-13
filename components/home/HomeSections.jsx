@@ -62,8 +62,6 @@ function AirlineCardFace({ airline, decorative = false }) {
 }
 
 export function AirlinesSection() {
-    const reverseRow = [...homeCarouselAirlines].reverse()
-
     return (
         <section className="overflow-hidden bg-white py-16 sm:py-20">
             <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -76,7 +74,8 @@ export function AirlinesSection() {
                     />
                 </div>
 
-                <div className="airline-marquee mt-9 space-y-4" aria-label="Airlines">
+                {/* Single-row marquee: one visible set of logos; clone is aria-hidden for seamless loop only */}
+                <div className="airline-marquee mt-9" aria-label="Airlines">
                     <div className="airline-marquee-mask">
                         <div className="airline-marquee-track airline-marquee-left">
                             {homeCarouselAirlines.map((airline) => (
@@ -90,15 +89,6 @@ export function AirlinesSection() {
                             ))}
                             {homeCarouselAirlines.map((airline) => (
                                 <div key={`dup-a-${airline.href}`} aria-hidden="true" className={cardClass}>
-                                    <AirlineCardFace airline={airline} decorative />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="airline-marquee-mask" aria-hidden="true">
-                        <div className="airline-marquee-track airline-marquee-right">
-                            {[...reverseRow, ...reverseRow].map((airline, index) => (
-                                <div key={`dup-b-${airline.href}-${index}`} className={cardClass}>
                                     <AirlineCardFace airline={airline} decorative />
                                 </div>
                             ))}
