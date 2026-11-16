@@ -7,6 +7,7 @@ import { QUOTE_STORAGE_KEY } from '@/lib/quoteStorage';
 import { isDisposableEmail, sanitizePhoneInput, validateEmail, validatePhone } from '@/lib/validationRules';
 
 import AirportInput from './AirportInput'
+import PhoneInputField from '@/components/PhoneInputField'
 
 const tripTypes = ['Round Trip', 'One Way', 'Multi City']
 const textInputClass = 'mt-2 h-12 w-full rounded-xl border border-slate-200 bg-white px-3 text-md text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-blue-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100'
@@ -213,16 +214,38 @@ export default function QuoteForm() {
             </FormField>
             <div className="relative min-w-0 focus-within:z-50 lg:col-span-3">
               <label htmlFor="phone" className={fieldLabelClass}>Phone No.:</label>
-              <span className="mt-2 flex h-12 overflow-hidden rounded-xl border border-slate-200 bg-white focus-within:border-blue-600 focus-within:ring-2 focus-within:ring-blue-100">
-                <select aria-label="Country calling code" name="countryCode" value={form.countryCode} onChange={updateField} aria-invalid={Boolean(fieldErrors.phone)} className="h-full w-[82px] shrink-0 border-r border-slate-200 bg-transparent px-2 text-md text-slate-700 outline-none focus:ring-2 focus:ring-blue-100">
-                  <option value="+1">US +1</option>
-                  <option value="+44">UK +44</option>
-                  <option value="+91">IN +91</option>
-                  <option value="+61">AU +61</option>
-                  <option value="+971">AE +971</option>
-                </select>
-                <input id="phone" className="min-w-0 flex-1 bg-transparent px-2.5 text-md text-slate-800 outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-blue-100" name="phone" type="tel" value={form.phone} onChange={updateField} onBlur={() => setFieldErrors((current) => ({ ...current, phone: getPhoneError(form.countryCode, form.phone) || undefined }))} aria-invalid={Boolean(fieldErrors.phone)} aria-describedby={fieldErrors.phone ? 'quote-phone-error' : undefined} placeholder="Phone number" autoComplete="tel-national" required />
-              </span>
+              <PhoneInputField
+                id="phone"
+                countryCode={form.countryCode}
+                phone={form.phone}
+                required
+                invalid={Boolean(fieldErrors.phone)}
+                describedBy={fieldErrors.phone ? 'quote-phone-error' : undefined}
+                onCountryCodeChange={(countryCode) => {
+                  setForm((current) => ({ ...current, countryCode }))
+                  setFieldErrors((current) => {
+                    if (!form.phone && !current.phone) return current
+                    const phoneError = form.phone ? getPhoneError(countryCode, form.phone) : current.phone
+                    const next = { ...current }
+                    if (phoneError) next.phone = phoneError
+                    else delete next.phone
+                    return next
+                  })
+                }}
+                onPhoneChange={(phone) => {
+                  const value = sanitizePhoneInput(phone)
+                  setForm((current) => ({ ...current, phone: value }))
+                  setFieldErrors((current) => {
+                    if (!current.phone) return current
+                    const phoneError = value ? getPhoneError(form.countryCode, value) : 'Enter a valid phone number for the selected country.'
+                    const next = { ...current }
+                    if (phoneError) next.phone = phoneError
+                    else delete next.phone
+                    return next
+                  })
+                }}
+                onBlur={() => setFieldErrors((current) => ({ ...current, phone: getPhoneError(form.countryCode, form.phone) || undefined }))}
+              />
               {fieldErrors.phone && <span id="quote-phone-error" role="alert" className="mt-1 block text-xs text-red-600">{fieldErrors.phone}</span>}
             </div>
             <div className="flex items-end sm:col-span-2 lg:col-span-1">

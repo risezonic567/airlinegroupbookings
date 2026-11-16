@@ -3,6 +3,7 @@
 import { useState } from 'react'
 
 import { ArrowRight } from 'lucide-react'
+import PhoneInputField from '@/components/PhoneInputField'
 import { isDisposableEmail, sanitizePhoneInput, validateEmail, validatePhone } from '@/lib/validationRules'
 
 const inputClass = 'mt-2 h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100'
@@ -129,22 +130,46 @@ return (
         </label>
         <label className="block text-sm font-medium text-slate-700">
           Phone number <span className="font-normal text-slate-400">(optional)</span>
-          <span className="mt-2 flex h-12 overflow-hidden rounded-lg border border-slate-200 bg-white focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-100">
-            <select aria-label="Country calling code" name="countryCode" value={message.countryCode} onChange={updateField} aria-invalid={Boolean(fieldErrors.phone)} className="w-[82px] shrink-0 border-r border-slate-200 bg-transparent px-2 text-sm text-slate-700 outline-none">
-              <option value="+1">US +1</option>
-              <option value="+44">UK +44</option>
-              <option value="+91">IN +91</option>
-              <option value="+61">AU +61</option>
-              <option value="+971">AE +971</option>
-            </select>
-            <input className="min-w-0 flex-1 bg-transparent px-3 text-sm text-slate-800 outline-none placeholder:text-slate-400" type="tel" name="phone" value={message.phone} onChange={updateField} onBlur={() => setFieldErrors((current) => {
+          <div className="PhoneInputField--contact">
+            <PhoneInputField
+              id="contact-phone"
+              countryCode={message.countryCode}
+              phone={message.phone}
+              invalid={Boolean(fieldErrors.phone)}
+              describedBy={fieldErrors.phone ? 'contact-phone-error' : undefined}
+              placeholder="Your phone number"
+              onCountryCodeChange={(countryCode) => {
+                setMessage((current) => ({ ...current, countryCode }))
+                setFieldErrors((current) => {
+                  if (!message.phone && !current.phone) return current
+                  const phoneError = message.phone ? getPhoneError(countryCode, message.phone) : ''
+                  const next = { ...current }
+                  if (phoneError) next.phone = phoneError
+                  else delete next.phone
+                  return next
+                })
+              }}
+              onPhoneChange={(phone) => {
+                const value = sanitizePhoneInput(phone)
+                setMessage((current) => ({ ...current, phone: value }))
+                setFieldErrors((current) => {
+                  if (!current.phone) return current
+                  const phoneError = value ? getPhoneError(message.countryCode, value) : ''
+                  const next = { ...current }
+                  if (phoneError) next.phone = phoneError
+                  else delete next.phone
+                  return next
+                })
+              }}
+              onBlur={() => setFieldErrors((current) => {
                 const phoneError = message.phone ? getPhoneError(message.countryCode, message.phone) : ''
                 const next = { ...current }
                 if (phoneError) next.phone = phoneError
                 else delete next.phone
                 return next
-            })} aria-invalid={Boolean(fieldErrors.phone)} aria-describedby={fieldErrors.phone ? 'contact-phone-error' : undefined} autoComplete="tel-national" placeholder="Your phone number" />
-          </span>
+              })}
+            />
+          </div>
           {fieldErrors.phone && <span id="contact-phone-error" role="alert" className="mt-1 block text-xs text-red-600">{fieldErrors.phone}</span>}
         </label>
         <label className="block text-sm font-medium text-slate-700">
