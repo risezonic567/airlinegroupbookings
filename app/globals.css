@@ -122,10 +122,14 @@
 }
 .PhoneInputField .PhoneInputCountry {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
   margin-right: 0;
-  padding: 0 0.5rem;
+  padding: 0 0.65rem;
   border-right: 1px solid #e2e8f0;
   background: transparent;
+  min-width: 5.75rem;
 }
 .PhoneInputField .PhoneInputCountryIcon {
   width: 1.35rem;
@@ -134,8 +138,16 @@
   background: none;
 }
 .PhoneInputField .PhoneInputCountrySelectArrow {
-  margin-left: 0.35rem;
+  margin-left: 0.15rem;
   opacity: 0.55;
+}
+.PhoneInputField .PhoneInputCountryDialCode {
+  margin-left: 0.15rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #1e293b;
+  white-space: nowrap;
 }
 .PhoneInputField .PhoneInputCountrySelect--button {
   position: absolute;

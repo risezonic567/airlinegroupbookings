@@ -145,6 +145,11 @@ function SearchableCountrySelect({
                 <Icon aria-hidden country={value} label={selected.label} />
             ) : null}
             {Arrow ? <Arrow /> : <div className="PhoneInputCountrySelectArrow" aria-hidden />}
+            {value ? (
+                <span className="PhoneInputCountryDialCode" aria-hidden="true">
+                    +{getCountryCallingCode(value)}
+                </span>
+            ) : null}
 
             {open && (
                 <div className="PhoneInputCountryDropdown" role="listbox" aria-label={ariaLabel || 'Countries'}>

@@ -224,8 +224,12 @@ export default function QuoteForm() {
                 onCountryCodeChange={(countryCode) => {
                   setForm((current) => ({ ...current, countryCode }))
                   setFieldErrors((current) => {
-                    if (!form.phone && !current.phone) return current
-                    const phoneError = form.phone ? getPhoneError(countryCode, form.phone) : current.phone
+                    if (!form.phone.trim()) {
+                      const next = { ...current }
+                      delete next.phone
+                      return next
+                    }
+                    const phoneError = getPhoneError(countryCode, form.phone)
                     const next = { ...current }
                     if (phoneError) next.phone = phoneError
                     else delete next.phone
@@ -244,7 +248,16 @@ export default function QuoteForm() {
                     return next
                   })
                 }}
-                onBlur={() => setFieldErrors((current) => ({ ...current, phone: getPhoneError(form.countryCode, form.phone) || undefined }))}
+                onBlur={() => setFieldErrors((current) => {
+                  // Don't flash error when only country changed and phone is still empty
+                  if (!form.phone.trim()) {
+                    const next = { ...current }
+                    delete next.phone
+                    return next
+                  }
+                  const phoneError = getPhoneError(form.countryCode, form.phone)
+                  return { ...current, ...(phoneError ? { phone: phoneError } : { phone: undefined }) }
+                })}
               />
               {fieldErrors.phone && <span id="quote-phone-error" role="alert" className="mt-1 block text-xs text-red-600">{fieldErrors.phone}</span>}
             </div>
