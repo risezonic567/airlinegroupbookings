@@ -12,7 +12,7 @@ const nextConfig = {
     // Keep live URLs, canonicals, and sitemap aligned (SEO: trailing slash)
     trailingSlash: true,
     images: {
-        qualities: [75, 90],
+        qualities: [70, 75, 90],
         remotePatterns: [
             {
                 protocol: 'https',

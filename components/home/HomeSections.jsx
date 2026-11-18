@@ -39,9 +39,8 @@ const homeDestinationAlts = {
 }
 
 const homeBlogAlts = {
-    'plan-flights-large-group': 'Group of people working on laptops around a table, planning flights together',
-    'group-air-travel-checklist': 'Open desert road leading toward mountains under a blue sky',
-    'team-trip-planning': 'Travel map with a camera, backpack and notebook for trip planning',
+    'group-booking-lufthansa-how-it-works-for-10-plus-travelers':
+        'Lufthansa group travel for 10 or more passengers',
 }
 
 function Heading({ eyebrow, first, accent, subtitle }) {

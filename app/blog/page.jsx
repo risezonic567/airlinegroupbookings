@@ -17,6 +17,13 @@ export const metadata = createPageMetadata({
 })
 
 export default function BlogIndex() {
+    const sortedBlogs = [...blogs].sort((a, b) => {
+        if (a.id != null && b.id != null) return b.id - a.id
+        if (a.id != null) return -1
+        if (b.id != null) return 1
+        return 0
+    })
+
     return (
         <main>
             <JsonLd data={pageSchemas.blog} />
@@ -35,7 +42,7 @@ export default function BlogIndex() {
             </section>
             <section className="bg-slate-50 py-12 sm:py-16">
                 <div className="mx-auto grid max-w-7xl gap-6 px-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-3 lg:px-10">
-                    {blogs.map((post) => (
+                    {sortedBlogs.map((post) => (
                         <article key={post.slug} className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-blue-100 hover:shadow-xl">
                             <Link href={`/blog/${post.slug}`} className="block focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200">
                                 <div className="relative h-56 overflow-hidden bg-blue-900">
