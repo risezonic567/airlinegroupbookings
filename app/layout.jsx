@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/home/Footer'
+import GoogleAnalytics from '../components/seo/GoogleAnalytics'
 import SiteStructuredData from '../components/seo/SiteStructuredData'
 import { OG_IMAGE, SITE_URL } from '../lib/seo'
 import './globals.css'
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
                 <meta charSet="utf-8" />
             </head>
             <body suppressHydrationWarning className="min-h-screen bg-white font-sans antialiased">
+                <GoogleAnalytics />
                 <SiteStructuredData />
                 <Navbar />
                 {children}
