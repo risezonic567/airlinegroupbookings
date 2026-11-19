@@ -43,6 +43,8 @@ const homeBlogAlts = {
         'Lufthansa group travel for 10 or more passengers',
     'group-booking-wizz-air-how-it-works-deposits-and-tips':
         'Wizz Air group booking deposits and travel tips',
+    'group-booking-turkish-airlines-how-it-works-and-how-to-get-the-best-deal':
+        'Turkish Airlines group booking for large travel parties',
 }
 
 function Heading({ eyebrow, first, accent, subtitle }) {
@@ -200,9 +202,67 @@ export function DestinationsSection() {
 }
 
 export function BlogsSection() {
-    return <section className="bg-white py-16 sm:py-20"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><Heading eyebrow="Travel notes" first="Group Travel Tips &" accent="Guides" subtitle="Ideas and practical tips for your next group trip." /><div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">{blogs.map((post) => <article key={post.slug} className="group flex h-full overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-md shadow-blue-950/5 transition duration-200 hover:-translate-y-1 hover:border-blue-100 hover:shadow-xl"><Link href={`/blog/${post.slug}`} className="flex h-full w-full flex-col focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"><div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-blue-900"><Image src={post.image} alt={homeBlogAlts[post.slug] || post.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /><span className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" /><span className="absolute left-4 top-4 rounded-full border border-white/60 bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-blue-800">{post.category}</span></div><div className="flex flex-1 flex-col p-5"><h3 className="text-lg font-bold text-slate-900 transition group-hover:text-blue-700">{post.title}</h3><p className="mt-2 line-clamp-3 text-md leading-6 text-slate-600">{post.excerpt}</p><span className="mt-auto inline-flex items-center gap-2 pt-5 text-md font-bold text-blue-700">Know More <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div></Link></article>)}</div>
-        <div className="mt-6 flex justify-center">
-            <Link href="/blog" className="inline-flex items-center gap-2 text-md font-bold text-blue-700">View all articles <ArrowRight className="h-4 w-4" /></Link>
-        </div>
-    </div></section>
+    const homeBlogs = [...blogs]
+        .sort((a, b) => (b.id ?? 0) - (a.id ?? 0))
+        .slice(0, 3)
+
+    return (
+        <section className="bg-white py-16 sm:py-20">
+            <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+                <Heading
+                    eyebrow="Travel notes"
+                    first="Group Travel Tips &"
+                    accent="Guides"
+                    subtitle="Ideas and practical tips for your next group trip."
+                />
+                <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    {homeBlogs.map((post) => (
+                        <article
+                            key={post.slug}
+                            className="group flex h-full overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-md shadow-blue-950/5 transition duration-200 hover:-translate-y-1 hover:border-blue-100 hover:shadow-xl"
+                        >
+                            <Link
+                                href={`/blog/${post.slug}`}
+                                className="flex h-full w-full flex-col focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
+                            >
+                                <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-blue-900">
+                                    <Image
+                                        src={post.image}
+                                        alt={homeBlogAlts[post.slug] || post.title}
+                                        fill
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                        className="object-cover transition duration-500 group-hover:scale-105"
+                                    />
+                                    <span className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
+                                    <span className="absolute left-4 top-4 rounded-full border border-white/60 bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-blue-800">
+                                        {post.category}
+                                    </span>
+                                </div>
+                                <div className="flex flex-1 flex-col p-5">
+                                    <h3 className="text-lg font-bold text-slate-900 transition group-hover:text-blue-700">
+                                        {post.title}
+                                    </h3>
+                                    <p className="mt-2 line-clamp-3 text-md leading-6 text-slate-600">
+                                        {post.excerpt}
+                                    </p>
+                                    <span className="mt-auto inline-flex items-center gap-2 pt-5 text-md font-bold text-blue-700">
+                                        Know More{' '}
+                                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                    </span>
+                                </div>
+                            </Link>
+                        </article>
+                    ))}
+                </div>
+                <div className="mt-6 flex justify-center">
+                    <Link
+                        href="/blog"
+                        className="inline-flex items-center gap-2 text-md font-bold text-blue-700"
+                    >
+                        View all articles <ArrowRight className="h-4 w-4" />
+                    </Link>
+                </div>
+            </div>
+        </section>
+    )
 }

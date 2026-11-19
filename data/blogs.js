@@ -311,7 +311,7 @@ const blogs = [
                         },
                     ],
                 },
-            ],
+            ],  
         },
         content: `
 <p>Booking flights for yourself is easy. Booking for a whole group is a different story. Maybe it’s a school trip, a family reunion, a wedding party or a team heading to a conference. Suddenly there are 20 names, different payment promises and one person (probably you) holding everything together.</p>
@@ -370,6 +370,212 @@ const blogs = [
 <p>No. Wizz Air states the deposit is non-refundable.</p>
 <h3>What happens if I miss a payment deadline?</h3>
 <p>The booking can be deleted automatically, and the deposit is lost.</p>
+`,
+    },
+
+    {
+        id: 3,
+        slug: 'group-booking-turkish-airlines-how-it-works-and-how-to-get-the-best-deal',
+        metatitle: 'Group Booking Turkish Airlines : Easy Steps & Tips',
+        metadescription:
+            'Planning a trip with a crowd ? Here’s how group booking Turkish Airlines works, what to expect on fares and payments, and how to avoid common mistakes.',
+        title: 'Group Booking Turkish Airlines: How It Works and How to Get the Best Deal',
+        category: 'Group travel guide',
+        date: '2026-11-19',
+        publishedAt: 'November 19, 2026',
+        image: '/blog3/Featured Image - Group Booking Turkish Airlines.jpg.jpeg',
+        coverImage: '/blog3/Featured Image - Group Booking Turkish Airlines.jpg.jpeg',
+        excerpt:
+            'How group booking Turkish Airlines works — group size, deposits, name lists, tips for better value and mistakes to avoid before you confirm.',
+        schema: {
+            '@context': 'https://schema.org',
+            '@graph': [
+                {
+                    '@type': 'Article',
+                    '@id':
+                        'https://airlinegroupbookings.com/blog/group-booking-turkish-airlines-how-it-works-and-how-to-get-the-best-deal/#article',
+                    headline:
+                        'Group Booking Turkish Airlines: How It Works and How to Get the Best Deal',
+                    description:
+                        'Planning a trip with a crowd ? Here’s how group booking Turkish Airlines works, what to expect on fares and payments, and how to avoid common mistakes.',
+                    inLanguage: 'en',
+                    datePublished: '2026-11-19',
+                    dateModified: '2026-11-19',
+                    mainEntityOfPage: {
+                        '@type': 'WebPage',
+                        '@id':
+                            'https://airlinegroupbookings.com/blog/group-booking-turkish-airlines-how-it-works-and-how-to-get-the-best-deal/',
+                    },
+                    author: {
+                        '@type': 'Organization',
+                        name: 'Airline Group Bookings',
+                        url: 'https://airlinegroupbookings.com/',
+                    },
+                    publisher: {
+                        '@type': 'Organization',
+                        name: 'Airline Group Bookings',
+                        url: 'https://airlinegroupbookings.com/',
+                    },
+                },
+                {
+                    '@type': 'FAQPage',
+                    '@id':
+                        'https://airlinegroupbookings.com/blog/group-booking-turkish-airlines-how-it-works-and-how-to-get-the-best-deal/#faq',
+                    mainEntity: [
+                        {
+                            '@type': 'Question',
+                            name: 'How many passengers do I need for a Turkish Airlines group booking?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'Usually around ten or more travellers on the same flight, though this can vary. Check with the airline for the current requirement.',
+                            },
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'Can I pay a deposit instead of the full amount?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'Many group fares allow a deposit with the balance due later. Your quote will show the exact amounts and dates.',
+                            },
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'Can I change the number of passengers after booking the tickets?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'Sometimes, but it depends on your fare conditions. Ask about the rules for reducing group size before you confirm.',
+                            },
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'Do I need passenger names right away?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'Not always. Group bookings often let you submit names later, but you’ll have a deadline to meet.',
+                            },
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'Are group fares always cheaper than regular tickets?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'Not every time. They tend to offer better stability and flexibility, but it’s smart to compare with standard fares for your dates.',
+                            },
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'Is it better to book directly or through a travel agent?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'Both work. An agent can save time and handle the back-and-forth, while booking directly gives you a straight line to the airline.',
+                            },
+                        },
+                    ],
+                },
+                {
+                    '@type': 'BreadcrumbList',
+                    '@id':
+                        'https://airlinegroupbookings.com/blog/group-booking-turkish-airlines-how-it-works-and-how-to-get-the-best-deal/#breadcrumb',
+                    itemListElement: [
+                        {
+                            '@type': 'ListItem',
+                            position: 1,
+                            name: 'Home',
+                            item: 'https://airlinegroupbookings.com/',
+                        },
+                        {
+                            '@type': 'ListItem',
+                            position: 2,
+                            name: 'Blog',
+                            item: 'https://airlinegroupbookings.com/blog/',
+                        },
+                        {
+                            '@type': 'ListItem',
+                            position: 3,
+                            name: 'Group Booking Turkish Airlines: How It Works and How to Get the Best Deal',
+                            item: 'https://airlinegroupbookings.com/blog/group-booking-turkish-airlines-how-it-works-and-how-to-get-the-best-deal/',
+                        },
+                    ],
+                },
+            ],
+        },
+        content: `
+<p>Booking a flight for yourself takes five minutes. Booking for fifteen people? That’s a different story. Everyone has different dates, someone always forgets their passport details, and one person will definitely ask if they can switch seats at the last minute.</p>
+<p>If you’re planning a trip with a big party, <a href="https://airlinegroupbookings.com/">group booking Turkish Airlines</a> is worth understanding before you start. It won’t make your group any less chaotic, but it can make the booking part a lot calmer.</p>
+
+<h2>What Is a Group Booking on Turkish Airlines?</h2>
+<img src="/blog3/Group Travel Experience - Boarding Together.jpg.jpeg" alt="Group travel experience boarding together" />
+<p>A group booking is a reservation made for a larger number of travelers flying together on the same flight. Instead of buying tickets one at a time on the website, you send a request, and the airline’s group team builds a fare and a set of terms around your party.</p>
+<p>Turkish Airlines usually treats a group as around ten or more passengers, though the exact threshold can differ by route and season. Always confirm the current minimum when you enquire.</p>
+<p>The big benefit is that your whole group stays on one reservation. That makes it much easier to manage payments, deadlines and changes.</p>
+
+<h2>Who Usually Books Group Tickets?</h2>
+<p>You’d be surprised how many different groups use this option:</p>
+<ul>
+<li>Families travelling for a wedding or reunion</li>
+<li>Companies sending a team to a conference or training event</li>
+<li>School and university trips</li>
+<li>Religious pilgrimage groups</li>
+<li>Sports teams and clubs</li>
+<li>Friends heading out on a big holiday</li>
+</ul>
+<p>Turkish Airlines flies to a huge number of destinations through Istanbul, so it’s a popular pick for groups heading to Europe, the Middle East, Africa and Asia.</p>
+
+<h2>Why Book as a Group Instead of Individually?</h2>
+<p>Honestly, price is the first thing people think about, but it’s not the only reason.</p>
+<ul>
+<li><strong>Locked-in pricing.</strong> When you book individually, fares can change between one passenger and the next. With a group request, the fare is agreed for everyone, so you’re not watching prices climb while you wait for friends to confirm.</li>
+<li><strong>More flexible payment terms.</strong> Group bookings often let you pay a deposit first and settle the balance later, rather than paying everything on day one. The exact terms depend on the airline’s conditions at the time.</li>
+<li><strong>Easier name handling.</strong> Many group bookings allow names to be submitted closer to departure, which helps when people drop out or are still waiting on visas.</li>
+<li><strong>One point of contact.</strong> You deal with the group desk rather than juggling dozens of separate tickets.</li>
+</ul>
+<p>Keep in mind that every group fare comes with its own rules, so read them carefully before you agree to anything.</p>
+
+<h2>How to Make a Group Booking with Turkish Airlines</h2>
+<img src="/blog3/Group Booking Process - Documents, Payments & Coordination.jpg.jpeg" alt="Group booking process documents payments and coordination" />
+<p>Here’s the simple path most people follow.</p>
+<ol>
+<li><strong>Get your basics sorted.</strong> Before you contact anyone, know your travel dates, departure and arrival cities, and the number of passengers. Adults, children and infants should be counted separately.</li>
+<li><strong>Check your flexibility.</strong> Can your group leave a day earlier or later? Being flexible, even by a day, can sometimes open up better fares.</li>
+<li><strong>Send a group request.</strong> You can reach out through Turkish Airlines’ group booking channels, or through a travel agency that handles group fares. A good agent will save you time, especially if your itinerary is complicated.</li>
+<li><strong>Review the quote carefully.</strong> Look at the fare, taxes, baggage allowance, deposit amount and deadlines. Don’t skim this part.</li>
+<li><strong>Pay the deposit.</strong> This is what confirms your seats. Miss the deadline and the offer can disappear.</li>
+<li><strong>Submit passenger names.</strong> Do this by the date given in your terms. Names usually need to match passports exactly.</li>
+<li><strong>Pay the balance and get your tickets.</strong> Once everything is settled, tickets are issued and you’re ready to go.</li>
+</ol>
+
+<h2>Tips to Get the Best Value</h2>
+<ul>
+<li><strong>Ask early.</strong> Group seats on popular routes can fill up quickly, especially in summer and around holidays.</li>
+<li><strong>Compare against individual fares.</strong> Occasionally, regular fares are cheaper for a certain date. It’s worth checking both.</li>
+<li><strong>Understand the change rules.</strong> Ask what happens if a passenger cancels or if you need to reduce the group size.</li>
+<li><strong>Confirm baggage rules.</strong> Allowances can vary by fare type, so check before you tell everyone to pack.</li>
+<li><strong>Appoint one organiser.</strong> Having a single person handle communication avoids confusion and conflicting requests.</li>
+</ul>
+
+<h2>Common Mistakes to Avoid</h2>
+<p>Some problems come up again and again with <a href="https://airlinegroupbookings.com/group-travel/">group travel</a>.</p>
+<p>Waiting too long is the big one. Seats and fares aren’t held forever, and delays can mean a higher price.</p>
+<p>Another is ignoring deadlines. Deposit and name submission dates matter, and missing them can cost you.</p>
+<p>Finally, many organisers forget to double-check passport names and validity. A spelling slip or an expired passport can turn into a real headache at the airport.</p>
+
+<h2>Final Thoughts</h2>
+<p><a href="https://airlinegroupbookings.com/">Group booking Turkish Airlines</a> is really about taking the stress out of coordinating a large trip. When you know the steps, prepare your details and read the terms carefully, the process is far smoother than most people expect.</p>
+<p>Start early, stay organised and ask plenty of questions. A little effort upfront means everyone else can focus on the fun part: the trip itself. Need help planning? The team at <a href="https://airlinegroupbookings.com/">Airline Group Bookings</a> can walk you through the next steps.</p>
+
+<h2>FAQs</h2>
+<h3>How many passengers do I need for a Turkish Airlines group booking?</h3>
+<p>Usually around ten or more travellers on the same flight, though this can vary. Check with the airline for the current requirement.</p>
+<h3>Can I pay a deposit instead of the full amount?</h3>
+<p>Many group fares allow a deposit with the balance due later. Your quote will show the exact amounts and dates.</p>
+<h3>Can I change the number of passengers after booking the tickets?</h3>
+<p>Sometimes, but it depends on your fare conditions. Ask about the rules for reducing group size before you confirm.</p>
+<h3>Do I need passenger names right away?</h3>
+<p>Not always. Group bookings often let you submit names later, but you’ll have a deadline to meet.</p>
+<h3>Are group fares always cheaper than regular tickets?</h3>
+<p>Not every time. They tend to offer better stability and flexibility, but it’s smart to compare with standard fares for your dates.</p>
+<h3>Is it better to book directly or through a travel agent?</h3>
+<p>Both work. An agent can save time and handle the back-and-forth, while booking directly gives you a straight line to the airline.</p>
 `,
     },
 ]
