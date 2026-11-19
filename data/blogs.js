@@ -194,6 +194,184 @@ const blogs = [
 <p><a href="https://airlinegroupbookings.com/">Group booking Lufthansa</a> is mostly about planning ahead. Get your quote early, know your deadlines and keep one person in charge of the name list. Do those three things and the flight itself is the easy part.</p>
 `,
     },
+
+    {
+        id: 2,
+        slug: 'group-booking-wizz-air-how-it-works-deposits-and-tips',
+        metatitle: 'Group Booking Wizz Air: How It Works, Deposits & Tips',
+        metadescription:
+            'Planning a trip with a big group? Here’s how group booking Wizz Air works: minimum numbers, deposits, name changes, payment deadlines and tips to avoid mistakes.',
+        title: 'Group Booking Wizz Air: How It Works and What to Know Before You Book',
+        category: 'Group travel guide',
+        date: '2026-11-19',
+        publishedAt: 'November 19, 2026',
+        image: '/blog2/Group booking 1_.jpg.jpeg',
+        coverImage: '/blog2/Group booking 1_.jpg.jpeg',
+        excerpt:
+            'How group booking on Wizz Air works — minimum size, fixed fares, deposits, payment deadlines, name lists and tips to avoid costly mistakes.',
+        schema: {
+            '@context': 'https://schema.org',
+            '@graph': [
+                {
+                    '@type': 'Article',
+                    '@id':
+                        'https://airlinegroupbookings.com/blog/group-booking-wizz-air-how-it-works-deposits-and-tips/#article',
+                    headline:
+                        'Group Booking Wizz Air: How It Works and What to Know Before You Book',
+                    description:
+                        'Planning a trip with a big group? Here’s how group booking Wizz Air works: minimum numbers, deposits, name changes, payment deadlines and tips to avoid mistakes.',
+                    inLanguage: 'en',
+                    datePublished: '2026-11-19',
+                    dateModified: '2026-11-19',
+                    mainEntityOfPage: {
+                        '@type': 'WebPage',
+                        '@id':
+                            'https://airlinegroupbookings.com/blog/group-booking-wizz-air-how-it-works-deposits-and-tips/',
+                    },
+                    author: {
+                        '@type': 'Organization',
+                        name: 'Airline Group Bookings',
+                        url: 'https://airlinegroupbookings.com/',
+                    },
+                    publisher: {
+                        '@type': 'Organization',
+                        name: 'Airline Group Bookings',
+                        url: 'https://airlinegroupbookings.com/',
+                    },
+                },
+                {
+                    '@type': 'FAQPage',
+                    '@id':
+                        'https://airlinegroupbookings.com/blog/group-booking-wizz-air-how-it-works-deposits-and-tips/#faq',
+                    mainEntity: [
+                        {
+                            '@type': 'Question',
+                            name: 'What is the minimum group size for Wizz Air?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'Wizz Air’s official page says 16 or more passengers. Check it before you book, as rules can change.',
+                            },
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'Can I add passengers later?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'Yes, up to 10% more within 30 days of booking, and no later than 60 days before departure.',
+                            },
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'When do I need to give passenger names?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'Up to 72 hours before departure, after full payment has been received.',
+                            },
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'Is the group deposit refundable?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'No. Wizz Air states the deposit is non-refundable.',
+                            },
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'What happens if I miss a payment deadline?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'The booking can be deleted automatically, and the deposit is lost.',
+                            },
+                        },
+                    ],
+                },
+                {
+                    '@type': 'BreadcrumbList',
+                    '@id':
+                        'https://airlinegroupbookings.com/blog/group-booking-wizz-air-how-it-works-deposits-and-tips/#breadcrumb',
+                    itemListElement: [
+                        {
+                            '@type': 'ListItem',
+                            position: 1,
+                            name: 'Home',
+                            item: 'https://airlinegroupbookings.com/',
+                        },
+                        {
+                            '@type': 'ListItem',
+                            position: 2,
+                            name: 'Blog',
+                            item: 'https://airlinegroupbookings.com/blog/',
+                        },
+                        {
+                            '@type': 'ListItem',
+                            position: 3,
+                            name: 'Group Booking Wizz Air: How It Works and What to Know Before You Book',
+                            item: 'https://airlinegroupbookings.com/blog/group-booking-wizz-air-how-it-works-deposits-and-tips/',
+                        },
+                    ],
+                },
+            ],
+        },
+        content: `
+<p>Booking flights for yourself is easy. Booking for a whole group is a different story. Maybe it’s a school trip, a family reunion, a wedding party or a team heading to a conference. Suddenly there are 20 names, different payment promises and one person (probably you) holding everything together.</p>
+<p>Wizz Air has a dedicated group booking system for this. It’s useful, but it has rules you should understand first. Here’s what to expect with a <a href="https://airlinegroupbookings.com/">group booking</a> on Wizz Air.</p>
+
+<h2>How many people count as a “group”?</h2>
+<img src="/blog2/Group booking 2_.jpg.jpeg" alt="How many people count as a group on Wizz Air" />
+<p>This is where people get confused. Wizz Air’s own group booking page says you need 16 or more passengers to make a group booking. Some travel sites and older forum posts say 10, which is what other airlines use.</p>
+<p>If your group is smaller than 16, you’ll most likely book through the normal booking engine, so check the airline’s page before you plan around any number.</p>
+
+<h2>The big perk: one price for everyone</h2>
+<p>The best part of a group booking is the fixed price. Everyone in the group pays the same fare, so you don’t watch the price climb with every seat you add. If you’ve ever tried booking 18 people one by one, you know how much that’s worth.</p>
+
+<h2>How the booking process works</h2>
+<ul>
+<li>Create or log into a Wizz Air account. You’ll need one for groups of 16 or more.</li>
+<li>Send your request. Give your dates, route and number of passengers. Then wait for fares to be released, which Wizz Air says usually takes no more than two working days.</li>
+<li>Create your booking once the fares are available online.</li>
+<li>Pay the deposit by card straight away, or by bank transfer within 24 hours.</li>
+</ul>
+
+<h2>Deposits and payments</h2>
+<img src="/blog2/Group booking 3_.jpg.jpeg" alt="Wizz Air group booking deposits and payments" />
+<p>The payment plan depends on how far ahead you book, so read this part twice.</p>
+<ul>
+<li>If you book close to departure, the first instalment is a non-refundable deposit of at least 40%.</li>
+<li>If you book well in advance, the first deposit can be as low as 10%. A second instalment of at least 30% is then due at least 60 days before departure.</li>
+</ul>
+<p>Miss a deadline and the booking can be deleted automatically, and the deposit is not refunded. Put every payment date in your calendar and share it with whoever else is helping.</p>
+
+<h2>Passenger names: you don’t need them on day one</h2>
+<p>You don’t have to know exactly who’s coming when you book. Passenger names can be provided online up to 72 hours before departure, once full payment has been received.</p>
+<p>Groups also get some flexibility on numbers. You can increase the group by up to 10% within 30 days of the original booking, as long as it’s no later than 60 days before departure.</p>
+
+<h2>Tips from people who’ve done this before</h2>
+<ul>
+<li><strong>Pick one organiser.</strong> Too many people editing one booking is how mistakes happen.</li>
+<li><strong>Collect passport details early.</strong> Names must match IDs exactly, and a typo is easier to fix before you’re at the airport.</li>
+<li><strong>Tell your group about the deposit.</strong> Say upfront that it’s non-refundable so nobody backs out late and leaves you covering the cost.</li>
+<li><strong>Ask about baggage and extras up front.</strong> Sort out checked bags, seats and priority boarding before departure, not at the gate.</li>
+<li><strong>Keep every confirmation email.</strong> If something goes wrong, you’ll want the paper trail.</li>
+</ul>
+
+<h2>Is a group booking worth it?</h2>
+<p>For big groups, yes. The fixed price, flexible names and staged payments make planning much calmer. If your group is on the smaller side, compare the group price against booking individually, because sometimes the normal route is cheaper or simpler.</p>
+<p>Need help with the process? Our team at <a href="https://airlinegroupbookings.com/">AIRLINE TICKET BOOKING</a> can help you plan <a href="https://airlinegroupbookings.com/group-travel/">group travel</a>, compare options and avoid expensive mistakes.</p>
+
+<h2>FAQs</h2>
+<h3>What is the minimum group size for Wizz Air?</h3>
+<p>Wizz Air’s official page says 16 or more passengers. Check it before you book, as rules can change.</p>
+<h3>Can I add passengers later?</h3>
+<p>Yes, up to 10% more within 30 days of booking, and no later than 60 days before departure.</p>
+<h3>When do I need to give passenger names?</h3>
+<p>Up to 72 hours before departure, after full payment has been received.</p>
+<h3>Is the group deposit refundable?</h3>
+<p>No. Wizz Air states the deposit is non-refundable.</p>
+<h3>What happens if I miss a payment deadline?</h3>
+<p>The booking can be deleted automatically, and the deposit is lost.</p>
+`,
+    },
 ]
 
 export default blogs

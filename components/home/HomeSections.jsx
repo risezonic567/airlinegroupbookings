@@ -41,6 +41,8 @@ const homeDestinationAlts = {
 const homeBlogAlts = {
     'group-booking-lufthansa-how-it-works-for-10-plus-travelers':
         'Lufthansa group travel for 10 or more passengers',
+    'group-booking-wizz-air-how-it-works-deposits-and-tips':
+        'Wizz Air group booking deposits and travel tips',
 }
 
 function Heading({ eyebrow, first, accent, subtitle }) {
