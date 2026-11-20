@@ -4,6 +4,7 @@ import businessClassAirlines from '../../data/businessClassAirlines'
 import deals from '../../data/deals'
 import destinations from '../../data/destinations'
 import groupTravelAirlines from '../../data/groupTravelAirlines'
+import industries from '../../data/industries'
 import { withAirlinesName } from '../../data/slugRedirects'
 import PageStructuredData from '../../components/seo/PageStructuredData'
 import { createPageMetadata } from '../../lib/seo'
@@ -19,6 +20,9 @@ const linkClass = 'text-md font-semibold text-blue-700 transition hover:text-blu
 const mainPages = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About Us' },
+    { href: '/how-it-works', label: 'How It Works' },
+    { href: '/faq', label: 'FAQs' },
+    { href: '/industries', label: 'Industries' },
     { href: '/group-travel', label: 'Group Travel' },
     { href: '/business-class', label: 'Business Class' },
     { href: '/deals', label: 'Deals' },
@@ -26,7 +30,7 @@ const mainPages = [
     { href: '/destinations', label: 'Destinations' },
     { href: '/contact', label: 'Contact Us' },
     { href: '/private-jet-charter', label: 'Private Jet Charter' },
-    { href: '/contact', label: 'Request a Quote' },
+    { href: '/contact#request-quote', label: 'Request a Quote' },
 ]
 
 const legalPages = [
@@ -78,6 +82,11 @@ export default function SiteMapPage() {
         label: `${destination.name}, ${destination.country}`,
     }))
 
+    const industryLinks = industries.map((industry) => ({
+        href: `/industries/${industry.slug}`,
+        label: industry.name,
+    }))
+
     return (
         <main>
             <PageStructuredData
@@ -100,6 +109,7 @@ export default function SiteMapPage() {
             <section className="bg-slate-50 py-12 sm:py-16">
                 <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 sm:px-8 lg:px-10">
                     <SitemapSection title="Main Pages" links={mainPages} />
+                    <SitemapSection title="Industries" links={industryLinks} />
                     <SitemapSection title="Group Travel Airlines" links={groupTravelLinks} />
                     <SitemapSection title="Business Class" links={businessClassLinks} />
                     <SitemapSection title="Deals" links={dealLinks} />

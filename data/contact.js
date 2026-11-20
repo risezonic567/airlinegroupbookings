@@ -3,6 +3,7 @@ const contactDetails = {
     phoneHref: 'tel:+18339580151',
     whatsappHref: 'https://wa.me/18339580151',
     email: 'info@airlinegroupbookings.com',
+    supportHours: '24/7 group booking support for organizers',
     offices: [
         {
             label: 'USA Office',

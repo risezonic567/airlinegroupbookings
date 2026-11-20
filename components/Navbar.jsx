@@ -39,8 +39,10 @@ const menus = [
 
 const pages = [
     { label: 'About Us', href: '/about' },
+    { label: 'How It Works', href: '/how-it-works' },
     { label: 'Deals', href: '/deals' },
     { label: 'Blog', href: '/blog' },
+    { label: 'FAQ', href: '/faq' },
     { label: 'Private Jet Charter', href: '/private-jet-charter' },
     { label: 'Contact Us', href: '/contact' },
 ]

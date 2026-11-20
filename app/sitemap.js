@@ -3,6 +3,7 @@ import businessClassAirlines from '../data/businessClassAirlines'
 import deals from '../data/deals'
 import destinations from '../data/destinations'
 import groupTravelAirlines from '../data/groupTravelAirlines'
+import industries from '../data/industries'
 import { absoluteUrl } from '../lib/seo'
 
 const staticPaths = [
@@ -14,7 +15,10 @@ const staticPaths = [
     '/deals',
     '/destinations',
     '/disclaimer',
+    '/faq',
     '/group-travel',
+    '/how-it-works',
+    '/industries',
     '/privacy-policy',
     '/private-jet-charter',
     '/refund-policy',
@@ -28,6 +32,7 @@ const detailPaths = [
     ...deals.map(({ slug }) => `/deals/${slug}`),
     ...destinations.map(({ slug }) => `/destinations/${slug}`),
     ...groupTravelAirlines.map(({ slug }) => `/group-travel/${slug}`),
+    ...industries.map(({ slug }) => `/industries/${slug}`),
 ]
 
 export default function sitemap() {

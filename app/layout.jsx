@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/home/Footer'
+import StickyQuoteCta from '../components/layout/StickyQuoteCta'
 import GoogleAnalytics from '../components/seo/GoogleAnalytics'
 import SiteStructuredData from '../components/seo/SiteStructuredData'
 import { OG_IMAGE, SITE_URL } from '../lib/seo'
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
                 <Navbar />
                 {children}
                 <Footer />
+                <StickyQuoteCta />
             </body>
         </html>
     )

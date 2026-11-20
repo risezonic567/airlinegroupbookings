@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 import { ArrowRight } from 'lucide-react'
 import PhoneInputField from '@/components/PhoneInputField'
+import { trackEvent } from '@/components/seo/GoogleAnalytics'
 import { isDisposableEmail, sanitizePhoneInput, validateEmail, validatePhone } from '@/lib/validationRules'
 
 const inputClass = 'mt-2 h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100'
@@ -75,6 +76,10 @@ export default function ContactForm() {
             });
             const result = await response.json();
             if (response.ok && result.success) {
+                trackEvent('generate_lead', {
+                    form_name: 'contact_enquiry',
+                    subject: message.subject || undefined,
+                })
                 // Save to sessionStorage for possible confirmation page
                 try {
                     const storageKey = 'CONTACT_STORAGE_KEY';

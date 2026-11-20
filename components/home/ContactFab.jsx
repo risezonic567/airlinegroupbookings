@@ -26,7 +26,7 @@ export default function ContactFab() {
     }
 
     return (
-        <div className="fixed bottom-6 right-4 z-50 flex flex-col items-end gap-3 sm:bottom-8 sm:right-6" aria-label="Contact us">
+        <div className="fixed bottom-20 right-4 z-50 flex flex-col items-end gap-3 md:bottom-8 md:right-6" aria-label="Contact us">
             <div
                 onMouseEnter={keepOpen}
                 onMouseLeave={scheduleClose}
