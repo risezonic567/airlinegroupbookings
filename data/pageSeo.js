@@ -536,17 +536,113 @@ export const businessClassSeo = {
         "Delta One Business Class Booking: Deals, Fares & Free Quote",
         "Book Delta Air Lines business class tickets. Compare Delta business class deals and Delta One cheap tickets, then request a free quote from our specialists."
     ),
-    "alaska-airlines": bcSeo(
-        "alaska airlines business class booking",
-        [
-        "alaska airlines first class vs business",
-        "alaska business class deals",
-        "alaska airlines premium class tickets"
-        ],
-        "Alaska Airlines Business Class Booking: Fares, Deals & Support",
-        "Alaska Airlines Business Class Booking | Deals & Free Quote",
-        "Alaska Airlines business class made easy. Explore Alaska Airlines first class vs business and Alaska business class deals, then request a free quote. Call 24/7."
-    ),
+    "alaska-airlines": {
+        ...bcSeo(
+            "alaska airlines business class booking",
+            [
+                "alaska airlines first class vs business",
+                "alaska business class deals",
+                "alaska airlines premium class tickets",
+            ],
+            "Alaska Airlines Business Class Booking",
+            "Alaska Airlines Business Class Booking | Deals & Free Quote",
+            "Airline Group Bookings can help you see business class options with Alaska Airlines. Compare First Class, Premium Class, deals and fare terms, then request a free quote."
+        ),
+        highlights: [],
+        onPageCopy:
+            "Airline Group Bookings can help you see what options there are for flying in business class with Alaska Airlines. Whether you’re looking to book business travel, a family break or travelling with more people, our team can help you find the right flights and compare the terms and conditions of the fares.",
+        contentHtml: `
+<p>Booking a <a href="/group-travel/alaska-airlines/">business class flight with Alaska Airlines</a> gives you the flexibility to search for business class seats on the airline. Simply tell us where you’d like to fly from, where you’d like to go, your preferred dates and how many people you need to upgrade seats for. Our experts will help you look at the different seat options and times.</p>
+
+<h2>How to book Alaska Airlines Business Class</h2>
+<p>Booking your premium flight is made quick and easy using the following steps:</p>
+<ol>
+<li>Tell us where you’re travelling. Include your departure and arrival locations and preferred dates.</li>
+<li>Tell us how many people you have upgrading to premium seats and those in other cabins.</li>
+<li>Tell us any preferences you have such as your preferred flight times, maximum connections and budget.</li>
+<li>Look at the seat options available. View the different seat products, times and terms and conditions.</li>
+<li>Once you’ve found an option that fits your needs, contact our team for a quote.</li>
+</ol>
+<p>If you’re unsure what cabin to book, our team can help you understand the difference between <a href="/">Alaska Airlines first class vs business</a>.</p>
+
+<h2>Alaska Airlines First Class vs Business</h2>
+<p>Alaska Airlines primarily offers First Class seats within their premium cabin.</p>
+<p>Some routes and aircraft have First Class seats whereas others have Premium Class which is an upgrade within the Economy cabin.</p>
+<p>Consider the following before booking:</p>
+<ul>
+<li><strong>Seat Layout</strong> – What seats are available?</li>
+<li><strong>Premium Class</strong> – Extra legroom and benefits.</li>
+<li><strong>Food &amp; Drink</strong> – What food and drinks are available?</li>
+<li><strong>Luggage</strong> – Luggage allowances.</li>
+<li><strong>Flight Time</strong> – Is the extra comfort worth it?</li>
+<li><strong>Flexibility</strong> – What are the terms for changes, cancellations and refunds?</li>
+</ul>
+<p>Depending on your route, aircraft, travel time and personal preferences you may want to choose the best option for you.</p>
+
+<h2>Alaska Business Class Deals</h2>
+<p>Premium seat prices can vary depending on when you are travelling, how busy the route is, and the availability of seats. Searching for <a href="/group-travel/alaska-airlines/">alaska Business Class deals</a> may be easier by finding the best date and flight times for you.</p>
+<p>Our team can help you see what premium cabin options you have available and what is included in the price. Think about the comfort of the seats, luggage, flight times and flexibility of the ticket rather than just looking for the cheapest option.</p>
+<p>To get the most relevant results for you, let us know what airports you want to fly from/to, when you want to travel and your budget. If you have flexible dates then you may have more options.</p>
+
+<h2>Alaska Airlines Premium Class Tickets</h2>
+<p>Not everyone will need First Class seats. Depending on your route and aircraft, <a href="/group-travel/alaska-airlines/">Alaska Airlines Premium Class tickets</a> may be a good option for you to upgrade your legroom within the Main Cabin.</p>
+<p>Alaska Airlines Premium Class tickets usually offer extra legroom and a selection of benefits, however this will depend on the flight and any conditions. This is not First Class so make sure you know what is included.</p>
+<p>Our team can help compare what seats you have available.</p>
+
+<h2>Why Book Alaska Airlines Premium with Airline Group Bookings?</h2>
+<p>Booking premium seats can involve a lot of details to consider, especially if you are flying with a group. Airline Group Bookings can help you compare options.</p>
+<ul>
+<li><strong>Personalised Help</strong> – Find the best flights for you.</li>
+<li><strong>Travel with a group</strong> – Talk to us about your group travelling with some premium seats.</li>
+<li><strong>Transparent Pricing</strong> – Know what the ticket conditions are.</li>
+<li><strong>Compare First Class and Premium Class</strong> – If available.</li>
+<li><strong>All in one place</strong> – Keep your travel requirements in one place and we can answer any follow up questions.</li>
+</ul>
+<p>Our team can help you find the best option for you whether it be for yourself or a larger group.</p>
+
+<h2>Who can benefit from Alaska Airlines Premium Seats?</h2>
+<p>Alaska Airlines premium seats may be a good option for:</p>
+<ul>
+<li>Business travellers and executives</li>
+<li>Families traveling domestically or internationally</li>
+<li>Wedding parties and celebrations</li>
+<li>Sports teams and professionals</li>
+<li>Those wanting extra comfort on longer flights</li>
+<li>Those wanting to mix up their seating.</li>
+</ul>
+<p>If some people want First Class and others want to stay in the Main Cabin let us know the seat requirements.</p>
+
+<h2>Top Tips for your booking</h2>
+<p>A few top tips to make your journey easier:</p>
+<ul>
+<li><strong>Passengers</strong> – How many people need First Class or Premium Class seats.</li>
+<li><strong>Seat Layout</strong> – What aircraft and seats are available.</li>
+<li><strong>Luggage</strong> – What luggage allowances are available.</li>
+<li><strong>Flight Times</strong> – Compare flight times.</li>
+<li><strong>Conditions</strong> – What are the conditions for changes and cancellations.</li>
+<li><strong>Passports &amp; Visas</strong> – International travel will require passports and visas.</li>
+<li><strong>Dietary Requirements &amp; Accessibility</strong> – Let us know if you have any dietary requirements or accessibility requirements.</li>
+</ul>
+<p>Always double check what cabin and seats are available for your specific flight. Aircraft and flight times can change.</p>
+
+<h2>FAQs</h2>
+<h3>How do I book Alaska Airlines Business Class?</h3>
+<p>Let us know what city you want to fly from, where you want to go, when you want to travel and how many people. Our team can help you look at premium seat options.</p>
+<h3>Does Alaska Airlines have Business Class?</h3>
+<p>Alaska Airlines mainly offers First Class, however they do offer Premium Class seats within the Main Cabin.</p>
+<h3>What is the difference between First Class and Premium Class on Alaska Airlines?</h3>
+<p>First Class is a separate cabin whereas Premium Class is within the Main Cabin. Premium Class usually has extra legroom and some benefits, however this depends on the aircraft and route.</p>
+<h3>How do I find Alaska Business Class deals?</h3>
+<p>Look at different dates, routes and seats. Prices will depend on how busy the route is and the availability. If you have flexible dates you may have more options.</p>
+<h3>Can I book premium seats for multiple people?</h3>
+<p>Yes you can! Let us know how many people you have in your group and how many people need upgrading.</p>
+<h3>Are Alaska Airlines Premium Class tickets the same as First Class?</h3>
+<p>No, Alaska Airlines Premium Class tickets are within the Main Cabin. First Class is a separate cabin.</p>
+<h3>Can some people in my group fly in First Class and others in Economy?</h3>
+<p>Yes, let us know how you want to split your cabins. This will depend on your route, flight, seat availability and booking conditions.</p>
+`.trim(),
+    },
+
     "lufthansa-airlines": bcSeo(
         "lufthansa business class booking",
         [
