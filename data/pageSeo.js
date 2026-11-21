@@ -429,18 +429,128 @@ export const groupTravelSeo = {
 `.trim(),
     },
 
-    "klm-airlines": gtSeo(
-        "klm group booking",
-        [
-        "klm group travel policy",
-        "klm group reservation",
-        "klm group flight deals",
-        "klm group ticket for 10 or more"
-        ],
-        "KLM Group Booking for 10+ Passengers",
-        "KLM Group Booking: Fares, Policy & Free Group Quote",
-        "Need KLM group booking? Compare KLM group travel policy, check group minimums and request a free group flight quote from our travel specialists. Call 24/7."
-    ),
+    "klm-airlines": {
+        ...gtSeo(
+            "klm group booking",
+            [
+                "klm group travel policy",
+                "klm group reservation",
+                "klm group flight deals",
+                "klm group ticket for 10 or more",
+            ],
+            "KLM Group Booking for 10+ Passengers",
+            "KLM Group Booking: Fares, Policy & Free Group Quote",
+            "Need KLM group booking? Compare KLM group travel policy, check group minimums and request a free group flight quote from our travel specialists. Call 24/7."
+        ),
+        highlights: [],
+        onPageCopy:
+            "I understand that planning a trip with family, friends, colleagues or a large organisation can feel stressful. KLM group booking options help make it easier to coordinate air travel for passengers. Whether you are arranging an event, school excursion, sports tour, family holiday or international group trip, KLM offers dedicated group travel arrangements for bookings.",
+        contentHtml: `
+<p>With Airlines Group Travel you can explore KLM group fare options, compare flight schedules and request a quotation that fits your itinerary and passenger requirements. I know how confusing the enquiry process can be, so our team is ready to help you navigate it and find the booking options for your group.</p>
+<p>Share your travel details with us. Take the step toward organising your group journey.</p>
+
+<h2>Why Choose KLM for Group Travel?</h2>
+<p>KLM Royal Dutch Airlines operates a flight network that connects travellers to destinations across Europe and beyond. The KLM group travel programme is designed to help larger parties coordinate their reservations through a booking process. I have seen many groups benefit from this programme.</p>
+<p>Here are some benefits of considering KLM for your group journey:</p>
+<ul>
+<li><strong>Group booking assistance:</strong> Access a reservation process that is built for parties.</li>
+<li><strong>Competitive group fares:</strong> Request a quotation that fits your destination, travel dates and passenger count.</li>
+<li><strong>Seat selection:</strong> Eligible group bookings may include free standard seat reservations, under the airline’s terms.</li>
+<li><strong>Flying benefits:</strong> Eligible passengers can earn Flying Blue Miles according to the programme’s terms and conditions.</li>
+</ul>
+<p>The availability of these benefits depends on the booking market and the applicable group agreement.</p>
+
+<h2>Understanding the KLM Group Travel Policy</h2>
+<p>Before you confirm your reservation it is important to understand the <a href="/">KLM group travel policy</a> and the conditions that come with group bookings. KLM offers a quotation-based reservation process, where the fares and booking terms depend on the itinerary, the number of passengers, the seats and the departure market.</p>
+<p>Here are some important points to remember:</p>
+<ol>
+<li>
+<strong>Minimum Passenger Requirement</strong>
+<p>KLM usually needs at least 10 passengers traveling together on one flight. Children who are under two years old and traveling on a parent’s lap do not count toward the minimum group size.</p>
+</li>
+<li>
+<strong>Group Fare Quotation</strong>
+<p>The group fare is based on the number of passengers, the destination, the travel dates, the available seats and the average ticket price for the chosen travel class. Group fares can be different from the fares that appear online.</p>
+</li>
+<li>
+<strong>Booking Confirmation and Option Period</strong>
+<p>KLM might offer an option period of up to 14 days depending on the departure date and the conditions that apply. This gives the group time to look at the offer before making the reservation final.</p>
+</li>
+<li>
+<strong>Deposit and Payment</strong>
+<p>A deposit or full payment could be needed to confirm the booking. Details about when and how to pay are given in the airline’s group travel proposal or agreement.</p>
+</li>
+<li>
+<strong>Passenger Information</strong>
+<p>Names of passengers and other necessary details must be given by the deadlines in the booking agreement. KLM group travel information allows some name changes without charge before the tickets are printed.</p>
+</li>
+<li>
+<strong>Changes and Cancellations</strong>
+<p>Changes to the number of passengers, cancellations and other booking changes are covered by the group agreement. Extra charges could apply. If the group size drops below the minimum, the group fare could be affected.</p>
+</li>
+</ol>
+<p>Always read the conditions in your quotation before you confirm your reservation.</p>
+
+<h2>How to Find KLM Group Flight Deals</h2>
+<p>If you are planning to travel with a group of people, looking into <a href="/deals">KLM group flight deals</a> can help you see what options are available for your trip. KLM offers group prices instead of just using the lowest price for each person.</p>
+<p>The final group price depends on things like:</p>
+<ul>
+<li>Number of people traveling together.</li>
+<li>Where they are leaving from and where they are going.</li>
+<li>The dates they want to travel and the time of year.</li>
+<li>How many seats are available in the chosen cabin, including <a href="/business-class-booking/klm/">business class</a> when needed.</li>
+<li>The route they need.</li>
+<li>Taxes, charges and the rules for booking.</li>
+</ul>
+<p>To find the prices it is a good idea to ask for a quote early, have your travel dates planned and read all the details of the booking before you decide.</p>
+<p>A group price can have benefits even if it is not cheaper than the price for one person.</p>
+
+<h2>How to Make a KLM Group Reservation</h2>
+<p>Making a <a href="/contact">KLM group reservation</a> means giving your travel details, getting a quote and then booking according to the airline’s rules.</p>
+<p>Here are the steps to start:</p>
+<ol>
+<li>
+<strong>Step 1: Share Your Travel Details</strong>
+<p>Give your starting city, your destination, the dates you want to travel and how many people are going.</p>
+</li>
+<li>
+<strong>Step 2: Choose Your Travel Preferences</strong>
+<p>Say if you want a one-way trip, a round-trip or a trip with stops. You can also pick the class of service you want and any special timing needs.</p>
+</li>
+<li>
+<strong>Step 3: Ask for a Group Price Quote</strong>
+<p>Send your request through the Airlines Group Travel website. Your needs will then be looked at to find the group flight options.</p>
+</li>
+<li>
+<strong>Step 4: Look at the Offer</strong>
+<p>Check the price, the flights, when you need to pay, what is needed as a deposit and the rules about changing or cancelling the booking.</p>
+</li>
+<li>
+<strong>Step 5: Finalize Your Group Booking</strong>
+<p>When you are happy with the plan, pay the required amount and send the passenger details before the deadline.</p>
+</li>
+</ol>
+
+<h2>Contact the KLM Group Travel Desk</h2>
+<p>KLM offers group travel help through its Group Desk for reservations that qualify. The KLM group travel team answers questions about group fares, booking rules and reservation needs.</p>
+<p>If you need help looking at group flight choices, Airlines Group Travel can guide you in sending your travel enquiry and explain the next steps to get a quote.</p>
+<p>Whether you are planning a family holiday, corporate trip, school tour or international group journey, give your itinerary and passenger details to begin.</p>
+
+<h2>Plan Your Next Group Journey with KLM</h2>
+<p>Organising flights for passengers needs careful coordination — from picking good schedules to handling passenger data and payment dates. KLM group travel options can help make these plans more organised for qualifying groups.</p>
+<p>Explore KLM group booking options with Airlines Group Travel. Ask for a quote that fits your destination, travel dates and number of passengers.</p>
+<p>Ready to plan your group trip? Call Airlines Group Travel at <a href="tel:+18339580151">+1-833-958-0151</a>. Send your enquiry online to talk about your travel needs.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>1. What is the minimum number of passengers required for KLM group booking?</h3>
+<p>KLM normally needs at least 10 passengers traveling together on the same flight. Children under two years old who sit on a parent’s lap do not count toward the number.</p>
+<h3>2. Does KLM offer fares for group bookings?</h3>
+<p>Yes. KLM gives special group fare quotes for qualifying reservations. The final price depends on the destination, travel dates, how many passengers, seat availability and chosen travel class. Group fares can be different from the fares shown online for tickets.</p>
+<h3>3. Can I change passenger names after making a KLM group reservation?</h3>
+<p>KLM lets you change passenger names at no cost before tickets are issued, as long as you follow the group booking rules and deadlines. Always check with KLM to confirm which changes are allowed before you ask.</p>
+`.trim(),
+    },
+
     "southwest-airlines": gtSeo(
         "southwest airlines group travel",
         [
