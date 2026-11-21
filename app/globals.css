@@ -255,3 +255,90 @@
   border-color: #50679b;
   box-shadow: 0 0 0 4px #e8edf7;
 }
+
+/* Google Translate engine — off-screen, still initable */
+.google-translate-engine {
+  position: fixed !important;
+  left: -9999px !important;
+  top: 0 !important;
+  width: 200px !important;
+  height: 40px !important;
+  opacity: 0 !important;
+  z-index: -1 !important;
+  overflow: hidden !important;
+}
+
+/* Kill Google Website Translator top banner (keep #google-translate-host) */
+body > .skiptranslate:not(#google-translate-host),
+body > .goog-te-banner-frame,
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+.skiptranslate > iframe.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  width: 0 !important;
+  border: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  top: -9999px !important;
+}
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+/* Stop Google from pushing the whole page down */
+html,
+body,
+body.translated-ltr,
+body.translated-rtl,
+html.translated-ltr,
+html.translated-rtl {
+  top: 0 !important;
+  position: static !important;
+  margin-top: 0 !important;
+}
+
+/* Top bar flex stays stable even if Google wraps nodes in <font> */
+.agb-topbar {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+}
+@media (min-width: 1024px) {
+  .agb-topbar {
+    flex-wrap: nowrap !important;
+  }
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Google wraps text in <font> — keep nav/layout stable */
+font {
+  vertical-align: inherit !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+}
+
+/* Desktop nav: tolerate longer translated labels */
+.agb-desktop-nav {
+  flex-wrap: wrap;
+}
+.agb-desktop-nav-links {
+  flex-wrap: wrap;
+  row-gap: 0;
+}
+.agb-desktop-nav-links a,
+.agb-desktop-nav-links .group > a {
+  white-space: nowrap;
+  max-width: 100%;
+}
