@@ -305,18 +305,130 @@ export const groupTravelSeo = {
         "Delta Airlines Group Booking: Policy, Fares & Free Quote",
         "Need Delta Airlines group booking? Compare Delta group fare policy, check group minimums and request a free group flight quote from our travel specialists."
     ),
-    "el-al-airlines": gtSeo(
-        "el al group booking",
-        [
-        "el al group travel discount",
-        "el al group flight tickets",
-        "book el al flights for group",
-        "el al group fare policy"
-        ],
-        "EL AL Group Booking for 10+ Passengers",
-        "EL AL Group Booking for 10+ Travelers | Free Quote",
-        "Need EL AL group booking? Compare EL AL group fare policy, check group minimums and request a free group flight quote from our travel specialists. Call 24/7."
-    ),
+    "el-al-airlines": {
+        ...gtSeo(
+            "el al group booking",
+            [
+                "el al group travel discount",
+                "el al group flight tickets",
+                "book el al flights for group",
+                "el al group fare policy",
+            ],
+            "EL AL Group Booking for 10+ Passengers",
+            "EL AL Group Booking for 10+ Travelers | Free Quote",
+            "Need EL AL group booking? Compare EL AL group fare policy, check group minimums and request a free group flight quote from our travel specialists. Call 24/7."
+        ),
+        highlights: [],
+        onPageCopy:
+            "Planning a travel package together with family members, friends, colleagues or even an organization? EL AL group travel bookings offer an effective solution in arranging flights for many travelers at once. Whether it is for business travel, study tours, religious trips, family reunion or leisure vacations, EL AL group travel booking packages are available for qualified travelers.",
+        contentHtml: `
+<p>Through Airline Group Travel, you will be introduced to group flight packages with EL AL, learn about various travel options, and make a request for group air fare quotations depending on your travel plans.</p>
+
+<h2>Why travel with EL AL?</h2>
+<p>Indeed, EL AL Israel Airlines takes its passengers to a variety of destinations through its vast international network. The group travel bookings of this airline are for group travel, quoting method in booking, and subject to discretion of the airline.</p>
+<p>Some of the reasons that make EL AL a good choice for the next group trip include:</p>
+<ul>
+<li><strong>Group reservations:</strong> Investigate the specific reservations made by the group.</li>
+<li><strong>Interline flights:</strong> Look into the flight routes and schedule to your desired destination.</li>
+<li><strong>Group quotation of fare:</strong> Request a fare quote based on your itinerary, number of passengers and dates.</li>
+<li><strong>Group coordination of reservations:</strong> Arrange for travel details using a group booking contact person.</li>
+<li><strong>Cabin choices:</strong> Look into the availability of group travel in various cabin classes, including <a href="/business-class-booking/el-al/">business class</a>, if available.</li>
+<li><strong>Group assistance with booking:</strong> Help with group quotations, payments and bookings.</li>
+</ul>
+
+<h2>EL AL Group Booking For 10 Or More Passengers</h2>
+<p>The group agreement as published by EL AL defines a group as 10 or more passengers traveling in the same cabin of service. However, the specific requirements can differ according to the booking, market and itinerary, so it is important to review them when requesting a quotation.</p>
+<p>EL AL group travel could suit:</p>
+<ul>
+<li>Educational institutions organizing trips for education purposes.</li>
+<li>Sports teams organizing international matches.</li>
+<li>Religious organizations organizing international travels.</li>
+<li>Travel operators organizing travels for multiple people.</li>
+</ul>
+<p>If you are planning a journey for 10 people and above, inform us about your itinerary and group so we can advise which reservations would be suitable for you.</p>
+
+<h2>Understanding the EL AL Group Travel Fares Policy</h2>
+<p>In order to make a reservation, you should first learn about the <a href="/">EL AL group fare policy</a>. Group fares are quoted based on the itinerary of the travel and the conditions set by the airline.</p>
+<p>Some key group booking conditions to take into consideration include:</p>
+<ol>
+<li>
+<strong>Eligible Group Size</strong>
+<p>According to the group agreement that is published, the minimum number of passengers should be 10 people in the same cabin.</p>
+</li>
+<li>
+<strong>Group Fare Quotation</strong>
+<p>A fare quoted for a group depends on availability and confirmation by an airline. It is not confirmation of allocation or securing of seats.</p>
+</li>
+<li>
+<strong>Deposit and Payment</strong>
+<p>If EL AL requires a deposit to book the group, the amount, method of payment and the deadline are indicated in the proposal or agreement.</p>
+</li>
+<li>
+<strong>Passengers’ Information</strong>
+<p>Passengers’ information, including names and other necessary trip details, should be provided within the deadlines informed by the airline. Check that all information corresponds to the travel documents of passengers.</p>
+</li>
+<li>
+<strong>Ticket Issuing</strong>
+<p>Tickets should be issued by the deadline provided in the group agreement. The deadline might differ depending on the itinerary and participation of other airlines.</p>
+</li>
+<li>
+<strong>Changes and Cancellations</strong>
+<p>The conditions for changes to passenger numbers, names, travel dates and cancellations are indicated in the group agreement.</p>
+</li>
+</ol>
+<p>It is necessary to check the particular agreement before making payments.</p>
+
+<h2>Is There an EL AL Group Travel Discount?</h2>
+<p>Group travel could possibly qualify for discounted fares. Yet, an <a href="/deals">EL AL group travel discount</a> is not always available for all bookings and the exact fare will depend on variables like the route, the time of travel, number of seats, cabin, and the fare rules of the carrier.</p>
+<p>In order to find possible group fare rates:</p>
+<ul>
+<li>Start inquiring early, especially when travelling during peak periods.</li>
+<li>Give an accurate number of passengers and the travel details.</li>
+<li>Give flexible dates of travel, if your group can afford it.</li>
+<li>Compare flight timings and prices available.</li>
+</ul>
+
+<h2>How to Book EL AL Flights for a Group</h2>
+<p>If you are wondering how to <a href="/contact">book EL AL flights for a group</a>, the first step is to get your trip plan ready and collect all the details about the people traveling. A group reservation usually goes through a process of getting a quote, then confirming it.</p>
+<p>Follow these steps to start the process:</p>
+<ol>
+<li>
+<strong>Step 1: Share Your Travel Needs</strong>
+<p>Tell us where you are leaving from, where you are going, the dates you want to travel and how many people are in your group.</p>
+</li>
+<li>
+<strong>Step 2: Choose Your Flight</strong>
+<p>Say if you need a one-way trip, a round-trip or a trip with stops. You can also ask for what type of seat you want, like economy or business class.</p>
+</li>
+<li>
+<strong>Step 3: Ask for a Special Group Discount Price</strong>
+<p>Send your request through the Airlines Group Travel website. Then you can look at the options that fit your needs.</p>
+</li>
+<li>
+<strong>Step 4: Look at the Offer</strong>
+<p>Check the price that is offered, the flight times, how much you need to pay as a deposit, when you need to pay and what rules the airline has.</p>
+</li>
+<li>
+<strong>Step 5: Finish the Booking</strong>
+<p>When you agree with the terms, make the payment and give the details of all the travelers before the deadline.</p>
+</li>
+</ol>
+
+<h2>Plan Your Next Group Trip with EL AL</h2>
+<p>Whether you are organizing a family vacation, a business event, a student visit or a community outing, choosing the flight setup is an important part of planning group travel.</p>
+<p>Explore EL AL group booking options with Airlines Group Travel. Request a quote based on your destination, travel dates and passenger needs.</p>
+<p>Ready to plan your group travel? Call Airlines Group Travel at <a href="tel:+18339580151">+1-833-958-0151</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>1. What is the minimum number of people needed for EL AL group booking?</h3>
+<p>EL AL’s group policy requires at least 10 people traveling in the same class of service. Rules may vary depending on the booking method or region, so be sure to check the details when requesting a group quote.</p>
+<h3>2. Can I book EL AL group tickets for international flights?</h3>
+<p>Yes. You may ask about eligible international group itineraries in EL AL’s available network. Flight options are based on destination, schedule and seat availability.</p>
+<h3>3. What does the EL AL group fare policy include?</h3>
+<p>Group fare policy covers: 1. Eligibility 2. Fare quote 3. Deposits 4. Payment deadlines 5. Passenger information 6. Ticket issuance 7. Changes/Cancellations. These are outlined in the group proposal or agreement.</p>
+`.trim(),
+    },
+
     "klm-airlines": gtSeo(
         "klm group booking",
         [
