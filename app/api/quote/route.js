@@ -28,6 +28,10 @@ async function validatePayload(payload) {
     'secondDestination',
     'secondDeparture',
     'passengers',
+    'adults',
+    'children',
+    'infantsInSeat',
+    'infantsOnLap',
     'cabin',
     'countryCode',
     'website',
@@ -61,6 +65,34 @@ async function validatePayload(payload) {
   // passengers integer range
   const pax = Number(passengers);
   if (!Number.isInteger(pax) || pax < 1 || pax > 999) errors.push('passengers');
+
+  // Optional passenger breakdown (additive — missing values stay empty strings)
+  const parseOptionalCount = (value) => {
+    if (value === '') return null;
+    const n = Number(value);
+    return Number.isInteger(n) && n >= 0 && n <= 999 ? n : NaN;
+  };
+  const adults = parseOptionalCount(sanitized.adults);
+  const children = parseOptionalCount(sanitized.children);
+  const infantsInSeat = parseOptionalCount(sanitized.infantsInSeat);
+  const infantsOnLap = parseOptionalCount(sanitized.infantsOnLap);
+  const hasBreakdown = [adults, children, infantsInSeat, infantsOnLap].some((n) => n !== null);
+  if (hasBreakdown) {
+    if (Number.isNaN(adults) || adults === null || adults < 1) errors.push('adults');
+    if (Number.isNaN(children) || children === null) errors.push('children');
+    if (Number.isNaN(infantsInSeat) || infantsInSeat === null) errors.push('infantsInSeat');
+    if (Number.isNaN(infantsOnLap) || infantsOnLap === null) errors.push('infantsOnLap');
+    if (
+      !Number.isNaN(adults) && adults !== null &&
+      !Number.isNaN(children) && children !== null &&
+      !Number.isNaN(infantsInSeat) && infantsInSeat !== null &&
+      !Number.isNaN(infantsOnLap) && infantsOnLap !== null
+    ) {
+      if (infantsOnLap > adults) errors.push('infantsOnLap');
+      const breakdownTotal = adults + children + infantsInSeat + infantsOnLap;
+      if (!errors.includes('passengers') && breakdownTotal !== pax) errors.push('passengers');
+    }
+  }
 
   if (!validateEmail(email)) {
     errors.push('email');

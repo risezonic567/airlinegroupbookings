@@ -66,11 +66,20 @@ export default function QuoteConfirmationClient() {
     secondDestination,
     secondDeparture,
     passengers,
+    adults,
+    children,
+    infantsInSeat,
+    infantsOnLap,
     cabin,
     email,
     countryCode,
     phone,
   } = details;
+
+  const hasBreakdown = adults !== undefined && adults !== null && String(adults).trim() !== '';
+  const passengerLabel = hasBreakdown
+    ? `${passengers} total (A${adults || 0} · C${children || 0} · I${Number(infantsInSeat || 0) + Number(infantsOnLap || 0)})`
+    : passengers;
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-blue-50 px-4 py-12 sm:px-6 lg:px-8">
@@ -120,8 +129,28 @@ export default function QuoteConfirmationClient() {
               )}
               <tr className="border-b">
                 <td className="py-1 font-medium">Passengers</td>
-                <td className="py-1">{passengers}</td>
+                <td className="py-1">{passengerLabel}</td>
               </tr>
+              {hasBreakdown && (
+                <>
+                  <tr className="border-b">
+                    <td className="py-1 font-medium">Adults</td>
+                    <td className="py-1">{adults}</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-1 font-medium">Children</td>
+                    <td className="py-1">{children || 0}</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-1 font-medium">Infants (in seat)</td>
+                    <td className="py-1">{infantsInSeat || 0}</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-1 font-medium">Infants (on lap)</td>
+                    <td className="py-1">{infantsOnLap || 0}</td>
+                  </tr>
+                </>
+              )}
               <tr className="border-b">
                 <td className="py-1 font-medium">Class</td>
                 <td className="py-1">{cabin}</td>
