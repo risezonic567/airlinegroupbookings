@@ -61,7 +61,7 @@ export default function PrivateJetCharterPage() {
       {/* 1. HERO */}
       <section className="relative isolate flex min-h-[320px] items-center overflow-hidden text-white sm:min-h-[380px]">
         <Image
-          src="/images/Jetsetter's World Map Journey.png"
+          src="/images/Jetsetter’s World Map Journey.png"
           alt="Private jet journey illustrated over a world map"
           fill
           priority

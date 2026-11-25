@@ -3,6 +3,8 @@
  *  Update THIS file when page schemas change.
  */
 import { SITE_URL, absoluteUrl } from '../lib/seo'
+import { homeFaqs } from './pageFaqs'
+import { mainPageSeo } from './mainPageSeo'
 
 const orgId = `${SITE_URL}/#organization`
 const websiteId = `${SITE_URL}/#website`
@@ -30,9 +32,8 @@ export const pageSchemas = {
                 '@type': 'WebPage',
                 '@id': `${SITE_URL}/#webpage`,
                 url: `${SITE_URL}/`,
-                name: 'Airline Group Booking USA | Group Flight Deals & Quotes',
-                description:
-                    'Airline group booking for 10+ passengers in the USA. Book group flights online, get a free group airline tickets quote and compare group travel flight deals.',
+                name: mainPageSeo.home.metaTitle,
+                description: mainPageSeo.home.metaDescription,
                 inLanguage: 'en-US',
                 isPartOf: { '@id': websiteId },
                 about: { '@id': orgId },
@@ -41,10 +42,9 @@ export const pageSchemas = {
             {
                 '@type': 'Service',
                 '@id': `${SITE_URL}/#service`,
-                name: 'Airline Group Booking for 10+ Passengers',
+                name: mainPageSeo.home.h1,
                 serviceType: 'Group flight booking',
-                description:
-                    'Group flight booking for 10 or more passengers. Share your route, dates and traveler count to get a free group airline tickets quote and compare group travel flight deals in the USA.',
+                description: mainPageSeo.home.metaDescription,
                 provider: { '@id': orgId },
                 areaServed: { '@type': 'Country', name: 'United States' },
                 url: `${SITE_URL}/`,
@@ -53,56 +53,14 @@ export const pageSchemas = {
                 '@type': 'FAQPage',
                 '@id': `${SITE_URL}/#faq`,
                 isPartOf: { '@id': `${SITE_URL}/#webpage` },
-                mainEntity: [
-                    {
-                        '@type': 'Question',
-                        name: 'What is airline group booking?',
-                        acceptedAnswer: {
-                            '@type': 'Answer',
-                            text: 'Airline group booking means planning one shared itinerary for several travelers instead of buying seats one by one. At Airline Group Bookings we help families, schools, teams, and companies compare options, understand fare notes, and move to a clear next step without the usual runaround.',
-                        },
+                mainEntity: homeFaqs.items.map(({ question, answer }) => ({
+                    '@type': 'Question',
+                    name: question,
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: answer,
                     },
-                    {
-                        '@type': 'Question',
-                        name: 'How many travelers do I need for group flight booking for 10 or more passengers?',
-                        acceptedAnswer: {
-                            '@type': 'Answer',
-                            text: 'Most airlines treat group flight booking for 10 or more passengers as a formal group request when everyone flies the same flights. If your party is a little smaller, tell us the count anyway — we will advise whether a group request or individual tickets fits better for your dates.',
-                        },
-                    },
-                    {
-                        '@type': 'Question',
-                        name: 'Can I book group flights online with your team?',
-                        acceptedAnswer: {
-                            '@type': 'Answer',
-                            text: 'Yes. You can book group flights online by sharing your route, dates, and traveler count through our quote form, then reviewing the outline with a specialist. Prefer a call? We can walk through the same details by phone so your organizers stay aligned.',
-                        },
-                    },
-                    {
-                        '@type': 'Question',
-                        name: 'What is a group airline tickets quote used for?',
-                        acceptedAnswer: {
-                            '@type': 'Answer',
-                            text: 'A group airline tickets quote helps your lead traveler compare total cost, timing, and rules before deposits or names are due. It is useful when a committee needs approval, or when you want one document everyone can review together.',
-                        },
-                    },
-                    {
-                        '@type': 'Question',
-                        name: 'Do you offer group travel flight deals USA travelers can use?',
-                        acceptedAnswer: {
-                            '@type': 'Answer',
-                            text: 'We regularly help USA-based organizers look for group travel flight deals USA routes can support — including domestic hops and long-haul departures. Deals depend on season and inventory, so earlier planning usually opens more choices.',
-                        },
-                    },
-                    {
-                        '@type': 'Question',
-                        name: 'What details should I prepare before I start?',
-                        acceptedAnswer: {
-                            '@type': 'Answer',
-                            text: 'Have cities, rough dates, flexibility notes, and a headcount ready. If anyone needs extra assistance or sports equipment, mention that early so your airline group booking plan stays realistic from the first conversation.',
-                        },
-                    },
-                ],
+                })),
             },
         ],
     },

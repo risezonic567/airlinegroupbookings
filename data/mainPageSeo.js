@@ -10,10 +10,10 @@ export const mainPageSeo = {
             'group airline tickets quote',
             'group travel flight deals USA',
         ],
-        metaTitle: `Airline Group Booking USA | Group Flight Deals & Quotes`,
+        metaTitle: 'Airline Group Booking in the USA for 10+ Passengers',
         metaDescription:
-            'Airline group booking for 10+ passengers in the USA. Book group flights online, get a free group airline tickets quote and compare group travel flight deals.',
-        h1: 'Airline Group Booking for 10+ Passengers',
+            "Booking one seat is easy. Booking forty is a different job. Request a group airline tickets quote with comparable fares and clear deposit and name-list details.",
+        h1: 'Airline Group Booking in the USA for 10+ Passengers',
     },
     about: {
         primary: 'group flight booking company USA',

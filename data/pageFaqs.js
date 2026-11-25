@@ -4,42 +4,61 @@ export const homeFaqs = {
     primary: 'airline group booking',
     secondaries: [
         'group flight booking for 10 or more passengers',
-        'book group flights online',
         'group airline tickets quote',
-        'group travel flight deals USA',
+        'group travel flight deals in the USA',
     ],
     heading: 'Group Flight Booking FAQs',
-    intro: 'Quick answers about airline group booking with Airline Group Bookings — from traveler minimums to quotes and deals.',
+    intro: 'Straight answers on group size, quotes, payments and planning.',
     items: [
         {
             question: 'What is airline group booking?',
             answer:
-                'Airline group booking means planning one shared itinerary for several travelers instead of buying seats one by one. At Airline Group Bookings we help families, schools, teams, and companies compare options, understand fare notes, and move to a clear next step without the usual runaround.',
+                "It's one booking for a bunch of people flying together, usually 10 or more. Airlines treat these differently from single tickets. Fares, deposits and deadlines follow group rules, which is why a group needs its own request.",
         },
         {
-            question: 'How many travelers do I need for group flight booking for 10 or more passengers?',
+            question: 'How many people count as a group?',
             answer:
-                'Most airlines treat group flight booking for 10 or more passengers as a formal group request when everyone flies the same flights. If your party is a little smaller, tell us the count anyway — we will advise whether a group request or individual tickets fits better for your dates.',
+                "Ten is the usual starting line, but it isn't universal. Some airlines set it a little differently by route. If you're at eight or nine, tell us anyway. It can still be worth asking.",
         },
         {
-            question: 'Can I book group flights online with your team?',
+            question: 'Can I get group travel flight deals in the USA?',
             answer:
-                'Yes. You can book group flights online by sharing your route, dates, and traveler count through our quote form, then reviewing the outline with a specialist. Prefer a call? We can walk through the same details by phone so your organizers stay aligned.',
+                "Yes. We look at group fares on domestic routes as well as international ones. What's available depends on the airline, the season and how early you ask, so the sooner you send your dates, the more choice you usually have.",
         },
         {
-            question: 'What is a group airline tickets quote used for?',
+            question: 'How do I get a group airline tickets quote?',
             answer:
-                'A group airline tickets quote helps your lead traveler compare total cost, timing, and rules before deposits or names are due. It is useful when a committee needs approval, or when you want one document everyone can review together.',
+                "Use the form at the top of the page or call us. We need where you're flying from and to, your dates, and how many people. A rough headcount is fine. We'll tighten it up together.",
         },
         {
-            question: 'Do you offer group travel flight deals USA travelers can use?',
+            question: 'What should I have ready?',
             answer:
-                'We regularly help USA-based organizers look for group travel flight deals USA routes can support — including domestic hops and long-haul departures. Deals depend on season and inventory, so earlier planning usually opens more choices.',
+                "Cities, dates (even a flexible range), headcount and cabin. If someone's traveling with sports gear or needs mobility help, say so early. It's much easier to plan around than to fix later.",
         },
         {
-            question: 'What details should I prepare before I start?',
+            question: 'Can I send passenger names later?',
             answer:
-                'Have cities, rough dates, flexibility notes, and a headcount ready. If anyone needs extra assistance or sports equipment, mention that early so your airline group booking plan stays realistic from the first conversation.',
+                "Often, yes. Many airlines let you secure the group first and send the full name list closer to departure. The deadline depends on the airline, and we'll point it out on your quote.",
+        },
+        {
+            question: 'Can I pay in installments?',
+            answer:
+                "Some airlines take a deposit now and the balance later. Others don't. We'll tell you which applies to your route before you decide.",
+        },
+        {
+            question: 'Can part of our group fly from a different city?',
+            answer:
+                "Sometimes. It depends on the airline and the route. Tell us where everyone is starting from and we'll explain what's possible.",
+        },
+        {
+            question: 'Do you handle international and business class groups?',
+            answer:
+                "Yes to both. Give us the route and cabin (Economy, Premium Economy, Business or First) and we'll look at what's available.",
+        },
+        {
+            question: 'What if our numbers change?',
+            answer:
+                "They do, all the time. Someone drops out, two more join. Airlines have their own rules on cutting or adding seats, usually tied to how close you are to departure. Tell us early and we'll explain where you stand.",
         },
     ],
 }
