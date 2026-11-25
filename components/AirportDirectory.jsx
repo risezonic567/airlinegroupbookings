@@ -22,7 +22,7 @@ const faqs = [
     a: "Most airlines treat around 10 passengers as the starting point for group handling. The exact limit varies by airline and season.",
   },
   {
-    q: "How do I get a quote from a specific airport?",
+    q: "How do I get a quote from a specific airport",
     a: "Fill in the quote form with your route, dates and number of passengers, or call our group desk directly.",
   },
   {
