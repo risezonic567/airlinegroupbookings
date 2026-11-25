@@ -23,6 +23,7 @@ const linkGroups = [
             { label: 'Group travel', href: '/group-travel' },
             { label: 'Request a quote', href: '/contact' },
             { label: 'Site Map', href: '/site-map' },
+            { label: 'Airports', href: '/airports' },
         ],
     },
 ]

@@ -532,7 +532,7 @@ const blogs = [
 <p>Keep in mind that every group fare comes with its own rules, so read them carefully before you agree to anything.</p>
 
 <h2>How to Make a Group Booking with Turkish Airlines</h2>
-<img src="/blog3/Group Booking Process - Documents, Payments and Coordination.jpg.jpeg" alt="Group booking process documents payments and coordination" />
+<img src="/blog3/Groupbookingjpg.jpeg" alt="Group booking process documents payments and coordination" />
 <p>Here’s the simple path most people follow.</p>
 <ol>
 <li><strong>Get your basics sorted.</strong> Before you contact anyone, know your travel dates, departure and arrival cities, and the number of passengers. Adults, children and infants should be counted separately.</li>
