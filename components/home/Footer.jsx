@@ -112,6 +112,16 @@ export default function Footer() {
                     {contactDetails.offices.map((office) => <li key={office.label} className="flex items-start gap-2.5"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" aria-hidden="true" /><span><strong className="block text-slate-800">{office.label}</strong>{office.address}</span></li>)}
                 </ul>
             </div>
+
+            <div className="flex justify-center pt-2 lg:col-span-4">
+                <Image
+                    src="/images/certificates/Trustpilot Verified Reviews Badge.png"
+                    alt="Trustpilot Verified Reviews"
+                    width={220}
+                    height={80}
+                    className="h-auto w-48 object-contain"
+                />
+            </div>
         </div>
 
         <div className="mx-auto max-w-7xl rounded-b-[2rem] bg-white/95 px-6 pb-6 text-center sm:px-9 lg:px-12">
