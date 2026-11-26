@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { airports, popularCities } from "@/data/airports";
 import AirportDirectory from "@/components/AirportDirectory";
@@ -44,9 +45,21 @@ export default function AirportsPage() {
   return (
     <main className="bg-white">
       {/* Hero */}
-      <section className="bg-slate-950 text-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
-          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-slate-400">
+      <section className="relative overflow-hidden bg-slate-950 text-white">
+        {/* Background image */}
+        <Image
+          src="/images/back.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        {/* Dark overlay so text stays readable (opacity kam/zyada kar sakte ho: /60, /70, /80) */}
+        <div className="absolute inset-0 bg-slate-950/70" />
+
+        <div className="relative mx-auto max-w-6xl px-4 py-14 sm:py-20">
+          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-slate-300">
             <Link href="/" className="hover:text-white">
               Home
             </Link>
@@ -57,7 +70,7 @@ export default function AirportsPage() {
           <h1 className="max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
             Group Booking <span className="text-blue-500">Airports</span>
           </h1>
-          <p className="mt-5 max-w-2xl text-lg text-slate-300">
+          <p className="mt-5 max-w-2xl text-lg text-slate-200">
             Browse {airports.length}+ departure airports for group flights of 10 or more
             passengers. Request seat blocks, group fares, flexible names and GST billing.
           </p>
@@ -68,9 +81,12 @@ export default function AirportsPage() {
               { n: intlCount, l: "International airports" },
               { n: "24/7", l: "Group desk" },
             ].map((s) => (
-              <div key={s.l} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div
+                key={s.l}
+                className="rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm"
+              >
                 <p className="text-3xl font-bold text-blue-400">{s.n}</p>
-                <p className="mt-1 text-sm text-slate-300">{s.l}</p>
+                <p className="mt-1 text-sm text-slate-200">{s.l}</p>
               </div>
             ))}
           </div>
@@ -96,7 +112,7 @@ export default function AirportsPage() {
       </section>
 
       {/* Directory */}
-      <section className="bg-slate-50 py-14 ">
+      <section className="bg-slate-50 py-14">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="mb-6 text-2xl font-bold text-slate-900 sm:text-3xl">
             All airports for group booking

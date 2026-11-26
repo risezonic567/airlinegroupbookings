@@ -9,6 +9,7 @@ const withSlash = (path) => (path.endsWith('/') ? path : `${path}/`)
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'standalone',
+    staticPageGenerationTimeout: 20,
     // Keep live URLs, canonicals, and sitemap aligned (SEO: trailing slash)
     trailingSlash: true,
     images: {
