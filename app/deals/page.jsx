@@ -29,10 +29,15 @@ export default function DealsIndex() {
                 <div className="relative mx-auto w-full max-w-7xl">
                     <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Offers for groups</p>
                     <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-                        Group Flight Deals: <span className="text-blue-200">Cheap Group Airfare Offers</span>
+                        Group Flight Deals for <span className="text-blue-200">Teams, Families and Organizations</span>
                     </h1>
+                    <p className="mt-4 max-w-2xl text-base leading-7 text-blue-100 font-semibold">
+                        Group sales come and go. Here&apos;s how to tell a real deal from one that only looks good on the screen.
+                    </p>
                     <p className="mt-4 max-w-2xl text-base leading-7 text-blue-50">
-                        Find group flight deals and cheap group airfare deals USA. Compare last minute group flight deals, group discount on airline tickets, and seasonal group travel offers — then request a free quote.
+                        Say you spot a group fare that&apos;s $40 less per person. Sounds like a win, until you notice the deposit is due this week and the names are due next. That&apos;s the thing about group flight deals: the price is only part of it. Cheap group airfare deals in the USA can hide strict terms or extras that add up, and last minute group flight deals are real, but seats for a big group go fast. Even a group discount on airline tickets depends on the airline, the route, your dates and your headcount. No promises there. Seasonal group travel offers pop up through the year, so it helps to know what to ask before you jump. Look through the current ones below, or{' '}
+                        <Link href="/contact" className="underline underline-offset-2 hover:text-white">send us your trip</Link>{' '}
+                        and we&apos;ll tell you what fits.
                     </p>
                 </div>
             </section>
@@ -75,11 +80,11 @@ export default function DealsIndex() {
                 </div>
             </section>
             <FaqSection
-                heading="Group Flight Deals Questions"
+                heading={dealsFaqs.heading}
                 intro={dealsFaqs.intro}
                 items={dealsFaqs.items}
                 path="/deals"
-                accentWord="Questions"
+                accentWord="FAQs"
             />
             <Newsletter />
         </main>

@@ -99,7 +99,7 @@ export default function Footer() {
             </div>
 
             {linkGroups.map((group) => <nav key={group.title} aria-label={group.title}>
-                <h2 className="text-lg font-bold text-slate-900">{group.title}</h2>
+                <p className="text-lg font-bold text-slate-900">{group.title}</p>
                 <ul className="mt-4 space-y-3">{group.links.map((link) => <li key={link.href}><Link className={footerLink} href={link.href}>{link.label}</Link></li>)}</ul>
             </nav>)}
 

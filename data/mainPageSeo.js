@@ -12,7 +12,7 @@ export const mainPageSeo = {
         ],
         metaTitle: 'Airline Group Booking in the USA for 10+ Passengers',
         metaDescription:
-            "Booking one seat is easy. Booking forty is a different job. Request a group airline tickets quote with comparable fares and clear deposit and name-list details.",
+            'Airline group booking in the USA for 10+ passengers. Get a free group airline tickets quote with clear deposit and name-list details. Request yours today.',
         h1: 'Airline Group Booking in the USA for 10+ Passengers',
     },
     about: {
@@ -22,10 +22,10 @@ export const mainPageSeo = {
             'airline group reservation agency',
             'trusted group ticket booking service',
         ],
-        metaTitle: `Group Flight Booking Company in USA | About Our Team`,
+        metaTitle: 'About Airline Group Bookings | Group Flights in the USA',
         metaDescription:
-            'Meet Airline Group Bookings, a group flight booking company in the USA. Our specialists handle group airline reservations with clear quotes and 24/7 support.',
-        h1: 'Trusted Group Flight Booking Company in the USA',
+            'Meet the team behind Airline Group Bookings. We help teams, schools, churches and families book group flights for 10+ travelers across the USA.',
+        h1: 'Group Flight Booking Company in the USA',
     },
     groupTravel: {
         primary: 'group travel airlines',
@@ -38,7 +38,7 @@ export const mainPageSeo = {
         metaTitle: `Group Travel Airlines: Compare Group Booking Policies`,
         metaDescription:
             'Browse 18 group travel airlines and compare group booking policies, discounts and group fare vs individual fare. Request a free group flight quote today.',
-        h1: 'Group Travel Airlines: Compare Policies & Discounts',
+        h1: 'Group Travel Airlines: Find the Right One for Your Group',
     },
     deals: {
         primary: 'group flight deals',
@@ -51,7 +51,7 @@ export const mainPageSeo = {
         metaTitle: `Group Flight Deals USA | Cheap Group Airfare Offers`,
         metaDescription:
             'Find group flight deals and cheap group airfare deals in the USA. Compare last minute offers and group discounts on airline tickets, then request a free quote.',
-        h1: 'Group Flight Deals: Cheap Group Airfare Offers',
+        h1: 'Group Flight Deals for Teams, Families and Organizations',
     },
     popularDeals: {
         primary: 'popular group flight deals',

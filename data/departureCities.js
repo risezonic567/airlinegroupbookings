@@ -1,0 +1,58 @@
+export const departureCities = [
+    {
+        name: 'New York',
+        slug: 'from-new-york',
+        linkText: 'Group flights from New York',
+        description: 'Flying out of JFK, LaGuardia or Newark? Big groups often need a bit of juggling here, so we compare all three before sending your quote.',
+        airports: 'JFK, LGA, EWR',
+    },
+    {
+        name: 'Los Angeles',
+        slug: 'from-los-angeles',
+        linkText: 'Group flights from Los Angeles',
+        description: 'From LAX to Burbank and Long Beach, there are more options than most organizers expect. We check which airport gives your group the better fare and the better time.',
+        airports: 'LAX, BUR, LGB',
+    },
+    {
+        name: 'Chicago',
+        slug: 'from-chicago',
+        linkText: 'Group flights from Chicago',
+        description: "O'Hare has the most flights, but Midway can be cheaper for some routes. We look at both so you don't have to guess.",
+        airports: 'ORD, MDW',
+    },
+    {
+        name: 'Dallas',
+        slug: 'from-dallas',
+        linkText: 'Group flights from Dallas',
+        description: 'Dallas has two big airports, DFW and Love Field, and they serve different airlines. Tell us where your group lives and we\'ll point you to the one that fits.',
+        airports: 'DFW, DAL',
+    },
+    {
+        name: 'Atlanta',
+        slug: 'from-atlanta',
+        linkText: 'Group flights from Atlanta',
+        description: 'Atlanta is one of the busiest hubs in the country, which helps when your group is flying onward to somewhere else. We keep an eye on connection times so nobody gets left at the gate.',
+        airports: 'ATL',
+    },
+    {
+        name: 'Houston',
+        slug: 'from-houston',
+        linkText: 'Group flights from Houston',
+        description: 'Houston groups can choose between Bush Intercontinental and Hobby. The better pick depends on your airline and your route, so we check both.',
+        airports: 'IAH, HOU',
+    },
+    {
+        name: 'Miami',
+        slug: 'from-miami',
+        linkText: 'Group flights from Miami',
+        description: 'Miami is a popular start for Caribbean and Latin America trips, and Fort Lauderdale is close by if it works out cheaper. We\'ll compare the two for your dates.',
+        airports: 'MIA, FLL',
+    },
+    {
+        name: 'Las Vegas',
+        slug: 'from-las-vegas',
+        linkText: 'Group flights from Las Vegas',
+        description: 'Weddings, tournaments, conventions. Las Vegas groups travel all year, so seats go quickly around big events. Send your dates early and we\'ll see what\'s open.',
+        airports: 'LAS',
+    },
+]

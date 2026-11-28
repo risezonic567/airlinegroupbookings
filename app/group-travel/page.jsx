@@ -4,8 +4,10 @@ import { ArrowRight } from 'lucide-react'
 import groupTravelAirlines from '../../data/groupTravelAirlines'
 import { withAirlinesName } from '../../data/slugRedirects'
 import JsonLd from '../../components/seo/JsonLd'
+import FaqSection from '../../components/content/FaqSection'
 import { pageSchemas } from '../../data/pageSchemas'
 import { mainPageSeo } from '../../data/mainPageSeo'
+import { groupTravelFaqs } from '../../data/pageFaqs'
 import { createPageMetadata } from '../../lib/seo'
 
 const seo = mainPageSeo.groupTravel
@@ -24,12 +26,24 @@ export default function GroupTravelPage() {
                 <Image src="/images/group-travel-banner.jpg.png" alt="Group travelers preparing for a shared airline journey" fill priority sizes="100vw" className="-z-20 object-cover" />
                 <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/75 to-[#101a3d]/35" aria-hidden="true" />
                 <div className="relative mx-auto max-w-7xl">
-                    <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Plan together</p>
+                    <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Every airline has its own group rules, and they don't always line up. See how they differ, then send us your trip.</p>
                     <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-                        Group Travel Airlines: <span className="text-blue-200">Compare Policies & Discounts</span>
+                        Group Travel Airlines: <span className="text-blue-200">Find the Right One for Your Group</span>
                     </h1>
-                    <p className="mt-4 max-w-2xl text-base leading-7 text-blue-50">
-                        Browse group travel airlines and airlines with group booking discount. Review group flight booking policy by airline, learn how to book group flights with airlines, and compare group fare vs individual fare before you request a free group flight quote.
+                    <p className="mt-4 max-w-3xl text-base leading-7 text-blue-50">
+                        Booking a group isn't like booking one seat, and the airline you choose changes almost everything. One of the group travel airlines below might want a deposit up front. Another will let you wait on passenger names until a few weeks before you fly. Some airlines with a group booking discount only offer it on certain routes and dates, and plenty don't offer one at all. So before you commit, compare the group flight booking policy by airline. It takes a little time, but it can save you a headache later. If you've never done this before, start with our guide on{' '}
+                        <Link href="/blog/group-booking-lufthansa-how-it-works-for-10-plus-travelers" className="font-bold text-white underline hover:text-blue-200">
+                            how to book group flights with airlines
+                        </Link>
+                        , then read our{' '}
+                        <Link href="/blog/are-group-flight-tickets-cheaper-than-individual-tickets" className="font-bold text-white underline hover:text-blue-200">
+                            group fare vs. individual fare breakdown
+                        </Link>{' '}
+                        to see which way to go. Short on time?{' '}
+                        <Link href="/contact" className="font-bold text-white underline hover:text-blue-200">
+                            Send us your route, dates and headcount
+                        </Link>{' '}
+                        and we'll take a look.
                     </p>
                     <Link href="#airlines" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-bold text-blue-800 transition hover:bg-blue-50">
                         Browse airlines <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -59,6 +73,14 @@ export default function GroupTravelPage() {
                     </div>
                 </div>
             </section>
+
+            <FaqSection
+                heading={groupTravelFaqs.heading}
+                intro={groupTravelFaqs.intro}
+                items={groupTravelFaqs.items}
+                path="/group-travel"
+                accentWord="FAQs"
+            />
         </main>
     )
 }

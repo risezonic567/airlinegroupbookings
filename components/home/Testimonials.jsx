@@ -38,6 +38,13 @@ export default function Testimonials() {
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
             What Group Organizers <span className="text-blue-600">Say</span>
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base font-medium text-slate-600">
+            One team for your quote, your deposit dates and your name list. Call us any time on{' '}
+            <a href="tel:+18339580151" className="font-bold text-blue-700 hover:underline">
+              +1-833-958-0151
+            </a>
+            .
+          </p>
         </div>
 
         <div className="mt-10">

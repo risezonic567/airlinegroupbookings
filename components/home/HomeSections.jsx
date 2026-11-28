@@ -4,6 +4,8 @@ import { ArrowRight, BadgePercent, CalendarClock, CheckCircle2, Headphones, Wall
 import AirlineLogo from './AirlineLogo'
 import destinations from '../../data/destinations'
 import deals from '../../data/deals'
+import blogs from '../../data/blogs'
+import { departureCities } from '../../data/departureCities'
 
 /** Homepage carousel — 7 airlines with Group Travel pages (no United). */
 const homeCarouselAirlines = [
@@ -37,30 +39,17 @@ const homeDestinationOrder = ['las-vegas', 'miami', 'orlando', 'new-york', 'pari
 const homeDestinations = homeDestinationOrder.map((slug) => destinations.find((destination) => destination.slug === slug))
 
 const homeDestinationAlts = {
-    paris: 'Paris skyline at dusk along the Seine river, group flights to Paris',
-    london: 'Big Ben and Westminster Bridge at sunset, group flights to London',
-    'las-vegas': 'Las Vegas skyline and hotels at dusk, group flights to Las Vegas',
-    orlando: 'Group flights to Orlando, Florida – illustrated city skyline',
-    'new-york': 'Group flights to New York, New York – illustrated city skyline',
-    dubai: 'Burj Khalifa and Dubai skyscrapers at sunset, group flights to Dubai',
-    tokyo: 'Tokyo Tower lit up at night, group flights to Tokyo',
-    miami: 'Miami skyline across the bay at dusk, group flights to Miami',
+    paris: 'Group flights to Paris, France – skyline along the Seine river at dusk',
+    london: 'Group flights to London, United Kingdom – Big Ben and Westminster Bridge at sunset',
+    'las-vegas': 'Group flights to Las Vegas, Nevada – skyline and hotels at dusk',
+    orlando: 'Group flights to Orlando, Florida – theme park skyline at dusk',
+    'new-york': 'Group flights to New York, New York – city skyline at dusk',
+    dubai: 'Group flights to Dubai, United Arab Emirates – Burj Khalifa and skyscrapers at sunset',
+    tokyo: 'Group flights to Tokyo, Japan – Tokyo Tower lit up at night',
+    miami: 'Group flights to Miami, Florida – skyline across the bay at dusk',
 }
 
-const homeGuides = [
-    {
-        title: 'How to Book Group Flights in the USA: A Practical Guide',
-        excerpt: "What to sort out before you ask for a quote: headcount, dates, budget, and who's paying.",
-    },
-    {
-        title: 'Group Booking Lufthansa: How It Works When You’re Flying With 10 or More',
-        excerpt: 'The 10-passenger rule, how quotes work, and what to know about deposits and name lists.',
-    },
-    {
-        title: 'Group Booking Deposits, Name Lists and Deadlines: What to Expect',
-        excerpt: 'The parts of a group booking that tend to catch organizers off guard.',
-    },
-]
+
 
 function Heading({ eyebrow, first, accent, subtitle }) {
     return <div className="mx-auto max-w-2xl text-center"><p className="text-xs font-bold uppercase tracking-[.18em] text-blue-700">{eyebrow}</p><h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">{first} <span className="text-red-700">{accent}</span></h2>{subtitle && <p className="mt-3 text-md leading-6 text-slate-600 sm:text-md">{subtitle}</p>}</div>
@@ -135,7 +124,7 @@ export function DealsSection() {
                     eyebrow="Find your fare"
                     first="Group Travel Flight Deals for"
                     accent="USA Travelers"
-                    subtitle="Planning around a game, a conference or a holiday weekend? Start here."
+                    subtitle="Looking for cheap group flights? Start with the trip you're planning: a game, a conference, a holiday weekend or a company offsite."
                 />
                 <div className="mt-10 grid gap-5 sm:grid-cols-2">
                     {deals.filter((deal) => homeDealCopy[deal.slug]).map((deal) => {
@@ -247,21 +236,33 @@ export function WhoItsForSection() {
 }
 
 export function DepartureCitiesSection() {
-    const cities = ['New York', 'Los Angeles', 'Chicago', 'Dallas', 'Atlanta', 'Houston', 'Miami', 'Las Vegas']
-
     return (
         <section className="bg-blue-50/60 py-16 sm:py-20">
             <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-                <Heading eyebrow="Departing from" first="Group Flights From Major US" accent="Cities" subtitle="Wherever your group starts out, we'll work with your nearest airport." />
+                <Heading
+                    eyebrow="Departing from"
+                    first="Group Flights From Major US"
+                    accent="Cities"
+                    subtitle="Your group doesn't have to start from one place. Pick the city closest to most of you and we'll work around the nearest airports."
+                />
                 <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-                    {cities.map((city) => (
-                        <article key={city} className="rounded-2xl border border-blue-100 bg-white px-5 py-6 text-center shadow-sm">
-                            <h3 className="text-lg font-bold text-slate-900">Group flights from {city}</h3>
-                        </article>
+                    {departureCities.map((city) => (
+                        <Link
+                            key={city.slug}
+                            href={`/group-flights/${city.slug}`}
+                            className="group flex flex-col justify-center rounded-2xl border border-blue-100 bg-white px-5 py-6 text-center shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
+                        >
+                            <h3 className="text-lg font-bold text-slate-900 transition group-hover:text-blue-700">
+                                {city.linkText}
+                            </h3>
+                            <p className="mt-2 line-clamp-2 text-xs text-slate-500">
+                                {city.description}
+                            </p>
+                        </Link>
                     ))}
                 </div>
-                <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-6 text-slate-600">
-                    Not everyone lives near the same airport. If your group is starting from more than one city, mention it in your request and we'll tell you what's possible.
+                <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-slate-600">
+                    Don't see your city? Most US airports work. Tell us where you're starting from and we'll take it from there.
                 </p>
             </div>
         </section>
@@ -269,7 +270,11 @@ export function DepartureCitiesSection() {
 }
 
 const features = [
-    { icon: BadgePercent, title: 'Fares built for groups', text: "Group fares often work differently from regular ones. We find what's open for your size and dates." },
+    {
+        icon: BadgePercent,
+        title: 'Fares built for groups',
+        text: 'Group airline tickets are priced differently from regular fares. We look at what\'s open for your group size and dates, and send you a quote you can actually compare.',
+    },
     { icon: CalendarClock, title: 'Payment terms up front', text: 'Deposit amounts and due dates vary by airline. You hear them from us before you commit.' },
     { icon: Headphones, title: 'Someone to call', text: 'Our toll-free line, +1-833-958-0151, runs 24/7. A late-night question doesn’t have to wait.' },
     { icon: WalletCards, title: 'One place for the details', text: "Names, dates, changes. No digging through five email threads to find who's on which flight." },
@@ -350,6 +355,10 @@ export function DestinationsSection() {
 }
 
 export function BlogsSection() {
+    const featuredBlogs = [...blogs]
+        .sort((a, b) => (b.id ?? 0) - (a.id ?? 0))
+        .slice(0, 3)
+
     return (
         <section className="bg-white py-16 sm:py-20">
             <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -359,21 +368,48 @@ export function BlogsSection() {
                     accent="Guides"
                     subtitle="Short, practical reads for the questions that come up before you book."
                 />
-                <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                    {homeGuides.map((guide) => (
+                <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {featuredBlogs.map((post) => (
                         <article
-                            key={guide.title}
-                            className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-6 shadow-md shadow-blue-950/5"
+                            key={post.slug}
+                            className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-blue-100 hover:shadow-xl"
                         >
-                            <h3 className="text-lg font-bold text-slate-900">{guide.title}</h3>
-                            <p className="mt-2 text-md leading-6 text-slate-600">{guide.excerpt}</p>
+                            <Link
+                                href={`/blog/${post.slug}`}
+                                className="block focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
+                            >
+                                <div className="relative h-56 overflow-hidden bg-blue-900">
+                                    <Image
+                                        src={post.image}
+                                        alt={post.title}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                        className="object-cover transition duration-500 group-hover:scale-110"
+                                    />
+                                    <span className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                                    <span className="absolute bottom-4 left-4 rounded-full border border-white/60 bg-white/95 px-3 py-1 text-xs font-bold uppercase tracking-wide text-blue-800">
+                                        {post.category}
+                                    </span>
+                                </div>
+                                <div className="p-6">
+                                    <h3 className="text-lg font-bold text-slate-900 transition group-hover:text-blue-700">
+                                        {post.title}
+                                    </h3>
+                                    <p className="mt-2 min-h-12 text-md leading-6 text-slate-600 line-clamp-3">
+                                        {post.excerpt}
+                                    </p>
+                                    <span className="mt-5 inline-flex items-center gap-2 text-md font-bold text-blue-700">
+                                        Know More <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                    </span>
+                                </div>
+                            </Link>
                         </article>
                     ))}
                 </div>
-                <div className="mt-6 flex justify-center">
+                <div className="mt-8 flex justify-center">
                     <Link
                         href="/blog"
-                        className="inline-flex items-center gap-2 text-md font-bold text-blue-700"
+                        className="inline-flex items-center gap-2 text-md font-bold text-blue-700 hover:text-blue-900"
                     >
                         View all articles <ArrowRight className="h-4 w-4" />
                     </Link>

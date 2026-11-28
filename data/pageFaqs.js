@@ -73,38 +73,121 @@ export const dealsFaqs = {
         'popular group flight deals',
         'trending group travel deals',
     ],
-    heading: 'Group Flight Deals FAQ',
-    intro: 'Straight answers about group flight deals — how cheap offers work, what last-minute options look like, and how discounts are quoted.',
+    heading: 'Group Flight Deals FAQs',
+    intro: 'Straight answers on group sales, cheap group airfare, deposit deadlines, and seasonal group travel offers.',
     items: [
         {
-            question: 'What counts as group flight deals on this page?',
+            question: 'What counts as a group flight deal?',
             answer:
-                'Group flight deals are trip ideas and offer themes we use to start a real quote for parties flying together. They are not random coupon codes — each deal still depends on your route, dates, and how many travelers share the same itinerary.',
+                'A fare, sale or promotion that works for a group flying together, usually 10 or more people. It might be a special group fare, a seasonal sale or an airline offer. Not every sale covers groups, though, so check before you get excited.',
         },
         {
-            question: 'Where can I see popular group flight deals?',
+            question: 'Is the cheapest group fare always the best deal?',
             answer:
-                'Popular group flight deals are highlighted near the top of this Deals page, alongside trending group travel deals for teams, families, and schools. Pick a theme, then contact us for a free group flight quote.',
+                'Not always. A lower fare can hide a big deposit, a short deadline for names, or almost no room for changes. Before you pick, check what’s included, when payments are due, and what happens if three people drop out.',
         },
         {
-            question: 'Can you help with cheap group airfare deals USA groups are searching for?',
+            question: 'Can I find last minute group flight deals?',
             answer:
-                'Yes. When people ask about cheap group airfare deals USA departures, we compare realistic timing — midweek flights, flexible dates, and quieter travel weeks often help more than waiting for a miracle fare the week before departure.',
+                'Sometimes. Seats for a group are limited, and the closer you get to departure, the fewer you have to choose from. If your dates are tight, send us your trip early and stay as flexible as you can. We can’t promise a last-minute deal, but we’ll tell you what’s actually available.',
         },
         {
-            question: 'Are last minute group flight deals still possible?',
+            question: 'Do airlines give a group discount on airline tickets?',
             answer:
-                'Sometimes. Last minute group flight deals depend on leftover inventory and how flexible your group can be on airports or times. Share your must-have dates and nice-to-have alternatives so we can be honest about what is left.',
+                'Some do, on certain routes and dates. Often it shows up as a group fare rather than a set percentage off. It varies so much that we don’t promise a discount before we’ve seen your trip.',
         },
         {
-            question: 'How does a group discount on airline tickets usually work?',
+            question: 'When is the best time to book a group flight?',
             answer:
-                'A group discount on airline tickets is rarely one fixed percentage. Pricing follows the airline’s group process, route demand, and cabin mix. We explain the tradeoffs in plain language before you commit, so nobody is surprised later.',
+                'As soon as your plans are firm. A group needs several seats on the same flights, and popular dates like holiday weekends, spring break and summer tend to fill first. Booking early gives you more choices.',
         },
         {
-            question: 'Where can I see current group travel offers?',
+            question: 'Are Black Friday and holiday sales good for group travel?',
             answer:
-                'Start with the group travel offers listed on this Deals page, then contact Airline Group Bookings with your headcount and preferred dates. That turns a general offer into a concrete outline your organizers can approve.',
+                'They can be, but not every promotion applies to group bookings. Some sales leave groups out or have blackout dates. Send us the offer and your trip details, and we’ll tell you whether it works for your group.',
+        },
+    ],
+}
+
+export const groupTravelFaqs = {
+    primary: 'group travel airlines',
+    secondaries: [
+        'airlines with group booking discount',
+        'group flight booking policy by airline',
+        'how to book group flights with airlines',
+        'group fare vs individual fare',
+    ],
+    heading: 'Group Travel Airlines FAQs',
+    intro: 'Straight answers about booking flights for 10 or more passengers with leading airlines.',
+    items: [
+        {
+            question: 'Which airlines offer group booking?',
+            answer:
+                "A lot of them do, including every one of the group travel airlines on this page. The catch is that each airline writes its own rules. Open an airline's page to see how it works, or just send us your route and we'll tell you where to start.",
+        },
+        {
+            question: 'Do airlines offer a group booking discount?',
+            answer:
+                "Some do, but not on every route and not on every date. Some don't at all. We won't promise you a discount before we've seen your trip. Once we have your route, dates and headcount, we'll tell you straight what's out there.",
+        },
+        {
+            question: 'Is a group fare cheaper than an individual fare?',
+            answer:
+                "Sometimes. Not always. A group fare can lock in a price and seats for everybody, which is a relief when you're juggling 30 people. But if your dates are flexible, individual fares occasionally win. It depends on the route, the season and how big your group is. The only way to know is to look at real numbers.",
+        },
+        {
+            question: 'How do I book group flights with airlines?',
+            answer:
+                "You send the airline a request with your route, dates and headcount. If it can work, you get group terms back. That usually means a deposit and a date by which you have to send passenger names. After you confirm and pay the deposit, ticketing and the final payment follow the airline's schedule. Doing all of that alone means a lot of back and forth, and we can help with that part.",
+        },
+        {
+            question: 'How does the group flight booking policy differ by airline?',
+            answer:
+                "In a few big ways. Minimum group size, deposit amount, how long you have to pay, when names are due, and what happens if two people drop out the week before. None of that is standard. It's worth checking before you pick an airline, not after.",
+        },
+    ],
+}
+
+export const businessClassFaqs = {
+    primary: 'business class flight booking',
+    secondaries: [
+        'cheap business class flights USA',
+        'group business class tickets',
+        'business class deals for groups',
+        'book business class online',
+    ],
+    heading: 'Frequently Asked Questions',
+    intro: 'Straight answers on booking business class flights online, group business class tickets, and discounts.',
+    items: [
+        {
+            question: 'How do I book business class online here?',
+            answer:
+                "Find your airline in the list on this page and send us your route and dates. Prefer talking? Call us. We'll come back with what's available, and you only go ahead if the price works for you.",
+        },
+        {
+            question: 'Are cheap business class flights in the USA real, or just marketing?',
+            answer:
+                "They're real, but not every route has them. A flight from New York to London in a quiet month can be far cheaper than the same seat at Christmas. We compare fares across airlines, and honestly, booking early is the biggest thing you can do to save.",
+        },
+        {
+            question: 'Can you book group business class tickets?',
+            answer:
+                "Yes, and it's one of the things we get asked about most. A fair number of our requests come from offices sending a team abroad, though we also see a lot of family trips. Send us the headcount and where you're headed. If the airline has enough seats, we'll try to keep all of you on a single booking.",
+        },
+        {
+            question: 'Do business class deals for groups actually exist?',
+            answer:
+                "They do, though the terms change from airline to airline. Some give you a lower per-seat fare, some let you pay in parts, and some allow name changes closer to departure. We check all of that so you don't have to read every fare rule yourself.",
+        },
+        {
+            question: "What's different about business class compared to economy?",
+            answer:
+                "More space, mainly. On many long flights you get a seat that turns into a flat bed. You also usually get priority boarding, lounge access, a proper meal and extra baggage. Details depend on the airline and the plane, so check the airline page before you pick.",
+        },
+        {
+            question: 'Can I change or cancel after booking?',
+            answer:
+                "Sometimes. It depends entirely on the fare. A flexible ticket gives you room to change plans, a cheaper one may not. We tell you the rules before you pay, not after.",
         },
     ],
 }

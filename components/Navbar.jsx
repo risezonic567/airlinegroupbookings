@@ -125,8 +125,18 @@ export default function Navbar() {
                         ))}
                         {pages.slice(1).map(({ label, href }) => <Link key={label} href={href} className={desktopLinkClass(href)}>{label}</Link>)}
                     </div>
-                    <div className="notranslate flex shrink-0 items-center gap-3 pl-3">
-                        <SupportLanguagesDropdown variant="cta" />
+                    <div className="notranslate flex shrink-0 items-center pl-3">
+                   <SupportLanguagesDropdown variant="cta" />     
+                        {/* <div className="flex items-center rounded-lg bg-white px-2.5 py-1 shadow-sm">
+                            <Image
+                                src="/images/certificates/Trustpilot Verified Reviews Badge.png"
+                                alt="Trustpilot Verified Reviews"
+                                width={180}
+                                height={28}
+                                priority
+                                className="h-6 w-auto object-contain xl:h-7"
+                            />
+                        </div> */}
                     </div>
                 </div>
             </nav>
