@@ -80,7 +80,7 @@ export default function HomePage() {
             items={homeFaqs.items}
             accentWord="FAQs"
         />
-        <div className="bg-slate-50 px-5 pb-14 sm:px-8 sm:pb-16">
+        <div className="bg-slate-50 px-5 pb-14 sm:px-8 sm:pb-16 pt-5">
             <div className="mx-auto flex max-w-7xl justify-center">
                 <Link
                     href="/contact"

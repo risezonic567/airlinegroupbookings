@@ -3,8 +3,7 @@
 import { useMemo, useState } from "react";
 
 const FILTERS = [
-  { key: "all", label: "All" },
-  { key: "india", label: "India" },
+  // { key: "all", label: "All" },
   { key: "intl", label: "International" },
 ];
 
@@ -35,7 +34,7 @@ export default function AirportDirectory({ airports = [] }) {
           aria-label="Search airports"
           className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-blue-600 sm:max-w-md"
         />
-        <div className="flex gap-2">
+        {/* <div className="flex gap-2">
           {FILTERS.map((f) => (
             <button
               key={f.key}
@@ -50,7 +49,7 @@ export default function AirportDirectory({ airports = [] }) {
               {f.label}
             </button>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <p className="mt-4 text-sm text-slate-500">

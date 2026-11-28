@@ -27,19 +27,17 @@ export default function DealsIndex() {
                 <Image src="/images/Premium Travel Deals Banner.png" alt="Premium group travel deals banner for airline bookings" fill priority sizes="100vw" className="-z-20 object-cover" />
                 <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a3d]/95 via-[#101a3d]/75 to-[#101a3d]/35" aria-hidden="true" />
                 <div className="relative mx-auto w-full max-w-7xl">
-                    <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Offers for groups</p>
-                    <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-                        Group Flight Deals for <span className="text-blue-200">Teams, Families and Organizations</span>
-                    </h1>
-                    <p className="mt-4 max-w-2xl text-base leading-7 text-blue-100 font-semibold">
-                        Group sales come and go. Here&apos;s how to tell a real deal from one that only looks good on the screen.
-                    </p>
-                    <p className="mt-4 max-w-2xl text-base leading-7 text-blue-50">
-                        Say you spot a group fare that&apos;s $40 less per person. Sounds like a win, until you notice the deposit is due this week and the names are due next. That&apos;s the thing about group flight deals: the price is only part of it. Cheap group airfare deals in the USA can hide strict terms or extras that add up, and last minute group flight deals are real, but seats for a big group go fast. Even a group discount on airline tickets depends on the airline, the route, your dates and your headcount. No promises there. Seasonal group travel offers pop up through the year, so it helps to know what to ask before you jump. Look through the current ones below, or{' '}
-                        <Link href="/contact" className="underline underline-offset-2 hover:text-white">send us your trip</Link>{' '}
-                        and we&apos;ll tell you what fits.
-                    </p>
-                </div>
+    <p className="text-xs font-bold uppercase tracking-[.18em] text-blue-100">Offers for groups</p>
+    <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+        Group Flight Deals for <span className="text-blue-200">Teams, Families and Organizations</span>
+    </h1>
+    <p className="mt-4 max-w-2xl text-base leading-7 text-blue-100 font-semibold">
+        Group sales come and go. Here&apos;s how to tell a real deal from one that only looks good on the screen.
+    </p>
+    <Link href="/contact" className="mt-7 inline-flex items-center rounded-lg bg-white px-5 py-3 text-sm font-bold text-blue-800 transition hover:bg-blue-50">
+        Get Your Free Group Quote
+    </Link>
+</div>
             </section>
 
             <section id="popular-deals" className="scroll-mt-8 bg-white py-12 sm:py-14">
@@ -48,6 +46,11 @@ export default function DealsIndex() {
                     <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{popular.h1}</h2>
                     <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
                         Browse popular group flight deals and trending group travel deals for teams, families, and schools. Pick an idea below, then contact our specialists for a free group flight quote.
+                    </p> 
+                    <p className="mt-4 max-w text-base leading-7 slate-60lue-50">
+                        Say you spot a group fare that&apos;s $40 less per person. Sounds like a win, until you notice the deposit is due this week and the names are due next. That&apos;s the thing about group flight deals: the price is only part of it. Cheap group airfare deals in the USA can hide strict terms or extras that add up, and last minute group flight deals are real, but seats for a big group go fast. Even a group discount on airline tickets depends on the airline, the route, your dates and your headcount. No promises there. Seasonal group travel offers pop up through the year, so it helps to know what to ask before you jump. Look through the current ones below, or{' '}
+                        <Link href="/contact" className="underline underline-offset-2">send us your trip</Link>{' '}
+                        and we&apos;ll tell you what fits.
                     </p>
                 </div>
             </section>
